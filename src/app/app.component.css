@@ -1,76 +1,54 @@
-:host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #333;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.content{
+  margin: 0 auto;
+  max-width: 70vw;
+  height: 100%;
 }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 8px 0;
-}
-
-p {
-  margin: 0;
-}
-
-.spacer {
-  flex: 1;
-}
-
-.toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
+header .content, footer .content{
   display: flex;
-  align-items: center;
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
-}
-
-.toolbar img {
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
-}
-
-.content {
-  margin: 82px auto 32px;
-  padding: 0 16px;
-  max-width: 1200px;
-}
-
-footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-}
-
-footer a {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
+
+header{
+  height: 61px;
+  background-color: #280223;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+  .logo{
+    height: 41px;
+    max-height: 100%;
+    width: auto;
+  }
+
+  .navWrap{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+  }
+  .navWrap ul{
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+  }
+    .navWrap li{
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .navWrap li:hover{
+      border-bottom: #ffff00 2px solid;
+      
+    }
+      .navWrap ul li a{
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .navWrap li:hover a{
+        color: #ffff00 !important;
+        margin-bottom: -2px;
+      }
