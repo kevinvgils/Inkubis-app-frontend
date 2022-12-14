@@ -51,6 +51,15 @@
             width: 30px;
             height: 30px;
           }
+          .form-check-input:checked {
+            background-color: #280223;
+            border-color: #280223;
+          }
+          .form-check-input:focus {
+            border-color: #c096b3;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem #c096b356;
+          }
           .form-check-label {
             margin-left: 5px;
           }
