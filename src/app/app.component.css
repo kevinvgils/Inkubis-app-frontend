@@ -52,3 +52,8 @@ header{
         color: #ffff00 !important;
         margin-bottom: -2px;
       }
+
+main{
+  background-color: #280223;
+  min-height: calc(100vh - 61px);
+}
