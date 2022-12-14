@@ -1,3 +1,8 @@
+.formWrap{
+  min-height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+}
 .form {
   background-color: #ffffff;
   height: 75vh;
@@ -30,6 +35,9 @@
       }
       .formMain .card-body {
         padding: 0;
+      }
+      .formMain .formHeader hr{
+        margin-bottom: 0px;
       }
       .formMain .formMainContent .card{
         margin-top: 30px;
