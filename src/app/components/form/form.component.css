@@ -22,8 +22,8 @@ hr {
   opacity: 1;
 }
 
-.pt0 {
-  padding-top: 0;
+p {
+  padding-top: 10px;
 }
 
 .move30right {
@@ -37,4 +37,16 @@ hr {
 
 .form-check-label {
   margin-left: 5px;
+}
+
+.startHeight {
+  margin-top: 38px;
+}
+
+.move20left {
+  margin-right: 20px;
+}
+
+.mb45 {
+  margin-bottom: 45px;
 }
