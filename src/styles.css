@@ -6,6 +6,26 @@
 html{
     font-size: 16px;
 }
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700 !important;
+}
+h1{
+    font-size: 4rem !important; /*64px*/
+    color: #ffff00;
+}
+h2{
+    font-size: 1.75rem !important; /*28px*/
+    color: #280223;
+}
+h5{
+    font-size: 1.5rem !important; /*24px*/
+    color: #280223;
+}
+h5.preTitle{
+    font-size: 1rem !important; /*16px*/
+    color: #c95478;
+}
+
 button{
     padding: 10.5px 16px;
     font-weight: 900;
