@@ -6,7 +6,7 @@
   .form {
     background-color: #ffffff;
     height: 75vh;    
-    min-width: 1075px;
+    min-width: 70vw; /*1075px*/
   }
     .form .row{
       --bs-gutter-x: 0;
