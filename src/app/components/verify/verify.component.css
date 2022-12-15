@@ -5,7 +5,8 @@
   }
   .form {
     background-color: #ffffff;
-    height: 75vh;
+    height: 75vh;    
+    min-width: 1075px;
   }
     .form .row{
       --bs-gutter-x: 0;
@@ -52,5 +53,12 @@
             }
             .buttonToRight{
               display: flex;
-              justify-content: end;
+              justify-content: flex-end;
+              margin-top: 70px;
+              margin-bottom: 50px;
+            }
+            .versturen{
+              width: 120px;
+              height: 40px;
+              padding: 0;
             }
