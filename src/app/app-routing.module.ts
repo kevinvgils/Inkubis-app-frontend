@@ -4,6 +4,7 @@ import { FormComponent } from './components/form/form.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FormComponent },
+  { path: 'contract', loadChildren: () => import('./contract/contract.module').then(m => m.ContractModule) },
 ];
 
 @NgModule({
