@@ -17,11 +17,16 @@ hr {
     font-size: 1.5rem;
 }
 
+.test {
+    min-width: 70vw;
+}
+
 .card {
     max-width: 40rem;
     max-height: 40rem;
     display: flex;
     width: 100%;
+    width: 39rem;
 }
 
 .card-body {
