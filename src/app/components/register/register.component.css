@@ -1,0 +1,49 @@
+.form-label {
+    font-size: 1rem;
+    color: #280223;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 2.5rem !important;
+}
+
+hr {
+    background-color: black;
+}
+
+.login-preTitle {
+    color: #c95478;
+    font-size: 1.5rem;
+}
+
+.card {
+    width: 50rem;
+    height: 50rem;
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+input {
+    border-radius: 0;
+    line-height: 3rem;
+    border-color: black;
+}
+
+.form-control {
+    padding-right: 5rem;
+}
+
+.btn {
+    background-color: #280223;
+    border-radius: 0;
+    color: #ffff00;
+}
+
+.btn:hover {
+    transition: 0.5s;
+    background-color: #c95478;
+}
