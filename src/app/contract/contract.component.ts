@@ -10,7 +10,9 @@ import { FormProvider } from './FormProvider';
 })
 export class ContractComponent extends FormProvider implements OnInit {
 
-  onboardingForm = new FormGroup({
+  components: string[] = ['FirstPart', 'SecondPart'];
+
+  contractForm = new FormGroup({
     firstPart: new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required)
@@ -22,7 +24,7 @@ export class ContractComponent extends FormProvider implements OnInit {
   })
 
   getForm() {
-    return this.onboardingForm;
+    return this.contractForm;
   }
 
   constructor() {
