@@ -1,0 +1,64 @@
+.formWrap{
+    min-height: calc(100vh - 61px);
+    display: flex;
+    align-items: center;
+  }
+  .form {
+    background-color: #ffffff;
+    height: 75vh;    
+    min-width: 70vw; /*1075px*/
+  }
+    .form .row{
+      --bs-gutter-x: 0;
+      height: 100%;
+    }
+      .formLeft {
+        padding: 60px 40px 0px 60px;
+        height: 100%;
+        background-color: #c096b3;
+        color: #ffffff;
+        float: right;
+        text-align: right;
+      }
+        .formLeft h4{
+          margin-bottom: 45px;
+        }
+        .formLeft p{
+          margin-bottom: 20px;
+        }
+      .formMain{
+        padding: 60px 60px 0px 40px;
+        height: inherit;
+        overflow-y: scroll;
+      }
+        .formMain .card {
+          border: none;
+        }
+        .formMain .card-body {
+          padding: 0;
+        }
+        .formMain .formHeader hr{
+          margin-bottom: 0px;
+        }
+        .formMain .formMainContent .card{
+          margin-top: 30px;
+        }
+          .flex{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+          }
+            .form-check-label {
+              margin-left: 5px;
+            }
+            .buttonToRight{
+              display: flex;
+              justify-content: flex-end;
+              margin-top: 70px;
+              margin-bottom: 50px;
+            }
+            .versturen{
+              width: 120px;
+              height: 40px;
+              padding: 0;
+            }

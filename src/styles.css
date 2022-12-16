@@ -37,3 +37,8 @@ button.yellow{
     background-color: #ffff00;
     color: #280223;
 }
+
+button.black{
+    background-color: #280223;
+    color: #ffff00;
+}
