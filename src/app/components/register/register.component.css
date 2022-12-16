@@ -17,9 +17,11 @@ hr {
     font-size: 1.5rem;
 }
 
-.card {
-    width: 50rem;
-    height: 50rem;
+@media (max-width:1000px) {
+    .card {
+        width: auto;
+        height: auto;
+    }
 }
 
 .no-padding {

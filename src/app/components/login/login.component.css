@@ -5,7 +5,7 @@
 }
 
 h3 {
-    font-size: 2.5rem !important;
+    font-size: 1.8rem !important;
 }
 
 hr {
@@ -18,19 +18,26 @@ hr {
 }
 
 .card {
-    width: 50rem;
-    height: 50rem;
+    max-width: 40rem;
+    max-height: 40rem;
+    display: flex;
+    width: 100%;
 }
 
-.no-padding {
-    padding-left: 0;
-    padding-right: 0;
+.card-body {
+    width: 100%;
 }
 
 input {
     border-radius: 0;
     line-height: 3rem;
     border-color: black;
+}
+
+.img-inkubis {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .form-control {
@@ -41,6 +48,7 @@ input {
     background-color: #280223;
     border-radius: 0;
     color: #ffff00;
+    position: absolute;
 }
 
 .btn:hover {
