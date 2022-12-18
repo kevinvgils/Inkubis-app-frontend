@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '',
     component: ContractComponent,
     children: [
+      { path: '', pathMatch: 'full', redirectTo: 'firstpart' },
       { path: 'firstpart', component: FirstPartComponent },
       { path: 'secondpart', component: SecondPartComponent }
     ] }, 

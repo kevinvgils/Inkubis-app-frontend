@@ -31,6 +31,8 @@ header{
     margin: 0px;
     padding: 0px;
     position: relative;
+    display: flex;
+    gap: 40px;
   }
     .navWrap li{
       position: relative;

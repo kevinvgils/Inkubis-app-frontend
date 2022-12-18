@@ -55,6 +55,11 @@ p a{
             justify-content: space-between;
             margin-top: 15px;
           }
+          ::ng-deep button{
+            margin-top: 30px;
+            margin-left: auto;
+            float: right;
+          }
           ::ng-deep .form-check-input {
               width: 30px;
               height: 30px;
