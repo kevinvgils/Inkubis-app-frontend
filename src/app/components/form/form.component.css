@@ -4,9 +4,28 @@
   align-items: center;
 }
 .form {
+  width: 100%;
   background-color: #ffffff;
   height: 75vh;
+  padding: 20px 80px;
+  position: relative;
 }
+  .form .contract{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    border-bottom: #280223 1px solid;
+  }
+  .extraTempStyling{
+    border-right: #280223 1px solid;
+    padding-right: 20px;
+  }
+  button{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+  }
+
   .form .row{
     --bs-gutter-x: 0;
     height: 100%;
