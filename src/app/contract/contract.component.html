@@ -4,10 +4,16 @@
             <!-- Buttons -->
             <div class="col-3 formLeft">
                 <h4>progressie:</h4>
-                <p><a>Naam formulier 1</a></p>
+                <p (click)="link()" *ngFor="let comp of components" >
+                    <span *ngIf="comp == currentComp">-></span>
+                    <a [routerLink]="['./', comp]">
+                        {{comp}}
+                    </a> 
+                </p>
+                <!-- <p><a>Naam formulier 1</a></p>
                 <p><a>Naam onderdeel 2</a></p>
                 <p><a>Naam onderdeel 3</a></p>
-                <p><a>Controlleren gegevens</a></p>
+                <p><a>Controlleren gegevens</a></p> -->
             </div>
     
             <!-- Text -->

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormProvider } from './FormProvider';
 
 @Component({
@@ -9,17 +10,17 @@ import { FormProvider } from './FormProvider';
   providers: [{ provide: FormProvider, useExisting: ContractComponent }]
 })
 export class ContractComponent extends FormProvider implements OnInit {
-
-  components: string[] = ['FirstPart', 'SecondPart'];
-
+  components: string[] = ['firstpart', 'secondpart'];
+  currentComp!: string;
+  
   contractForm = new FormGroup({
     firstPart: new FormGroup({
-      name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required)
+      firstQuestion: new FormControl(false),
+      secondQuestion: new FormControl(false),
     }),
     secondPart: new FormGroup({
-      cardNumber: new FormControl('', Validators.required),
-      CVC: new FormControl('', Validators.required),
+      thirdQuestion: new FormControl(false),
+      lastQuestion: new FormControl(false),
     })
   })
 
@@ -27,11 +28,16 @@ export class ContractComponent extends FormProvider implements OnInit {
     return this.contractForm;
   }
 
-  constructor() {
+  constructor(private router: Router) {
     super();
   }
 
   ngOnInit(): void {
+    this.link();
   }
 
+  link(): void {
+    this.currentComp = this.router.url.split('/').pop() as string;
+  }
 }
+

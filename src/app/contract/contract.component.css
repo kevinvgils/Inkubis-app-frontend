@@ -1,3 +1,9 @@
+p a{
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 .formWrap{
     min-height: calc(100vh - 61px);
     display: flex;
@@ -47,6 +53,7 @@
             display: flex;
             width: 100%;
             justify-content: space-between;
+            margin-top: 15px;
           }
           ::ng-deep .form-check-input {
               width: 30px;
@@ -54,7 +61,8 @@
               margin-top: 0px;
             }
             ::ng-deep .form-check{
-                
+                display: flex;
+                align-items: center;
             }
             ::ng-deep .form-check-input:checked {
               background-color: #280223;
@@ -66,5 +74,6 @@
               box-shadow: 0 0 0 0.2rem #c096b356;
             }
             ::ng-deep .form-check-label {
-              margin-left: 5px;
+                margin-bottom: 0px;
+                margin-left: 10px;
             }

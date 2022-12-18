@@ -1,1 +1,46 @@
-<p>second-part works!</p>
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Form 2</h5>
+        <h2 class="card-subtitle mb-2">Naam van Formulier 2</h2>
+        <p class="card-text">Beschrijving van formulier 2. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-subtitle mb-2">thirdQuestion</h5>
+            <p class="card-text">Beschrijving van thirdQuestion. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi</p>
+        </div>
+        <div class="buttons">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="thirdQuestion" name="thirdQuestion" formControlName="thirdQuestion">
+                <label class="form-check-label h5" for="cb1">
+                    Accept
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-subtitle mb-2">lastQuestion</h5>
+            <p class="card-text">Beschrijving van formulier lastQuestion. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi</p>
+        </div>
+        <div class="buttons">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="lastQuestion" name="lastQuestion" formControlName="lastQuestion">
+                <label class="form-check-label h5" for="cb1">
+                    Accept
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <button class="yellow" type="submit">Submit</button>
+</form>
