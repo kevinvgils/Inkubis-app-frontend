@@ -1,7 +1,7 @@
 import { FormGroup } from "@angular/forms";
 import { Contract } from "./contract";
 
-export abstract class FormData {
+export class FormData {
     
     contracts: Contract[] = [];
 

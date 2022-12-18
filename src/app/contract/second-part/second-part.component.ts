@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Contract } from '../contract';
 import { FormData } from '../FormData';
 import { FormProvider } from '../FormProvider';
@@ -13,14 +14,20 @@ export class SecondPartComponent implements OnInit {
 
   @Input()
   initialForm!: FormGroup;
-  contracts!: FormData;
+  contracts: any;
 
   form: FormGroup;
 
-  constructor(private formProvider: FormProvider
+  constructor(private formProvider: FormProvider, private router: Router
     ) {
     this.form = formProvider.getForm().get('secondPart') as FormGroup;
-    this.contracts = JSON.parse(localStorage.getItem('forms') || '[]')
+    console.log(localStorage.getItem('forms'));
+    try {
+      this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
+    } catch (e:any) {
+      this.contracts = [];
+      console.error(e.message);
+    };
   }
   
   ngOnInit(): void {
@@ -29,13 +36,13 @@ export class SecondPartComponent implements OnInit {
   onSubmit(){
     if(this.formProvider.getForm().get('firstPart')){
       const allForms = this.formProvider.getForm() as FormGroup;
-      console.log(allForms);
-      let contract = new Contract(allForms);
 
-      this.contracts.addContract(contract);
-      
-      localStorage.setItem('forms', JSON.stringify(this.contracts.contracts));
+      let contract = new Contract(allForms);
+      this.contracts.push(contract);
+
+      localStorage.setItem('forms', JSON.stringify(this.contracts));
+      this.router.navigate(['']);
     }
   }
-
+ 
 }
