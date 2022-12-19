@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './components/form/form.component';
+import { VerifyComponent } from './components/verify/verify.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     FormComponent,
     LoginComponent,
     RegisterComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule,
