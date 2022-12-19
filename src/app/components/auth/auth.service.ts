@@ -14,7 +14,7 @@ export class AuthService {
       //'Access-Control-Allow-Origin': '*',
       //Authorization: `${token}`,
     });
-    return this.httpClient.get<ILogin>(`http://localhost:3000/login`, {
+    return this.httpClient.post<ILogin>(`http://localhost:3000/login`, {
       headers: headers,
     });
   }

@@ -9,7 +9,7 @@
                             Registreer om bedrijfscontracten te bekijken en aan te passen
                         </h3>
                         <hr class="mt-4" />
-                        <form class="mb-3">
+                        <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate class="mb-3 mt-md-4">
                             <div class="row">
                                 <div class="col">
                                     <div class="mb-3">
@@ -50,6 +50,8 @@
                                     <label class="form-check-label" for="radio1"></label>
                                 </div>
                             </div>
+                            <button type="submit" class="btn purple end-0 mx-5"
+                                [disabled]="!loginForm.valid">Registreren</button>
                         </form>
                     </div>
                 </div>

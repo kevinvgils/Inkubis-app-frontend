@@ -21,6 +21,12 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
+    console.log(
+      'Username: ' +
+        this.formData.username +
+        ' Password: ' +
+        this.formData.password
+    );
     if (this.formData.username != '' && this.formData.password != '') {
       this.authService
         .login(this.formData.username, this.formData.password)

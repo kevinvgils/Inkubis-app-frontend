@@ -1,46 +1,47 @@
 .form-label {
-    font-size: 1rem;
-    color: #280223;
-    font-weight: bold;
+  font-size: 1rem;
+  color: #280223;
+  font-weight: bold;
 }
 
 h3 {
-    font-size: 1.8rem !important;
+  font-size: 1.8rem !important;
 }
 
 hr {
-    background-color: black;
+  background-color: black;
 }
 
 .login-preTitle {
-    color: #c95478;
-    font-size: 1.5rem;
+  color: #c95478;
+  font-size: 1.5rem;
 }
 
 .card {
-    max-width: 50rem;
-    max-height: 45vw;
-    display: flex;
+  max-width: 50rem;
+  max-height: 45vw;
+  display: flex;
 }
 
 input {
-    border-radius: 0;
-    line-height: 3rem;
-    border-color: black;
+  border-radius: 0;
+  line-height: 3rem;
+  border-color: black;
 }
 
 .form-control {
-    width: 90%;
-    font-size: 1rem;
+  width: 90%;
+  font-size: 1rem;
 }
 
 .btn {
-    background-color: #280223;
-    border-radius: 0;
-    color: #ffff00;
+  background-color: #280223;
+  border-radius: 0;
+  color: #ffff00;
+  position: absolute;
 }
 
 .btn:hover {
-    transition: 0.5s;
-    background-color: #c95478;
+  transition: 0.5s;
+  background-color: #c95478;
 }

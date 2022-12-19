@@ -1,62 +1,62 @@
 .form-label {
-    font-size: 1rem;
-    color: #280223;
-    font-weight: bold;
+  font-size: 1rem;
+  color: #280223;
+  font-weight: bold;
 }
 
 h3 {
-    font-size: 1.8rem !important;
+  font-size: 1.8rem !important;
 }
 
 hr {
-    background-color: black;
+  opacity: 100% !important;
 }
 
 .login-preTitle {
-    color: #c95478;
-    font-size: 1.5rem;
+  color: #c95478;
+  font-size: 1.5rem;
 }
 
 .test {
-    min-width: 70vw;
+  min-width: 70vw;
 }
 
 .card {
-    max-width: 40rem;
-    max-height: 40rem;
-    display: flex;
-    min-width: 41vw;
+  max-width: 40rem;
+  max-height: 40rem;
+  display: flex;
+  min-width: 41vw;
 }
 
 .card-body {
-    width: 100%;
+  width: 100%;
 }
 
 input {
-    border-radius: 0;
-    line-height: 3rem;
-    border-color: black;
+  border-radius: 0;
+  line-height: 3rem;
+  border-color: black;
 }
 
 .img-inkubis {
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .form-control {
-    width: 70%;
+  width: 70%;
 }
 
 .btn {
-    background-color: #280223;
-    border-radius: 0;
-    color: #ffff00;
-    position: absolute;
+  background-color: #280223;
+  border-radius: 0;
+  color: #ffff00;
+  position: absolute;
 }
 
 .btn:hover {
-    transition: 0.5s;
-    background-color: #c95478;
-    transform: scale(1.02);
+  transition: 0.5s;
+  background-color: #c95478;
+  transform: scale(1.02);
 }

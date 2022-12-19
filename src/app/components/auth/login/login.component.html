@@ -11,19 +11,43 @@
                         <h3 class="card-title">
                             Login om bedrijfscontracten te bekijken en aan te passen
                         </h3>
-                        <hr class="mt-4"/>
+                        <hr class="mt-4" />
                         <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate class="mb-3 mt-md-4">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Gebruikersnaam</label>
-                                <input type="username" class="form-control" id="username"
-                                    placeholder="Type hier je gebruikersnaam" />
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Type hier je gebruikersnaam" [(ngModel)]="formData.username"
+                                    #username="ngModel" minlength="3" required [ngClass]="{
+                                    'is-invalid': username.invalid && username.touched
+                                }" />
+                                <div *ngIf="username.invalid && username.touched" class="invalid-feedback">
+                                    <div *ngIf="username.errors!['required']">
+                                        Gebruikersnaam is verplicht
+                                    </div>
+                                    <div *ngIf="username.errors!['minlength']">
+                                        Gebruikersnaam moet minimaal 3 karakters hebben.
+                                    </div>
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Wachtwoord</label>
-                                <input type="password" class="form-control" id="password"
-                                    placeholder="Type hier je wachtwoord" />
-                                <a routerLink="" class="btn end-0 mx-5 my-3">Versturen</a>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Type hier je wachtwoord" class="form-control"
+                                    [(ngModel)]="formData.password" #password="ngModel" minlength="3" required
+                                    [ngClass]="{
+                                'is-invalid': password.invalid && password.touched
+                            }" />
+                                <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+                                    <div *ngIf="password.errors!['required']">
+                                        Wachtwoord is verplicht
+                                    </div>
+                                    <div *ngIf="password.errors!['minlength']">
+                                        Wachtwoord moet minimaal 3 karakters hebben.
+                                    </div>
+                                </div>
                             </div>
+                            <button type="submit" class="btn purple end-0 mx-5"
+                                [disabled]="!loginForm.valid">Login</button>
                         </form>
                     </div>
                 </div>
