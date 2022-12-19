@@ -37,6 +37,9 @@ p a{
         height: inherit;
         overflow-y: scroll;
       }
+        .formMain ::ng-deep form{
+          margin-bottom: 50px;
+        }
         .formMain ::ng-deep .card {
           border: none;
         }
@@ -58,7 +61,7 @@ p a{
           ::ng-deep .formMainContent button{
             margin-top: 30px;
             margin-left: auto;
-            float: right;
+            
           }
           ::ng-deep .form-check-input {
               width: 30px;
