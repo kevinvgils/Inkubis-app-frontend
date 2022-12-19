@@ -1,28 +1,27 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-8" id="htmlData">
-        <table class="table table-bordered">
-          <tr class="table-primary">
-            <th>Id</th>
-            <th>Option1</th>
-            <th>Option2</th>
-            <th>Option3</th>
-            <th>Company</th>
-            
-          </tr>
-          <tr>
-            <th>{{pdf?.id}}</th>
-            <td>{{pdf?.option1}}</td>
-            <td>{{pdf?.option2}}</td>
-            <td>{{pdf?.option3}}</td>
-            
-            <td>{{pdf?.company}}</td>
-            
-          </tr>
-        </table>
-      </div>
-      <div class="col-md-4 text-right">
-        <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
-      </div>
+  <div class="row">
+    <div class="col-md-8" id="htmlData">
+      <table class="table table-bordered">
+        <tr class="table-primary">
+          <th>Id</th>
+          <th>Option1</th>
+          <th>Option2</th>
+          <th>Option3</th>
+          <th>Company</th>
+        </tr>
+        <tr>
+          <th>{{pdf?.id}}</th>
+          <td>{{pdf?.option1}}</td>
+          <td>{{pdf?.option2}}</td>
+          <td>{{pdf?.option3}}</td>
+
+          <td>{{pdf?.company}}</td>
+
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-4 text-right">
+      <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
     </div>
   </div>
+</div>
