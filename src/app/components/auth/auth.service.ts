@@ -14,8 +14,18 @@ export class AuthService {
       //'Access-Control-Allow-Origin': '*',
       //Authorization: `${token}`,
     });
-    return this.httpClient.post<ILogin>(`http://localhost:3000/login`, {
-      headers: headers,
-    });
+
+    const credentials = {
+      emailAddress: username,
+      password: password,
+    };
+
+    return this.httpClient.post<ILogin>(
+      `http://localhost:3000/user-auth/login`,
+      credentials,
+      {
+        headers: headers,
+      }
+    );
   }
 }
