@@ -32,14 +32,14 @@ button{
     font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    border: none;
 }
 
 button.yellow{
     background-color: #ffff00;
     color: #280223;
 }
-
-button.black{
+button.purple{
     background-color: #280223;
     color: #ffff00;
 }

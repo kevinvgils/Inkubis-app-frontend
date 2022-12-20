@@ -10,6 +10,7 @@ import { VerifyComponent } from './components/verify/verify.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { PdfComponent } from './pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     VerifyComponent,
+    PdfComponent,
   ],
   imports: [
     BrowserModule,

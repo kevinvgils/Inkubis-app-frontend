@@ -17,10 +17,6 @@ hr {
   font-size: 1.5rem;
 }
 
-.test {
-  min-width: 70vw;
-}
-
 .card {
   max-width: 40rem;
   max-height: 40rem;
@@ -48,15 +44,12 @@ input {
   width: 70%;
 }
 
-.btn {
-  background-color: #280223;
-  border-radius: 0;
-  color: #ffff00;
-  position: absolute;
-}
-
-.btn:hover {
+.abs:hover {
   transition: 0.5s;
   background-color: #c95478;
   transform: scale(1.02);
+}
+
+.abs {
+  position: absolute;
 }

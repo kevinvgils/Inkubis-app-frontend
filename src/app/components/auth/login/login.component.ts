@@ -15,21 +15,21 @@ export class LoginComponent {
 
   ngOnInit(): void {
     this.formData = {
-      username: '',
+      emailAddress: '',
       password: '',
     };
   }
 
   onSubmit(): void {
     console.log(
-      'Username: ' +
-        this.formData.username +
+      'EmailAddress: ' +
+        this.formData.emailAddress +
         ' Password: ' +
         this.formData.password
     );
-    if (this.formData.username != '' && this.formData.password != '') {
+    if (this.formData.emailAddress != '' && this.formData.password != '') {
       this.authService
-        .login(this.formData.username, this.formData.password)
+        .login(this.formData.emailAddress, this.formData.password)
         .subscribe((user: ILogin | undefined) => {
           console.log('User: ' + user);
 

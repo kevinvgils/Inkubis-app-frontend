@@ -14,18 +14,18 @@
                         <hr class="mt-4" />
                         <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate class="mb-3 mt-md-4">
                             <div class="mb-3">
-                                <label for="username" class="form-label">Gebruikersnaam</label>
-                                <input type="text" class="form-control" id="username" name="username"
-                                    placeholder="Type hier je gebruikersnaam" [(ngModel)]="formData.username"
-                                    #username="ngModel" minlength="3" required [ngClass]="{
-                                    'is-invalid': username.invalid && username.touched
+                                <label for="emailAddress" class="form-label">E-mailadres</label>
+                                <input type="text" class="form-control" id="emailAddress" name="emailAddress"
+                                    placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
+                                    #emailAddress="ngModel" minlength="3" required [ngClass]="{
+                                    'is-invalid': emailAddress.invalid && emailAddress.touched
                                 }" />
-                                <div *ngIf="username.invalid && username.touched" class="invalid-feedback">
-                                    <div *ngIf="username.errors!['required']">
-                                        Gebruikersnaam is verplicht
+                                <div *ngIf="emailAddress.invalid && emailAddress.touched" class="invalid-feedback">
+                                    <div *ngIf="emailAddress.errors!['required']">
+                                        E-mailadres is verplicht
                                     </div>
-                                    <div *ngIf="username.errors!['minlength']">
-                                        Gebruikersnaam moet minimaal 3 karakters hebben.
+                                    <div *ngIf="emailAddress.errors!['minlength']">
+                                        E-mailadres moet minimaal 3 karakters hebben.
                                     </div>
                                 </div>
                             </div>
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn purple end-0 mx-5"
+                            <button type="submit" class="purple abs end-0 mx-5"
                                 [disabled]="!loginForm.valid">Login</button>
                         </form>
                     </div>

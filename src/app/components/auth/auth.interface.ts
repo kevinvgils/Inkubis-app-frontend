@@ -1,5 +1,10 @@
 export interface ILogin {
-  username: string;
+  emailAddress: string;
+  password: string;
+}
+
+export interface IRegister {
+  emailAddress: string;
   password: string;
 }
 
