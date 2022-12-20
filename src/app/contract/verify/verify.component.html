@@ -9,64 +9,24 @@
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
 
-    <div class="card">
-        <h5 class="card-subtitle mb-2">Formulier 1</h5>
-        <div class="flex">
-            <label class="">Input 1</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 2</label>
-            <label class="">Geweigerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 3</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-    </div>
-    <div class="card">
-        <h5 class="card-subtitle mb-2">Formulier 1</h5>
-        <div class="flex">
-            <label class="">Input 1</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 2</label>
-            <label class="">Geweigerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 3</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-    </div>
-    <div class="card">
-        <h5 class="card-subtitle mb-2">Formulier 1</h5>
-        <div class="flex">
-            <label class="">Input 1</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 2</label>
-            <label class="">Geweigerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 3</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-    </div>
-    <div class="card">
-        <h5 class="card-subtitle mb-2">Formulier 1</h5>
-        <div class="flex">
-            <label class="">Input 1</label>
-            <label class="">Geaccepteerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 2</label>
-            <label class="">Geweigerd</label>
-        </div>
-        <div class="flex">
-            <label class="">Input 3</label>
-            <label class="">Geaccepteerd</label>
+    <div class="contract" *ngFor="let form of contracts">
+        <div class="card">
+            <h5 class="card-subtitle mb-2">Formulier 1</h5>
+            <div class="flex">
+                <label class="">Input 1</label>
+                <label *ngIf="form.firstQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.firstQuestion" class="">Geweigerd</label>
+            </div>
+            <div class="flex">
+                <label class="">Input 2</label>
+                <label *ngIf="form.secondQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.secondQuestion" class="">Geweigerd</label>
+            </div>
+            <div class="flex">
+                <label class="">Input 3</label>
+                <label *ngIf="form.thirdQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.thirdQuestion" class="">Geweigerd</label>
+            </div>
         </div>
     </div>
 
