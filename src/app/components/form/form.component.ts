@@ -6,7 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
-  constructor() {}
+  contracts: any;
+  constructor() {
+    try {
+      this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
+    } catch (e:any) {
+      this.contracts = [];
+      console.error(e.message);
+    };
+
+    console.log(this.contracts);
+  }
 
   ngOnInit(): void {}
+
+  clearLocalStorage(){
+    localStorage.clear();
+    window.location.reload();
+  }
 }
