@@ -7,12 +7,12 @@ import { FormProvider } from './FormProvider';
   selector: 'app-contract',
   templateUrl: './contract.component.html',
   styleUrls: ['./contract.component.css'],
-  providers: [{ provide: FormProvider, useExisting: ContractComponent }]
+  providers: [{ provide: FormProvider, useExisting: ContractComponent }],
 })
 export class ContractComponent extends FormProvider implements OnInit {
-  components: string[] = ['firstpart', 'secondpart'];
+  components: string[] = ['firstpart', 'secondpart', 'verify'];
   currentComp!: string;
-  
+
   contractForm = new FormGroup({
     firstPart: new FormGroup({
       firstQuestion: new FormControl(false),
@@ -21,8 +21,8 @@ export class ContractComponent extends FormProvider implements OnInit {
     secondPart: new FormGroup({
       thirdQuestion: new FormControl(false),
       lastQuestion: new FormControl(false),
-    })
-  })
+    }),
+  });
 
   getForm() {
     return this.contractForm;
@@ -40,4 +40,3 @@ export class ContractComponent extends FormProvider implements OnInit {
     this.currentComp = this.router.url.split('/').pop() as string;
   }
 }
-

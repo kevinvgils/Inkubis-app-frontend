@@ -4,11 +4,11 @@ import { Router } from '@angular/router';
 import { FormProvider } from '../FormProvider';
 
 @Component({
-  selector: 'app-first-part',
-  templateUrl: './first-part.component.html',
-  styleUrls: ['./first-part.component.css'],
+  selector: 'app-verify',
+  templateUrl: './verify.component.html',
+  styleUrls: ['./verify.component.css'],
 })
-export class FirstPartComponent implements OnInit {
+export class VerifyComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
