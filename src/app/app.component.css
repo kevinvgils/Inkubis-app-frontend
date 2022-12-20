@@ -56,7 +56,8 @@ header{
       }
 
 main{
-  background-color: #280223;
+  background: rgb(39,15,39);
+  background: linear-gradient(69deg, rgba(39,15,39,1) 0%, rgba(40,24,55,1) 69%, rgba(20,22,60,1) 100%);
   min-height: calc(100vh - 61px);
 }
   main .content{

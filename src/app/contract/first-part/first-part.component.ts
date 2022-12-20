@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormProvider } from '../FormProvider';
@@ -9,6 +9,7 @@ import { FormProvider } from '../FormProvider';
   styleUrls: ['./first-part.component.css'],
 })
 export class FirstPartComponent implements OnInit {
+  @Input()
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
