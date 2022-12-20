@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   public currentUser$ = new BehaviorSubject<ILogin | undefined>(undefined);
-  private readonly CURRENT_USERTOKEN = 'currentusertoken';
+  private readonly CURRENT_USER = 'currentuser';
   private readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });
@@ -32,10 +32,8 @@ export class AuthService {
       .pipe(
         tap(console.log),
         map((data: any) => {
-          const token = data.token;
-          console.log('Authorization token: ' + token);
-          localStorage.setItem(this.CURRENT_USERTOKEN, JSON.stringify(token));
-          this.currentUser$.next(token);
+          localStorage.setItem(this.CURRENT_USER, JSON.stringify(data));
+          this.currentUser$.next(data);
           return data;
         }),
         catchError((error) => {
@@ -53,7 +51,7 @@ export class AuthService {
       .then((success) => {
         if (success) {
           console.log('logout - removing local user info');
-          localStorage.removeItem(this.CURRENT_USERTOKEN);
+          localStorage.removeItem(this.CURRENT_USER);
           this.currentUser$.next(undefined);
         } else {
           console.log('navigate result:', success);

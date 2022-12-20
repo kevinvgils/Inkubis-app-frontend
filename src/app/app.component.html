@@ -5,7 +5,7 @@
     <div class="navWrap">
       <ul>
         <li><a routerLink="/contract">Create contract</a></li>
-        <li><a href="">Admin pannel</a></li>
+        <li><a routerLink="">Admin pannel</a></li>
       </ul>
       <ul *ngIf="(loggedInUser$ | async) === undefined">
         <li><a class="nav-link yellow" routerLink="/register">Registreer</a></li>
