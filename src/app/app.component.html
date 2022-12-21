@@ -4,8 +4,8 @@
     <img src="../assets/img/brand-logo.svg" alt="" class="logo">
     <div class="navWrap">
       <ul>
-        <li><a routerLink="/contract">Create contract</a></li>
-        <li><a routerLink="">Admin pannel</a></li>
+        <li><a routerLink="/contract" *ngIf="loggedInUser$ | async as user">Create contract</a></li>
+        <li><a routerLink="" *ngIf="loggedInUser$ | async as user">Admin pannel</a></li>
       </ul>
       <ul *ngIf="(loggedInUser$ | async) === undefined">
         <li><a class="nav-link yellow" routerLink="/register">Registreer</a></li>
