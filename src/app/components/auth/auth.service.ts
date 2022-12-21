@@ -1,5 +1,13 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, map, Observable, of, tap } from 'rxjs';
+import {
+  BehaviorSubject,
+  catchError,
+  map,
+  Observable,
+  of,
+  switchMap,
+  tap,
+} from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ILogin } from './auth.interface';
 import { Router } from '@angular/router';
@@ -14,7 +22,22 @@ export class AuthService {
     'Content-Type': 'application/json',
   });
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router) {
+    this.getUserFromLocalStorage()
+      .pipe(
+        switchMap((user: ILogin | undefined) => {
+          if (user) {
+            console.log('User found in local storage');
+            console.log(user);
+            this.currentUser$.next(user);
+            return of(user);
+          } else {
+            return of(undefined);
+          }
+        })
+      )
+      .subscribe();
+  }
 
   login(
     emailAddress: string,
@@ -58,5 +81,15 @@ export class AuthService {
         }
       })
       .catch((error) => console.log('not logged out!'));
+  }
+
+  getUserFromLocalStorage(): Observable<ILogin | undefined> {
+    const user = localStorage.getItem(this.CURRENT_USER);
+    if (user) {
+      const localUser = JSON.parse(user);
+      return of(localUser);
+    } else {
+      return of(undefined);
+    }
   }
 }

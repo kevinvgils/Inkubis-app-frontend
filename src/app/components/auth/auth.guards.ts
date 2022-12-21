@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 import { ILogin } from './auth.interface';
 import { AuthService } from './auth.service';
 
-// Verifies that user is logged in before navigating to routes.
 @Injectable()
 export class LoggedInAuthGuard implements CanActivate, CanActivateChild {
   constructor(private authService: AuthService, private router: Router) {}

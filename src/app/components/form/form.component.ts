@@ -10,18 +10,18 @@ export class FormComponent implements OnInit {
   constructor() {
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
-    } catch (e:any) {
+    } catch (e: any) {
       this.contracts = [];
       console.error(e.message);
-    };
+    }
 
     console.log(this.contracts);
   }
 
   ngOnInit(): void {}
 
-  clearLocalStorage(){
-    localStorage.clear();
+  clearLocalStorage() {
+    localStorage.removeItem('forms');
     window.location.reload();
   }
 }

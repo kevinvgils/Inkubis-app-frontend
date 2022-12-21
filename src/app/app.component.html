@@ -7,11 +7,8 @@
         <li><a routerLink="/contract" *ngIf="loggedInUser$ | async as user">Create contract</a></li>
         <li><a routerLink="" *ngIf="loggedInUser$ | async as user">Admin pannel</a></li>
       </ul>
-      <div *ngIf="(loggedInUser$ | async) === undefined">
-        <button class="yellow" routerLink="/login">Login</button>
-      </div>
       <div *ngIf="loggedInUser$ | async as user">
-        {{ user.emailAddress }}
+        <span>{{ user.emailAddress }}</span>
         <button class="yellow" (click)="logout()">Uitloggen</button>
       </div>
     </div>
