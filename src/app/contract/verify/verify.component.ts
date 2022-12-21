@@ -10,14 +10,16 @@ import { FormProvider } from '../FormProvider';
   styleUrls: ['./verify.component.css'],
 })
 export class VerifyComponent implements OnInit {
-  initialForm!: FormGroup;
   contracts: any;
   form: FormGroup;
+  verifyData: any;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('firstPart') as FormGroup;
-    this.form = formProvider.getForm().get('secondPart') as FormGroup;
-    console.log(localStorage.getItem('forms'));
+    this.verifyData = [];
+    this.form = formProvider.getForm() as FormGroup;
+    const allForms = this.formProvider.getForm() as FormGroup;
+    let contract = new Contract(allForms);
+    this.verifyData.push(contract);
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
     } catch (e: any) {
