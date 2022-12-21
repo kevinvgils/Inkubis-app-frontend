@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProcessorDataComponent } from './processor-data.component';
+import { DataCategoryComponent } from './data-category.component';
 
-describe('ProcessorDataComponent', () => {
-  let component: ProcessorDataComponent;
-  let fixture: ComponentFixture<ProcessorDataComponent>;
+describe('DataCategoryComponent', () => {
+  let component: DataCategoryComponent;
+  let fixture: ComponentFixture<DataCategoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProcessorDataComponent ]
+      declarations: [ DataCategoryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProcessorDataComponent);
+    fixture = TestBed.createComponent(DataCategoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

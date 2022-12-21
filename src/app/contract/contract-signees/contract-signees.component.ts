@@ -1,3 +1,8 @@
+// Verwerkingsmedewerker 
+  // Naam medewerker – string 
+  // Functietitel medewerker – string 
+  // Bedrijf medewerker – company 
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

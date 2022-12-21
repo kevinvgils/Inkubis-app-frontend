@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ControllerDataComponent } from './controller-data.component';
+import { ThirdPartyDataComponent } from './third-party-data.component';
 
-describe('ControllerDataComponent', () => {
-  let component: ControllerDataComponent;
-  let fixture: ComponentFixture<ControllerDataComponent>;
+describe('ThirdPartyDataComponent', () => {
+  let component: ThirdPartyDataComponent;
+  let fixture: ComponentFixture<ThirdPartyDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ControllerDataComponent ]
+      declarations: [ ThirdPartyDataComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ControllerDataComponent);
+    fixture = TestBed.createComponent(ThirdPartyDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
