@@ -1,0 +1,67 @@
+<div class="d-flex overflow-hidden">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="card rounded-0 bg-white">
+                    <div class="card-body m-2 p-5">
+                        <h6 class="login-preTitle">Registreer</h6>
+                        <h3 class="card-title ">
+                            Registreer om bedrijfscontracten te bekijken en aan te passen
+                        </h3>
+                        <hr class="mt-4" />
+                        <form #registerForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate
+                            class="mb-3 mt-md-4">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="emailAddress" class="form-label">E-mailadres</label>
+                                        <input type="text" class="form-control" id="emailAddress" name="emailAddress"
+                                            placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
+                                            #emailAddress="ngModel" minlength="3" required [ngClass]="{
+                                            'is-invalid': emailAddress.invalid && emailAddress.touched
+                                        }" />
+                                        <div *ngIf="emailAddress.invalid && emailAddress.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="emailAddress.errors!['required']">
+                                                E-mailadres is verplicht
+                                            </div>
+                                            <div *ngIf="emailAddress.errors!['minlength']">
+                                                E-mailadres moet minimaal 3 karakters hebben.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mb-3 ">
+                                        <label for="function" class="form-label">Functie</label>
+                                        <input type="function" class="form-control" id="function"
+                                            placeholder="Type hier je functie" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="phoneNumber" class="form-label ">Telefoonnummer</label>
+                                        <input type="phoneNumber" class="form-control" id="phoneNumber"
+                                            placeholder="Type hier je telefoonnummer" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="isAdmin" class="form-label">Is Admin?</label>
+                                    <input type="checkbox" class="form-check-input mx-2" id="radio1" name="optradio"
+                                        value="option1" checked>
+                                    <label class="form-check-label" for="radio1"></label>
+                                </div>
+                            </div>
+                            <button type="submit" class="purple abs end-0 mx-5"
+                                [disabled]="!registerForm.valid">Registreren</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

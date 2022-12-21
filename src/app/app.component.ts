@@ -1,10 +1,24 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ILogin } from './components/auth/auth.interface';
+import { AuthService } from './components/auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'Inkubis';
+  loggedInUser$!: Observable<ILogin | undefined>;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.loggedInUser$ = this.authService.currentUser$;
+  }
+
+  logout(): void {
+    this.authService.logout();
+  }
 }
