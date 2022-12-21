@@ -12,10 +12,7 @@ import { FormProvider } from '../FormProvider';
 })
 export class SecondPartComponent implements OnInit {
 
-  @Input()
-  initialForm!: FormGroup;
   contracts: any;
-
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router
