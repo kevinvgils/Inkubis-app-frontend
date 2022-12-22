@@ -74,7 +74,7 @@ export class AuthService {
   }
 
   register(userData: IRegister): Observable<IRegister | undefined> {
-    const isAdmin = userData.isAdmin === true ? 'admin' : 'sales';
+    const isAdmin = userData.isAdmin ? 'admin' : 'sales';
     userData.role = isAdmin;
     console.log(userData);
     return this.httpClient
