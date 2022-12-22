@@ -18,6 +18,9 @@
   // Basis van doorgifte: string 
 
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormProvider } from '../../FormProvider';
 
 @Component({
   selector: 'app-third-party-data',
@@ -26,9 +29,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThirdPartyDataComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private formProvider: FormProvider, private router: Router) {
+    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }

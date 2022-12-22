@@ -41,7 +41,8 @@ p a{
           margin-bottom: 50px;
         }
         .formMain ::ng-deep form h2{
-          margin-top: 30px;
+          color: #c95478;
+          margin-top: 60px;
         }
         .formMain ::ng-deep .card {
           border: none;

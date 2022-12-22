@@ -1,1 +1,150 @@
-<p>third-party-data works!</p>
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle ">Contract informatie</h2>
+        <p class="card-text">Algemene informatie over het contract
+             waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+    
+    <div class="row">
+        <h2>Externe subverwerkers</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Statutaire zetel</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Adres</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Aanduiding van verwerking persoonsgegevens</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Dienstomschrijving voor verwerker</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2>Derde leveranciers</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Zetel</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Adres</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Beschrijving van de levering</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Eventueel link naar de voorwaarden</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h2>Derde leveranciers</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Land</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Basis van doorgifte</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+    </div>
+
+    <button class="purple" type="submit">Next</button>
+</form>

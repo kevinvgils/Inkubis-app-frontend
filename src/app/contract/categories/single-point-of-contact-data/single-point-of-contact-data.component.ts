@@ -13,6 +13,9 @@
   // Mobiele telefoon 
 
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormProvider } from '../../FormProvider';
 
 @Component({
   selector: 'app-single-point-of-contact-data',
@@ -21,9 +24,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SinglePointOfContactDataComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private formProvider: FormProvider, private router: Router) {
+    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+  }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }
