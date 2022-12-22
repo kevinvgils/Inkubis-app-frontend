@@ -10,7 +10,7 @@ import { FormProvider } from './FormProvider';
   providers: [{ provide: FormProvider, useExisting: ContractComponent }]
 })
 export class ContractComponent extends FormProvider implements OnInit {
-  components: string[] = ['firstpart', 'secondpart'];
+  components: string[] = ['contractinfo', 'contractsignees', 'processingpurposes', 'certification', 'thirdparty', 'spoc'];
   currentComp!: string;
   
   contractForm = new FormGroup({
