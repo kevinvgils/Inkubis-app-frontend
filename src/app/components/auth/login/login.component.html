@@ -1,0 +1,57 @@
+<div class="d-flex overflow-hidden">
+    <div class="container my-5">
+        <div class="row justify-content-start">
+            <div class="col-md-5 p-0">
+                <img src="../../../assets/img/Inkubis-photo.jpg" class="img-fluid rounded-0 img-inkubis" alt="" />
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card rounded-0 bg-white">
+                    <div class="card-body m-2 p-5">
+                        <h6 class="login-preTitle">Login</h6>
+                        <h3 class="card-title">
+                            Login om bedrijfscontracten te bekijken en aan te passen
+                        </h3>
+                        <hr class="mt-4" />
+                        <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate class="mb-3 mt-md-4">
+                            <div class="mb-3">
+                                <label for="emailAddress" class="form-label">E-mailadres</label>
+                                <input type="text" class="form-control" id="emailAddress" name="emailAddress"
+                                    placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
+                                    #emailAddress="ngModel" minlength="3" required [ngClass]="{
+                                    'is-invalid': emailAddress.invalid && emailAddress.touched
+                                }" />
+                                <div *ngIf="emailAddress.invalid && emailAddress.touched" class="invalid-feedback">
+                                    <div *ngIf="emailAddress.errors!['required']">
+                                        E-mailadres is verplicht
+                                    </div>
+                                    <div *ngIf="emailAddress.errors!['minlength']">
+                                        E-mailadres moet minimaal 3 karakters hebben.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Wachtwoord</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="Type hier je wachtwoord" class="form-control"
+                                    [(ngModel)]="formData.password" #password="ngModel" minlength="3" required
+                                    [ngClass]="{
+                                'is-invalid': password.invalid && password.touched
+                            }" />
+                                <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+                                    <div *ngIf="password.errors!['required']">
+                                        Wachtwoord is verplicht
+                                    </div>
+                                    <div *ngIf="password.errors!['minlength']">
+                                        Wachtwoord moet minimaal 3 karakters hebben.
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="purple abs end-0 mx-5"
+                                [disabled]="!loginForm.valid">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
