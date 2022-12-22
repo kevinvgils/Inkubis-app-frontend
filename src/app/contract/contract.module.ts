@@ -7,6 +7,8 @@ import { ContractRoutingModule } from './contract-routing.module';
 import { ContractComponent } from './contract.component';
 import { FirstPartComponent } from './first-part/first-part.component';
 import { SecondPartComponent } from './second-part/second-part.component';
+
+import { ContractSigneesComponent } from './categories/contract-signees/contract-signees.component';
 import { ContractInfoComponent } from './categories/contract-info/contract-info.component';
 import { DataProcessingPurposesComponent } from './categories/data-processing-purposes/data-processing-purposes.component';
 import { ThirdPartyDataComponent } from './categories/third-party-data/third-party-data.component';
@@ -19,6 +21,7 @@ import { SinglePointOfContactDataComponent } from './categories/single-point-of-
 
 @NgModule({
   declarations: [
+    ContractSigneesComponent,
     ContractComponent,
     FirstPartComponent,
     SecondPartComponent,

@@ -1,7 +1,7 @@
 <div class="card formHeader">
     <div class="card-body">
         <h5 class="preTitle">Contract aanmaken</h5>
-        <h2 class="card-subtitle mb-2">Contract informatie</h2>
+        <h2 class="card-subtitle ">Contract informatie</h2>
         <p class="card-text">Algemene informatie over het contract
              waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
         <hr>
@@ -10,37 +10,143 @@
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
     
-    <h5>Verwerker</h5>
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-subtitle mb-2">(bedrijfs-) naam</h5>
-            <p class="card-text">De naam van de verwerker</p>
+    <div class="row">
+        <h2>Verwerkingsverantwoordelijke</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">(bedrijfs-) naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
         </div>
-        <div class="buttons">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
-                <label class="form-check-label h5" for="cb1">
-                    Accept
-                </label>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Ondernemingsnummer</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Adres</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Postcode</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Plaats</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Land</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
             </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-subtitle mb-2">secondQuestion</h5>
-            <p class="card-text">Beschrijving van formulier secondQuestion. Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi</p>
+    <div class="row">
+        <h2>Verwerker</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">(bedrijfs-) naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
         </div>
-        <div class="buttons">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="secondQuestion" name="secondQuestion" formControlName="secondQuestion">
-                <label class="form-check-label h5" for="cb1">
-                    Accept
-                </label>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Ondernemingsnummer</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Adres</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Postcode</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Plaats</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Land</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
             </div>
         </div>
     </div>
 
-    <button class="purple" type="submit">Submit</button>
+    <div class="row">
+        <h2>Extra informatie</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Plaats ondertekening</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Datum ondertekening</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="Date" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            </div>
+        </div>
+    </div>
+
+    <button class="purple" type="submit">Next</button>
 </form>
