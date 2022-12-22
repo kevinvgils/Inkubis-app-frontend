@@ -4,7 +4,6 @@ import { LoggedInAuthGuard } from './components/auth/auth.guards';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { FormComponent } from './components/form/form.component';
-import { VerifyComponent } from './components/verify/verify.component';
 import { PdfComponent } from './pdf/pdf.component';
 
 const routes: Routes = [
@@ -16,15 +15,15 @@ const routes: Routes = [
   },
   {
     path: 'contract',
-    canActivate: [LoggedInAuthGuard],
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),
   },
+  { path: 'pdf', pathMatch: 'full', component: PdfComponent },
   {
-    path: 'verify',
+    path: '',
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
-    component: VerifyComponent,
+    component: FormComponent,
   },
   {
     path: 'pdf',

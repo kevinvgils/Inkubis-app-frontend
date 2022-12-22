@@ -7,18 +7,15 @@ import { ContractRoutingModule } from './contract-routing.module';
 import { ContractComponent } from './contract.component';
 import { FirstPartComponent } from './first-part/first-part.component';
 import { SecondPartComponent } from './second-part/second-part.component';
-
+import { VerifyComponent } from './verify/verify.component';
 
 @NgModule({
   declarations: [
     ContractComponent,
     FirstPartComponent,
-    SecondPartComponent
+    SecondPartComponent,
+    VerifyComponent,
   ],
-  imports: [
-    CommonModule,
-    ContractRoutingModule,
-    ReactiveFormsModule
-  ]
+  imports: [CommonModule, ContractRoutingModule, ReactiveFormsModule],
 })
-export class ContractModule { }
+export class ContractModule {}
