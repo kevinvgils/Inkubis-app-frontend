@@ -11,6 +11,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { PdfComponent } from './pdf/pdf.component';
+import { CompanyComponent } from './company/company.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PdfComponent } from './pdf/pdf.component';
     RegisterComponent,
     VerifyComponent,
     PdfComponent,
+    CompanyComponent,
   ],
   imports: [
     BrowserModule,
