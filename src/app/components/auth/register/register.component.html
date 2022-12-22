@@ -42,18 +42,29 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="mb-3">
-                                        <label for="phoneNumber" class="form-label ">Telefoonnummer</label>
-                                        <input type="phoneNumber" class="form-control" id="phoneNumber"
-                                            placeholder="Type hier je telefoonnummer" />
+                                        <label for="password" class="form-label">Wachtwoord</label>
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Type hier je wachtwoord" class="form-control"
+                                            [(ngModel)]="formData.password" #password="ngModel" minlength="3" required
+                                            [ngClass]="{
+                                        'is-invalid': password.invalid && password.touched
+                                    }" />
+                                        <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
+                                            <div *ngIf="password.errors!['required']">
+                                                Wachtwoord is verplicht
+                                            </div>
+                                            <div *ngIf="password.errors!['minlength']">
+                                                Wachtwoord moet minimaal 3 karakters hebben.
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-4">
                                     <label for="isAdmin" class="form-label">Is Admin?</label>
-                                    <input type="checkbox" class="form-check-input mx-2" id="radio1" name="optradio"
-                                        value="option1" checked>
-                                    <label class="form-check-label" for="radio1"></label>
+                                    <input type="checkbox" class="form-check-input mx-2" id="isAdmin" name="isAdmin"
+                                        [(ngModel)]="formData!.isAdmin" #isAdmin="ngModel" checked>
                                 </div>
                             </div>
                             <button type="submit" class="purple abs end-0 mx-5"

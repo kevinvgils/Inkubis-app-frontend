@@ -9,7 +9,7 @@ import {
   tap,
 } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ILogin } from './auth.interface';
+import { ILogin, IRegister } from './auth.interface';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -20,6 +20,7 @@ export class AuthService {
   private readonly CURRENT_USER = 'currentuser';
   private readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
+    Authorization: this.getAuthorizationToken() || '',
   });
 
   constructor(private httpClient: HttpClient, private router: Router) {
@@ -49,9 +50,13 @@ export class AuthService {
     };
 
     return this.httpClient
-      .post<ILogin>(`http://localhost:3000/user-auth/login`, credentials, {
-        headers: this.headers,
-      })
+      .post<ILogin>(
+        `http://localhost:3000/auth-api/user-auth/login`,
+        credentials,
+        {
+          headers: this.headers,
+        }
+      )
       .pipe(
         tap(console.log),
         map((data: any) => {
@@ -59,6 +64,24 @@ export class AuthService {
           this.currentUser$.next(data);
           return data;
         }),
+        catchError((error) => {
+          console.log('error:', error);
+          console.log('error.message:', error.message);
+          console.log('error.error.message:', error.error.message);
+          return of(undefined);
+        })
+      );
+  }
+
+  register(userData: IRegister): Observable<IRegister | undefined> {
+    const isAdmin = userData.isAdmin === true ? 'admin' : 'sales';
+    userData.role = isAdmin;
+    console.log(userData);
+    return this.httpClient
+      .post<IRegister>(`http://localhost:3000/auth-api/user-auth`, userData, {
+        headers: this.headers,
+      })
+      .pipe(
         catchError((error) => {
           console.log('error:', error);
           console.log('error.message:', error.message);
@@ -91,5 +114,14 @@ export class AuthService {
     } else {
       return of(undefined);
     }
+  }
+
+  getAuthorizationToken(): string | undefined {
+    const user = localStorage.getItem(this.CURRENT_USER);
+    if (user) {
+      const localUser = JSON.parse(user);
+      return localUser.token;
+    }
+    return undefined;
   }
 }

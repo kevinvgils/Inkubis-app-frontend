@@ -17,29 +17,14 @@ export class RegisterComponent {
     this.formData = {
       emailAddress: '',
       password: '',
+      isAdmin: false,
+      role: '',
     };
   }
 
   onSubmit(): void {
-    console.log(
-      'EmailAddress: ' +
-        this.formData.emailAddress +
-        ' Password: ' +
-        this.formData.password
-    );
     if (this.formData.emailAddress != '' && this.formData.password != '') {
-      this.authService
-        .login(this.formData.emailAddress, this.formData.password)
-        .subscribe((user: ILogin | undefined) => {
-          console.log('User: ' + user);
-
-          if (user) {
-            console.log('Logged in');
-            this.router.navigate(['/']);
-          } else {
-            console.error('Invalid data');
-          }
-        });
+      this.authService.register(this.formData).subscribe();
     }
   }
 }

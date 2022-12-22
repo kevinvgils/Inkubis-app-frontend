@@ -6,6 +6,7 @@
       <ul>
         <li><a routerLink="/contract" *ngIf="loggedInUser$ | async as user">Create contract</a></li>
         <li><a routerLink="" *ngIf="loggedInUser$ | async as user">Admin pannel</a></li>
+        <li><a routerLink="/register" *ngIf="loggedInUser$ | async as user">Gebruiker registreren</a></li>
       </ul>
       <div *ngIf="loggedInUser$ | async as user">
         <span>{{ user.emailAddress }}</span>
