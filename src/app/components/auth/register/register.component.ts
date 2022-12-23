@@ -28,6 +28,7 @@ export class RegisterComponent {
   onSubmit(): void {
     if (this.formData.emailAddress != '' && this.formData.password != '') {
       this.authService.register(this.formData).subscribe();
+      this.router.navigate(['/']);
     }
   }
 }
