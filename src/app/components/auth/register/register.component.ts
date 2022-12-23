@@ -15,8 +15,11 @@ export class RegisterComponent {
 
   ngOnInit(): void {
     this.formData = {
+      firstName: '',
+      lastName: '',
       emailAddress: '',
       password: '',
+      phoneNumber: '',
       isAdmin: false,
       role: '',
     };

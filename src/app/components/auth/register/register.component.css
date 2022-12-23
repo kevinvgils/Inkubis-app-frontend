@@ -18,9 +18,9 @@ hr {
 }
 
 .card {
-  max-width: 50rem;
-  max-height: 45vw;
+  max-height: 40rem;
   display: flex;
+  min-width: 70vw;
 }
 
 input {

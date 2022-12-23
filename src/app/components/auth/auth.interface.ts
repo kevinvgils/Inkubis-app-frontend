@@ -4,8 +4,11 @@ export interface ILogin {
 }
 
 export interface IRegister {
+  firstName: string;
+  lastName: string;
   emailAddress: string;
   password: string;
+  phoneNumber: string;
   isAdmin: boolean;
   role: string;
 }
