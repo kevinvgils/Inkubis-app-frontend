@@ -1,0 +1,26 @@
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle ">Contract informatie</h2>
+        <p class="card-text">Algemene informatie over het contract
+             waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+    
+    <div class="row">
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Verwerkingsdoeleindes</h5>
+                <p class="card-text">De Persoonsgegevens worden Verwerkt voor de volgende Doeleinden:</p>
+            </div>
+            <div class="inputs">
+                <textarea class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion"></textarea>
+            </div>
+        </div>    
+    </div>
+
+    <button class="purple" type="submit">Next</button>
+</form>
