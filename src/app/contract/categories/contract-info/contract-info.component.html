@@ -18,7 +18,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="companyResponsibleForDataProcessing.name">
             </div>
         </div>
         <div class="card col-12">
@@ -27,7 +27,16 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="companyNumber" name="companyNumber" formControlName="companyResponsibleForDataProcessing.companyNumber">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Nederlandse wetgeving</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="checkbox" id="legalCountry" name="legalCountry" formControlName="companyResponsibleForDataProcessing.legalCountry">
             </div>
         </div>
         <div class="card col-6">
@@ -36,7 +45,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="address" name="address" formControlName="companyResponsibleForDataProcessing.address">
             </div>
         </div>
         <div class="card col-6">
@@ -45,16 +54,16 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="zipcode" name="zipcode" formControlName="companyResponsibleForDataProcessing.zipcode">
             </div>
         </div>
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Plaats</h5>
+                <h5 class="card-subtitle ">city</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="city" name="city" formControlName="companyResponsibleForDataProcessing.city">
             </div>
         </div>
         <div class="card col-6">
@@ -63,7 +72,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="countryOfResidence" name="countryOfResidence" formControlName="companyResponsibleForDataProcessing.countryOfResidence">
             </div>
         </div>
     </div>
@@ -76,7 +85,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="companyExecutingDataProcessing.name">
             </div>
         </div>
         <div class="card col-12">
@@ -85,43 +94,56 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="companyNumber" name="companyNumber" formControlName="companyExecutingDataProcessing.companyNumber">
             </div>
         </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Nederlandse wetgeving</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="checkbox" id="legalCountry" name="legalCountry" formControlName="companyExecutingDataProcessing.legalCountry">
+            </div>
+        </div>
+
         <div class="card col-6">
             <div class="card-body">
                 <h5 class="card-subtitle ">Adres</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="address" name="address" formControlName="companyExecutingDataProcessing.address">
             </div>
         </div>
+
         <div class="card col-6">
             <div class="card-body">
                 <h5 class="card-subtitle ">Postcode</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="zipcode" name="zipcode" formControlName="companyExecutingDataProcessing.zipcode">
             </div>
         </div>
+
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Plaats</h5>
+                <h5 class="card-subtitle ">city</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="city" name="city" formControlName="companyExecutingDataProcessing.city">
             </div>
         </div>
+
         <div class="card col-6">
             <div class="card-body">
                 <h5 class="card-subtitle ">Land</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="countryOfResidence" name="countryOfResidence" formControlName="companyExecutingDataProcessing.countryOfResidence">
             </div>
         </div>
     </div>
@@ -134,7 +156,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="citySigned" name="citySigned" formControlName="citySigned">
             </div>
         </div>
         <div class="card col-12">
@@ -143,7 +165,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="Date" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="Date" id="dateSigned" name="dateSigned" formControlName="dateSigned">
             </div>
         </div>
     </div>
