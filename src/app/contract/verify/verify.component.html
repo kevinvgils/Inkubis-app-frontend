@@ -1,0 +1,41 @@
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Controleer de volgende gegevens goed</h5>
+        <h2 class="card-subtitle mb-2">Controleren gegevens</h2>
+        <p class="card-text">De volgende informatie is opgegeven in het formulier</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+
+    <div class="contract" *ngFor="let form of verifyData">
+        <div class="card">
+            <h5 class="card-subtitle mb-2">Formulier 1</h5>
+            <div class="flex">
+                <label class="">Input 1</label>
+                <label *ngIf="form.firstQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.firstQuestion" class="">Geweigerd</label>
+            </div>
+            <div class="flex">
+                <label class="">Input 2</label>
+                <label *ngIf="form.secondQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.secondQuestion" class="">Geweigerd</label>
+            </div>
+            <div class="flex">
+                <label class="">Input 3</label>
+                <label *ngIf="form.thirdQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.thirdQuestion" class="">Geweigerd</label>
+            </div>
+            <div class="flex">
+                <label class="">Input 4</label>
+                <label *ngIf="form.lastQuestion" class="">Geaccepteerd</label>
+                <label *ngIf="!form.lastQuestion" class="">Geweigerd</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttonToRight">
+        <button class="versturen purple" type="submit">Versturen</button>
+    </div>
+</form>
