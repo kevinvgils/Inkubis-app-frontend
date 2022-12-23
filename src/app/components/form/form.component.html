@@ -9,10 +9,8 @@
         </div>
         <div class="contract" *ngFor="let form of contracts">
             <h5 class="extraTempStyling">Contract:</h5>
-            <div class="first">{{form.firstQuestion}}</div>
-            <div class="second">{{form.secondQuestion}}</div>
-            <div class="third">{{form.thirdQuestion}}</div>
-            <div class="last">{{form.lastQuestion}}</div>
+            <div class="first">{{form.contractinfo.companyResponsibleForDataProcessing.name}}</div>
+      
         </div>
         <button class="purple" (click)="clearLocalStorage()">CLEAR</button>
     </div>
