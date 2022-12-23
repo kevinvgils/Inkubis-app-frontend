@@ -1,3 +1,4 @@
+
 import { FormGroup } from "@angular/forms";
 import { IContract, CompanyResponsibleForDataProcessing, CompanyExecutingDataProcessing, EmployeeExecutingDataProcessing, CategoryOfSubjectsInvolved, CategoryOfDataInvolved, CategoryOfSpecialDataInvolved, ExternalSubEmployeeExecutingDataProcessing, ThirdPartySuppliers, DataTransfer, SinglePointOfContact } from "./contract.interface";
 
@@ -84,3 +85,4 @@ export class Contract {
         this.singlePointOfContact.mobilePhoneOfCompanyExecutingDataProcessing;
     }
 }
+

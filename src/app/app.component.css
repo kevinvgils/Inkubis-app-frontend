@@ -1,65 +1,75 @@
-.content{
+.content {
   margin: 0 auto;
   max-width: 70vw;
   height: 100%;
 }
-header .content, footer .content{
+header .content,
+footer .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header{
+header {
   height: 61px;
   background-color: #280223;
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
-  .logo{
-    height: 41px;
-    max-height: 100%;
-    width: auto;
-  }
+.logo {
+  height: 41px;
+  max-height: 100%;
+  width: auto;
+}
 
-  .navWrap{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    height: 100%;
-  }
-  .navWrap ul{
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    position: relative;
-    display: flex;
-    gap: 40px;
-  }
-    .navWrap li{
-      position: relative;
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-    .navWrap li:hover{
-      border-bottom: #ffff00 2px solid;
-      
-    }
-      .navWrap ul li a{
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .navWrap li:hover a{
-        color: #ffff00 !important;
-        margin-bottom: -2px;
-      }
+.navWrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+}
+.navWrap ul {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
+.navWrap li {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navWrap li:hover {
+  border-bottom: #ffff00 2px solid;
+}
+.navWrap ul li a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.navWrap li:hover a {
+  color: #ffff00 !important;
+  margin-bottom: -2px;
+}
 
-main{
-  background: rgb(39,15,39);
-  background: linear-gradient(69deg, rgba(39,15,39,1) 0%, rgba(40,24,55,1) 69%, rgba(20,22,60,1) 100%);
+main {
+  background: rgb(39, 15, 39);
+  background: linear-gradient(
+    69deg,
+    rgba(39, 15, 39, 1) 0%,
+    rgba(40, 24, 55, 1) 69%,
+    rgba(20, 22, 60, 1) 100%
+  );
   min-height: calc(100vh - 61px);
 }
-  main .content{
-    min-height: inherit;
-  }
+main .content {
+  min-height: inherit;
+}
+span {
+  color: #fff;
+  margin-right: 30px;
+  font-weight: bold;
+}
