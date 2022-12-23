@@ -4,17 +4,14 @@
     <img src="../assets/img/brand-logo.svg" alt="" class="logo">
     <div class="navWrap">
       <ul>
-        <li><a routerLink="/contract">Create contract</a></li>
-        <li><a routerLink="">Admin pannel</a></li>
+        <li><a routerLink="/contract" *ngIf="loggedInUser$ | async as user">Create contract</a></li>
+        <li><a routerLink="" *ngIf="loggedInUser$ | async as user">Admin pannel</a></li>
+        <li><a routerLink="/register" *ngIf="loggedInUser$ | async as user">Gebruiker registreren</a></li>
       </ul>
-      <ul *ngIf="(loggedInUser$ | async) === undefined">
-        <li><a class="nav-link yellow" routerLink="/register">Registreer</a></li>
-        <li><a class="nav-link" routerLink="/login">Login</a></li>
-      </ul>
-      <ul *ngIf="loggedInUser$ | async as user">
-        <li><a class="nav-link">{{ user.emailAddress }}</a></li>
-        <li><a class="nav-link" (click)="logout()">Uitloggen</a></li>
-      </ul>
+      <div *ngIf="loggedInUser$ | async as user">
+        <span>{{ user.emailAddress }}</span>
+        <button class="yellow" (click)="logout()">Uitloggen</button>
+      </div>
     </div>
   </div>
 </header>
