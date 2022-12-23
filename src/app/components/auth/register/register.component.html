@@ -1,8 +1,7 @@
 <div class="d-flex overflow-hidden">
     <div class="container my-5">
-        <!-- <div class="row justify-content-center"> -->
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 p-0">
                 <div class="card rounded-0">
                     <div class="card-body m-2 p-5">
                         <h6 class="login-preTitle">Registreer</h6>
@@ -13,26 +12,7 @@
                         <form #registerForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate
                             class="mb-3 mt-md-4">
                             <div class="row">
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <label for="emailAddress" class="form-label">E-mailadres</label>
-                                        <input type="text" class="form-control" id="emailAddress" name="emailAddress"
-                                            placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
-                                            #emailAddress="ngModel" minlength="3" required [ngClass]="{
-                                            'is-invalid': emailAddress.invalid && emailAddress.touched
-                                        }" />
-                                        <div *ngIf="emailAddress.invalid && emailAddress.touched"
-                                            class="invalid-feedback">
-                                            <div *ngIf="emailAddress.errors!['required']">
-                                                E-mailadres is verplicht
-                                            </div>
-                                            <div *ngIf="emailAddress.errors!['minlength']">
-                                                E-mailadres moet minimaal 3 karakters hebben.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4">
+                                <div class="col-6">
                                     <div class="mb-3">
                                         <label for="firstName" class="form-label">Voornaam</label>
                                         <input type="text" class="form-control" id="firstName" name="firstName"
@@ -50,16 +30,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="mb-3 ">
-                                        <label for="function" class="form-label">Functie</label>
-                                        <input type="function" class="form-control" id="function"
-                                            placeholder="Type hier je functie" />
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="lastName" class="form-label">Achternaam</label>
+                                        <input type="lastName" class="form-control" id="lastName" name="lastName"
+                                            placeholder="Type hier je achternaam" class="form-control"
+                                            [(ngModel)]="formData.lastName" #lastName="ngModel" [ngClass]="{
+                                        'is-invalid': lastName.invalid && lastName.touched
+                                    }" />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-4">
+                                <div class="col-12">
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Wachtwoord</label>
                                         <input type="password" class="form-control" id="password" name="password"
@@ -78,17 +61,33 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="mb-3">
-                                        <label for="lastName" class="form-label">Achternaam</label>
-                                        <input type="lastName" class="form-control" id="lastName" name="lastName"
-                                            placeholder="Type hier je achternaam" class="form-control"
-                                            [(ngModel)]="formData.lastName" #lastName="ngModel" [ngClass]="{
-                                        'is-invalid': lastName.invalid && lastName.touched
-                                    }" />
+                                <div class="col-12">
+                                    <div class="mb-3 ">
+                                        <label for="function" class="form-label">Functie</label>
+                                        <input type="function" class="form-control" id="function"
+                                            placeholder="Type hier je functie" />
                                     </div>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="emailAddress" class="form-label">E-mailadres</label>
+                                        <input type="text" class="form-control" id="emailAddress" name="emailAddress"
+                                            placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
+                                            #emailAddress="ngModel" minlength="3" required [ngClass]="{
+                                            'is-invalid': emailAddress.invalid && emailAddress.touched
+                                        }" />
+                                        <div *ngIf="emailAddress.invalid && emailAddress.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="emailAddress.errors!['required']">
+                                                E-mailadres is verplicht
+                                            </div>
+                                            <div *ngIf="emailAddress.errors!['minlength']">
+                                                E-mailadres moet minimaal 3 karakters hebben.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
                                     <div class="mb-3">
                                         <label for="phoneNumber" class="form-label">Telefoonnummer</label>
                                         <input type="phoneNumber" class="form-control" id="phoneNumber"
