@@ -9,31 +9,78 @@
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
 
-    <div class="contract" *ngFor="let form of verifyData">
-        <div class="card">
-            <h5 class="card-subtitle mb-2">Formulier 1</h5>
-            <div class="flex">
-                <label class="">Input 1</label>
-                <label *ngIf="form.firstQuestion" class="">Geaccepteerd</label>
-                <label *ngIf="!form.firstQuestion" class="">Geweigerd</label>
-            </div>
-            <div class="flex">
-                <label class="">Input 2</label>
-                <label *ngIf="form.secondQuestion" class="">Geaccepteerd</label>
-                <label *ngIf="!form.secondQuestion" class="">Geweigerd</label>
-            </div>
-            <div class="flex">
-                <label class="">Input 3</label>
-                <label *ngIf="form.thirdQuestion" class="">Geaccepteerd</label>
-                <label *ngIf="!form.thirdQuestion" class="">Geweigerd</label>
-            </div>
-            <div class="flex">
-                <label class="">Input 4</label>
-                <label *ngIf="form.lastQuestion" class="">Geaccepteerd</label>
-                <label *ngIf="!form.lastQuestion" class="">Geweigerd</label>
-            </div>
-        </div>
+    <!-- <div class="contract" *ngFor="let form of verifyData"> -->
+    <div class="card">
+        <!-- Verwerkingsverantwoordelijke -->
+        <h5 class="">Formulier 1</h5>
+        <label class="">(bedrijfs-) naam</label>
+        <label class="">Ondernemingsnummer</label>
+        <label class="">Adres</label>
+        <label class="">Postcode</label>
+        <label class="">Plaats</label>
+        <label class="">Land</label>
+        <!-- Verwerker -->
+        <h5 class="">Verwerker</h5>
+        <label class="">(bedrijfs-) naam</label>
+        <label class="">Ondernemingsnummer</label>
+        <label class="">Adres</label>
+        <label class="">Postcode</label>
+        <label class="">Plaats</label>
+        <label class="">Land</label>
+        <!-- Extra informatie -->
+        <label class="">Plaats ondertekening</label>
+        <label class="">Datum ondertekening</label>
+
+        <!-- contractsignees Verwerkingsverantwoordelijke -->
+        <label class="">Naam medewerker 1</label>
+        <label class="">Functie medewerker 1</label>
+        <label class="">Naam medewerker 2</label>
+        <label class="">Functie medewerker 2</label>
+        <!-- contractsignees Verwerker -->
+        <label class="">Naam medewerker 1</label>
+        <label class="">Functie medewerker 1</label>
+        <label class="">Naam medewerker 2</label>
+        <label class="">Functie medewerker 2</label>
+
+        <!-- processingpurposes Verwerkingsdoeleindes -->
+        <label class="">Verwerkingsdoeleindes</label>
+
+        <!-- certification Verwerkingsverantwoordelijke -->
+        <label class="">Certificeringen</label>
+        <label class="">Behaalde certificering</label>
+        <label class="">Audits, inspecties of interne controles</label>
+
+        <!-- thirdparty Externe subverwerkers -->
+        <label class="">Naam</label>
+        <label class="">Statutaire zetel</label>
+        <label class="">Adres</label>
+        <label class="">Aanduiding van verwerking persoonsgegevens</label>
+        <label class="">Dienstomschrijving voor verwerker</label>
+        <!-- thirdparty Derde leveranciers -->
+        <label class="">Naam</label>
+        <label class="">Zetel</label>
+        <label class="">Adres</label>
+        <label class="">Beschrijving van de levering</label>
+        <label class="">Eventueel link naar de voorwaarden</label>
+        <!-- thirdparty Derde leveranciers -->
+        <label class="">Naam</label>
+        <label class="">Land</label>
+        <label class="">Basis van doorgifte</label>
+
+        <!-- spoc Verwerkingsverantwoordelijke -->
+        <label class="">Naam</label>
+        <label class="">Functie</label>
+        <label class="">Email</label>
+        <label class="">Telefoon</label>
+        <label class="">Mobiele telefoon</label>
+        <!-- spoc Verwerker -->
+        <label class="">Naam</label>
+        <label class="">Functie</label>
+        <label class="">Email</label>
+        <label class="">Telefoon</label>
+        <label class="">Mobiele telefoon</label>
     </div>
+    <!-- </div> -->
 
     <div class="buttonToRight">
         <button class="versturen purple" type="submit">Versturen</button>
