@@ -40,6 +40,10 @@ p a{
         .formMain ::ng-deep form{
           margin-bottom: 50px;
         }
+        .formMain ::ng-deep form h2{
+          color: #c95478;
+          margin-top: 60px;
+        }
         .formMain ::ng-deep .card {
           border: none;
         }
@@ -52,7 +56,7 @@ p a{
         .formMain ::ng-deep .formMainContent .card{
           margin-top: 30px;
         }
-        ::ng-deep .buttons{
+        ::ng-deep .inputs{
             display: flex;
             width: 100%;
             justify-content: space-between;
@@ -81,6 +85,16 @@ p a{
               outline: 0;
               box-shadow: 0 0 0 0.2rem #c096b356;
             }
+            ::ng-deep .form-tekst-input{
+              padding: 12px 16px;
+              line-height: 24px;
+              border: 1px solid #280223;
+              font-size: 16px;
+              border-radius: 0px !important;
+              outline: none !important;
+              width: 100%;
+            }
+
             ::ng-deep .form-check-label {
                 margin-bottom: 0px;
                 margin-left: 10px;

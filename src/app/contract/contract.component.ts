@@ -10,17 +10,115 @@ import { FormProvider } from './FormProvider';
   providers: [{ provide: FormProvider, useExisting: ContractComponent }],
 })
 export class ContractComponent extends FormProvider implements OnInit {
-  components: string[] = ['firstpart', 'secondpart', 'verify'];
+  components: string[] = [
+    'contractinfo',
+    'contractsignees',
+    'processingpurposes',
+    'certification',
+    'thirdparty',
+    'spoc',
+    'verify',
+  ];
   currentComp!: string;
 
   contractForm = new FormGroup({
-    firstPart: new FormGroup({
-      firstQuestion: new FormControl(false),
-      secondQuestion: new FormControl(false),
+    contractinfo: new FormGroup({
+      companyResponsibleForDataProcessing: new FormGroup({
+        name: new FormControl(''),
+        legalCountry: new FormControl(''),
+        companyNumber: new FormControl(''),
+        address: new FormControl(''),
+        zipcode: new FormControl(''),
+        city: new FormControl(''),
+        countryOfResidence: new FormControl(''),
+      }),
+      companyExecutingDataProcessing: new FormGroup({
+        name: new FormControl(''),
+        legalCountry: new FormControl(''),
+        companyNumber: new FormControl(''),
+        address: new FormControl(''),
+        zipcode: new FormControl(''),
+        city: new FormControl(''),
+        countryOfResidence: new FormControl(''),
+      }),
+      dateSigned: new FormControl(''),
+      citySigned: new FormControl(''),
     }),
-    secondPart: new FormGroup({
-      thirdQuestion: new FormControl(false),
-      lastQuestion: new FormControl(false),
+
+    contractsignees: new FormGroup({
+      companyResponsibleForDataProcessing: new FormGroup({
+        member1: new FormGroup({
+          name: new FormControl(''),
+          jobDescription: new FormControl(''),
+        }),
+        member2: new FormGroup({
+          name: new FormControl(''),
+          jobDescription: new FormControl(''),
+        }),
+      }),
+      companyExecutingDataProcessing: new FormGroup({
+        member1: new FormGroup({
+          name: new FormControl(''),
+          jobDescription: new FormControl(''),
+        }),
+        member2: new FormGroup({
+          name: new FormControl(''),
+          jobDescription: new FormControl(''),
+        }),
+      }),
+    }),
+
+    processingpurposes: new FormGroup({
+      processingPurposes: new FormControl(''),
+    }),
+
+    certification: new FormGroup({
+      certifications: new FormControl(''),
+      achievedCertifications: new FormControl(''),
+      overhauls: new FormControl(''),
+    }),
+
+    thirdparty: new FormGroup({
+      externalSubEmployeeExecutingDataProcessing: new FormGroup({
+        name: new FormControl(''),
+        formalCity: new FormControl(''),
+        address: new FormControl(''),
+        typeOfProcessingForPersonalData: new FormControl(''),
+        jobDescription: new FormControl(''),
+      }),
+
+      externalSubEmployeeExecutingDatathirdPartySuppliersProcessing:
+        new FormGroup({
+          name: new FormControl(''),
+          formalCity: new FormControl(''),
+          address: new FormControl(''),
+          descriptionOfSupply: new FormControl(''),
+          linkToLegalTerms: new FormControl(''),
+        }),
+
+      dataTransfer: new FormGroup({
+        legalCountry: new FormControl(''),
+        nameOfExternalSubEmployee: new FormControl(''),
+        reasonForDataTransfer: new FormControl(''),
+      }),
+    }),
+
+    spoc: new FormGroup({
+      CompanyResponsibleForDataProcessing: new FormGroup({
+        name: new FormControl(''),
+        jobDescription: new FormControl(''),
+        email: new FormControl(''),
+        phone: new FormControl(''),
+        mobile: new FormControl(''),
+      }),
+
+      CompanyExecutingDataProcessing: new FormGroup({
+        name: new FormControl(''),
+        jobDescription: new FormControl(''),
+        email: new FormControl(''),
+        phone: new FormControl(''),
+        mobile: new FormControl(''),
+      }),
     }),
   });
 
