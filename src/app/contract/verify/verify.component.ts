@@ -18,8 +18,8 @@ export class VerifyComponent implements OnInit {
     this.verifyData = [];
     this.form = formProvider.getForm() as FormGroup;
     const allForms = this.formProvider.getForm() as FormGroup;
-    let contract = new Contract(allForms);
-    this.verifyData.push(contract);
+    // let contract = new Contract(allForms); // Eigenlijk voor het inladen van form verify page, maar undefined dus voor nu weggehaald. Voor als iemand op verify page wilt werken.
+    // this.verifyData.push(contract);
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
     } catch (e: any) {
