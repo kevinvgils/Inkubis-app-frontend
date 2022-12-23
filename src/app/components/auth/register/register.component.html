@@ -83,15 +83,9 @@
                                         <label for="lastName" class="form-label">Achternaam</label>
                                         <input type="lastName" class="form-control" id="lastName" name="lastName"
                                             placeholder="Type hier je achternaam" class="form-control"
-                                            [(ngModel)]="formData.lastName" #lastName="ngModel" minlength="10"
-                                            [ngClass]="{
+                                            [(ngModel)]="formData.lastName" #lastName="ngModel" [ngClass]="{
                                         'is-invalid': lastName.invalid && lastName.touched
                                     }" />
-                                        <div *ngIf="lastName.invalid && lastName.touched" class="invalid-feedback">
-                                            <div *ngIf="lastName.errors!['minlength']">
-                                                Achternaam moet minimaal 10 karakters hebben.
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-4">
