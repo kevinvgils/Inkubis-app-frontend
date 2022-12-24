@@ -35,3 +35,7 @@ input {
 .abs {
   position: absolute;
 }
+
+.bi-eye {
+  margin-left: 10px;
+}
