@@ -10,7 +10,7 @@
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
     
-    <div class="row">
+    <div formGroupName="CompanyResponsibleForDataProcessing" class="row">
         <h2>Verwerkingsverantwoordelijke</h2>
         <div class="card col-12">
             <div class="card-body">
@@ -18,7 +18,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="CompanyResponsibleForDataProcessing.name">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
             </div>
         </div>
         <div class="card col-12">
@@ -27,7 +27,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="CompanyResponsibleForDataProcessing.jobDescription">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
             </div>
         </div>
 
@@ -37,7 +37,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="email" name="email" formControlName="CompanyResponsibleForDataProcessing.email">
+                <input class="form-tekst-input" type="text" id="email" name="email" formControlName="email">
             </div>
         </div>
 
@@ -47,7 +47,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="CompanyResponsibleForDataProcessing.phone">
+                <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="phone">
             </div>
         </div>
         
@@ -57,12 +57,12 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="mobile" name="mobile" formControlName="CompanyResponsibleForDataProcessing.mobile">
+                <input class="form-tekst-input" type="text" id="mobile" name="mobile" formControlName="mobile">
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div formGroupName="CompanyExecutingDataProcessing" class="row">
         <h2>Verwerker</h2>
         <div class="card col-12">
             <div class="card-body">
@@ -70,7 +70,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="CompanyExecutingDataProcessing.name">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
             </div>
         </div>
         <div class="card col-12">
@@ -79,7 +79,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="CompanyExecutingDataProcessing.jobDescription">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
             </div>
         </div>
 
@@ -89,7 +89,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="email" name="email" formControlName="CompanyExecutingDataProcessing.email">
+                <input class="form-tekst-input" type="text" id="email" name="email" formControlName="email">
             </div>
         </div>
 
@@ -99,7 +99,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="CompanyExecutingDataProcessing.phone">
+                <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="phone">
             </div>
         </div>
         
@@ -109,7 +109,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="mobile" name="mobile" formControlName="CompanyExecutingDataProcessing.mobile">
+                <input class="form-tekst-input" type="text" id="mobile" name="mobile" formControlName="mobile">
             </div>
         </div>
     </div>
