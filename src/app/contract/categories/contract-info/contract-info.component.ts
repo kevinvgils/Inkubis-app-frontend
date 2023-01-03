@@ -43,6 +43,6 @@ export class ContractInfoComponent implements OnInit {
 
   onSubmit(){
     console.log(JSON.stringify(this.form.value));
-    this.router.navigate(['contract/secondpart']);
+    this.router.navigate(['contract/contractsignees']);
   }
 }

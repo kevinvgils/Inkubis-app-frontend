@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: '',
     component: ContractComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'firstpart' },
+      { path: '', pathMatch: 'full', redirectTo: 'contractinfo' },
       { path: 'contractinfo', component: ContractInfoComponent },
       { path: 'contractsignees', component: ContractSigneesComponent },
       { path: 'processingpurposes', component: DataProcessingPurposesComponent },

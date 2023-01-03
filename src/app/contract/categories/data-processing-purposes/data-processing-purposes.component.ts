@@ -22,7 +22,8 @@ export class DataProcessingPurposesComponent implements OnInit {
   }
 
   onSubmit(){
-
+    console.log(JSON.stringify(this.form.value));
+    this.router.navigate(['contract/certification']);
   }
 
 }
