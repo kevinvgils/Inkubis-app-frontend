@@ -17,7 +17,7 @@ export class CertificationsComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+    this.form = formProvider.getForm().get('certification') as FormGroup;
   }
 
   ngOnInit(): void {

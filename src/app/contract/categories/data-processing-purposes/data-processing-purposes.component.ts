@@ -15,7 +15,7 @@ export class DataProcessingPurposesComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+    this.form = formProvider.getForm().get('processingpurposes') as FormGroup;
   }
 
   ngOnInit(): void {

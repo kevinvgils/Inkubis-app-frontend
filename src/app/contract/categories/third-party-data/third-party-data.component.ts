@@ -32,7 +32,7 @@ export class ThirdPartyDataComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+    this.form = formProvider.getForm().get('thirdparty') as FormGroup;
   }
 
   ngOnInit(): void {

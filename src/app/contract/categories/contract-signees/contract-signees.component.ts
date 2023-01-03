@@ -19,7 +19,7 @@ export class ContractSigneesComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+    this.form = formProvider.getForm().get('contractsignees') as FormGroup;
   }
 
   ngOnInit(): void {
