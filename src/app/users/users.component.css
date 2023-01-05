@@ -1,0 +1,63 @@
+.user-header {
+    border: 1px solid black;
+    background-color: #53042F;
+    font-weight: 700;
+    height: 6vh;
+}
+
+.user-header > span {
+    line-height: 5.7vh;
+    vertical-align: middle;
+}
+
+.role-picture-container {
+    border-right: 1px solid black;
+    background-color: #D9D9D9;
+    height: 100%;
+}
+
+.user-companies {
+    background-color: #D9D9D9;
+    height: 100%;
+}
+
+.user-companies span {
+    margin-left: 10px;
+}
+
+.role-picture-admin {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 90%;
+    height: 85%;
+    background-image: url('../../assets/img/admin.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+.role-picture-sales {
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 90%;
+    height: 85%;
+    background-image: url('../../assets/img/sales.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position-y: 0.3rem;
+}
+
+.user-details {
+    height: 15vh;
+}
+
+.container {
+    background-color: white;
+}
+
+.h3 {
+    color: #280223;
+}

@@ -10,6 +10,11 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PdfComponent } from './pdf/pdf.component';
 import { LoggedInAuthGuard } from './components/auth/auth.guards';
+import { UsersComponent } from './users/users.component';
+import { httpInterceptorProviders } from './components/auth/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { UserDialogComponent } from './users/user-dialog/user-dialog.component'
 
 @NgModule({
   declarations: [
@@ -18,6 +23,8 @@ import { LoggedInAuthGuard } from './components/auth/auth.guards';
     LoginComponent,
     RegisterComponent,
     PdfComponent,
+    UsersComponent,
+    UserDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,8 +33,13 @@ import { LoggedInAuthGuard } from './components/auth/auth.guards';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
-  providers: [LoggedInAuthGuard],
+  entryComponents: [
+    UserDialogComponent
+  ],
+  providers: [LoggedInAuthGuard, httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
