@@ -18,8 +18,11 @@ export class VerifyComponent implements OnInit {
     this.verifyData = [];
     this.form = formProvider.getForm() as FormGroup;
     const allForms = this.formProvider.getForm() as FormGroup;
-    // let contract = new Contract(allForms);
-    // this.verifyData.push(contract);
+    let contract = new Contract(allForms);
+    this.verifyData.push(contract);
+    console.log('-------------');
+    console.log(this.form.value.processingpurposes.processingPurposes);
+    console.log('-------------');
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
     } catch (e: any) {
@@ -31,14 +34,14 @@ export class VerifyComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (this.formProvider.getForm().get('firstPart')) {
-      const allForms = this.formProvider.getForm() as FormGroup;
+    // if (this.formProvider.getForm().get('firstPart')) {
+    const allForms = this.formProvider.getForm() as FormGroup;
 
-      let contract = new Contract(allForms);
-      this.contracts.push(contract);
+    let contract = new Contract(allForms);
+    this.contracts.push(contract);
 
-      localStorage.setItem('forms', JSON.stringify(this.contracts));
-      this.router.navigate(['..']);
-    }
+    localStorage.setItem('forms', JSON.stringify(this.contracts));
+    this.router.navigate(['..']);
+    // }
   }
 }
