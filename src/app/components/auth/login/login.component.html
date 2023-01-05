@@ -13,6 +13,9 @@
                         </h3>
                         <hr class="mt-4" />
                         <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate class="mb-3 mt-md-4">
+                            <ul class="text-danger mb-2" *ngIf="wrongPwOrEmail">
+                                <li>Verkeerd Email address of wachtwoord probeer opnieuw</li>
+                            </ul>
                             <div class="mb-3">
                                 <label for="emailAddress" class="form-label">E-mailadres</label>
                                 <input type="text" class="form-control" id="emailAddress" name="emailAddress"
