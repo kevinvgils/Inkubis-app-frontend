@@ -8,17 +8,10 @@ import { PdfComponent } from './pdf/pdf.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    canActivate: [LoggedInAuthGuard],
-    component: FormComponent,
-  },
-  {
     path: 'contract',
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),
   },
-  { path: 'pdf', pathMatch: 'full', component: PdfComponent },
   {
     path: '',
     pathMatch: 'full',
