@@ -24,9 +24,9 @@ export class ContractComponent extends FormProvider implements OnInit {
   contractForm = new FormGroup({
     contractinfo: new FormGroup({
       companyResponsibleForDataProcessing: new FormGroup({
-        name: new FormControl(''),
-        legalCountry: new FormControl(''),
-        companyNumber: new FormControl(''),
+        name: new FormControl(""),
+        legalCountry: new FormControl(false),
+        companyNumber: new FormControl(""),
         address: new FormControl(''),
         zipcode: new FormControl(''),
         city: new FormControl(''),

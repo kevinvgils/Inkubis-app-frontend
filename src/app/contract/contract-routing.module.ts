@@ -18,7 +18,7 @@ const routes: Routes = [
     canActivate: [LoggedInAuthGuard],
     component: ContractComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'firstpart' },
+      { path: '', pathMatch: 'full', redirectTo: 'contractinfo' },
       { path: 'contractinfo', component: ContractInfoComponent },
       { path: 'contractsignees', component: ContractSigneesComponent },
       {
