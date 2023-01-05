@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { IRegister, ILogin } from '../auth.interface';
 import { AuthService } from '../auth.service';
@@ -9,25 +15,43 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  formData: IRegister;
+  registerForm!: FormGroup;
+  hide: boolean = true;
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(
+    private fb: FormBuilder,
+    public authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
-    this.formData = {
-      firstName: '',
-      lastName: '',
-      emailAddress: '',
-      password: '',
-      phoneNumber: '',
-      isAdmin: false,
-      role: '',
-    };
+    this.registerForm = this.fb.group({
+      firstName: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
+      lastName: new FormControl(''),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(
+          '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}'
+        ),
+      ]),
+      emailAddress: new FormControl(null, [
+        Validators.required,
+        Validators.email,
+      ]),
+      phoneNumber: new FormControl(null, [Validators.pattern('[- +()0-9]+')]),
+      isAdmin: new FormControl(false),
+    }) as FormGroup;
   }
 
   onSubmit(): void {
-    if (this.formData.emailAddress != '' && this.formData.password != '') {
-      this.authService.register(this.formData).subscribe();
+    if (
+      this.registerForm.value.emailAddress != '' &&
+      this.registerForm.value.password != ''
+    ) {
+      this.authService.register(this.registerForm.value).subscribe();
       this.router.navigate(['/']);
     }
   }

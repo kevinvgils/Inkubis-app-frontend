@@ -10,6 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
   formData: ILogin;
+  wrongPwOrEmail: boolean = false;
 
   constructor(public authService: AuthService, private router: Router) {}
 
@@ -21,23 +22,16 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    console.log(
-      'EmailAddress: ' +
-        this.formData.emailAddress +
-        ' Password: ' +
-        this.formData.password
-    );
     if (this.formData.emailAddress != '' && this.formData.password != '') {
       this.authService
         .login(this.formData.emailAddress, this.formData.password)
         .subscribe((user: ILogin | undefined) => {
-          console.log('User: ' + user);
-
           if (user) {
-            console.log('Logged in');
+            this.wrongPwOrEmail = false;
             this.router.navigate(['/']);
           } else {
-            console.error('Invalid data');
+            this.wrongPwOrEmail = true;
+            this.formData.password = ''
           }
         });
     }

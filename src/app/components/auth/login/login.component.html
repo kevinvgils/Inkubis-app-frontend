@@ -13,19 +13,19 @@
                         </h3>
                         <hr class="mt-4" />
                         <form #loginForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate class="mb-3 mt-md-4">
+                            <ul class="text-danger mb-2" *ngIf="wrongPwOrEmail">
+                                <li>Verkeerd Email address of wachtwoord probeer opnieuw</li>
+                            </ul>
                             <div class="mb-3">
                                 <label for="emailAddress" class="form-label">E-mailadres</label>
                                 <input type="text" class="form-control" id="emailAddress" name="emailAddress"
                                     placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
-                                    #emailAddress="ngModel" minlength="3" required [ngClass]="{
+                                    #emailAddress="ngModel" required [ngClass]="{
                                     'is-invalid': emailAddress.invalid && emailAddress.touched
                                 }" />
                                 <div *ngIf="emailAddress.invalid && emailAddress.touched" class="invalid-feedback">
                                     <div *ngIf="emailAddress.errors!['required']">
                                         E-mailadres is verplicht
-                                    </div>
-                                    <div *ngIf="emailAddress.errors!['minlength']">
-                                        E-mailadres moet minimaal 3 karakters hebben.
                                     </div>
                                 </div>
                             </div>
@@ -33,16 +33,12 @@
                                 <label for="password" class="form-label">Wachtwoord</label>
                                 <input type="password" class="form-control" id="password" name="password"
                                     placeholder="Type hier je wachtwoord" class="form-control"
-                                    [(ngModel)]="formData.password" #password="ngModel" minlength="3" required
-                                    [ngClass]="{
+                                    [(ngModel)]="formData.password" #password="ngModel" required [ngClass]="{
                                 'is-invalid': password.invalid && password.touched
                             }" />
                                 <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
                                     <div *ngIf="password.errors!['required']">
                                         Wachtwoord is verplicht
-                                    </div>
-                                    <div *ngIf="password.errors!['minlength']">
-                                        Wachtwoord moet minimaal 3 karakters hebben.
                                     </div>
                                 </div>
                             </div>

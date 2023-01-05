@@ -9,22 +9,21 @@
                             Registreer om bedrijfscontracten te bekijken en aan te passen
                         </h3>
                         <hr class="mt-4" />
-                        <form #registerForm="ngForm" name="form" (ngSubmit)="onSubmit()" novalidate
-                            class="mb-3 mt-md-4">
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mb-3 mt-md-4">
                             <div class="row">
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="firstName" class="form-label">Voornaam</label>
-                                        <input type="text" class="form-control" id="firstName" name="firstName"
-                                            placeholder="Type hier je voornaam" [(ngModel)]="formData.firstName"
-                                            #firstName="ngModel" minlength="3" required [ngClass]="{
-                                            'is-invalid': firstName.invalid && firstName.touched
+                                        <input type="text" class="form-control" id="firstName"
+                                            formControlName="firstName" placeholder="Type hier je voornaam" [ngClass]="{
+                                            'is-invalid': registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched
                                         }" />
-                                        <div *ngIf="firstName.invalid && firstName.touched" class="invalid-feedback">
-                                            <div *ngIf="firstName.errors!['required']">
+                                        <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('firstName')?.errors!['required']">
                                                 Voornaam is verplicht
                                             </div>
-                                            <div *ngIf="firstName.errors!['minlength']">
+                                            <div *ngIf="registerForm.get('firstName')?.errors!['minlength']">
                                                 Voornaam moet minimaal 3 karakters hebben.
                                             </div>
                                         </div>
@@ -33,10 +32,10 @@
                                 <div class="col">
                                     <div class="mb-3">
                                         <label for="lastName" class="form-label">Achternaam</label>
-                                        <input type="lastName" class="form-control" id="lastName" name="lastName"
-                                            placeholder="Type hier je achternaam" class="form-control"
-                                            [(ngModel)]="formData.lastName" #lastName="ngModel" [ngClass]="{
-                                        'is-invalid': lastName.invalid && lastName.touched
+                                        <input type="lastName" class="form-control" id="lastName"
+                                            formControlName="lastName" placeholder="Type hier je achternaam"
+                                            class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched
                                     }" />
                                     </div>
                                 </div>
@@ -45,18 +44,21 @@
                                 <div class="col-12">
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Wachtwoord</label>
-                                        <input type="password" class="form-control" id="password" name="password"
-                                            placeholder="Type hier je wachtwoord" class="form-control"
-                                            [(ngModel)]="formData.password" #password="ngModel" minlength="3" required
-                                            [ngClass]="{
-                                        'is-invalid': password.invalid && password.touched
+                                        <i class="bi bi-eye" (click)="hide = !hide"></i>
+                                        <input [type]="hide ? 'password' : 'text'" class="form-control" id="password"
+                                            formControlName="password" placeholder="Type hier je wachtwoord"
+                                            class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched
                                     }" />
-                                        <div *ngIf="password.invalid && password.touched" class="invalid-feedback">
-                                            <div *ngIf="password.errors!['required']">
+                                        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('password')?.errors!['required']">
                                                 Wachtwoord is verplicht
                                             </div>
-                                            <div *ngIf="password.errors!['minlength']">
-                                                Wachtwoord moet minimaal 3 karakters hebben.
+                                            <div *ngIf="registerForm.get('password')?.errors!['pattern']">
+                                                Het wachtwoord moet minstens 8 tekens lang zijn en de volgende
+                                                onderdelen bevatten: kleine letters, hoofdletters, cijfers, speciale
+                                                tekens.
                                             </div>
                                         </div>
                                     </div>
@@ -71,18 +73,18 @@
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <label for="emailAddress" class="form-label">E-mailadres</label>
-                                        <input type="text" class="form-control" id="emailAddress" name="emailAddress"
-                                            placeholder="Type hier je e-mailadres" [(ngModel)]="formData.emailAddress"
-                                            #emailAddress="ngModel" minlength="3" required [ngClass]="{
-                                            'is-invalid': emailAddress.invalid && emailAddress.touched
+                                        <input type="text" class="form-control" id="emailAddress"
+                                            formControlName="emailAddress" placeholder="Type hier je e-mailadres"
+                                            [ngClass]="{
+                                            'is-invalid': registerForm.get('emailAddress')?.invalid && registerForm.get('emailAddress')?.touched
                                         }" />
-                                        <div *ngIf="emailAddress.invalid && emailAddress.touched"
+                                        <div *ngIf="registerForm.get('emailAddress')?.invalid && registerForm.get('emailAddress')?.touched"
                                             class="invalid-feedback">
-                                            <div *ngIf="emailAddress.errors!['required']">
+                                            <div *ngIf="registerForm.get('emailAddress')?.errors!['required']">
                                                 E-mailadres is verplicht
                                             </div>
-                                            <div *ngIf="emailAddress.errors!['minlength']">
-                                                E-mailadres moet minimaal 3 karakters hebben.
+                                            <div *ngIf="registerForm.get('emailAddress')?.errors!['email']">
+                                                E-mailadres moet een geldig e-mailadres zijn.
                                             </div>
                                         </div>
                                     </div>
@@ -91,15 +93,14 @@
                                     <div class="mb-3">
                                         <label for="phoneNumber" class="form-label">Telefoonnummer</label>
                                         <input type="phoneNumber" class="form-control" id="phoneNumber"
-                                            name="phoneNumber" placeholder="Type hier je Telefoonnummer"
-                                            class="form-control" [(ngModel)]="formData.phoneNumber"
-                                            #phoneNumber="ngModel" minlength="10" [ngClass]="{
-                                        'is-invalid': phoneNumber.invalid && phoneNumber.touched
+                                            formControlName="phoneNumber" placeholder="Type hier je Telefoonnummer"
+                                            class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched
                                     }" />
-                                        <div *ngIf="phoneNumber.invalid && phoneNumber.touched"
+                                        <div *ngIf="registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched"
                                             class="invalid-feedback">
-                                            <div *ngIf="phoneNumber.errors!['minlength']">
-                                                Telefoonnummer moet minimaal 10 karakters hebben.
+                                            <div *ngIf="registerForm.get('phoneNumber')?.errors!['pattern']">
+                                                Telefoonnummer moet een geldig telefoonnummer zijn.
                                             </div>
                                         </div>
                                     </div>
@@ -108,8 +109,8 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <label for="isAdmin" class="form-label">Is Admin?</label>
-                                    <input type="checkbox" class="form-check-input mx-2" id="isAdmin" name="isAdmin"
-                                        [(ngModel)]="formData!.isAdmin" #isAdmin="ngModel" checked>
+                                    <input type="checkbox" class="form-check-input mx-2" id="isAdmin"
+                                        formControlName="isAdmin" checked>
                                 </div>
                             </div>
                             <button type="submit" class="purple abs end-0 mx-5"

@@ -77,18 +77,13 @@ export class AuthService {
     const isAdmin = userData.isAdmin ? 'admin' : 'sales';
     userData.role = isAdmin;
     console.log(userData);
-    return this.httpClient
-      .post<IRegister>(`http://localhost:3000/auth-api/user-auth`, userData, {
+    return this.httpClient.post<IRegister>(
+      `http://localhost:3000/auth-api/user-auth`,
+      userData,
+      {
         headers: this.headers,
-      })
-      .pipe(
-        catchError((error) => {
-          console.log('error:', error);
-          console.log('error.message:', error.message);
-          console.log('error.error.message:', error.error.message);
-          return of(undefined);
-        })
-      );
+      }
+    );
   }
 
   logout(): void {
