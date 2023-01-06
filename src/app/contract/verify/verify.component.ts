@@ -12,19 +12,11 @@ import { FormProvider } from '../FormProvider';
 export class VerifyComponent implements OnInit {
   contracts: any;
   form: FormGroup;
-  verifyData: any;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.verifyData = [];
     this.form = formProvider.getForm() as FormGroup;
-
-    console.log('-------------');
     console.log(JSON.stringify(this.form.value));
-    this.verifyData = this.form.value;
-    // console.log(
-    //   this.form.value.processingpurposes.processingPurposes.processingPurposes
-    // );
-    console.log('-------------');
+
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
     } catch (e: any) {
@@ -36,7 +28,6 @@ export class VerifyComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    // if (this.formProvider.getForm().get('firstPart')) {
     const allForms = this.formProvider.getForm() as FormGroup;
 
     let contract = new Contract(allForms);
@@ -44,6 +35,5 @@ export class VerifyComponent implements OnInit {
 
     localStorage.setItem('forms', JSON.stringify(this.contracts));
     this.router.navigate(['..']);
-    // }
   }
 }
