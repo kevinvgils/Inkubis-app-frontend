@@ -15,7 +15,7 @@ export class VerifyComponent implements OnInit {
 
   constructor(private formProvider: FormProvider, private router: Router) {
     this.form = formProvider.getForm() as FormGroup;
-    console.log(JSON.stringify(this.form.value));
+    console.log(JSON.stringify(this.form.value.spoc.CompanyResponsibleForDataProcessing.name));
 
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
