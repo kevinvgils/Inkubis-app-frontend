@@ -8,7 +8,16 @@
                 <hr>
 
                 <div class="contract" *ngFor="let contract of contracts">
-                    <h2>Contract aangemaakt op: {{ contract.iContract.dateSigned }}</h2>
+                    <div class="content">
+                        <h2>Contract aangemaakt op: {{ contract.iContract.dateSigned }}</h2>
+                        <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == true">Nederlands template</p>
+                        <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == false">Belgisch template</p>
+                    </div>
+                    <div class="crud">
+                        <a><i class="bi bi-pencil"></i> Bewerken</a>
+                        <a><i class="bi bi-trash3"></i> Verwijderen</a>
+                    </div>
+                    <hr>
                 </div>
             </div>
         </div>

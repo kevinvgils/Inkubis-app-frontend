@@ -13,8 +13,12 @@
       height: 100%;
     }
     .main{
-        padding: 60px 60px 0px 40px;
-        width: 100%;
-        height: inherit;
-        overflow-y: scroll;
-      }
+      padding: 60px 60px 0px 40px;
+      width: 100%;
+      height: inherit;
+      overflow-y: scroll;
+    }
+    .crud{
+      display: flex;
+      align-items: right;
+    }

@@ -18,3 +18,7 @@
         height: inherit;
         overflow-y: scroll;
       }
+      .crud{
+        display: flex;
+        align-items: right;
+      }
