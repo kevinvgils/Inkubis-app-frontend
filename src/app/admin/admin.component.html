@@ -6,6 +6,10 @@
                 <h2>Contracten overzicht</h2>
                 <p>Hieronder een overzicht van alle contracten van alle bedrijven</p>
                 <hr>
+
+                <div class="contract" *ngFor="let contract of contracts">
+                    <h2>Contract aangemaakt op: {{ contract.iContract.dateSigned }}</h2>
+                </div>
             </div>
         </div>
     </div>

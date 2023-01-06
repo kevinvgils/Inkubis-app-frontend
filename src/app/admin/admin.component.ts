@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Contract } from '../contract/contract';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  contracts: Contract[] = []; //getAllContracts();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  getAllContracts() {
+    return ;
+  }
 }
