@@ -17,11 +17,13 @@ export class VerifyComponent implements OnInit {
   constructor(private formProvider: FormProvider, private router: Router) {
     this.verifyData = [];
     this.form = formProvider.getForm() as FormGroup;
-    const allForms = this.formProvider.getForm() as FormGroup;
-    let contract = new Contract(allForms);
-    this.verifyData.push(contract);
+
     console.log('-------------');
-    console.log(this.form.value.processingpurposes.processingPurposes);
+    console.log(JSON.stringify(this.form.value));
+    this.verifyData = this.form.value;
+    // console.log(
+    //   this.form.value.processingpurposes.processingPurposes.processingPurposes
+    // );
     console.log('-------------');
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');

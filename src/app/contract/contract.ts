@@ -41,7 +41,7 @@ export class Contract {
         // this.employeeExecutingDataProcessing.jobDescription;
         // this.employeeExecutingDataProcessing.companyEmployedAt;
 
-        this.iContract.processingPurposes = form.value.processingpurposes.processingPurposes;
+        // this.iContract.processingPurposes = form.value.processingpurposes.processingPurposes;
 
         // this.categoryOfSubjectsInvolved.category;
         // this.categoryOfSubjectsInvolved.involvedornot;
