@@ -1,0 +1,20 @@
+.homepageWrap{
+    min-height: calc(100vh - 61px);
+    display: flex;
+    align-items: center;
+  }
+  .homepage {
+    background-color: #ffffff;
+    height: 75vh;
+    width: 100%;
+  }
+    .homepage .row{
+      --bs-gutter-x: 0;
+      height: 100%;
+    }
+    .main{
+        padding: 60px 60px 0px 40px;
+        width: 100%;
+        height: inherit;
+        overflow-y: scroll;
+      }

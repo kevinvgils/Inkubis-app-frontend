@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoggedInAuthGuard } from './components/auth/auth.guards';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
-import { FormComponent } from './components/form/form.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { AdminComponent } from './admin/admin.component'; 
 import { PdfComponent } from './pdf/pdf.component';
 
 const routes: Routes = [
@@ -16,7 +17,13 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
-    component: FormComponent,
+    component: HomepageComponent,
+  },
+  {
+    path: 'admin',
+    pathMatch: 'full',
+    canActivate: [LoggedInAuthGuard],
+    component: AdminComponent,
   },
   {
     path: 'pdf',
