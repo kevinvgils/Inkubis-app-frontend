@@ -14,7 +14,8 @@ import { UsersComponent } from './users/users.component';
 import { httpInterceptorProviders } from './components/auth/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-import { UserDialogComponent } from './users/user-dialog/user-dialog.component'
+import { UserDialogComponent } from './users/user-dialog/user-dialog.component';
+import {MatSelectModule} from '@angular/material/select'; 
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserDialogComponent } from './users/user-dialog/user-dialog.component'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   entryComponents: [
     UserDialogComponent

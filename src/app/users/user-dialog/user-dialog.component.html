@@ -1,5 +1,46 @@
 <h2 mat-dialog-title>Details van {{selectedUser.firstName + ' ' + selectedUser.lastName}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="userForm">
+    <div class="row">
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="firstName" class="form-label">Voornaam</label>
+                <input type="text" formControlName="firstName" class="form-control" name="firstName" id="firstName" placeholder="Type hier je voornaam"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label for="lastName" class="form-label">Achternaam</label>
+                <input type="lastName" formControlName="lastName" class="form-control" id="lastName" name="lastName" placeholder="Type hier je achternaam" class="form-control"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="mb-3 ">
+                <label for="function" class="form-label">Werkt voor</label>
+                <mat-select class="form-control" formControlName="companies" multiple>
+                    <mat-option *ngFor="let company of allCompanies" [value]="company.id">{{company.name}}</mat-option>
+                  </mat-select>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="emailAddress" class="form-label">E-mailadres</label>
+                <input type="text" formControlName="emailAddress" class="form-control" id="emailAddress" name="email" placeholder="Type hier je e-mailadres" />
+            </div>
+        </div>
+        <div class="col-6">
+            <label for="isAdmin" class="form-label">Rol</label>
+            <select formControlName="role" class="form-control" id="isAdmin">
+                <option value="admin">Admin</option>
+                <option value="sales">Sales</option>
+            </select>
+        </div>
+    </div>
+</form>
+</mat-dialog-content>
 <mat-dialog-actions>
     <button mat-dialog-close>Cancel</button>
-    <button mat-dialog-close>Save</button>
+    <button (click)="onSubmit()" mat-dialog-close routerLink="users" class="purple abs end-0 mx-2">Save</button>
 </mat-dialog-actions>

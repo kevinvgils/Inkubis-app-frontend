@@ -27,12 +27,15 @@ export class UsersComponent implements OnInit {
   }
 
   openDialog(userId: number) {
-    this.dialog.open(UserDialogComponent, {
-      height: '20vh',
-      width: '40vw',
+    let dialogref = this.dialog.open(UserDialogComponent, {
+      width: '50vw',
       data: {
         userId: userId 
       }
+    })
+
+    dialogref.afterClosed().subscribe(x => {
+      this.getUsers()
     })
   }
 

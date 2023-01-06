@@ -1,3 +1,4 @@
+
 <div class="container px-5 pb-4">
     <div class="text-center pt-3">
         <h2>Gebruiker overzicht</h2>
@@ -7,8 +8,8 @@
     <div class="row" style="margin-top: -2.5vh;">
         <div class="col-md-4 col-md-offset-2 user-container pt-5" *ngFor="let user of users">
             <div class="px-3 user-header text-white">
-                <a (click)="openDialog(user.id)" class="btn edit-button"></a>
                 <span class="align-middle">{{user.firstName + ' ' + user.lastName }} | {{ user.emailAddress }}</span>
+                <a (click)="openDialog(user.id)" class="btn edit-button"></a>
             </div>
             <div class="row g-0 user-details">
                 <div class="col-4">
@@ -19,11 +20,14 @@
                 </div>
                 <div class="col-8">
                     <div class="user-companies">
-                        <div>
+                        <div *ngIf="user.role === 'sales'">
                             <span>Werkt voor:</span><br>
                             <span *ngFor="let company of user.companies">
                                 {{company.name}}
                             </span>
+                        </div>
+                        <div *ngIf="user.role === 'admin'">
+                            <span>Admin heeft tot alles toegang</span>
                         </div>
                     </div>
                 </div>
