@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoggedInAuthGuard } from '../components/auth/auth.guards';
+import { LoggedInAuthGuard } from '../auth/auth.guards';
 import { ContractComponent } from './contract.component';
 import { FirstPartComponent } from './first-part/first-part.component';
 import { SecondPartComponent } from './second-part/second-part.component';
@@ -18,7 +18,7 @@ const routes: Routes = [
     canActivate: [LoggedInAuthGuard],
     component: ContractComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'firstpart' },
+      { path: '', pathMatch: 'full', redirectTo: 'contractinfo' },
       { path: 'contractinfo', component: ContractInfoComponent },
       { path: 'contractsignees', component: ContractSigneesComponent },
       {

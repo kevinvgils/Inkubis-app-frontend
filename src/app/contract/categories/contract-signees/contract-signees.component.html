@@ -10,86 +10,95 @@
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
     
-    <div class="row">
+    <div formGroupName="companyResponsibleForDataProcessing" >
         <h2>Verwerkingsverantwoordelijke</h2>
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Naam medewerker 1</h5>
-                <p class="card-text"></p>
-            </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
-            </div>
-        </div>
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Functie medewerker 1</h5>
-                <p class="card-text"></p>
-            </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
-            </div>
-        </div>
 
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Naam medewerker 2</h5>
-                <p class="card-text"></p>
+        <div formGroupName="member1" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
+                </div>
             </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                </div>
             </div>
         </div>
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Functie medewerker 2</h5>
-                <p class="card-text"></p>
+        <hr>
+        <div formGroupName="member2" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
+                </div>
             </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                </div>
             </div>
         </div>
-        
+         
     </div>
 
-    <div class="row">
+    <div formGroupName="companyExecutingDataProcessing" class="row">
         <h2>Verwerker</h2>
 
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Naam medewerker 1</h5>
-                <p class="card-text"></p>
+        <div formGroupName="member1" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
+                </div>
             </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
-            </div>
-        </div>
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Functie medewerker 1</h5>
-                <p class="card-text"></p>
-            </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
-            </div>
-        </div>
-
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Naam medewerker 2</h5>
-                <p class="card-text"></p>
-            </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                </div>
             </div>
         </div>
-        <div class="card col-12">
-            <div class="card-body">
-                <h5 class="card-subtitle ">Functie medewerker 2</h5>
-                <p class="card-text"></p>
+        <hr>
+        <div formGroupName="member2" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
+                </div>
             </div>
-            <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                </div>
             </div>
         </div>
     </div>
