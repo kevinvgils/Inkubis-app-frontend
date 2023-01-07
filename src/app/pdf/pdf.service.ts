@@ -2,16 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PdfComponent } from './pdf.component';
-import { IPDF } from './pdf.interface'
+import { IPDF } from './pdf.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 export class PdfService {
-
   constructor(private httpClient: HttpClient) {}
-
-
 
   getContractByIdAsObservable(id: string): Observable<IPDF> {
     //console.log('getUserByIdAsObservable aangeroepen');
@@ -23,7 +18,7 @@ export class PdfService {
     });
     return this.httpClient.get<IPDF>(
       //`${environment.API_URL}/data-api/user/${id}`,
-       `http://localhost:3000/contract/${id}`,
+      `http://localhost:3000/contract/${id}`,
       {
         headers: headers,
       }

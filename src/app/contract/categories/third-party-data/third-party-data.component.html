@@ -10,7 +10,7 @@
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
     
-    <div class="row">
+    <div formGroupName="externalSubEmployeeExecutingDataProcessing" class="row">
         <h2>Externe subverwerkers</h2>
         <div class="card col-12">
             <div class="card-body">
@@ -18,7 +18,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
             </div>
         </div>
         <div class="card col-12">
@@ -27,7 +27,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="formalCity" name="formalCity" formControlName="formalCity">
             </div>
         </div>
 
@@ -37,7 +37,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="address" name="address" formControlName="address">
             </div>
         </div>
 
@@ -47,7 +47,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="typeOfProcessingForPersonalData" name="typeOfProcessingForPersonalData" formControlName="typeOfProcessingForPersonalData">
             </div>
         </div>
         
@@ -57,12 +57,12 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div formGroupName="externalSubEmployeeExecutingDatathirdPartySuppliersProcessing" class="row">
         <h2>Derde leveranciers</h2>
         <div class="card col-12">
             <div class="card-body">
@@ -70,7 +70,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="name">
             </div>
         </div>
         <div class="card col-12">
@@ -79,7 +79,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="formalCity" name="formalCity" formControlName="formalCity">
             </div>
         </div>
 
@@ -89,7 +89,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="address" name="address" formControlName="address">
             </div>
         </div>
 
@@ -99,7 +99,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="descriptionOfSupply" name="descriptionOfSupply" formControlName="descriptionOfSupply">
             </div>
         </div>
         
@@ -109,12 +109,12 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="linkToLegalTerms" name="linkToLegalTerms" formControlName="linkToLegalTerms">
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div formGroupName="dataTransfer" class="row">
         <h2>Derde leveranciers</h2>
         <div class="card col-12">
             <div class="card-body">
@@ -122,7 +122,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="nameOfExternalSubEmployee" name="nameOfExternalSubEmployee" formControlName="nameOfExternalSubEmployee">
             </div>
         </div>
         <div class="card col-12">
@@ -131,7 +131,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="legalCountry" name="legalCountry" formControlName="legalCountry">
             </div>
         </div>
 
@@ -141,7 +141,7 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="firstQuestion" name="firstQuestion" formControlName="firstQuestion">
+                <input class="form-tekst-input" type="text" id="reasonForDataTransfer" name="reasonForDataTransfer" formControlName="reasonForDataTransfer">
             </div>
         </div>
     </div>
