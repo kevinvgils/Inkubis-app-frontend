@@ -5,6 +5,7 @@ import { FormComponent } from '../form/form.component';
 import { Router } from '@angular/router';
 import { IContract } from './contract.interface';
 
+@Injectable({ providedIn: 'root' })
 export class ContractService {
   private readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',

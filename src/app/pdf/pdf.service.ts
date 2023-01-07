@@ -4,9 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PdfComponent } from './pdf.component';
 import { IPDF } from './pdf.interface';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class PdfService {
   constructor(private httpClient: HttpClient) {}
 

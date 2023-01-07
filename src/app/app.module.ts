@@ -10,6 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PdfComponent } from './pdf/pdf.component';
 import { LoggedInAuthGuard } from './auth/auth.guards';
+import { ContractModule } from './contract/contract.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoggedInAuthGuard } from './auth/auth.guards';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ContractModule,
   ],
   providers: [LoggedInAuthGuard],
   bootstrap: [AppComponent],
