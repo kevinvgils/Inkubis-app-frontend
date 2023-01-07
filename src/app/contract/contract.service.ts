@@ -1,21 +1,17 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, map, Observable, of, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { FormComponent } from '../components/form/form.component'
+import { FormComponent } from '../form/form.component';
 import { Router } from '@angular/router';
 import { IContract } from './contract.interface';
 
-
 export class ContractService {
-  
- 
   private readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
   });
 
   constructor(private httpClient: HttpClient, private router: Router) {}
-  
-  
+
   contract(
     company: number,
     user: number,
@@ -25,7 +21,7 @@ export class ContractService {
     //console.log("first", Object.entries(questions).at(0)?.at(1));
     //const result2 = Object.entries(questions).at(0)?.at(1);
 
-    console.log(questions[0]["firstQuestion"]);
+    console.log(questions[0]['firstQuestion']);
 
     /*let go = Object.entries(questions).at(0)?.at(1);
 
@@ -41,19 +37,17 @@ export class ContractService {
       
         return false;
       });*/
- 
+
     const contract = {
       company: {
         id: company,
-        name: ""
+        name: '',
       },
       user: user,
-      firstQuestion: questions[0]["firstQuestion"],
-      secondQuestion: questions[0]["secondQuestion"],
-      thirdQuestion: questions[0]["thirdQuestion"],
-      lastQuestion: questions[0]["lastQuestion"]
- 
-
+      firstQuestion: questions[0]['firstQuestion'],
+      secondQuestion: questions[0]['secondQuestion'],
+      thirdQuestion: questions[0]['thirdQuestion'],
+      lastQuestion: questions[0]['lastQuestion'],
     };
     //console.log(typeof(questions))
     return this.httpClient
@@ -75,6 +69,4 @@ export class ContractService {
         })
       );
   }
-
-
 }

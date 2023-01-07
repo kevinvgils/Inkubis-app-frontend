@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ILogin } from './components/auth/auth.interface';
-import { AuthService } from './components/auth/auth.service';
+import { ILogin } from './auth/auth.interface';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
