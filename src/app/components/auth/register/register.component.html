@@ -1,0 +1,124 @@
+<div class="d-flex overflow-hidden">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-9 p-0">
+                <div class="card rounded-0">
+                    <div class="card-body m-2 p-5">
+                        <h6 class="login-preTitle">Registreer</h6>
+                        <h3 class="card-title ">
+                            Registreer om bedrijfscontracten te bekijken en aan te passen
+                        </h3>
+                        <hr class="mt-4" />
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="mb-3 mt-md-4">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="firstName" class="form-label">Voornaam</label>
+                                        <input type="text" class="form-control" id="firstName"
+                                            formControlName="firstName" placeholder="Type hier je voornaam" [ngClass]="{
+                                            'is-invalid': registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched
+                                        }" />
+                                        <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('firstName')?.errors!['required']">
+                                                Voornaam is verplicht
+                                            </div>
+                                            <div *ngIf="registerForm.get('firstName')?.errors!['minlength']">
+                                                Voornaam moet minimaal 3 karakters hebben.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="mb-3">
+                                        <label for="lastName" class="form-label">Achternaam</label>
+                                        <input type="lastName" class="form-control" id="lastName"
+                                            formControlName="lastName" placeholder="Type hier je achternaam"
+                                            class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched
+                                    }" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">Wachtwoord</label>
+                                        <i class="bi bi-eye" (click)="hide = !hide"></i>
+                                        <input [type]="hide ? 'password' : 'text'" class="form-control" id="password"
+                                            formControlName="password" placeholder="Type hier je wachtwoord"
+                                            class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched
+                                    }" />
+                                        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('password')?.errors!['required']">
+                                                Wachtwoord is verplicht
+                                            </div>
+                                            <div *ngIf="registerForm.get('password')?.errors!['pattern']">
+                                                Het wachtwoord moet minstens 8 tekens lang zijn en de volgende
+                                                onderdelen bevatten: kleine letters, hoofdletters, cijfers, speciale
+                                                tekens.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="mb-3 ">
+                                        <label for="function" class="form-label">Functie</label>
+                                        <input type="function" class="form-control" id="function"
+                                            placeholder="Type hier je functie" />
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="emailAddress" class="form-label">E-mailadres</label>
+                                        <input type="text" class="form-control" id="emailAddress"
+                                            formControlName="emailAddress" placeholder="Type hier je e-mailadres"
+                                            [ngClass]="{
+                                            'is-invalid': registerForm.get('emailAddress')?.invalid && registerForm.get('emailAddress')?.touched
+                                        }" />
+                                        <div *ngIf="registerForm.get('emailAddress')?.invalid && registerForm.get('emailAddress')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('emailAddress')?.errors!['required']">
+                                                E-mailadres is verplicht
+                                            </div>
+                                            <div *ngIf="registerForm.get('emailAddress')?.errors!['email']">
+                                                E-mailadres moet een geldig e-mailadres zijn.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="mb-3">
+                                        <label for="phoneNumber" class="form-label">Telefoonnummer</label>
+                                        <input type="phoneNumber" class="form-control" id="phoneNumber"
+                                            formControlName="phoneNumber" placeholder="Type hier je Telefoonnummer"
+                                            class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched
+                                    }" />
+                                        <div *ngIf="registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('phoneNumber')?.errors!['pattern']">
+                                                Telefoonnummer moet een geldig telefoonnummer zijn.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="isAdmin" class="form-label">Is Admin?</label>
+                                    <input type="checkbox" class="form-check-input mx-2" id="isAdmin"
+                                        formControlName="isAdmin" checked>
+                                </div>
+                            </div>
+                            <button type="submit" class="purple abs end-0 mx-5"
+                                [disabled]="!registerForm.valid">Registreren</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

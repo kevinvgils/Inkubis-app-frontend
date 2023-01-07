@@ -7,19 +7,26 @@ import { FormProvider } from './FormProvider';
   selector: 'app-contract',
   templateUrl: './contract.component.html',
   styleUrls: ['./contract.component.css'],
-  providers: [{ provide: FormProvider, useExisting: ContractComponent }]
+  providers: [{ provide: FormProvider, useExisting: ContractComponent }],
 })
 export class ContractComponent extends FormProvider implements OnInit {
-  components: string[] = ['contractinfo', 'contractsignees', 'processingpurposes', 'certification', 'thirdparty', 'spoc'];
+  components: string[] = [
+    'contractinfo',
+    'contractsignees',
+    'processingpurposes',
+    'certification',
+    'thirdparty',
+    'spoc',
+    'verify',
+  ];
   currentComp!: string;
-  
-  contractForm = new FormGroup({
 
+  contractForm = new FormGroup({
     contractinfo: new FormGroup({
       companyResponsibleForDataProcessing: new FormGroup({
-        name: new FormControl(""),
+        name: new FormControl(''),
+        companyNumber: new FormControl(''),
         legalCountry: new FormControl(false),
-        companyNumber: new FormControl(""),
         address: new FormControl(''),
         zipcode: new FormControl(''),
         city: new FormControl(''),
@@ -27,8 +34,8 @@ export class ContractComponent extends FormProvider implements OnInit {
       }),
       companyExecutingDataProcessing: new FormGroup({
         name: new FormControl(''),
-        legalCountry: new FormControl(''),
         companyNumber: new FormControl(''),
+        legalCountry: new FormControl(false),
         address: new FormControl(''),
         zipcode: new FormControl(''),
         city: new FormControl(''),
@@ -47,7 +54,7 @@ export class ContractComponent extends FormProvider implements OnInit {
         member2: new FormGroup({
           name: new FormControl(''),
           jobDescription: new FormControl(''),
-        })
+        }),
       }),
       companyExecutingDataProcessing: new FormGroup({
         member1: new FormGroup({
@@ -57,18 +64,18 @@ export class ContractComponent extends FormProvider implements OnInit {
         member2: new FormGroup({
           name: new FormControl(''),
           jobDescription: new FormControl(''),
-        })
-      })
+        }),
+      }),
     }),
 
     processingpurposes: new FormGroup({
-      processingPurposes: new FormControl('')
+      processingPurposes: new FormControl(''),
     }),
 
     certification: new FormGroup({
       certifications: new FormControl(''),
       achievedCertifications: new FormControl(''),
-      overhauls: new FormControl('')
+      overhauls: new FormControl(''),
     }),
 
     thirdparty: new FormGroup({
@@ -80,19 +87,20 @@ export class ContractComponent extends FormProvider implements OnInit {
         jobDescription: new FormControl(''),
       }),
 
-      externalSubEmployeeExecutingDatathirdPartySuppliersProcessing: new FormGroup({
-        name: new FormControl(''),
-        formalCity: new FormControl(''),
-        address: new FormControl(''),
-        descriptionOfSupply: new FormControl(''),
-        linkToLegalTerms: new FormControl(''),
-      }),
+      externalSubEmployeeExecutingDatathirdPartySuppliersProcessing:
+        new FormGroup({
+          name: new FormControl(''),
+          formalCity: new FormControl(''),
+          address: new FormControl(''),
+          descriptionOfSupply: new FormControl(''),
+          linkToLegalTerms: new FormControl(''),
+        }),
 
       dataTransfer: new FormGroup({
         legalCountry: new FormControl(''),
         nameOfExternalSubEmployee: new FormControl(''),
         reasonForDataTransfer: new FormControl(''),
-      })
+      }),
     }),
 
     spoc: new FormGroup({
@@ -112,7 +120,7 @@ export class ContractComponent extends FormProvider implements OnInit {
         mobile: new FormControl(''),
       }),
     }),
-  })
+  });
 
   getForm() {
     return this.contractForm;
@@ -130,4 +138,3 @@ export class ContractComponent extends FormProvider implements OnInit {
     this.currentComp = this.router.url.split('/').pop() as string;
   }
 }
-

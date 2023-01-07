@@ -1,0 +1,41 @@
+.form-label {
+  font-size: 1rem;
+  color: #280223;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.8rem !important;
+}
+
+hr {
+  background-color: black;
+}
+
+.login-preTitle {
+  color: #c95478;
+  font-size: 1.5rem;
+}
+
+.card {
+  display: flex;
+  min-width: 70vw;
+}
+
+input {
+  border-radius: 0;
+  line-height: 3rem;
+  border-color: black;
+}
+
+.form-control {
+  font-size: 1rem;
+}
+
+.abs {
+  position: absolute;
+}
+
+.bi-eye {
+  margin-left: 10px;
+}
