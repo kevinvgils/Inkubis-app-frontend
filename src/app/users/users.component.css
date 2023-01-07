@@ -3,11 +3,14 @@
     background-color: #53042F;
     font-weight: 700;
     height: 6vh;
+    width: 100%;
+    position: relative;
 }
 
-.user-header > span {
+.user-header > div {
     line-height: 5.7vh;
     vertical-align: middle;
+    max-width: 100%;
 }
 
 .role-picture-container {
@@ -64,19 +67,27 @@
 
 .edit-button {
     background-color: #FFFF00;
-    float:inline-end;
     border-radius: 50%;
-    height: 3vh;
+    height: 1.8rem;
     line-height: 5.7vh;
     vertical-align: middle;
-    margin-top: 0.5rem;
     display: none;
     background-image: url(../../assets/img/editIcon.png);
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
+    width: 1.8rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.3rem;
 }
 
 .user-container:hover .edit-button {
-    display: block;
+    display: inline;
+}
+
+.user-container:hover .user-header > div {
+    line-height: 5.7vh;
+    vertical-align: middle;
+    max-width: 85%;
 }

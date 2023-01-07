@@ -8,7 +8,7 @@
     <div class="row" style="margin-top: -2.5vh;">
         <div class="col-md-4 col-md-offset-2 user-container pt-5" *ngFor="let user of users">
             <div class="px-3 user-header text-white">
-                <span class="align-middle">{{user.firstName + ' ' + user.lastName }} | {{ user.emailAddress }}</span>
+                <div class="align-middle text-truncate pl-3">{{user.firstName + ' ' + user.lastName }} | {{ user.emailAddress }}</div>
                 <a (click)="openDialog(user.id)" class="btn edit-button"></a>
             </div>
             <div class="row g-0 user-details">
