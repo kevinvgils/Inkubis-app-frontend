@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoggedInAuthGuard } from './auth/auth.guards';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { FormComponent } from './form/form.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AdminComponent } from './admin/admin.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { UsersComponent } from './users/users.component';
+import { ContractDetailComponent } from './homepage/contract-detail/contract-detail.component';
 
 const routes: Routes = [
   {
@@ -38,6 +38,12 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
     component: UsersComponent,
+  },
+  {
+    path: 'contract-details/:id',
+    pathMatch: 'full',
+    canActivate: [LoggedInAuthGuard],
+    component: ContractDetailComponent,
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

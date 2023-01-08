@@ -18,7 +18,10 @@
       height: inherit;
       overflow-y: scroll;
     }
-    .crud{
+    .line{
       display: flex;
-      align-items: right;
+      justify-content: space-between;
+    }
+    .crud{
+      float: right;
     }

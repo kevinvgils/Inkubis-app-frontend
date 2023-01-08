@@ -19,7 +19,7 @@ import { LoggedInAuthGuard } from './auth/auth.guards';
 import { ContractModule } from './contract/contract.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AdminComponent } from './admin/admin.component';
-import { HomepageDialogComponent } from './homepage/homepage-dialog/homepage-dialog.component';
+import { ContractDetailComponent } from './homepage/contract-detail/contract-detail.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { HomepageDialogComponent } from './homepage/homepage-dialog/homepage-dia
     UserDialogComponent,
     HomepageComponent,
     AdminComponent,
-    HomepageDialogComponent,
+    ContractDetailComponent,
   ],
   imports: [
     BrowserModule,

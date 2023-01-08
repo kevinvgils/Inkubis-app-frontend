@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomepageDialogComponent } from './homepage-dialog.component';
+import { ContractDetailComponent } from './contract-detail.component';
 
-describe('HomepageDialogComponent', () => {
-  let component: HomepageDialogComponent;
-  let fixture: ComponentFixture<HomepageDialogComponent>;
+describe('ContractDetailComponent', () => {
+  let component: ContractDetailComponent;
+  let fixture: ComponentFixture<ContractDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomepageDialogComponent ]
+      declarations: [ ContractDetailComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomepageDialogComponent);
+    fixture = TestBed.createComponent(ContractDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
