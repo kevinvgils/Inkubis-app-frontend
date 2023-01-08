@@ -27,14 +27,15 @@ export class SinglePointOfContactDataComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('firstPart') as FormGroup;
+    this.form = formProvider.getForm().get('spoc') as FormGroup;
   }
 
   ngOnInit(): void {
   }
 
   onSubmit(){
-
+    console.log(JSON.stringify(this.form.value));
+    this.router.navigate(['contract/verify']);
   }
 
 }

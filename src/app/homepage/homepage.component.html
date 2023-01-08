@@ -4,7 +4,7 @@
             <div class="col-9 main">
                 <h5 class="preTitle">Uw contracten</h5>
                 <h2>Contracten overzicht</h2>
-                <p>De volgende contracten behoren tot [Naam bedrijf]</p>
+                <p>De volgende contracten behoren tot uw bedrijf</p>
                 <hr>
 
                 <div class="contract" *ngFor="let contract of contracts">
@@ -14,6 +14,7 @@
                         <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == false">Belgisch template</p>
                     </div>
                     <div class="crud">
+                        <!-- (click)="openDialog(contract.id)" -->
                         <a><i class="bi bi-pencil"></i> Bewerken</a>
                         <a><i class="bi bi-trash3"></i> Verwijderen</a>
                     </div>

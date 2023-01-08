@@ -10,6 +10,7 @@
                 <div class="contract" *ngFor="let contract of contracts">
                     <div class="content">
                         <h2>Contract aangemaakt op: {{ contract.iContract.dateSigned }}</h2>
+                        <p>Contract hoort bij: {{ contract.companyExecutingDataProcessing.name }}</p>
                         <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == true">Nederlands template</p>
                         <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == false">Belgisch template</p>
                     </div>

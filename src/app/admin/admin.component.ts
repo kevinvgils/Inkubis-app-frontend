@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 import { Contract } from '../contract/contract';
+import { AdminService } from './admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,14 +10,18 @@ import { Contract } from '../contract/contract';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  contracts: Contract[] = []; //getAllContracts();
+  contracts: Contract[];
+  
+  constructor(private readonly adminService: AdminService, public dialog: MatDialog) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.getContracts();
   }
 
-  getAllContracts() {
-    return ;
+  async getContracts(): Promise<void>{
+    this.adminService.getAllContracts().subscribe(contracts => {
+      this.contracts = contracts
+      console.log(contracts)
+    })
   }
 }

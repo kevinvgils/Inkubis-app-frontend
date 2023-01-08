@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Contract } from '../contract';
+import { ContractService } from '../contract.service';
 import { FormProvider } from '../FormProvider';
 
 @Component({
@@ -12,14 +13,11 @@ import { FormProvider } from '../FormProvider';
 export class VerifyComponent implements OnInit {
   contracts: any;
   form: FormGroup;
-  verifyData: any;
 
-  constructor(private formProvider: FormProvider, private router: Router) {
-    this.verifyData = [];
+  constructor(private formProvider: FormProvider, private router: Router, readonly contractService: ContractService) {
     this.form = formProvider.getForm() as FormGroup;
-    const allForms = this.formProvider.getForm() as FormGroup;
-    let contract = new Contract(allForms);
-    this.verifyData.push(contract);
+    console.log(JSON.stringify(this.form.value));
+
     try {
       this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
     } catch (e: any) {
@@ -31,14 +29,19 @@ export class VerifyComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    if (this.formProvider.getForm().get('firstPart')) {
-      const allForms = this.formProvider.getForm() as FormGroup;
+    this.contractService
+    .contract(3, this.form.value)
+    .subscribe(() => {
+      console.log(this.form.value);
+    });
 
-      let contract = new Contract(allForms);
-      this.contracts.push(contract);
+    // const allForms = this.formProvider.getForm() as FormGroup;
 
-      localStorage.setItem('forms', JSON.stringify(this.contracts));
-      this.router.navigate(['..']);
-    }
+    // let contract = new Contract(allForms);
+    // this.contracts.push(contract);
+    // console.log(this.form.value)
+
+    // localStorage.setItem('forms', JSON.stringify(this.contracts));
+    // this.router.navigate(['..']);
   }
 }

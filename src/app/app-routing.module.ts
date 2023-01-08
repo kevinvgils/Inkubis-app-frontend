@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoggedInAuthGuard } from './components/auth/auth.guards';
-import { LoginComponent } from './components/auth/login/login.component';
-import { RegisterComponent } from './components/auth/register/register.component';
+import { LoggedInAuthGuard } from './auth/auth.guards';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { FormComponent } from './form/form.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { AdminComponent } from './admin/admin.component'; 
+import { AdminComponent } from './admin/admin.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,12 @@ const routes: Routes = [
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
     component: PdfComponent,
+  },
+  {
+    path: 'users',
+    pathMatch: 'full',
+    canActivate: [LoggedInAuthGuard],
+    component: UsersComponent,
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
