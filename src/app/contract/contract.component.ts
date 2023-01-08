@@ -43,6 +43,11 @@ export class ContractComponent extends FormProvider implements OnInit {
       }),
       dateSigned: new FormControl(''),
       citySigned: new FormControl(''),
+      processingPurposes: new FormControl(''),
+      certifications: new FormControl(''),
+      achievedCertifications: new FormControl(''),
+      overhauls: new FormControl(''),
+
     }),
 
     contractsignees: new FormGroup({
@@ -68,15 +73,11 @@ export class ContractComponent extends FormProvider implements OnInit {
       }),
     }),
 
-    processingpurposes: new FormGroup({
-      processingPurposes: new FormControl(''),
-    }),
+    
 
-    certification: new FormGroup({
-      certifications: new FormControl(''),
-      achievedCertifications: new FormControl(''),
-      overhauls: new FormControl(''),
-    }),
+    
+      
+    
 
     thirdparty: new FormGroup({
       externalSubEmployeeExecutingDataProcessing: new FormGroup({
