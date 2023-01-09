@@ -1,0 +1,44 @@
+    .card {
+        width: 13vw;
+        height: 30vh;
+        justify-content: space-between;
+    }
+    
+    img {
+        height: 25vh;
+    }
+    
+    .card-footer {
+        background-color: #53042F;
+    }
+    
+    .card .card-text {
+        color: #ffffff;
+    }
+    
+    .listWrap {
+        min-height: calc(100vh - 61px);
+        display: flex;
+        align-items: center;
+    }
+    
+    .list {
+        width: 100%;
+        background-color: #ffffff;
+        height: 75vh;
+        padding: 20px 30px;
+        position: relative;
+        overflow-y: none !important;
+    }
+    
+    hr {
+        opacity: 100%;
+        background-color: black;
+        width: 63.5vw;
+    }
+    
+    .detail-img {
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }

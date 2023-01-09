@@ -10,9 +10,16 @@ import { ActivatedRoute} from '@angular/router';
 })
 export class CompanyDetailComponent implements OnInit {
   company!: Company
-  constructor(companyService: CompanyService, private route: ActivatedRoute) { }
+  constructor(private companyService: CompanyService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getCompany(+this.route.snapshot.paramMap.get('id')!);
+  }
+
+  getCompany(id: number){
+    this.companyService.getById(id).subscribe((data: any) => { 
+      this.company = data;
+    });
   }
 
 }

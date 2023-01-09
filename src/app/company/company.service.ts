@@ -22,29 +22,29 @@ export class CompanyService {
 
   getAll(): Observable<Company[]> {
     return this.http
-      .get<Company[]>(`${this.apiURL}/companies`)
+      .get<Company[]>(`${this.apiURL}/company`)
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  getById(id: string): Observable<Company> {
+  getById(id: number): Observable<Company> {
     return this.http
-      .get<Company>(`${this.apiURL}/companies/${id}`)
+      .get<Company>(`${this.apiURL}/company/${id}`)
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  update(id: string, Company: Company): Observable<Company> {
+  update(id: number, Company: Company): Observable<Company> {
     return this.http
       .put<Company>(
-        this.apiURL + '/companies/' + id,
+        this.apiURL + '/company/' + id,
         JSON.stringify(Company),
         this.httpOptions
       )
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  delete(id: string) {
+  delete(id: number) {
     return this.http
-      .delete<Company>(`${this.apiURL}/companies/${id}`, this.httpOptions)
+      .delete<Company>(`${this.apiURL}/company/${id}`, this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
   }
 

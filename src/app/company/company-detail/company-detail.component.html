@@ -1,1 +1,25 @@
-<p>company-detail works!</p>
+<div class="listWrap">
+    <div class="list">
+        <h2 class=" text-center ">{{ company.name }}</h2>
+        <p class="card-text text-center ">Hieronder bevindt zich een overzicht van {{ company.name }}</p>
+        <hr>
+        <div class="container">
+            <div class="row p-2 ">
+                <!-- <div class="col-4 my-3 ms-5 detail-img justify-content-start">
+                    <img src=" ../../../assets/img/Inkubis-photo.jpg " class="card-img rounded-0 detail-img img-fluid " alt=" ... ">
+                </div> -->
+                <div class="col-8 col-md-8 col-lg-8 my-3">
+                    <div class="container border align-items-center">
+                        <h5 class="title mt-3 mb-2 mx-2 fw-bold ">Name: {{ company.name }}</h5>
+                        <h5 class="title mt-3 mb-2 mx-2 fw-bold ">Country: {{ company.country }}</h5>
+                        <h5 class="title mt-3 mb-2 mx-2 fw-bold ">Zipcode: {{ company.zipcode }}</h5>
+                        <h5 class="title mt-3 mb-2 mx-2 fw-bold ">Address: {{ company.address }}</h5>
+                        <h5 class="title mt-3 mb-2 mx-2 fw-bold ">City: {{ company.city }}</h5>
+                        <h5 class="title mt-3 mb-2 mx-2 fw-bold ">KvkNumber: {{ company.kvkNumber }}</h5>
+                    </div>
+                    <button class="button purple mx-3 my-3">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

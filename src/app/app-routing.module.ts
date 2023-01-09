@@ -9,6 +9,7 @@ import { PdfComponent } from './pdf/pdf.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FormComponent },
   { path: 'contract', loadChildren: () => import('./contract/contract.module').then(m => m.ContractModule) },
+  { path: 'company', loadChildren: () => import('./company/company.module').then(m => m.CompanyModule)},
   { path: 'verify', pathMatch: 'full', component: VerifyComponent },
   { path: 'pdf', pathMatch: 'full', component: PdfComponent },
   { path: 'login', component: LoginComponent },
