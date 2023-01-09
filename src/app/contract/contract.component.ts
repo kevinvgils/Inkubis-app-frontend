@@ -19,6 +19,15 @@ export class ContractComponent extends FormProvider implements OnInit {
     'spoc',
     'verify',
   ];
+  // components: string[] = [
+  //   'Contract info',
+  //   'Contract ondertekenaars',
+  //   'Verwerkingsdoeleinden',
+  //   'Certificatie',
+  //   'Derde partij',
+  //   'SPOC',
+  //   'Gegevenscontrole',
+  // ];
   currentComp!: string;
 
   contractForm = new FormGroup({
