@@ -15,7 +15,7 @@ export class HomepageService {
 
     getAllContracts(): Observable<Contract[]> {
         return this.httpClient
-        .get(`http://localhost:3000/data-api/contract`, {
+        .get(`http://localhost:3000/data-api/contract/user`, {
             headers: this.headers,
         })
         .pipe(
