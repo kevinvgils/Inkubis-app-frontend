@@ -18,10 +18,16 @@
       height: inherit;
       overflow-y: scroll;
     }
+    .title{
+      text-decoration: none;
+    }
     .line{
       display: flex;
       justify-content: space-between;
     }
     .crud{
-      float: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      grid-gap: 20px;
     }
