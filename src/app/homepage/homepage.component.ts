@@ -24,4 +24,11 @@ export class HomepageComponent implements OnInit {
       console.log(contracts)
     })
   }
+
+  async deleteContract(contractId: number): Promise<void>{
+    this.homepageService.deleteContract(contractId).subscribe(() => {
+      console.log("Contract with id", contractId, " deleted")
+    })
+    await this.getContracts();
+  }
 }
