@@ -30,7 +30,7 @@ export class FormComponent implements OnInit {
   ngOnSubmit(){
     //console
     this.contractService
-    .contract(3, 1, this.contracts)
+    .contract(3, this.contracts)
     .subscribe((contract) => {
       console.log(this.contracts);
       //contract.questions = Object.values(contract.questions).at(1);

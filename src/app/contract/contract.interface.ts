@@ -1,4 +1,5 @@
 export interface IContract {
+    id: number;
     company: number;
     user: number;
     questions: object;

@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" class="formMainContent">
 
     <div class="contract">
         <div class="card">
@@ -300,6 +300,6 @@
     </div>
 
     <div class="buttonToRight">
-        <button class="versturen purple" type="submit">Versturen</button>
+        <button (click)="onSubmit()" class="versturen purple" type="submit" >Versturen</button>
     </div>
 </form>
