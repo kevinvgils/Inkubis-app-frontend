@@ -16,6 +16,7 @@ export class ContractComponent extends FormProvider implements OnInit {
     'processingpurposes',
     'certification',
     'thirdparty',
+    'datacategory',
     'spoc',
     'verify',
   ];
@@ -25,6 +26,7 @@ export class ContractComponent extends FormProvider implements OnInit {
   //   'Verwerkingsdoeleinden',
   //   'Certificatie',
   //   'Derde partij',
+  //   'Gegevenscategorie',
   //   'SPOC',
   //   'Gegevenscontrole',
   // ];
@@ -79,6 +81,66 @@ export class ContractComponent extends FormProvider implements OnInit {
 
     processingpurposes: new FormGroup({
       processingPurposes: new FormControl(''),
+    }),
+
+    datacategory: new FormGroup({
+      companyResponsibleForDataProcessing: new FormGroup({
+        IdentificationData: new FormControl(false),
+        nationalRegistryNumber: new FormControl(false),
+        communicationsData: new FormControl(false),
+        relationalData: new FormControl(false),
+        professionalData: new FormControl(false),
+        locationData: new FormControl(false),
+        financialData: new FormControl(false),
+        financialAndInsuranceProducts: new FormControl(false),
+        stigmatizationOrIsolationData: new FormControl(false),
+        lifestyleAndHabits: new FormControl(false),
+        loginData: new FormControl(false),
+        identityFraudData: new FormControl(false),
+        specialLegalDutyOfConfidentialityAndProfessionalSecrecyData:
+          new FormControl(false),
+        contractualData: new FormControl(false),
+        imageOrSoundRecording: new FormControl(false),
+        otherCategory: new FormControl(false),
+      }),
+      companyExecutingDataProcessing: new FormGroup({
+        IdentificationData: new FormControl(false),
+        nationalRegistryNumber: new FormControl(false),
+        communicationsData: new FormControl(false),
+        relationalData: new FormControl(false),
+        professionalData: new FormControl(false),
+        locationData: new FormControl(false),
+        financialData: new FormControl(false),
+        financialAndInsuranceProducts: new FormControl(false),
+        stigmatizationOrIsolationData: new FormControl(false),
+        lifestyleAndHabits: new FormControl(false),
+        loginData: new FormControl(false),
+        identityFraudData: new FormControl(false),
+        specialLegalDutyOfConfidentialityAndProfessionalSecrecyData:
+          new FormControl(false),
+        contractualData: new FormControl(false),
+        imageOrSoundRecording: new FormControl(false),
+        otherCategory: new FormControl(false),
+      }),
+      SpecialCompanyExecutingDataProcessing: new FormGroup({
+        IdentificationData: new FormControl(false),
+        nationalRegistryNumber: new FormControl(false),
+        communicationsData: new FormControl(false),
+        relationalData: new FormControl(false),
+        professionalData: new FormControl(false),
+        locationData: new FormControl(false),
+        financialData: new FormControl(false),
+        financialAndInsuranceProducts: new FormControl(false),
+        stigmatizationOrIsolationData: new FormControl(false),
+        lifestyleAndHabits: new FormControl(false),
+        loginData: new FormControl(false),
+        identityFraudData: new FormControl(false),
+        specialLegalDutyOfConfidentialityAndProfessionalSecrecyData:
+          new FormControl(false),
+        contractualData: new FormControl(false),
+        imageOrSoundRecording: new FormControl(false),
+        otherCategory: new FormControl(false),
+      }),
     }),
 
     certification: new FormGroup({

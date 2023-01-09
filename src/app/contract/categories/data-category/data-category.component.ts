@@ -1,18 +1,27 @@
-// Categorieën van Gegevens: 
-  // Category: {string (de categorie), boolean (betrokken in de overeenkomst)}[] 
+// Categorieën van Gegevens:
+// Category: {string (de categorie), boolean (betrokken in de overeenkomst)}[]
 
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FormProvider } from '../../FormProvider';
 
 @Component({
   selector: 'app-data-category',
   templateUrl: './data-category.component.html',
-  styleUrls: ['./data-category.component.css']
+  styleUrls: ['./data-category.component.css'],
 })
 export class DataCategoryComponent implements OnInit {
+  form: FormGroup;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private formProvider: FormProvider, private router: Router) {
+    this.form = formProvider.getForm().get('datacategory') as FormGroup;
   }
 
+  ngOnInit(): void {}
+
+  onSubmit() {
+    console.log(JSON.stringify(this.form.value));
+    this.router.navigate(['contract/spoc']);
+  }
 }
