@@ -10,7 +10,7 @@ import { HomepageService } from './homepage.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  contracts: Contract[];
+  contracts: any[];
   
   constructor(private readonly homepageService: HomepageService, public dialog: MatDialog) { }
 

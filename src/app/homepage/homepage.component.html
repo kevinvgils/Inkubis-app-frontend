@@ -11,10 +11,11 @@
                     <div class="line">
                         <div class="content">
                             <!-- <h2>Contract aangemaakt op: {{ contract.iContract.dateSigned }}</h2> -->
-                            <a [routerLink]="['contract-details/', contract.iContract.id]"><h2>Contract aangemaakt op:</h2></a>
-                            <!-- <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == true">Nederlands template</p>
-                            <p *ngIf="contract.companyExecutingDataProcessing.legalCountry == false">Belgisch template</p> -->
-                            <p>Nederlands template</p>
+                            <a routerLink="/contract-details/{{contract.id}}"><h2>Contract aangemaakt op:</h2></a>
+                            <p><b>Verwerker:</b> {{contract.companyExecutingDP.name}}</p>
+                            <p><b>Verwerkings verantwoordelijke:</b> {{ contract.companyResponsibleForDP.name}}</p>
+                            <p *ngIf="contract.companyExecutingDP.legalCountry == true">Nederlands template</p>
+                            <p *ngIf="contract.companyExecutingDP.legalCountry == false">Belgisch template</p>
                         </div>
                         <div class="crud">
                             <div class="edit">
