@@ -18,6 +18,7 @@ export class ContractComponent extends FormProvider implements OnInit {
     'thirdparty',
     'datasubjectcategory',
     'datacategory',
+    'specialDataCategory',
     'spoc',
     'verify',
   ];
@@ -27,7 +28,9 @@ export class ContractComponent extends FormProvider implements OnInit {
   //   'Verwerkingsdoeleinden',
   //   'Certificatie',
   //   'Derde partij',
+  //   'Categorie betrokkenen',
   //   'Gegevenscategorie',
+  //   'Speciale gegevenscategorie',
   //   'SPOC',
   //   'Gegevenscontrole',
   // ];
@@ -86,10 +89,16 @@ export class ContractComponent extends FormProvider implements OnInit {
 
     category: new FormGroup({
       dataSubjectCategory: new FormGroup({
-        dummy: new FormControl(false),
+        potentialOrFormerCustomers: new FormControl(false),
+        applicantsAndFormerEmployeesInterns: new FormControl(false),
+        potentialIndependentAdvisors: new FormControl(false),
+        potentialFormerSuppliers: new FormControl(false),
+        potentialBusinessPartners: new FormControl(false),
+        minors: new FormControl(false),
+        otherCategory: new FormControl(false),
       }),
       dataCategory: new FormGroup({
-        IdentificationData: new FormControl(false),
+        identificationData: new FormControl(false),
         nationalRegistryNumber: new FormControl(false),
         communicationsData: new FormControl(false),
         relationalData: new FormControl(false),

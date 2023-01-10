@@ -241,14 +241,66 @@
                 <label>{{this.form.get(['thirdparty','dataTransfer', 'reasonForDataTransfer'])!.value}}</label>
             </div>
 
+            <!-- datacategory Categorieën van betrokkenen -->
+            <h5 class="card-subtitle mb-2">Formulier Categorieën van betrokkenen</h5>
+            <div class="flex">
+                <label>(potentiële) / (ex)klanten</label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialOrFormerCustomers'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialOrFormerCustomers'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>aanvragers en (ex) werknemers, stagiaires </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'applicantsAndFormerEmployeesInterns'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'applicantsAndFormerEmployeesInterns'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / zelfstandige consultants </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialIndependentAdvisors'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialIndependentAdvisors'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / (ex)leveranciers </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialFormerSuppliers'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialFormerSuppliers'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / (ex) zakelijke partners </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialBusinessPartners'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialBusinessPartners'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Minderjarigen (onder de leeftijd van 16) </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'minors'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'minors'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Een andere categorie </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'otherCategory'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'otherCategory'])!.value">Nee</label>
+            </div>
+
             <!-- datacategory Categorieën van gegevens -->
             <h5 class="card-subtitle mb-2">Formulier Categorieën van gegevens</h5>
             <div class="flex">
                 <label>Identificatiegegevens</label>
                 <label *ngIf="this.form.get(['category','dataCategory',
-                'IdentificationData'])!.value">Ja</label>
+                'identificationData'])!.value">Ja</label>
                 <label *ngIf="!this.form.get(['category','dataCategory',
-                'IdentificationData'])!.value">Nee</label>
+                'identificationData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Rijksregisternummer</label>
