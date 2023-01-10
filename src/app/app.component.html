@@ -1,7 +1,7 @@
 <!-- Toolbar -->
 <header>
   <div class="content">
-    <img src="../assets/img/brand-logo.svg" alt="" class="logo">
+    <a routerLink=""><img src="../assets/img/brand-logo.svg" alt="" class="logo"></a>
     <div class="navWrap">
       <ul>
         <li><a routerLink="/contract" *ngIf="loggedInUser$ | async as user">Create contract</a></li>
