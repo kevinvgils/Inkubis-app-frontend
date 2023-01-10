@@ -26,6 +26,19 @@ export class HomepageService {
         )
     }
 
+    getContractById(contractId: number): Observable<any> {
+        return this.httpClient
+        .get(`http://localhost:3000/data-api/contract/` + contractId, {
+            headers: this.headers,
+        })
+        .pipe(
+            map((data: any) => data),
+            map((contract: Contract) => {
+                return contract
+            })
+        )
+    }
+
     deleteContract(contractId: number): Observable<any> {
         return this.httpClient
         .delete(`http://localhost:3000/data-api/contract/` + contractId, {
