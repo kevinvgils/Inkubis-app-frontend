@@ -16,6 +16,7 @@ export class ContractComponent extends FormProvider implements OnInit {
     'processingpurposes',
     'certification',
     'thirdparty',
+    'datasubjectcategory',
     'datacategory',
     'spoc',
     'verify',
@@ -84,7 +85,10 @@ export class ContractComponent extends FormProvider implements OnInit {
     }),
 
     category: new FormGroup({
-      datacategory: new FormGroup({
+      dataSubjectCategory: new FormGroup({
+        dummy: new FormControl(false),
+      }),
+      dataCategory: new FormGroup({
         IdentificationData: new FormControl(false),
         nationalRegistryNumber: new FormControl(false),
         communicationsData: new FormControl(false),
@@ -102,6 +106,9 @@ export class ContractComponent extends FormProvider implements OnInit {
         contractualData: new FormControl(false),
         imageOrSoundRecording: new FormControl(false),
         otherCategory: new FormControl(false),
+      }),
+      specialDataCategory: new FormGroup({
+        dummy: new FormControl(false),
       }),
     }),
 

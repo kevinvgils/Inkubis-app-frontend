@@ -1,6 +1,3 @@
-// Categorieën van Gegevens:
-// Category: {string (de categorie), boolean (betrokken in de overeenkomst)}[]
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,6 +19,6 @@ export class DataCategoryComponent implements OnInit {
 
   onSubmit() {
     console.log(JSON.stringify(this.form.value));
-    this.router.navigate(['contract/spoc']);
+    this.router.navigate(['contract/specialdatacategory']);
   }
 }

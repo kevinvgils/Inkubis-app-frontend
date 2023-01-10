@@ -1,1 +1,29 @@
-<p>data-subject-category works!</p>
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle">Contract informatie</h2>
+        <p class="card-text">Algemene informatie over het contract
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="dataSubjectCategory" class="row">
+        <h2>Categorieën van betrokkenen</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">(potentiële) / (ex)klanten</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="IdentificationData" name="IdentificationData"
+                    formControlName="IdentificationData">
+            </div>
+        </div>
+
+    </div>
+
+    <button class="purple" type="submit">Volgende</button>
+</form>
