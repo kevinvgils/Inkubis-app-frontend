@@ -1,0 +1,55 @@
+.form-label {
+  font-size: 1rem;
+  color: #280223;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.8rem !important;
+}
+
+hr {
+  opacity: 100% !important;
+}
+
+.login-preTitle {
+  color: #c95478;
+  font-size: 1.5rem;
+}
+
+.card {
+  max-width: 40rem;
+  max-height: 40rem;
+  display: flex;
+  min-width: 41vw;
+}
+
+.card-body {
+  width: 100%;
+}
+
+input {
+  border-radius: 0;
+  line-height: 3rem;
+  border-color: black;
+}
+
+.img-inkubis {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.form-control {
+  width: 70%;
+}
+
+.abs:hover {
+  transition: 0.5s;
+  background-color: #c95478;
+  transform: scale(1.02);
+}
+
+.abs {
+  position: absolute;
+}
