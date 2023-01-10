@@ -18,7 +18,7 @@ export class ContractComponent extends FormProvider implements OnInit {
     'thirdparty',
     'datasubjectcategory',
     'datacategory',
-    'specialDataCategory',
+    'specialdatacategory',
     'spoc',
     'verify',
   ];
