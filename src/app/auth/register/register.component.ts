@@ -25,25 +25,28 @@ export class RegisterComponent {
   ) {}
 
   ngOnInit(): void {
-    this.registerForm = this.fb.group({
-      firstName: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(3),
-      ]),
-      lastName: new FormControl(''),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.pattern(
-          '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}'
-        ),
-      ]),
-      emailAddress: new FormControl(null, [
-        Validators.required,
-        Validators.email,
-      ]),
-      phoneNumber: new FormControl(null, [Validators.pattern('[- +()0-9]+')]),
-      isAdmin: new FormControl(false),
-    }) as FormGroup;
+    this.registerForm = this.fb.group(
+      {
+        firstName: [null, [Validators.required, Validators.minLength(3)]],
+        lastName: [''],
+        password: [
+          null,
+          [
+            Validators.required,
+            Validators.pattern(
+              '(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}'
+            ),
+          ],
+        ],
+        confirmPassword: ['', Validators.required],
+        emailAddress: [null, [Validators.required, Validators.email]],
+        phoneNumber: [null, [Validators.pattern('[- +()0-9]+')]],
+        isAdmin: [false],
+      },
+      {
+        validator: this.checkIfMatchingPasswords('password', 'confirmPassword'),
+      }
+    ) as FormGroup;
   }
 
   onSubmit(): void {
@@ -54,5 +57,20 @@ export class RegisterComponent {
       this.authService.register(this.registerForm.value).subscribe();
       this.router.navigate(['/']);
     }
+  }
+
+  checkIfMatchingPasswords(
+    passwordKey: string,
+    passwordConfirmationKey: string
+  ) {
+    return (group: FormGroup) => {
+      let passwordInput = group.controls[passwordKey],
+        passwordConfirmationInput = group.controls[passwordConfirmationKey];
+      if (passwordInput.value !== passwordConfirmationInput.value) {
+        return passwordConfirmationInput.setErrors({ notEquivalent: true });
+      } else {
+        return passwordConfirmationInput.setErrors(null);
+      }
+    };
   }
 }

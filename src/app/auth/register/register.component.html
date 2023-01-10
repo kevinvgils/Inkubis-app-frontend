@@ -64,6 +64,23 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Bevestig wachtwoord</label>
+                                        <i class="bi bi-eye" (click)="hide = !hide"></i>
+                                        <input [type]="hide ? 'password' : 'text'" class="form-control"
+                                            id="confirmPassword" formControlName="confirmPassword"
+                                            placeholder="Type hier je wachtwoord" class="form-control" [ngClass]="{
+                                        'is-invalid': registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched
+                                    }" />
+                                        <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched"
+                                            class="invalid-feedback">
+                                            <div *ngIf="registerForm.get('confirmPassword')?.errors!['notEquivalent']">
+                                                Wachtwoorden komen niet overeen
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
                                     <div class="mb-3 ">
                                         <label for="function" class="form-label">Functie</label>
                                         <input type="function" class="form-control" id="function"
