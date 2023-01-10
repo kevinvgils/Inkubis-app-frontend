@@ -15,7 +15,7 @@ export class DataCategoryComponent implements OnInit {
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('datacategory') as FormGroup;
+    this.form = formProvider.getForm().get('category') as FormGroup;
   }
 
   ngOnInit(): void {}

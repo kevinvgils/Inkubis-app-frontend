@@ -241,349 +241,119 @@
                 <label>{{this.form.get(['thirdparty','dataTransfer', 'reasonForDataTransfer'])!.value}}</label>
             </div>
 
-            <!-- datacategory Gegevenscategorie verwerkingsverantwoordelijke -->
-            <h5 class="card-subtitle mb-2">Formulier Gegevenscategorie verwerkingsverantwoordelijke</h5>
+            <!-- datacategory Gegevenscategorie -->
+            <h5 class="card-subtitle mb-2">Formulier Gegevenscategorie</h5>
             <div class="flex">
                 <label>Identificatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'IdentificationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'IdentificationData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Rijksregisternummer</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'nationalRegistryNumber'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'nationalRegistryNumber'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Communicatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'communicationsData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'communicationsData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Relationele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'relationalData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'relationalData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Professionele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'professionalData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'professionalData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Locatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'locationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'locationData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Alle gegevens met betrekking tot de financiële situatie van een betrokkene.</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'financialData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'financialData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Financiële en verzekeringsproducten</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'financialAndInsuranceProducts'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'financialAndInsuranceProducts'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Alle gegevens met betrekking tot stigmatisering of afzondering van de</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'stigmatizationOrIsolationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'stigmatizationOrIsolationData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Levensstijl en gewoonten of consumptiegewoonten</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'lifestyleAndHabits'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'lifestyleAndHabits'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Gebruikersnamen, wachtwoorden en andere inloggegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'loginData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'loginData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Alle gegevens die kunnen worden gebruikt voor (identiteits)fraude</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'identityFraudData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'identityFraudData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Alle gegevens met betrekking tot een bijzondere wettelijke</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Contractuele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'contractualData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'contractualData'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Beeld- of geluidsopname</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'imageOrSoundRecording'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'imageOrSoundRecording'])!.value">Nee</label>
             </div>
             <div class="flex">
                 <label>Een andere categorie:</label>
-                <label *ngIf="this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="this.form.get(['category','datacategory',
                 'otherCategory'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyResponsibleForDataProcessing',
+                <label *ngIf="!this.form.get(['category','datacategory',
                 'otherCategory'])!.value">Nee</label>
-            </div>
-
-            <!-- datacategory Gegevenscategorie verwerker -->
-            <h5 class="card-subtitle mb-2">Formulier Gegevenscategorie verwerker</h5>
-            <div class="flex">
-                <label>Identificatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'IdentificationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'IdentificationData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Rijksregisternummer</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'nationalRegistryNumber'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'nationalRegistryNumber'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Communicatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'communicationsData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'communicationsData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Relationele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'relationalData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'relationalData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Professionele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'professionalData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'professionalData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Locatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'locationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'locationData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens met betrekking tot de financiële situatie van een betrokkene.</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'financialData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'financialData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Financiële en verzekeringsproducten</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'financialAndInsuranceProducts'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'financialAndInsuranceProducts'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens met betrekking tot stigmatisering of afzondering van de</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'stigmatizationOrIsolationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'stigmatizationOrIsolationData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Levensstijl en gewoonten of consumptiegewoonten</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'lifestyleAndHabits'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'lifestyleAndHabits'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Gebruikersnamen, wachtwoorden en andere inloggegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'loginData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'loginData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens die kunnen worden gebruikt voor (identiteits)fraude</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'identityFraudData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'identityFraudData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens met betrekking tot een bijzondere wettelijke</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Contractuele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'contractualData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'contractualData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Beeld- of geluidsopname</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'imageOrSoundRecording'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'imageOrSoundRecording'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Een andere categorie:</label>
-                <label *ngIf="this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'otherCategory'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','companyExecutingDataProcessing',
-                            'otherCategory'])!.value">Nee</label>
-            </div>
-
-            <!-- datacategory Gegevenscategorie speciale verwerker -->
-            <h5 class="card-subtitle mb-2">Formulier Gegevenscategorie speciale verwerker</h5>
-            <div class="flex">
-                <label>Identificatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'IdentificationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'IdentificationData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Rijksregisternummer</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'nationalRegistryNumber'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'nationalRegistryNumber'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Communicatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'communicationsData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'communicationsData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Relationele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'relationalData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'relationalData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Professionele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'professionalData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'professionalData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Locatiegegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'locationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'locationData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens met betrekking tot de financiële situatie van een betrokkene.</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'financialData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'financialData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Financiële en verzekeringsproducten</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'financialAndInsuranceProducts'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'financialAndInsuranceProducts'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens met betrekking tot stigmatisering of afzondering van de</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'stigmatizationOrIsolationData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'stigmatizationOrIsolationData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Levensstijl en gewoonten of consumptiegewoonten</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'lifestyleAndHabits'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'lifestyleAndHabits'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Gebruikersnamen, wachtwoorden en andere inloggegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'loginData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'loginData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens die kunnen worden gebruikt voor (identiteits)fraude</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'identityFraudData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'identityFraudData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Alle gegevens met betrekking tot een bijzondere wettelijke</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Contractuele gegevens</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'contractualData'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'contractualData'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Beeld- of geluidsopname</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'imageOrSoundRecording'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'imageOrSoundRecording'])!.value">Nee</label>
-            </div>
-            <div class="flex">
-                <label>Een andere categorie:</label>
-                <label *ngIf="this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'otherCategory'])!.value">Ja</label>
-                <label *ngIf="!this.form.get(['datacategory','SpecialCompanyExecutingDataProcessing',
-                                 'otherCategory'])!.value">Nee</label>
             </div>
 
             <!-- spoc Verwerkingsverantwoordelijke -->
