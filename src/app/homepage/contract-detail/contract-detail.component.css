@@ -18,3 +18,10 @@
       height: inherit;
       overflow-y: scroll;
     }
+    .card-subtitle{
+      margin-top: 30px
+    }
+    .buttonToRight{
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
