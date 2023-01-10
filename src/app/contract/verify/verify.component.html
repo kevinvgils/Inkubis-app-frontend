@@ -241,8 +241,8 @@
                 <label>{{this.form.get(['thirdparty','dataTransfer', 'reasonForDataTransfer'])!.value}}</label>
             </div>
 
-            <!-- datacategory Gegevenscategorie -->
-            <h5 class="card-subtitle mb-2">Formulier Gegevenscategorie</h5>
+            <!-- datacategory Categorieën van gegevens -->
+            <h5 class="card-subtitle mb-2">Formulier Categorieën van gegevens</h5>
             <div class="flex">
                 <label>Identificatiegegevens</label>
                 <label *ngIf="this.form.get(['category','dataCategory',
@@ -354,6 +354,34 @@
                 'otherCategory'])!.value">Ja</label>
                 <label *ngIf="!this.form.get(['category','dataCategory',
                 'otherCategory'])!.value">Nee</label>
+            </div>
+
+            <!-- datacategory Speciale categorieën van gegevens ('Gevoelige gegevens') -->
+            <h5 class="card-subtitle mb-2">Formulier Speciale categorieën van gegevens ('Gevoelige gegevens')</h5>
+            <div class="flex">
+                <label>Alle gegevens waaruit de raciale of etnische afkomst, politieke opvattingen,
+                    religieuze of filosofische overtuiging of lidmaatschap van de vakbond blijkt</label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'racialOrEthnicData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'racialOrEthnicData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Genetische gegevens, biometrische gegevens met het oog op het uniek identificeren van een
+                    natuurlijke persoon, gegevens betreffende de gezondheid of het seksuele leven of seksuele geaardheid
+                </label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'geneticData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'geneticData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>De strafregisters en persoonlijke gegevens over onwettig of belemmerend gedrag met betrekking tot
+                    een opgelegd verbod op dat gedrag</label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'trafficRecordsAndPersonalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'trafficRecordsAndPersonalData'])!.value">Nee</label>
             </div>
 
             <!-- spoc Verwerkingsverantwoordelijke -->

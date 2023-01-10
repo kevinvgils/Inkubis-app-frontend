@@ -108,7 +108,9 @@ export class ContractComponent extends FormProvider implements OnInit {
         otherCategory: new FormControl(false),
       }),
       specialDataCategory: new FormGroup({
-        dummy: new FormControl(false),
+        racialOrEthnicData: new FormControl(false),
+        geneticData: new FormControl(false),
+        trafficRecordsAndPersonalData: new FormControl(false),
       }),
     }),
 
