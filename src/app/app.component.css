@@ -55,6 +55,7 @@ header {
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
+    cursor: pointer;
   }
   .navWrap .navBar > li:hover > * {
     color: #ffff00 !important;
