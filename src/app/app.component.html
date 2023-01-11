@@ -3,11 +3,26 @@
   <div class="content">
     <a routerLink=""><img src="../assets/img/brand-logo.svg" alt="" class="logo"></a>
     <div class="navWrap">
-      <ul *ngIf="loggedInUser$ | async as user">
+      <ul class="navBar" *ngIf="loggedInUser$ | async as user">
         <li><a routerLink="/contract">Contract aanmaken</a></li>
-        <li><div>Admin</div></li>
-        <li><a routerLink="/register">Gebruiker registreren</a></li>
-        <li><button class="logout yellow" (click)="logout()"></button></li>
+        <li class="dropdownWrap">
+          <div>Admin</div>
+          <div class="arrow">></div>
+          <ul class="dropdown">
+            <li><a routerLink="/register">Gebruiker registreren</a></li>
+            <li><a routerLink="/register">Gebruiker registreren</a></li>
+          </ul>
+        </li>
+        
+        <li>
+          <button class="logout yellow" ></button>
+          <ul class="dropdown">
+            <li><div>{{ user.emailAddress }}</div></li>
+            <li><a routerLink="/register">Gegevens aanpassen</a></li>
+            <li><a (click)="logout()">Uitloggen</a></li>
+          </ul>
+          
+        </li>
       </ul>
     </div>
   </div>
