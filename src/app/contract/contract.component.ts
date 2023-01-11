@@ -59,10 +59,6 @@ export class ContractComponent extends FormProvider implements OnInit {
       dateSigned: new FormControl(''),
       citySigned: new FormControl(''),
       processingPurposes: new FormControl(''),
-      certifications: new FormControl(''),
-      achievedCertifications: new FormControl(''),
-      overhauls: new FormControl(''),
-
     }),
 
     contractsignees: new FormGroup({
@@ -134,7 +130,7 @@ export class ContractComponent extends FormProvider implements OnInit {
         name: new FormControl(''),
         formalCity: new FormControl(''),
         address: new FormControl(''),
-        typeOfProcessingForPersonalData: new FormControl(''),
+        typeProcessingPersonalData: new FormControl(''),
         jobDescription: new FormControl(''),
       }),
 
@@ -156,19 +152,19 @@ export class ContractComponent extends FormProvider implements OnInit {
 
     spoc: new FormGroup({
       CompanyResponsibleForDataProcessing: new FormGroup({
-        name: new FormControl(''),
-        jobDescription: new FormControl(''),
-        email: new FormControl(''),
-        phone: new FormControl(''),
-        mobile: new FormControl(''),
+        nameE: new FormControl(''),
+        jobDescE: new FormControl(''),
+        emailE: new FormControl(''),
+        phoneE: new FormControl(''),
+        mobileE: new FormControl(''),
       }),
 
       CompanyExecutingDataProcessing: new FormGroup({
-        name: new FormControl(''),
-        jobDescription: new FormControl(''),
-        email: new FormControl(''),
-        phone: new FormControl(''),
-        mobile: new FormControl(''),
+        nameR: new FormControl(''),
+        jobDescR: new FormControl(''),
+        emailR: new FormControl(''),
+        phoneR: new FormControl(''),
+        mobileR: new FormControl(''),
       }),
     }),
   });
