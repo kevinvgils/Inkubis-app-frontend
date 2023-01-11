@@ -1,20 +1,20 @@
 <div class="card formHeader">
     <div class="card-body">
         <h5 class="preTitle">Contract aanmaken</h5>
-        <h2 class="card-subtitle ">Contract informatie</h2>
+        <h2 class="card-subtitle">Contract informatie</h2>
         <p class="card-text">Algemene informatie over het contract
-             waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
         <hr>
     </div>
 </div>
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
-    
+
     <div formGroupName="companyResponsibleForDataProcessing" class="row">
         <h2>Verwerkingsverantwoordelijke</h2>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">(bedrijfs-) naam</h5>
+                <h5 class="card-subtitle">Bedrijfsnaam</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -23,25 +23,27 @@
         </div>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">Ondernemingsnummer</h5>
+                <h5 class="card-subtitle">Ondernemingsnummer</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="companyNumber" name="companyNumber" formControlName="companyNumber">
+                <input class="form-tekst-input" type="text" id="companyNumber" name="companyNumber"
+                    formControlName="companyNumber">
             </div>
         </div>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">Nederlandse wetgeving</h5>
+                <h5 class="card-subtitle">Nederlandse wetgeving</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-check-input" type="checkbox" id="legalCountry" name="legalCountry" formControlName="legalCountry">
+                <input class="form-check-input" type="checkbox" id="legalCountry" name="legalCountry"
+                    formControlName="legalCountry">
             </div>
         </div>
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Adres</h5>
+                <h5 class="card-subtitle">Adres</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -50,7 +52,7 @@
         </div>
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Postcode</h5>
+                <h5 class="card-subtitle">Postcode</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -59,7 +61,7 @@
         </div>
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Stad</h5>
+                <h5 class="card-subtitle">Stad</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -68,11 +70,12 @@
         </div>
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Land</h5>
+                <h5 class="card-subtitle">Land</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="countryOfResidence" name="countryOfResidence" formControlName="countryOfResidence">
+                <input class="form-tekst-input" type="text" id="countryOfResidence" name="countryOfResidence"
+                    formControlName="countryOfResidence">
             </div>
         </div>
     </div>
@@ -81,7 +84,7 @@
         <h2>Verwerker</h2>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">(bedrijfs-) naam</h5>
+                <h5 class="card-subtitle">Bedrijfsnaam</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -90,26 +93,28 @@
         </div>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">Ondernemingsnummer</h5>
+                <h5 class="card-subtitle">Ondernemingsnummer</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="companyNumber" name="companyNumber" formControlName="companyNumber">
+                <input class="form-tekst-input" type="text" id="companyNumber" name="companyNumber"
+                    formControlName="companyNumber">
             </div>
         </div>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">Nederlandse wetgeving</h5>
+                <h5 class="card-subtitle">Nederlandse wetgeving</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-check-input" type="checkbox" id="legalCountry" name="legalCountry" formControlName="legalCountry">
+                <input class="form-check-input" type="checkbox" id="legalCountry" name="legalCountry"
+                    formControlName="legalCountry">
             </div>
         </div>
 
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Adres</h5>
+                <h5 class="card-subtitle">Adres</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -119,7 +124,7 @@
 
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Postcode</h5>
+                <h5 class="card-subtitle">Postcode</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -129,7 +134,7 @@
 
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">city</h5>
+                <h5 class="card-subtitle">Stad</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
@@ -139,11 +144,12 @@
 
         <div class="card col-6">
             <div class="card-body">
-                <h5 class="card-subtitle ">Land</h5>
+                <h5 class="card-subtitle">Land</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="countryOfResidence" name="countryOfResidence" formControlName="countryOfResidence">
+                <input class="form-tekst-input" type="text" id="countryOfResidence" name="countryOfResidence"
+                    formControlName="countryOfResidence">
             </div>
         </div>
     </div>
@@ -152,23 +158,25 @@
         <h2>Extra informatie</h2>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">Plaats ondertekening</h5>
+                <h5 class="card-subtitle">Plaats ondertekening</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="citySigned" name="citySigned" formControlName="citySigned">
+                <input class="form-tekst-input" type="text" id="citySigned" name="citySigned"
+                    formControlName="citySigned">
             </div>
         </div>
         <div class="card col-12">
             <div class="card-body">
-                <h5 class="card-subtitle ">Datum ondertekening</h5>
+                <h5 class="card-subtitle">Datum ondertekening</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="Date" id="dateSigned" name="dateSigned" formControlName="dateSigned">
+                <input class="form-tekst-input" type="Date" id="dateSigned" name="dateSigned"
+                    formControlName="dateSigned">
             </div>
         </div>
     </div>
 
-    <button class="purple" type="submit">Next</button>
+    <button class="purple" type="submit">Volgende</button>
 </form>

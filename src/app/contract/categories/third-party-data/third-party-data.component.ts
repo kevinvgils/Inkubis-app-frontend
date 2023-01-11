@@ -25,22 +25,19 @@ import { FormProvider } from '../../FormProvider';
 @Component({
   selector: 'app-third-party-data',
   templateUrl: './third-party-data.component.html',
-  styleUrls: ['./third-party-data.component.css']
+  styleUrls: ['./third-party-data.component.css'],
 })
 export class ThirdPartyDataComponent implements OnInit {
-
   form: FormGroup;
 
   constructor(private formProvider: FormProvider, private router: Router) {
     this.form = formProvider.getForm().get('thirdparty') as FormGroup;
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit(){
     console.log(JSON.stringify(this.form.value));
-    this.router.navigate(['contract/spoc']);
+    this.router.navigate(['contract/datasubjectcategory']);
   }
-
 }

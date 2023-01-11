@@ -9,6 +9,9 @@ import { SinglePointOfContactDataComponent } from './categories/single-point-of-
 import { CertificationsComponent } from './categories/certifications/certifications.component';
 import { DataProcessingPurposesComponent } from './categories/data-processing-purposes/data-processing-purposes.component';
 import { VerifyComponent } from './verify/verify.component';
+import { DataCategoryComponent } from './categories/data-category/data-category.component';
+import { DataSubjectCategoryComponent } from './categories/data-subject-category/data-subject-category.component';
+import { SpecialDataCategoryComponent } from './categories/special-data-category/special-data-category.component';
 
 const routes: Routes = [
   {
@@ -23,6 +26,9 @@ const routes: Routes = [
         path: 'processingpurposes',
         component: DataProcessingPurposesComponent,
       },
+      { path: 'datasubjectcategory', component: DataSubjectCategoryComponent },
+      { path: 'datacategory', component: DataCategoryComponent },
+      { path: 'specialdatacategory', component: SpecialDataCategoryComponent },
       { path: 'certification', component: CertificationsComponent },
       { path: 'thirdparty', component: ThirdPartyDataComponent },
       { path: 'spoc', component: SinglePointOfContactDataComponent },

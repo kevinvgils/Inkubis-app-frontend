@@ -3,13 +3,13 @@
         <h5 class="preTitle">Contract aanmaken</h5>
         <h2 class="card-subtitle ">Contract informatie</h2>
         <p class="card-text">Algemene informatie over het contract
-             waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
         <hr>
     </div>
 </div>
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
-    
+
     <div formGroupName="CompanyResponsibleForDataProcessing" class="row">
         <h2>Verwerkingsverantwoordelijke</h2>
         <div class="card col-12">
@@ -27,7 +27,8 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                    formControlName="jobDescription">
             </div>
         </div>
 
@@ -50,7 +51,7 @@
                 <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="phone">
             </div>
         </div>
-        
+
         <div class="card col-6">
             <div class="card-body">
                 <h5 class="card-subtitle ">Mobiele telefoon</h5>
@@ -79,7 +80,8 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                    formControlName="jobDescription">
             </div>
         </div>
 
@@ -102,7 +104,7 @@
                 <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="phone">
             </div>
         </div>
-        
+
         <div class="card col-6">
             <div class="card-body">
                 <h5 class="card-subtitle ">Mobiele telefoon</h5>
@@ -114,5 +116,5 @@
         </div>
     </div>
 
-    <button class="purple" type="submit">Next</button>
+    <button class="purple" type="submit">Volgende</button>
 </form>
