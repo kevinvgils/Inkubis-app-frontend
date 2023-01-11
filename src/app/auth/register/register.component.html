@@ -82,9 +82,11 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="mb-3 ">
-                                        <label for="function" class="form-label">Functie</label>
-                                        <input type="function" class="form-control" id="function"
-                                            placeholder="Type hier je functie" />
+                                        <label for="function" class="form-label">Werkt voor</label>
+                                        <mat-select class="form-control" formControlName="companies" multiple>
+                                            <mat-option *ngFor="let company of allCompanies"
+                                                [value]="company.id">{{company.name}}</mat-option>
+                                        </mat-select>
                                     </div>
                                 </div>
                                 <div class="col-6">
