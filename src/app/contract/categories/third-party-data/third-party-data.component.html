@@ -3,13 +3,13 @@
         <h5 class="preTitle">Contract aanmaken</h5>
         <h2 class="card-subtitle ">Contract informatie</h2>
         <p class="card-text">Algemene informatie over het contract
-             waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
         <hr>
     </div>
 </div>
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
-    
+
     <div formGroupName="externalSubEmployeeExecutingDataProcessing" class="row">
         <h2>Externe subverwerkers</h2>
         <div class="card col-12">
@@ -27,7 +27,8 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="formalCity" name="formalCity" formControlName="formalCity">
+                <input class="form-tekst-input" type="text" id="formalCity" name="formalCity"
+                    formControlName="formalCity">
             </div>
         </div>
 
@@ -47,17 +48,19 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="typeOfProcessingForPersonalData" name="typeOfProcessingForPersonalData" formControlName="typeOfProcessingForPersonalData">
+                <input class="form-tekst-input" type="text" id="typeOfProcessingForPersonalData"
+                    name="typeOfProcessingForPersonalData" formControlName="typeOfProcessingForPersonalData">
             </div>
         </div>
-        
+
         <div class="card col-12">
             <div class="card-body">
                 <h5 class="card-subtitle ">Dienstomschrijving voor verwerker</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                    formControlName="jobDescription">
             </div>
         </div>
     </div>
@@ -79,7 +82,8 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="formalCity" name="formalCity" formControlName="formalCity">
+                <input class="form-tekst-input" type="text" id="formalCity" name="formalCity"
+                    formControlName="formalCity">
             </div>
         </div>
 
@@ -99,17 +103,19 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="descriptionOfSupply" name="descriptionOfSupply" formControlName="descriptionOfSupply">
+                <input class="form-tekst-input" type="text" id="descriptionOfSupply" name="descriptionOfSupply"
+                    formControlName="descriptionOfSupply">
             </div>
         </div>
-        
+
         <div class="card col-12">
             <div class="card-body">
                 <h5 class="card-subtitle ">Eventueel link naar de voorwaarden</h5>
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="linkToLegalTerms" name="linkToLegalTerms" formControlName="linkToLegalTerms">
+                <input class="form-tekst-input" type="text" id="linkToLegalTerms" name="linkToLegalTerms"
+                    formControlName="linkToLegalTerms">
             </div>
         </div>
     </div>
@@ -122,7 +128,8 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="nameOfExternalSubEmployee" name="nameOfExternalSubEmployee" formControlName="nameOfExternalSubEmployee">
+                <input class="form-tekst-input" type="text" id="nameOfExternalSubEmployee"
+                    name="nameOfExternalSubEmployee" formControlName="nameOfExternalSubEmployee">
             </div>
         </div>
         <div class="card col-12">
@@ -131,7 +138,8 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="legalCountry" name="legalCountry" formControlName="legalCountry">
+                <input class="form-tekst-input" type="text" id="legalCountry" name="legalCountry"
+                    formControlName="legalCountry">
             </div>
         </div>
 
@@ -141,10 +149,11 @@
                 <p class="card-text"></p>
             </div>
             <div class="inputs">
-                <input class="form-tekst-input" type="text" id="reasonForDataTransfer" name="reasonForDataTransfer" formControlName="reasonForDataTransfer">
+                <input class="form-tekst-input" type="text" id="reasonForDataTransfer" name="reasonForDataTransfer"
+                    formControlName="reasonForDataTransfer">
             </div>
         </div>
     </div>
 
-    <button class="purple" type="submit">Next</button>
+    <button class="purple" type="submit">Volgende</button>
 </form>

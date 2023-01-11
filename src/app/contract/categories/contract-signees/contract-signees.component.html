@@ -3,14 +3,14 @@
         <h5 class="preTitle">Contract aanmaken</h5>
         <h2 class="card-subtitle ">Contract informatie</h2>
         <p class="card-text">Algemene informatie over het contract
-             waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
         <hr>
     </div>
 </div>
 
 <form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
-    
-    <div formGroupName="companyResponsibleForDataProcessing" >
+
+    <div formGroupName="companyResponsibleForDataProcessing">
         <h2>Verwerkingsverantwoordelijke</h2>
 
         <div formGroupName="member1" class="row">
@@ -29,7 +29,8 @@
                     <p class="card-text"></p>
                 </div>
                 <div class="inputs">
-                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                        formControlName="jobDescription">
                 </div>
             </div>
         </div>
@@ -50,11 +51,12 @@
                     <p class="card-text"></p>
                 </div>
                 <div class="inputs">
-                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                        formControlName="jobDescription">
                 </div>
             </div>
         </div>
-         
+
     </div>
 
     <div formGroupName="companyExecutingDataProcessing" class="row">
@@ -76,7 +78,8 @@
                     <p class="card-text"></p>
                 </div>
                 <div class="inputs">
-                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                        formControlName="jobDescription">
                 </div>
             </div>
         </div>
@@ -97,12 +100,13 @@
                     <p class="card-text"></p>
                 </div>
                 <div class="inputs">
-                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobDescription">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                        formControlName="jobDescription">
                 </div>
             </div>
         </div>
     </div>
 
 
-    <button class="purple" type="submit">Next</button>
+    <button class="purple" type="submit">Volgende</button>
 </form>
