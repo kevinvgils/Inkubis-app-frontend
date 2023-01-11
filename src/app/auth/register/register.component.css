@@ -39,3 +39,11 @@ input {
 .bi-eye {
   margin-left: 10px;
 }
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: unset;
+}
+
+::ng-deep .mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
+  background-color: #53042f;
+}

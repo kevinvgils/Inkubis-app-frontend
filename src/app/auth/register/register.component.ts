@@ -63,7 +63,9 @@ export class RegisterComponent {
       this.registerForm.value.emailAddress != '' &&
       this.registerForm.value.password != ''
     ) {
-      this.authService.register(this.registerForm.value).subscribe();
+      this.authService.register(this.registerForm.value).subscribe((x) => {
+        console.log(x);
+      });
       this.router.navigate(['/']);
     }
   }
