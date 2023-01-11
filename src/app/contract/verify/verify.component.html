@@ -14,7 +14,7 @@
             <!-- Verwerkingsverantwoordelijke -->
             <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
             <div class="flex">
-                <label>(bedrijfs-) naam</label>
+                <label>Bedrijfsnaam</label>
                 <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
                     'name'])!.value}}</label>
             </div>
@@ -54,7 +54,7 @@
             <!-- Verwerker -->
             <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
             <div class="flex">
-                <label>(bedrijfs-) naam</label>
+                <label>Bedrijfsnaam</label>
                 <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
                     'name'])!.value}}</label>
             </div>
@@ -239,6 +239,201 @@
             <div class="flex">
                 <label>Basis van doorgifte</label>
                 <label>{{this.form.get(['thirdparty','dataTransfer', 'reasonForDataTransfer'])!.value}}</label>
+            </div>
+
+            <!-- datacategory Categorieën van betrokkenen -->
+            <h5 class="card-subtitle mb-2">Formulier Categorieën van betrokkenen</h5>
+            <div class="flex">
+                <label>(potentiële) / (ex)klanten</label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialOrFormerCustomers'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialOrFormerCustomers'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>aanvragers en (ex) werknemers, stagiaires </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'applicantsAndFormerEmployeesInterns'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'applicantsAndFormerEmployeesInterns'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / zelfstandige consultants </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialIndependentAdvisors'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialIndependentAdvisors'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / (ex)leveranciers </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialFormerSuppliers'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialFormerSuppliers'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / (ex) zakelijke partners </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialBusinessPartners'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialBusinessPartners'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Minderjarigen (onder de leeftijd van 16) </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'minors'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'minors'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Een andere categorie </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'otherCategory'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'otherCategory'])!.value">Nee</label>
+            </div>
+
+            <!-- datacategory Categorieën van gegevens -->
+            <h5 class="card-subtitle mb-2">Formulier Categorieën van gegevens</h5>
+            <div class="flex">
+                <label>Identificatiegegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'identificationData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'identificationData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Rijksregisternummer</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'nationalRegistryNumber'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'nationalRegistryNumber'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Communicatiegegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'communicationsData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'communicationsData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Relationele gegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'relationalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'relationalData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Professionele gegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'professionalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'professionalData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Locatiegegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'locationData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'locationData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens met betrekking tot de financiële situatie van een betrokkene.</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'financialData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'financialData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Financiële en verzekeringsproducten</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'financialAndInsuranceProducts'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'financialAndInsuranceProducts'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens met betrekking tot stigmatisering of afzondering van de</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'stigmatizationOrIsolationData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'stigmatizationOrIsolationData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Levensstijl en gewoonten of consumptiegewoonten</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'lifestyleAndHabits'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'lifestyleAndHabits'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Gebruikersnamen, wachtwoorden en andere inloggegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'loginData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'loginData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens die kunnen worden gebruikt voor (identiteits)fraude</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'identityFraudData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'identityFraudData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens met betrekking tot een bijzondere wettelijke</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Contractuele gegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'contractualData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'contractualData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Beeld- of geluidsopname</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'imageOrSoundRecording'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'imageOrSoundRecording'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Een andere categorie:</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'otherCategory'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'otherCategory'])!.value">Nee</label>
+            </div>
+
+            <!-- datacategory Speciale categorieën van gegevens ('Gevoelige gegevens') -->
+            <h5 class="card-subtitle mb-2">Formulier Speciale categorieën van gegevens ('Gevoelige gegevens')</h5>
+            <div class="flex">
+                <label>Alle gegevens waaruit de raciale of etnische afkomst, politieke opvattingen,
+                    religieuze of filosofische overtuiging of lidmaatschap van de vakbond blijkt</label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'racialOrEthnicData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'racialOrEthnicData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Genetische gegevens, biometrische gegevens met het oog op het uniek identificeren van een
+                    natuurlijke persoon, gegevens betreffende de gezondheid of het seksuele leven of seksuele geaardheid
+                </label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'geneticData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'geneticData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>De strafregisters en persoonlijke gegevens over onwettig of belemmerend gedrag met betrekking tot
+                    een opgelegd verbod op dat gedrag</label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'trafficRecordsAndPersonalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'trafficRecordsAndPersonalData'])!.value">Nee</label>
             </div>
 
             <!-- spoc Verwerkingsverantwoordelijke -->

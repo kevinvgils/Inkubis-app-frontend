@@ -16,9 +16,24 @@ export class ContractComponent extends FormProvider implements OnInit {
     'processingpurposes',
     'certification',
     'thirdparty',
+    'datasubjectcategory',
+    'datacategory',
+    'specialdatacategory',
     'spoc',
     'verify',
   ];
+  // components: string[] = [
+  //   'Contract info',
+  //   'Contract ondertekenaars',
+  //   'Verwerkingsdoeleinden',
+  //   'Certificatie',
+  //   'Derde partij',
+  //   'Categorie betrokkenen',
+  //   'Gegevenscategorie',
+  //   'Speciale gegevenscategorie',
+  //   'SPOC',
+  //   'Gegevenscontrole',
+  // ];
   currentComp!: string;
 
   contractForm = new FormGroup({
@@ -72,12 +87,47 @@ export class ContractComponent extends FormProvider implements OnInit {
         }),
       }),
     }),
+    category: new FormGroup({
+      dataSubjectCategory: new FormGroup({
+        potentialOrFormerCustomers: new FormControl(false),
+        applicantsAndFormerEmployeesInterns: new FormControl(false),
+        potentialIndependentAdvisors: new FormControl(false),
+        potentialFormerSuppliers: new FormControl(false),
+        potentialBusinessPartners: new FormControl(false),
+        minors: new FormControl(false),
+        otherCategory: new FormControl(false),
+      }),
+      dataCategory: new FormGroup({
+        identificationData: new FormControl(false),
+        nationalRegistryNumber: new FormControl(false),
+        communicationsData: new FormControl(false),
+        relationalData: new FormControl(false),
+        professionalData: new FormControl(false),
+        locationData: new FormControl(false),
+        financialData: new FormControl(false),
+        financialAndInsuranceProducts: new FormControl(false),
+        stigmatizationOrIsolationData: new FormControl(false),
+        lifestyleAndHabits: new FormControl(false),
+        loginData: new FormControl(false),
+        identityFraudData: new FormControl(false),
+        specialLegalDutyOfConfidentialityAndProfessionalSecrecyData:
+          new FormControl(false),
+        contractualData: new FormControl(false),
+        imageOrSoundRecording: new FormControl(false),
+        otherCategory: new FormControl(false),
+      }),
+      specialDataCategory: new FormGroup({
+        racialOrEthnicData: new FormControl(false),
+        geneticData: new FormControl(false),
+        trafficRecordsAndPersonalData: new FormControl(false),
+      }),
+    }),
 
-    
-
-    
-      
-    
+    certification: new FormGroup({
+      certifications: new FormControl(''),
+      achievedCertifications: new FormControl(''),
+      overhauls: new FormControl(''),
+    }),
 
     thirdparty: new FormGroup({
       externalSubEmployeeExecutingDataProcessing: new FormGroup({

@@ -1,1 +1,93 @@
-<p>data-subject-category works!</p>
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle">Contract informatie</h2>
+        <p class="card-text">Algemene informatie over het contract
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="dataSubjectCategory" class="row">
+        <h2>Categorieën van betrokkenen</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">(potentiële) / (ex)klanten</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="potentialOrFormerCustomers"
+                    name="potentialOrFormerCustomers" formControlName="potentialOrFormerCustomers">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">aanvragers en (ex) werknemers, stagiaires
+                </h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="applicantsAndFormerEmployeesInterns"
+                    name="applicantsAndFormerEmployeesInterns" formControlName="applicantsAndFormerEmployeesInterns">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">(potentiële) / zelfstandige consultants
+                </h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="potentialIndependentAdvisors"
+                    name="potentialIndependentAdvisors" formControlName="potentialIndependentAdvisors">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">(potentiële) / (ex)leveranciers
+                </h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="potentialFormerSuppliers"
+                    name="potentialFormerSuppliers" formControlName="potentialFormerSuppliers">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">(potentiële) / (ex) zakelijke partners
+                </h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="potentialBusinessPartners"
+                    name="potentialBusinessPartners" formControlName="potentialBusinessPartners">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">Minderjarigen (onder de leeftijd van 16)
+                </h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="minors" name="minors" formControlName="minors">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">Een andere categorie</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="otherCategory" name="otherCategory"
+                    formControlName="otherCategory">
+            </div>
+        </div>
+    </div>
+
+    <button class="purple" type="submit">Volgende</button>
+</form>
