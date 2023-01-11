@@ -35,6 +35,7 @@ header {
   display: flex;
   gap: 40px;
 }
+/* LI ITSELF */
 .navWrap li {
   position: relative;
   height: 100%;
@@ -43,16 +44,30 @@ header {
 }
 .navWrap li:hover {
   border-bottom: #ffff00 2px solid;
+  color: #ffff00 !important;
 }
-.navWrap ul li a {
+/* CHILDREN OF LI */
+.navWrap ul li > *{
   color: #fff;
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
 }
-.navWrap li:hover a {
+.navWrap li:hover > * {
   color: #ffff00 !important;
   margin-bottom: -2px;
+}
+
+/* LOGOUT BUTTON OF LI */
+.yellow.logout{
+  background-image: url(/assets/img/sales.png);
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+.yellow.logout::after{
+  content: "";
 }
 
 main {
