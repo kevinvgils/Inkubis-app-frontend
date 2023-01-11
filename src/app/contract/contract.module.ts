@@ -4,8 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ContractRoutingModule } from './contract-routing.module';
 
 import { ContractComponent } from './contract.component';
-import { FirstPartComponent } from './first-part/first-part.component';
-import { SecondPartComponent } from './second-part/second-part.component';
 import { VerifyComponent } from './verify/verify.component';
 import { ContractSigneesComponent } from './categories/contract-signees/contract-signees.component';
 import { ContractInfoComponent } from './categories/contract-info/contract-info.component';
@@ -21,8 +19,6 @@ import { SinglePointOfContactDataComponent } from './categories/single-point-of-
   declarations: [
     ContractSigneesComponent,
     ContractComponent,
-    FirstPartComponent,
-    SecondPartComponent,
     VerifyComponent,
     ContractInfoComponent,
     DataProcessingPurposesComponent,
