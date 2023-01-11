@@ -53,22 +53,22 @@ export class ContractComponent extends FormProvider implements OnInit {
     contractsignees: new FormGroup({
       companyResponsibleForDataProcessing: new FormGroup({
         member1: new FormGroup({
-          name: new FormControl(''),
-          jobDescription: new FormControl(''),
+          nameEmployee1ResponsibleForDP: new FormControl(''),
+          jobEmployee1ResponsibleForDP: new FormControl(''),
         }),
         member2: new FormGroup({
-          name: new FormControl(''),
-          jobDescription: new FormControl(''),
+          nameEmployee2ResponsibleForDP: new FormControl(''),
+          jobEmployee2ResponsibleForDP: new FormControl(''),
         }),
       }),
       companyExecutingDataProcessing: new FormGroup({
         member1: new FormGroup({
-          name: new FormControl(''),
-          jobDescription: new FormControl(''),
+          nameEmployee1ExecutingDP: new FormControl(''),
+          jobEmployee1ExecutingDP: new FormControl(''),
         }),
         member2: new FormGroup({
-          name: new FormControl(''),
-          jobDescription: new FormControl(''),
+          nameEmployee2ExecutingDP: new FormControl(''),
+          jobEmployee2ExecutingDP: new FormControl(''),
         }),
       }),
     }),
