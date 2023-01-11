@@ -84,7 +84,7 @@
                                     <div class="mb-3 ">
                                         <label for="function" class="form-label">Werkt voor</label>
                                         <mat-select class="form-control" formControlName="companies"
-                                            placeholder="Type hier je wachtwoord" multiple>
+                                            placeholder="Selecteer hier een bedrijf" multiple>
                                             <mat-option *ngFor="let company of allCompanies"
                                                 [value]="company.id">{{company.name}}</mat-option>
                                         </mat-select>
