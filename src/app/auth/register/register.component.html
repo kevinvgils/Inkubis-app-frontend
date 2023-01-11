@@ -19,7 +19,7 @@
                                             'is-invalid': registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched
                                         }" />
                                         <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched"
-                                            class="invalid-feedback">
+                                            class="text-danger">
                                             <div *ngIf="registerForm.get('firstName')?.errors!['required']">
                                                 Voornaam is verplicht
                                             </div>
@@ -51,7 +51,7 @@
                                         'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched
                                     }" />
                                         <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched"
-                                            class="invalid-feedback">
+                                            class="text-danger">
                                             <div *ngIf="registerForm.get('password')?.errors!['required']">
                                                 Wachtwoord is verplicht
                                             </div>
@@ -73,7 +73,7 @@
                                         'is-invalid': registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched
                                     }" />
                                         <div *ngIf="registerForm.get('confirmPassword')?.invalid && registerForm.get('confirmPassword')?.touched"
-                                            class="invalid-feedback">
+                                            class="text-danger">
                                             <div *ngIf="registerForm.get('confirmPassword')?.errors!['notEquivalent']">
                                                 Wachtwoorden komen niet overeen
                                             </div>
@@ -96,7 +96,7 @@
                                             'is-invalid': registerForm.get('emailAddress')?.invalid && registerForm.get('emailAddress')?.touched
                                         }" />
                                         <div *ngIf="registerForm.get('emailAddress')?.invalid && registerForm.get('emailAddress')?.touched"
-                                            class="invalid-feedback">
+                                            class="text-danger">
                                             <div *ngIf="registerForm.get('emailAddress')?.errors!['required']">
                                                 E-mailadres is verplicht
                                             </div>
@@ -115,7 +115,7 @@
                                         'is-invalid': registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched
                                     }" />
                                         <div *ngIf="registerForm.get('phoneNumber')?.invalid && registerForm.get('phoneNumber')?.touched"
-                                            class="invalid-feedback">
+                                            class="text-danger">
                                             <div *ngIf="registerForm.get('phoneNumber')?.errors!['pattern']">
                                                 Telefoonnummer moet een geldig telefoonnummer zijn.
                                             </div>
