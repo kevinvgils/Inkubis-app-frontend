@@ -47,3 +47,13 @@ input {
 ::ng-deep .mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
   background-color: #53042f;
 }
+
+.mat-select {
+  border-radius: 0;
+  border-color: black;
+  padding: 18px;
+}
+
+::ng-deep .mat-select-placeholder {
+  color: #6c757d;
+}
