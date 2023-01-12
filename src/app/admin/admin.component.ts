@@ -10,7 +10,7 @@ import { AdminService } from './admin.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  contracts: Contract[];
+  contracts: any[];
   
   constructor(private readonly adminService: AdminService, public dialog: MatDialog) { }
 
@@ -23,5 +23,12 @@ export class AdminComponent implements OnInit {
       this.contracts = contracts
       console.log(contracts)
     })
+  }
+
+  async deleteContract(contractId: number): Promise<void>{
+    this.adminService.deleteContract(contractId).subscribe(() => {
+      console.log("Contract with id", contractId, " deleted")
+    })
+    await this.getContracts();
   }
 }

@@ -25,4 +25,11 @@ export class AdminService {
             })
         )
     }
+
+    deleteContract(contractId: number): Observable<any> {
+        return this.httpClient
+        .delete(`http://localhost:3000/data-api/contract/` + contractId, {
+            headers: this.headers,
+        })
+    }
 }
