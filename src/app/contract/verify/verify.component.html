@@ -152,7 +152,7 @@
             <h5 class="card-subtitle mb-2">Formulier Verwerkingsdoeleindes</h5>
             <div class="flex">
                 <label>Verwerkingsdoeleindes</label>
-                <label>{{this.form.get(['processingpurposes','processingPurposes'])!.value}}</label>
+                <label>{{this.form.get(['contractinfo','processingPurposes'])!.value}}</label>
             </div>
 
             <!-- certification Verwerkingsverantwoordelijke -->
@@ -190,7 +190,7 @@
             <div class="flex">
                 <label>Aanduiding van verwerking persoonsgegevens</label>
                 <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
-                    'typeOfProcessingForPersonalData'])!.value}}</label>
+                    'typeProcessingPersonalData'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Dienstomschrijving voor verwerker</label>
@@ -441,27 +441,27 @@
             <div class="flex">
                 <label>Naam</label>
                 <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                    'name'])!.value}}</label>
+                    'nameR'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Functie</label>
                 <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                    'jobDescription'])!.value}}</label>
+                    'jobDescR'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Email</label>
                 <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                    'email'])!.value}}</label>
+                    'emailR'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Telefoon</label>
                 <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                    'phone'])!.value}}</label>
+                    'phoneR'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Mobiele telefoon</label>
                 <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                    'mobile'])!.value}}</label>
+                    'mobileR'])!.value}}</label>
             </div>
 
             <!-- spoc Verwerker -->
@@ -469,27 +469,27 @@
             <div class="flex">
                 <label>Naam</label>
                 <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                    'name'])!.value}}</label>
+                    'nameE'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Functie</label>
                 <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                    'jobDescription'])!.value}}</label>
+                    'jobDescE'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Email</label>
                 <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                    'email'])!.value}}</label>
+                    'emailE'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Telefoon</label>
                 <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                    'phone'])!.value}}</label>
+                    'phoneE'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Mobiele telefoon</label>
                 <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                    'mobile'])!.value}}</label>
+                    'mobileE'])!.value}}</label>
             </div>
         </div>
     </div>

@@ -152,19 +152,19 @@ export class ContractComponent extends FormProvider implements OnInit {
 
     spoc: new FormGroup({
       CompanyResponsibleForDataProcessing: new FormGroup({
-        nameE: new FormControl(''),
-        jobDescE: new FormControl(''),
-        emailE: new FormControl(''),
-        phoneE: new FormControl(''),
-        mobileE: new FormControl(''),
-      }),
-
-      CompanyExecutingDataProcessing: new FormGroup({
         nameR: new FormControl(''),
         jobDescR: new FormControl(''),
         emailR: new FormControl(''),
         phoneR: new FormControl(''),
         mobileR: new FormControl(''),
+      }),
+
+      CompanyExecutingDataProcessing: new FormGroup({
+        nameE: new FormControl(''),
+        jobDescE: new FormControl(''),
+        emailE: new FormControl(''),
+        phoneE: new FormControl(''),
+        mobileE: new FormControl(''),
       }),
     }),
   });
