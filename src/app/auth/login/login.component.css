@@ -18,8 +18,7 @@ hr {
 }
 
 .card {
-  max-width: 40rem;
-  max-height: 40rem;
+  min-height: 30vw;
   display: flex;
   min-width: 41vw;
 }
@@ -52,4 +51,8 @@ input {
 
 .abs {
   position: absolute;
+}
+
+.bi-eye {
+  margin-left: 10px;
 }
