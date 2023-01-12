@@ -4,7 +4,7 @@
             <div class="col-9 main">
                 <h5 class="preTitle">Uw contracten</h5>
                 <h2>Contracten overzicht</h2>
-                <p>De volgende contracten behoren tot uw bedrijf</p>
+                <p>De volgende contracten behoren tot {{ contract.companyExecutingDataProcessing.name }}</p>
                 <hr>
                 
                 <div class="contract">
@@ -12,95 +12,80 @@
                     <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
                     <div class="flex">
                         <label>(bedrijfs-) naam</label>
-                        <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                            'name'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.name }}</label>
                     </div>
                     <div class="flex">
                         <label>Ondernemingsnummer</label>
-                        <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                            'companyNumber'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.companyNumber }}</label>
                     </div>
                     <div class="flex">
                         <label>Nederlandse wetgeving</label>
-                        <label *ngIf="this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                        'legalCountry'])!.value">Ja</label>
-                        <label *ngIf="!this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                        'legalCountry'])!.value">Nee</label>
+                        <label *ngIf="contract.companyResponsibleForDataProcessing.legalCountry">Ja</label>
+                        <label *ngIf="!contract.companyResponsibleForDataProcessing.legalCountry">Nee</label>
                     </div>
                     <div class="flex">
                         <label>Adres</label>
-                        <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                            'address'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.address }}</label>
                     </div>
                     <div class="flex">
                         <label>Postcode</label>
-                        <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                            'zipcode'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.zipcode }}</label>
                     </div>
                     <div class="flex">
                         <label>Stad</label>
-                        <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                            'city'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.city }}</label>
                     </div>
                     <div class="flex">
                         <label>Land</label>
-                        <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                            'countryOfResidence'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.countryOfResidence }}</label>
                     </div>
                     
                     <!-- Verwerker -->
                     <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
                     <div class="flex">
                         <label>(bedrijfs-) naam</label>
-                        <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
-                            'name'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.name }}</label>
                     </div>
                     <div class="flex">
                         <label>Ondernemingsnummer</label>
-                        <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
-                            'companyNumber'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.companyNumber }}</label>
                     </div>
                     <div class="flex">
                         <label>Nederlandse wetgeving</label>
-                        <label *ngIf="this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                        'legalCountry'])!.value">Ja</label>
-                        <label *ngIf="!this.form.get(['contractinfo','companyResponsibleForDataProcessing',
-                        'legalCountry'])!.value">Nee</label>
+                        <label *ngIf="contract.companyExecutingDataProcessing.legalCountry">Ja</label>
+                        <label *ngIf="!contract.companyExecutingDataProcessing.legalCountry">Nee</label>
                     </div>
                     <div class="flex">
                         <label>Adres</label>
-                        <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
-                            'address'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.address }}</label>
                     </div>
                     <div class="flex">
                         <label>Postcode</label>
-                        <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
-                            'zipcode'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.zipcode }}</label>
                     </div>
                     <div class="flex">
                         <label>Stad</label>
-                        <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
-                            'city'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.city }}</label>
                     </div>
                     <div class="flex">
                         <label>Land</label>
-                        <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
-                            'countryOfResidence'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.countryOfResidence }}</label>
                     </div>
                     
                     <!-- Extra informatie -->
                     <h5 class="card-subtitle mb-2">Formulier Extra informatie</h5>
                     <div class="flex">
                         <label>Plaats ondertekening</label>
-                        <label>{{this.form.get(['contractinfo','dateSigned'])!.value}}</label>
+                        <label>{{ contract.iContract.citySigned }}</label>
                     </div>
                     <div class="flex">
                         <label>Datum ondertekening</label>
-                        <label>{{this.form.get(['contractinfo','citySigned'])!.value}}</label>
+                        <label>{{ contract.iContract.dateSigned }}</label>
                     </div>
                     
                     <!-- contractsignees Verwerkingsverantwoordelijke -->
-                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
+
+                    <!-- <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
                     <div class="flex">
                         <label>Naam medewerker 1</label>
                         <label>{{this.form.get(['contractsignees','companyResponsibleForDataProcessing', 'member1',
@@ -120,10 +105,11 @@
                         <label>Functie medewerker 2</label>
                         <label>{{this.form.get(['contractsignees','companyResponsibleForDataProcessing', 'member2',
                             'jobDescription'])!.value}}</label>
-                    </div>
+                    </div> -->
                     
                     <!-- contractsignees Verwerker -->
-                    <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
+
+                    <!-- <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
                     <div class="flex">
                         <label>Naam medewerker 1</label>
                         <label>{{this.form.get(['contractsignees','companyExecutingDataProcessing', 'member1',
@@ -143,17 +129,19 @@
                         <label>Functie medewerker 2</label>
                         <label>{{this.form.get(['contractsignees','companyExecutingDataProcessing', 'member2',
                             'jobDescription'])!.value}}</label>
-                    </div>
+                    </div> -->
                     
                     <!-- processingpurposes Verwerkingsdoeleindes -->
-                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsdoeleindes</h5>
+
+                    <!-- <h5 class="card-subtitle mb-2">Formulier Verwerkingsdoeleindes</h5>
                     <div class="flex">
                         <label>Verwerkingsdoeleindes</label>
                         <label>{{this.form.get(['processingpurposes','processingPurposes'])!.value}}</label>
-                    </div>
+                    </div> -->
                     
                     <!-- certification Verwerkingsverantwoordelijke -->
-                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
+
+                    <!-- <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
                     <div class="flex">
                         <label>Certificeringen</label>
                         <label>{{this.form.get(['certification','certifications'])!.value}}</label>
@@ -165,38 +153,34 @@
                     <div class="flex">
                         <label>Audits, inspecties of interne controles</label>
                         <label>{{this.form.get(['certification','overhauls'])!.value}}</label>
-                    </div>
+                    </div> -->
                     
                     <!-- thirdparty Externe subverwerkers -->
                     <h5 class="card-subtitle mb-2">Formulier Externe subverwerkers</h5>
                     <div class="flex">
                         <label>Naam</label>
-                        <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
-                            'name'])!.value}}</label>
+                        <label>{{ contract.externalSubEmployeeExecutingDataProcessing.name }}</label>
                     </div>
                     <div class="flex">
                         <label>Statutaire zetel</label>
-                        <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
-                            'formalCity'])!.value}}</label>
+                        <label>{{ contract.externalSubEmployeeExecutingDataProcessing.formalCity }}</label>
                     </div>
                     <div class="flex">
                         <label>Adres</label>
-                        <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
-                            'address'])!.value}}</label>
+                        <label>{{ contract.externalSubEmployeeExecutingDataProcessing.address }}</label>
                     </div>
                     <div class="flex">
                         <label>Aanduiding van verwerking persoonsgegevens</label>
-                        <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
-                            'typeOfProcessingForPersonalData'])!.value}}</label>
+                        <label>{{ contract.externalSubEmployeeExecutingDataProcessing.typeOfProcessingForPersonalData }}</label>
                     </div>
                     <div class="flex">
                         <label>Dienstomschrijving voor verwerker</label>
-                        <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
-                            'jobDescription'])!.value}}</label>
+                        <label>{{ contract.externalSubEmployeeExecutingDataProcessing.jobDescription }}</label>
                     </div>
                     
                     <!-- thirdparty Derde leveranciers -->
-                    <h5 class="card-subtitle mb-2">Formulier Derde leveranciers</h5>
+
+                    <!-- <h5 class="card-subtitle mb-2">Formulier Derde leveranciers</h5>
                     <div class="flex">
                         <label>Naam</label>
                         <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
@@ -221,82 +205,75 @@
                         <label>Eventueel link naar de voorwaarden</label>
                         <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
                             'linkToLegalTerms'])!.value}}</label>
-                    </div>
+                    </div> -->
                     
                     <!-- thirdparty Derde leveranciers -->
                     <h5 class="card-subtitle mb-2">Formulier Derde leveranciers</h5>
                     <div class="flex">
                         <label>Naam</label>
-                        <label>{{this.form.get(['thirdparty','dataTransfer', 'legalCountry'])!.value}}</label>
+                        <label>{{ contract.dataTransfer.nameOfExternalSubEmployee }}</label>
                     </div>
                     <div class="flex">
                         <label>Land</label>
-                        <label>{{this.form.get(['thirdparty','dataTransfer', 'nameOfExternalSubEmployee'])!.value}}</label>
+                        <label>{{ contract.dataTransfer.legalCountry }}</label>
                     </div>
                     <div class="flex">
                         <label>Basis van doorgifte</label>
-                        <label>{{this.form.get(['thirdparty','dataTransfer', 'reasonForDataTransfer'])!.value}}</label>
+                        <label>{{ contract.dataTransfer.reasonForDataTransfer }}</label>
                     </div>
                     
                     <!-- spoc Verwerkingsverantwoordelijke -->
                     <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
                     <div class="flex">
                         <label>Naam</label>
-                        <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                            'name'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.name }}</label>
                     </div>
-                    <div class="flex">
+
+                    <!-- <div class="flex">
                         <label>Functie</label>
-                        <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                            'jobDescription'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.jobDescription }}</label>
                     </div>
                     <div class="flex">
                         <label>Email</label>
-                        <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                            'email'])!.value}}</label>
+                        <label>{{contract.companyResponsibleForDataProcessing.email }}</label>
                     </div>
                     <div class="flex">
                         <label>Telefoon</label>
-                        <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                            'phone'])!.value}}</label>
+                        <label>{{ contract.companyResponsibleForDataProcessing.phone }}</label>
                     </div>
                     <div class="flex">
                         <label>Mobiele telefoon</label>
-                        <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
-                            'mobile'])!.value}}</label>
-                    </div>
+                        <label>{{ contract.companyResponsibleForDataProcessing.mobile }}</label>
+                    </div> -->
                     
                     <!-- spoc Verwerker -->
                     <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
                     <div class="flex">
                         <label>Naam</label>
-                        <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                            'name'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.name }}</label>
                     </div>
-                    <div class="flex">
+
+                    <!-- <div class="flex">
                         <label>Functie</label>
-                        <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                            'jobDescription'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.jobDescription }}</label>
                     </div>
                     <div class="flex">
                         <label>Email</label>
-                        <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                            'email'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.email }}</label>
                     </div>
                     <div class="flex">
                         <label>Telefoon</label>
-                        <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                            'phone'])!.value}}</label>
+                        <label>{{ contract.companyExecutingDataProcessing.phone }}</label>
                     </div>
                     <div class="flex">
                         <label>Mobiele telefoon</label>
-                        <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
-                            'mobile'])!.value}}</label>
-                    </div>
+                        <label>{{ contract.companyExecutingDataProcessing.mobile }}</label>
+                    </div> -->
+
                 </div>
             
                 <div class="buttonToRight">
-                    <button routerLink="/" class="versturen purple" type="submit" >Terug naar overzicht</button>
+                    <button routerLink="/" class="versturen purple">Terug naar overzicht</button>
                 </div>
             </div>
         </div>

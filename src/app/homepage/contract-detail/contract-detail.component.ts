@@ -11,16 +11,20 @@ import { HomepageService } from 'src/app/homepage/homepage.service';
   styleUrls: ['./contract-detail.component.css']
 })
 export class ContractDetailComponent implements OnInit {
-  contracts: any;
-  form: FormGroup;
-  contractId: string | null = "";
-  contract: Contract;
+  contract!: Contract;
   
-  constructor(private route: ActivatedRoute, private router: Router, readonly homepageService: HomepageService) {
+  constructor(private route: ActivatedRoute, readonly homepageService: HomepageService) {
   }
 
   ngOnInit(): void {
-    const contractId = Number(this.route.snapshot.paramMap.get('id'));
-    this.homepageService.getContractById(contractId);
+    this.getContractById(+this.route.snapshot.paramMap.get('id')!);
+    console.log("Opgehaald ID", + +this.route.snapshot.paramMap.get('id')!);
+  }
+
+  getContractById(id: number) {
+    this.homepageService.getContractById(id).subscribe((contract: Contract) => {
+      console.log("Opgehaalde contractinfo: ", + contract);
+      this.contract = contract;
+    });
   }
 }
