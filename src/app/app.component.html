@@ -1,7 +1,7 @@
 <!-- Toolbar -->
 <header>
   <div class="content">
-    <img src="../assets/img/brand-logo.svg" alt="" class="logo">
+    <img src="../assets/img/brand-logo.svg" routerLink="/" alt="" class="logo">
     <div class="navWrap">
       <ul>
         <li><a routerLink="/users" *ngIf="loggedInUser$ | async as user">Gebruikers</a></li>
