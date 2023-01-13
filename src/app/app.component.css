@@ -113,6 +113,10 @@ header {
         cursor: pointer;
       }
 
+      .navBar li:last-child .dropdown .logoutButton:hover a{
+        color: #dc3545 !important;
+      }
+
 
     /* button */
     .yellow.logout{
@@ -125,8 +129,6 @@ header {
     .yellow.logout::after{
       content: "";
     }
-
-
 
 main {
   background: rgb(39, 15, 39);
