@@ -43,9 +43,7 @@ export class ContractInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params)
       this.routeId = params['id'];
-      console.log(this.routeId); // Print the parameter to the console.
       this.getContractById(this.routeId) 
     });
   }
@@ -53,8 +51,7 @@ export class ContractInfoComponent implements OnInit {
   getContractById(id: number) {
     this.contractService.getContractById(id).subscribe((contract: IContract) => {
       this.contract = contract;
-      console.log(this.contract.contractSignees.nameEmployee1ResponsibleForDP)
-      console.log(this.contract)
+      console.log(this.contract);
       this.form.patchValue({
         contractinfo: { 
           companyResponsibleForDataProcessing: {
@@ -73,11 +70,35 @@ export class ContractInfoComponent implements OnInit {
               jobEmployee1ResponsibleForDP: this.contract.contractSignees.jobEmployee1ResponsibleForDP,
               nameEmployee1ResponsibleForDP: this.contract.contractSignees.nameEmployee1ResponsibleForDP,
             },
-            // member2: {
-            //   ...this.contract.contractSignees
-            // }
-          }
-
+            member2: {
+              jobEmployee2ResponsibleForDP: this.contract.contractSignees.jobEmployee2ResponsibleForDP,
+              nameEmployee2ResponsibleForDP: this.contract.contractSignees.nameEmployee2ResponsibleForDP,
+            },
+          },
+          companyExecutingDataProcessing: {
+            member1: {
+              nameEmployee1ExecutingDP: this.contract.contractSignees.nameEmployee1ExecutingDP,
+              jobEmployee1ExecutingDP: this.contract.contractSignees.jobEmployee1ExecutingDP,
+            },
+            member2: {
+              nameEmployee2ExecutingDP: this.contract.contractSignees.nameEmployee2ExecutingDP,
+              jobEmployee2ExecutingDP: this.contract.contractSignees.jobEmployee2ExecutingDP,
+            },
+          },
+        },
+        certifications: {
+          ...this.contract.certifications
+        },
+        thirdparty: {
+          externalSubEmployeeExecutingDataProcessing: {
+            ...this.contract.thirdParty.TpProcessing
+          },
+          externalSubEmployeeExecutingDatathirdPartySuppliersProcessing: {
+            ...this.contract.thirdParty.TpSupplier
+          },
+          dataTransfer: {
+            ...this.contract.thirdParty.TpDataTransfer
+          },
         }
       })
       console.log(this.form.value)

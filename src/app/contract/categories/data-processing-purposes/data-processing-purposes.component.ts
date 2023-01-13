@@ -13,18 +13,21 @@ import { FormProvider } from '../../FormProvider';
 export class DataProcessingPurposesComponent implements OnInit {
 
   form: FormGroup;
+  routeId: number = 0;
 
   constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router) {
     this.form = formProvider.getForm().get('contractinfo') as FormGroup;
   }
 
   ngOnInit(): void {
-    console.log('test')
+    this.route.params.subscribe(params => {
+      this.routeId = params['id'];
+    })
   }
 
   onSubmit(){
-    if (+this.route.snapshot.paramMap.get('id')!){
-      this.router.navigate(['contract/edit/' + +this.route.snapshot.paramMap.get('id')! + '/certification']);
+    if (this.routeId != 0){
+      this.router.navigate(['contract/edit/' + this.routeId + '/certification']);
     } else {
       console.log(+this.route.snapshot.paramMap.get('id')!);
       this.router.navigate(['contract/certification']);

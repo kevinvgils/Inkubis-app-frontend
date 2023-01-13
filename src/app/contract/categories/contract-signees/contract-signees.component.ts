@@ -32,8 +32,8 @@ export class ContractSigneesComponent implements OnInit {
   }
 
   onSubmit(){
-    if (+this.route.snapshot.paramMap.get('id')!){
-      this.router.navigate(['contract/edit/' + +this.route.snapshot.paramMap.get('id')! + '/processingpurposes']);
+    if (this.routeId != 0){
+      this.router.navigate(['contract/edit/' + this.routeId + '/processingpurposes']);
     } else {
       console.log(+this.route.snapshot.paramMap.get('id')!);
       this.router.navigate(['contract/processingpurposes']);

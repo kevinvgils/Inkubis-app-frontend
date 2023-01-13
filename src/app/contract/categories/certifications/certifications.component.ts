@@ -17,20 +17,26 @@ import { FormProvider } from '../../FormProvider';
 export class CertificationsComponent implements OnInit {
 
   form: FormGroup;
+  routeId: number = 0;
 
   constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('certification') as FormGroup;
+    this.form = formProvider.getForm().get('certifications') as FormGroup;
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      console.log(params)
+      this.routeId = params['id'];
+      console.log(this.form.value)
+    })
   }
 
   onSubmit(){
-    if (!+this.route.snapshot.paramMap.get('id')!) {
-      console.log(JSON.stringify(this.form.value));
-      this.router.navigate(['contract/thirdparty']);
+    if (+this.route.snapshot.paramMap.get('id')!){
+      this.router.navigate(['contract/edit/' + +this.route.snapshot.paramMap.get('id')! + '/thirdparty']);
     } else {
-      this.router.navigate(['contract/',+this.route.snapshot.paramMap.get('id')!,'/thirdparty']);
+      console.log(+this.route.snapshot.paramMap.get('id')!);
+      this.router.navigate(['contract/thirdparty']);
     }
   }
 

@@ -122,7 +122,7 @@ export class ContractComponent extends FormProvider implements OnInit {
       }),
     }),
 
-    certification: new FormGroup({
+    certifications: new FormGroup({
       certifications: new FormControl(''),
       achievedCertifications: new FormControl(''),
       overhauls: new FormControl(''),
