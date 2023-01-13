@@ -10,8 +10,7 @@
                 <div class="contract" *ngFor="let contract of contracts">
                     <div class="line">
                         <div class="content">
-                            <!-- <h2>Contract aangemaakt op: {{ contract.iContract.dateSigned }}</h2> -->
-                            <a class="title" routerLink="/contract-details/{{contract.id}}"><h2>Contract aangemaakt op:</h2></a>
+                            <a class="title" routerLink="/contract-details/{{contract.id}}"><h2>Contract getekend op: {{ contract.dateSigned }}</h2></a>
                             <p><b>Verwerker:</b> {{contract.companyExecutingDP.name}}</p>
                             <p><b>Verwerkings verantwoordelijke:</b> {{ contract.companyResponsibleForDP.name}}</p>
                             <p *ngIf="contract.companyExecutingDP.legalCountry == true">Nederlands template</p>

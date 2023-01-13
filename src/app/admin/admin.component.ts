@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Contract } from '../contract/contract';
+import { IContract } from '../contract/contract.interface';
 import { AdminService } from './admin.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { AdminService } from './admin.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  contracts: any[];
+  contracts: IContract[];
   
   constructor(private readonly adminService: AdminService, public dialog: MatDialog) { }
 
