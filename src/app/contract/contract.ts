@@ -1,21 +1,10 @@
 
 import { FormGroup } from "@angular/forms";
-import { IContract, CompanyResponsibleForDataProcessing, CompanyExecutingDataProcessing, EmployeeExecutingDataProcessing, CategoryOfSubjectsInvolved, CategoryOfDataInvolved, CategoryOfSpecialDataInvolved, ExternalSubEmployeeExecutingDataProcessing, ThirdPartySuppliers, DataTransfer, SinglePointOfContact } from "./contract.interface";
+import { IContract } from "./contract.interface";
 
 export class Contract {
 
     iContract: IContract;
-    companyResponsibleForDataProcessing: CompanyResponsibleForDataProcessing;
-    companyExecutingDataProcessing: CompanyExecutingDataProcessing;
-    employeeExecutingDataProcessing: EmployeeExecutingDataProcessing;
-    categoryOfSubjectsInvolved: CategoryOfSubjectsInvolved;
-    categoryOfDataInvolved: CategoryOfDataInvolved;
-    categoryOfSpecialDataInvolved: CategoryOfSpecialDataInvolved;
-    externalSubEmployeeExecutingDataProcessing: ExternalSubEmployeeExecutingDataProcessing;
-    thirdPartySuppliers: ThirdPartySuppliers;
-    dataTransfer: DataTransfer;
-    singlePointOfContact: SinglePointOfContact;
-
 
     constructor(form: FormGroup){
         // this.companyResponsibleForDataProcessing.name = form.value.contractinfo.companyResponsibleForDataProcessing.name;
