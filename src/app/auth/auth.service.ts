@@ -9,14 +9,14 @@ import {
   tap,
 } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ILogin, IRegister } from './auth.interface';
+import { ILogin, IRegister, IToken } from './auth.interface';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  public currentUser$ = new BehaviorSubject<ILogin | undefined>(undefined);
+  public currentUser$ = new BehaviorSubject<IToken | undefined>(undefined);
   private readonly CURRENT_USER = 'currentuser';
   private readonly headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient, private router: Router) {
     this.getUserFromLocalStorage()
       .pipe(
-        switchMap((user: ILogin | undefined) => {
+        switchMap((user: IToken | undefined) => {
           if (user) {
             console.log('User found in local storage');
             console.log(user);
@@ -105,7 +105,7 @@ export class AuthService {
       .catch((error) => console.log('not logged out!'));
   }
 
-  getUserFromLocalStorage(): Observable<ILogin | undefined> {
+  getUserFromLocalStorage(): Observable<IToken | undefined> {
     const user = localStorage.getItem(this.CURRENT_USER);
     if (user) {
       const localUser = JSON.parse(user);

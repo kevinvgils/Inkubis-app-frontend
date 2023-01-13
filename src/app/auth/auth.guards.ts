@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ILogin } from './auth.interface';
+import { ILogin, IToken } from './auth.interface';
 import { AuthService } from './auth.service';
 
 @Injectable()
@@ -12,7 +12,7 @@ export class LoggedInAuthGuard implements CanActivate, CanActivateChild {
   canActivate(): Observable<boolean> {
     console.log('canActivate LoggedIn');
     return this.authService.currentUser$.pipe(
-      map((user: ILogin | undefined) => {
+      map((user: IToken | undefined) => {
         if (user) {
           return true;
         } else {
