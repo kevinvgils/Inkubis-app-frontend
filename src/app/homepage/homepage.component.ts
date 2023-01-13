@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Contract } from '../contract/contract';
+import { IContract } from '../contract/contract.interface';
 import { HomepageService } from './homepage.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { HomepageService } from './homepage.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  contracts: any[];
+  contracts: IContract[];
   
   constructor(private readonly homepageService: HomepageService, public dialog: MatDialog) { }
 

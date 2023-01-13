@@ -19,6 +19,7 @@ import { ContractModule } from './contract/contract.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AdminComponent } from './admin/admin.component';
 import { ContractDetailComponent } from './homepage/contract-detail/contract-detail.component';
+import { ContractEditComponent } from './homepage/contract-edit/contract-edit.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { ContractDetailComponent } from './homepage/contract-detail/contract-det
     HomepageComponent,
     AdminComponent,
     ContractDetailComponent,
+    ContractEditComponent,
   ],
   imports: [
     BrowserModule,
