@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { Contract } from '../contract/contract';
 import { IContract } from '../contract/contract.interface';
-import { HomepageService } from './homepage.service';
+import { ContractService } from '../contract/contract.service';
 
 @Component({
   selector: 'app-homepage',
@@ -13,21 +13,21 @@ import { HomepageService } from './homepage.service';
 export class HomepageComponent implements OnInit {
   contracts: IContract[];
   
-  constructor(private readonly homepageService: HomepageService, public dialog: MatDialog) { }
+  constructor(private readonly contractService: ContractService, public dialog: MatDialog) { }
 
   async ngOnInit(): Promise<void> {
     await this.getContracts();
   }
 
   async getContracts(): Promise<void>{
-    this.homepageService.getAllContracts().subscribe(contracts => {
+    this.contractService.getAllContracts().subscribe(contracts => {
       this.contracts = contracts
       console.log(contracts)
     })
   }
 
   async deleteContract(contractId: number): Promise<void>{
-    this.homepageService.deleteContract(contractId).subscribe(() => {
+    this.contractService.deleteContract(contractId).subscribe(() => {
       console.log("Contract with id", contractId, " deleted")
     })
     await this.getContracts();
