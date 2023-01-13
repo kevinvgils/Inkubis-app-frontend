@@ -65,9 +65,6 @@ export class AuthService {
           return data;
         }),
         catchError((error) => {
-          console.log('error:', error);
-          console.log('error.message:', error.message);
-          console.log('error.error.message:', error.error.message);
           return of(undefined);
         })
       );
@@ -76,14 +73,21 @@ export class AuthService {
   register(userData: IRegister): Observable<IRegister | undefined> {
     const isAdmin = userData.isAdmin ? 'admin' : 'sales';
     userData.role = isAdmin;
-    console.log(userData);
-    return this.httpClient.post<IRegister>(
-      `http://localhost:3000/auth-api/user-auth`,
-      userData,
-      {
+
+    return this.httpClient
+      .post(`http://localhost:3000/auth-api/user-auth`, userData, {
+        responseType: 'text',
         headers: this.headers,
-      }
-    );
+      })
+      .pipe(
+        tap(console.log),
+        map((data: any) => {
+          return data;
+        }),
+        catchError((error) => {
+          return of(undefined);
+        })
+      );
   }
 
   logout(): void {

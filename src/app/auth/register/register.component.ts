@@ -5,6 +5,7 @@ import { UsersService } from '../../users/users.service';
 import { Company } from '../../users/company.model';
 import { AuthService } from '../auth.service';
 import { User } from '../../users/user.model';
+import { IRegister } from '../auth.interface';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +18,7 @@ export class RegisterComponent {
   selectedUser: User = new User();
   allCompanies: Company[] = [];
   preSelectedCompanies: number[] = [];
+  emailAlreadyExists: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -63,10 +65,16 @@ export class RegisterComponent {
       this.registerForm.value.emailAddress != '' &&
       this.registerForm.value.password != ''
     ) {
-      this.authService.register(this.registerForm.value).subscribe((x) => {
-        console.log(x);
-      });
-      this.router.navigate(['users']);
+      this.authService
+        .register(this.registerForm.value)
+        .subscribe((user: IRegister | undefined) => {
+          if (user) {
+            this.emailAlreadyExists = false;
+            this.router.navigate(['users']);
+          } else {
+            this.emailAlreadyExists = true;
+          }
+        });
     }
   }
 

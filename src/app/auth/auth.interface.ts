@@ -1,3 +1,5 @@
+import { Company } from '../users/company.model';
+
 export interface ILogin {
   emailAddress: string;
   password: string;
@@ -11,6 +13,7 @@ export interface IRegister {
   phoneNumber: string;
   isAdmin: boolean;
   role: string;
+  companies: Company[];
 }
 
 export type Id = string;

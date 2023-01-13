@@ -133,6 +133,9 @@
                                         formControlName="isAdmin" checked>
                                 </div>
                             </div>
+                            <div *ngIf="emailAlreadyExists" class="text-danger">
+                                E-mailadres bestaat al
+                            </div>
                             <button type="submit" class="purple abs end-0 mx-5"
                                 [disabled]="!registerForm.valid">Registreren</button>
                         </form>
