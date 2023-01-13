@@ -65,12 +65,17 @@ export class UserDialogComponent implements OnInit {
   }
 
   async onSubmit() {
-    console.log(this.userForm.value);
-    await this.userService
-      .updateUser(this.selectedUser.id, this.userForm.value)
-      .subscribe((x) => {
-        console.log(x);
-        this.router.navigate(['users']);
-      });
+    if (
+      this.userForm.value.firstName != '' &&
+      this.userForm.value.emailAddress != ''
+    ) {
+      console.log(this.userForm.value);
+      await this.userService
+        .updateUser(this.selectedUser.id, this.userForm.value)
+        .subscribe((x) => {
+          console.log(x);
+          this.router.navigate(['users']);
+        });
+    }
   }
 }

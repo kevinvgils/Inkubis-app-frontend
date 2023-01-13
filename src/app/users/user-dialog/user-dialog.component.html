@@ -6,14 +6,27 @@
                 <div class="mb-3">
                     <label for="firstName" class="form-label">Voornaam</label>
                     <input type="text" formControlName="firstName" class="form-control" name="firstName" id="firstName"
-                        placeholder="Type hier je voornaam" />
+                        placeholder="Type hier je voornaam" [ngClass]="{
+                            'is-invalid': userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched
+                        }" />
+                    <div *ngIf="userForm.get('firstName')?.invalid && userForm.get('firstName')?.touched"
+                        class="text-danger">
+                        <div *ngIf="userForm.get('firstName')?.errors!['required']">
+                            Voornaam is verplicht
+                        </div>
+                        <div *ngIf="userForm.get('firstName')?.errors!['minlength']">
+                            Voornaam moet minimaal 3 karakters hebben.
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col">
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Achternaam</label>
                     <input type="lastName" formControlName="lastName" class="form-control" id="lastName" name="lastName"
-                        placeholder="Type hier je achternaam" class="form-control" />
+                        placeholder="Type hier je achternaam" class="form-control" [ngClass]="{
+                            'is-invalid': userForm.get('lastName')?.invalid && userForm.get('lastName')?.touched
+                        }" />
                 </div>
             </div>
         </div>
@@ -31,7 +44,18 @@
                 <div class="mb-3">
                     <label for="emailAddress" class="form-label">E-mailadres</label>
                     <input type="text" formControlName="emailAddress" class="form-control" id="emailAddress"
-                        name="email" placeholder="Type hier je e-mailadres" />
+                        name="email" placeholder="Type hier je e-mailadres" [ngClass]="{
+                            'is-invalid': userForm.get('emailAddress')?.invalid && userForm.get('emailAddress')?.touched
+                        }" />
+                    <div *ngIf="userForm.get('emailAddress')?.invalid && userForm.get('emailAddress')?.touched"
+                        class="text-danger">
+                        <div *ngIf="userForm.get('emailAddress')?.errors!['required']">
+                            E-mailadres is verplicht
+                        </div>
+                        <div *ngIf="userForm.get('emailAddress')?.errors!['email']">
+                            E-mailadres moet een geldig e-mailadres zijn.
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-6">
@@ -46,5 +70,6 @@
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-dialog-close>Annuleren</button>
-    <button (click)="onSubmit()" mat-dialog-close class="purple abs end-0 mx-2">Save</button>
+    <button [disabled]="!userForm.valid" (click)="onSubmit()" mat-dialog-close
+        class="purple abs end-0 mx-2">Save</button>
 </mat-dialog-actions>
