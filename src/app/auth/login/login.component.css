@@ -1,3 +1,12 @@
+.wrap{
+  min-height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+}
+.container{
+    overflow: clip;
+    height: 75vh;
+}
 .form-label {
   font-size: 1rem;
   color: #280223;
@@ -43,10 +52,8 @@ input {
   width: 70%;
 }
 
-.abs:hover {
-  transition: 0.5s;
-  background-color: #c95478;
-  transform: scale(1.02);
+.purple{
+  margin-top: 30px;
 }
 
 .abs {

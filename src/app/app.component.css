@@ -27,7 +27,7 @@ header {
   gap: 30px;
   height: 100%;
 }
-.navWrap ul {
+.navWrap .navBar {
   height: 100%;
   margin: 0px;
   padding: 0px;
@@ -35,25 +35,94 @@ header {
   display: flex;
   gap: 40px;
 }
-.navWrap li {
+
+/* LI ITSELF */
+.navWrap .navBar > li {
   position: relative;
-  height: 100%;
+  height: 101%;
+
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
-.navWrap li:hover {
+.navWrap .navBar > li:hover {
   border-bottom: #ffff00 2px solid;
-}
-.navWrap ul li a {
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-.navWrap li:hover a {
   color: #ffff00 !important;
-  margin-bottom: -2px;
 }
+  /* CHILDREN OF LI */
+  .navWrap .navBar > li *{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .navWrap .navBar > li:hover > * {
+    color: #ffff00 !important;
+    margin-bottom: -2px;
+  }
+
+    /* dropdown */
+    .navWrap .dropdownWrap{
+      display: flex;
+      flex-direction: row !important;
+      align-items: center;
+    }
+
+    .navWrap .dropdownWrap .arrow{
+      margin-left: 5px;
+      transition: 0.2s;
+    }
+    .navWrap .dropdownWrap:hover .arrow{
+      transform: rotateZ(90deg);
+    }
+
+    .navWrap .navBar > li:hover .dropdown{
+      transform: scaleY(1);
+    }
+    .dropdown{
+      z-index: 100;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.2s;
+      overflow-y: hidden;
+      
+      position: absolute;
+      top: 61px;
+      left: -10px;
+
+      padding-left: 0px;
+      width: max-content;
+    }
+      .dropdown li{
+        background-color: #280223;
+        width: 100%;
+        height: max-content;
+      }
+      .dropdown li *{
+        padding: 15px 10px;
+        display: block;
+        cursor: default;
+      }
+      .dropdown li:hover a{
+        color: #ffff00 !important;
+        cursor: pointer;
+      }
+
+
+    /* button */
+    .yellow.logout{
+      background-image: url(/assets/img/sales.png);
+      background-size: cover;
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+    }
+    .yellow.logout::after{
+      content: "";
+    }
+
+
 
 main {
   background: rgb(39, 15, 39);
