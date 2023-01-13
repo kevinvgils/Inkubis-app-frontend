@@ -1,44 +1,107 @@
-    .card {
-        width: 13vw;
-        height: 30vh;
-        justify-content: space-between;
-    }
-    
-    img {
-        height: 25vh;
-    }
-    
-    .card-footer {
-        background-color: #53042F;
-    }
-    
-    .card .card-text {
-        color: #ffffff;
-    }
-    
-    .listWrap {
-        min-height: calc(100vh - 61px);
-        display: flex;
-        align-items: center;
-    }
-    
-    .list {
-        width: 100%;
-        background-color: #ffffff;
-        height: 75vh;
-        padding: 20px 30px;
-        position: relative;
-        overflow-y: none !important;
-    }
-    
-    hr {
-        opacity: 100%;
-        background-color: black;
-        width: 63.5vw;
-    }
-    
-    .detail-img {
-        background-size: cover;
-        height: 100%;
-        width: 100%;
-    }
+.listWrap {
+    min-height: calc(100vh - 61px);
+    display: flex;
+    align-items: center;
+}
+
+hr {
+    opacity: 100%;
+}
+
+.border {
+    opacity: 100%;
+}
+
+.list {
+    width: 100%;
+    background-color: #ffffff;
+    height: 75vh;
+    padding: 20px 30px;
+    position: relative;
+    overflow-y: none !important;
+}
+
+.detail-img {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.modal-title {
+    color: #ffff00;
+    margin-left: 40px;
+}
+
+.modal-body {
+    width: 500px;
+}
+
+.modal-header {
+    background-color: #53042F;
+    width: 500px;
+}
+
+.modal-footer {
+    border-radius: 0;
+    width: 500px;
+}
+
+.btn {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background-color: #ffff00;
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+.button:hover {
+    background-color: #ffff00;
+    transition: 0.3s;
+    transform: scale(1.05);
+    color: black;
+}
+
+.close:hover {
+    background-color: #ffff00;
+    transition: 0.3s;
+    transform: scale(1.02);
+    color: black;
+}
+
+input {
+    display: block;
+    margin-right: 2rem;
+    border-color: black;
+    border-width: 1px;
+    opacity: 100%;
+}
+
+input::placeholder {
+    font-size: 12px;
+}
+
+.container .border {
+    opacity: 100%;
+}
+
+.container p,
+h5 {
+    display: inline;
+}
+
+.container p {
+    font-size: 18px;
+}
+
+.border {
+    opacity: 100%;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}

@@ -20,6 +20,10 @@ export class CompanyService {
   };
   constructor(private http: HttpClient, private router: Router) { }
 
+  create(company: Company): Observable<Company> {
+    return this.http.post<Company>(`${this.apiURL}/company`, JSON.stringify(company), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+  }
+
   getAll(): Observable<Company[]> {
     return this.http
       .get<Company[]>(`${this.apiURL}/company`)
