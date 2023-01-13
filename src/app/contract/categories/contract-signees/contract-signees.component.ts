@@ -25,9 +25,7 @@ export class ContractSigneesComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params)
       this.routeId = params['id'];
-      console.log(this.form.value)
     })
   }
 
