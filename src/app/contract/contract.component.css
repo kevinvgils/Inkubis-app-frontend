@@ -18,6 +18,22 @@ p a{
       --bs-gutter-x: 0;
       height: 100%;
     }
+    .formMain::-webkit-scrollbar, .formLeft::-webkit-scrollbar {
+      width: 8px;              /* width of the entire scrollbar */
+      margin: 2px;
+    }
+    .formMain::-webkit-scrollbar-track, .formLeft::-webkit-scrollbar-track {
+      background: #ffffff00;        /* color of the tracking area */
+    }
+    .formMain::-webkit-scrollbar-thumb, .formLeft::-webkit-scrollbar-thumb {
+      background-color: #280223;    /* color of the scroll thumb */
+      border-radius: 20px;       /* roundness of the scroll thumb */
+      border: 3px solid #c096b3;  /* creates padding around scroll thumb */
+    }
+    .formMain::-webkit-scrollbar-thumb{
+      border-color: white;
+    }
+
       .formLeft {
         padding: 60px 40px 0px 60px;
         height: 100%;
@@ -25,6 +41,7 @@ p a{
         color: #ffffff;
         float: right;
         text-align: right;
+        overflow-y: scroll;
       }
         .formLeft h4{
           margin-bottom: 45px;
