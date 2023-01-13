@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IContract } from './contract.interface';
+import { ContractService } from './contract.service';
 import { FormProvider } from './FormProvider';
 
 @Component({
@@ -35,6 +37,7 @@ export class ContractComponent extends FormProvider implements OnInit {
   //   'Gegevenscontrole',
   // ];
   currentComp!: string;
+  contract!: IContract;
 
   contractForm = new FormGroup({
     contractinfo: new FormGroup({
@@ -61,7 +64,7 @@ export class ContractComponent extends FormProvider implements OnInit {
       processingPurposes: new FormControl(''),
     }),
 
-    contractsignees: new FormGroup({
+    contractSignees: new FormGroup({
       companyResponsibleForDataProcessing: new FormGroup({
         member1: new FormGroup({
           nameEmployee1ResponsibleForDP: new FormControl(''),
@@ -173,11 +176,11 @@ export class ContractComponent extends FormProvider implements OnInit {
     return this.contractForm;
   }
 
-  constructor(private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, readonly contractService: ContractService) {
     super();
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.link();
   }
 

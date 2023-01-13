@@ -18,7 +18,6 @@ export class ContractDetailComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.getContractById(+this.route.snapshot.paramMap.get('id')!);
-    console.log(this.contract);
   }
 
   getContractById(id: number) {

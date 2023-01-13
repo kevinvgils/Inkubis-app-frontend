@@ -20,12 +20,12 @@ const routes: Routes = [
     component: ContractComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'contractinfo' },
+      { path: 'edit/:id/contractinfo', component: ContractInfoComponent },
       { path: 'contractinfo', component: ContractInfoComponent },
       { path: 'contractsignees', component: ContractSigneesComponent },
-      {
-        path: 'processingpurposes',
-        component: DataProcessingPurposesComponent,
-      },
+      { path: 'edit/:id/contractsignees', component: ContractSigneesComponent },
+      { path: 'processingpurposes',component: DataProcessingPurposesComponent},
+      { path: 'edit/:id/processingpurposes',component: DataProcessingPurposesComponent},
       { path: 'datasubjectcategory', component: DataSubjectCategoryComponent },
       { path: 'datacategory', component: DataCategoryComponent },
       { path: 'specialdatacategory', component: SpecialDataCategoryComponent },
