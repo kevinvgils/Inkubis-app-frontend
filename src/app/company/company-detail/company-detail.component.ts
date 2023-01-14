@@ -58,7 +58,6 @@ export class CompanyDetailComponent implements OnInit {
 
       imageBase64Code: new FormControl('', [
         Validators.required,
-        Validators.maxLength(200)
       ])
     })
   }

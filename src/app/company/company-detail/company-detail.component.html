@@ -5,15 +5,12 @@
         <hr>
         <div class="container">
             <div class="row p-2 justify-content-end">
-                <div *ngIf="company.image" class="col-4 my-3 ms-5 detail-img justify-content-start">
-                    <img [src]="company.image" class=" card-img rounded-0 detail-img img-fluid " alt=" ... ">
-                </div>
-                <div *ngIf="!company.image" class="col-4 my-3 ms-5 detail-img justify-content-start">
-                    <img [src]="" class=" card-img rounded-0 detail-img img-fluid " alt=" ... ">
+                <div *ngIf="company.image" class="col-4 col-md-4 col-lg-4 my-3 me-3">
+                    <img [src]="company.image" class=" card-img rounded-0 detail-img " alt=" ... ">
                 </div>
                 <div class="col-7 col-md-7 col-lg-7 my-3 ">
                     <h3 class=" text-center ">{{company.name}} details</h3>
-                    <div class="container border align-items-center ">
+                    <div class="container border border-dark align-items-center ">
                         <ul>
                             <li class="mt-3 mb-2 me-5 ">
                                 <h5 class="title fw-bold ">(Bedrijfs-)naam: </h5>
@@ -47,8 +44,8 @@
         </div>
 
         <ng-template #content let-c=" close " let-d="dismiss ">
-            <div class="modal-header ">
-                <h4 class="modal-title " id="modal-basic-title-create ">Update {{company.name}}</h4>
+            <div class="modal-header text-center ">
+                <h4 class="modal-title" id="modal-basic-title-create">Update {{company.name}}</h4>
                 <button type="button " class="close end-1 purple " aria-label="Close " (click)="d( 'Cross click') ">
                 <span aria-hidden="true ">×</span>
             </button>
@@ -168,11 +165,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <label for="kvkNumber" class="mb-1 fw-bold mt-2 ">File</label>
-                            <input type="file" accept="image/png, image/jpeg, image/jpg " (change)="onChange($event) " class="form-control rounded-0 " formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
-                            <div class="alert alert-danger p-1 " *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched) ">
-                            </div>
                             <!--Kvk-number end-->
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <label for="kvkNumber" class="mb-1 fw-bold mt-2 ">File</label>
+                                <input type="file" accept="image/png, image/jpeg, image/jpg " (change)="onChange($event) " class="form-control rounded-0" formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
+                                <div class="alert alert-danger p-1 " *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched) ">
+                                </div>
+                            </div>
                             <div class="modal-footer rounded-0 justify-content-center ">
                                 <button type="submit " class="btn purple rounded-0 " (click)="c( 'Cross click') ">Update</button>
                                 <button type=" button " class="btn purple rounded-0 " (click)="c( 'Cross click') ">Cancel</button>
