@@ -19,7 +19,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormProvider } from '../../FormProvider';
 
 @Component({
@@ -28,16 +28,26 @@ import { FormProvider } from '../../FormProvider';
   styleUrls: ['./third-party-data.component.css'],
 })
 export class ThirdPartyDataComponent implements OnInit {
+  
   form: FormGroup;
+  routeId: number = 0;
 
-  constructor(private formProvider: FormProvider, private router: Router) {
+  constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router) {
     this.form = formProvider.getForm().get('thirdparty') as FormGroup;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.routeId = params['id'];
+    })
+  }
 
   onSubmit(){
-    console.log(JSON.stringify(this.form.value));
-    this.router.navigate(['contract/datasubjectcategory']);
+    if (this.routeId != 0){
+      this.router.navigate(['contract/edit/' + this.routeId + '/datacategory']);
+    } else {
+      console.log(+this.route.snapshot.paramMap.get('id')!);
+      this.router.navigate(['contract/datasubjectcategory']);
+    }
   }
 }

@@ -99,7 +99,23 @@ export class ContractInfoComponent implements OnInit {
           dataTransfer: {
             ...this.contract.thirdParty.TpDataTransfer
           },
-        }
+        },
+        category: {
+          dataCategory: {
+            ...this.contract.categories.dataCategory
+          },
+          specialDataCategory: {
+            ...this.contract.categories.specialDataCategory
+          },
+        },
+        spoc: {
+          CompanyResponsibleForDataProcessing: {
+            ...this.contract.spoc
+          },
+          CompanyExecutingDataProcessing: {
+            ...this.contract.spoc
+          },
+        },
       })
       console.log(this.form.value)
     });
