@@ -9,7 +9,7 @@ import { FormComponent } from './components/form/form.component';
 import { VerifyComponent } from './components/verify/verify.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PdfComponent } from './pdf/pdf.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -27,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     NgbModule,
   ],

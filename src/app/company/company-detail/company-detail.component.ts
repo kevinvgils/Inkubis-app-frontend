@@ -4,8 +4,7 @@ import { Company } from '../company.model';
 import { ActivatedRoute, Router} from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Location } from '@angular/common'
-import { Observable, Subscriber } from 'rxjs';
+import { ImageService } from 'src/app/shared/services/image.service';
 
 @Component({
   selector: 'app-company-detail',
@@ -15,16 +14,10 @@ import { Observable, Subscriber } from 'rxjs';
 export class CompanyDetailComponent implements OnInit {
 
   company!: Company
-  companies: Company[]
-  closeResult= ''
   companyForm!: FormGroup
+  closeResult= ''
 
-  file!: File
-
-  base64code: any;
-
-
-  constructor(private companyService: CompanyService, private route: ActivatedRoute, private modalService: NgbModal, private router: Router, private location: Location) { }
+  constructor(private companyService: CompanyService, private imageService: ImageService, private route: ActivatedRoute, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getCompany(+this.route.snapshot.paramMap.get('id')!);
@@ -60,10 +53,10 @@ export class CompanyDetailComponent implements OnInit {
         Validators.required, 
         Validators.minLength(4),
         Validators.maxLength(11),
-        Validators.pattern(/[0-9]{3} [0-9]{3} [0-9]{3}/g) 
+        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}') 
       ]),
 
-      imageUrl: new FormControl('', [
+      imageBase64Code: new FormControl('', [
         Validators.required,
         Validators.maxLength(200)
       ])
@@ -73,21 +66,29 @@ export class CompanyDetailComponent implements OnInit {
   getCompany(id: number){
     this.companyService.getById(id).subscribe((data: any) => { 
       this.company = data.company;
+      this.company.image = this.imageService.convertToImage(this.company.imageBase64Code);
     });
   }
 
-  updateCompany(){
-    this.companyService.update(this.company.id, this.companyForm.value).subscribe((data: any) => {
+  updateCompany(company: any){
+    this.companyService.update(this.company.id, company).subscribe((data: any) => {
       this.getCompany(+this.route.snapshot.paramMap.get('id')!)
     });
+  }
+
+  onSubmit(){
+    const {value, valid} = this.companyForm;
+
+    if(valid){
+      this.company = value;
+      this.company.imageBase64Code = this.imageService.base64code;
+      this.updateCompany(this.company);
+    }
   }
 
   open(content: any){
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title',}).result.then((result) => {
       this.closeResult = `Closed result with ${result}`
-      if(result == 'update'){
-        this.updateCompany();
-      }
     },
     (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
@@ -95,35 +96,8 @@ export class CompanyDetailComponent implements OnInit {
   }
 
   onChange($event: any) {
-    const target = $event.target as HTMLInputElement
-    const file: File = (target.files as FileList)[0] 
-    this.convertToBase64(file)
-  }
-
-  convertToBase64(file: File) {
-    const observable = new Observable((subscriber: Subscriber<any>) => {
-      this.readFile(file, subscriber)
-    })
-
-    observable.subscribe((d) => {
-      this.file = d
-      this.base64code = d
-      this.companyForm.patchValue({imageURL: d})
-    })
-  }
-
-  readFile(file: File, subscriber: Subscriber<any>) {
-    const filereader = new FileReader();
-    filereader.readAsDataURL(file);
-    filereader.onload = () => {
-      subscriber.next(filereader.result)
-      subscriber.complete();
-    }
-
-    filereader.onerror = () => {
-      subscriber.error();
-      subscriber.complete();
-    }
+    const file = this.imageService.getFile($event);
+    this.imageService.convertToBase64(file);
   }
 
    private getDismissReason(reason: any): string {
@@ -160,8 +134,8 @@ export class CompanyDetailComponent implements OnInit {
     return this.companyForm.get('kvkNumber')
   }
 
-  get imageURL() {
-    return this.companyForm.get('imageURL')
+  get imageBase64Code() {
+    return this.companyForm.get('imageBase64Code')
   }
 
 }

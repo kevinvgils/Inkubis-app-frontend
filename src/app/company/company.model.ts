@@ -9,7 +9,8 @@ export class Company {
     address: string;
     city: string;
     kvkNumber: string;
-    imageURL: string;
+    imageBase64Code: string;
+    image? : File
     contracts?: Contract[];
 
 }

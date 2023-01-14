@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable, Subscriber } from 'rxjs';
 import { Company } from '../company.model';
 import { CompanyService } from '../company.service';
+import { ImageService } from 'src/app/shared/services/image.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-company-list',
@@ -13,18 +14,11 @@ import { CompanyService } from '../company.service';
 export class CompanyListComponent implements OnInit {
   
   companies: Company[]
-
+  companyForm!: FormGroup
+  company: Company
   closeResult = ''
 
-  companyForm!: FormGroup
-
-  file!: File
-
-  base64code!: any
-
-  
-
-  constructor(private companyService: CompanyService, private modalService: NgbModal) {}
+  constructor(private companyService: CompanyService, private imageService: ImageService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.getCompanies();
@@ -60,7 +54,7 @@ export class CompanyListComponent implements OnInit {
         Validators.required, 
         Validators.minLength(4),
         Validators.maxLength(11),
-        Validators.pattern(/[0-9]{3} [0-9]{3} [0-9]{3}/g) 
+        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}') 
       ]),
 
       imageURL: new FormControl('', [
@@ -71,8 +65,12 @@ export class CompanyListComponent implements OnInit {
 
   getCompanies() {
     this.companyService.getAll().subscribe((data: any) => {
-      console.log(data);
       this.companies = data.companies;
+      // Assign image
+      this.companies.forEach(item => {
+        item.image = this.imageService.convertToImage(item.imageBase64Code);
+        console.log(item.image)
+      })
     })
   }
   
@@ -82,7 +80,13 @@ export class CompanyListComponent implements OnInit {
   }
 
   createCompany() {
-    this.companyService.create(this.companyForm.value).subscribe((data: any) => this.getCompanies())
+    const {value, valid} = this.companyForm;
+
+    if(valid){
+      this.company = value;
+      this.company.imageBase64Code = this.imageService.base64code;
+      this.companyService.create(this.company).subscribe((data: any) => this.getCompanies())
+    }
   }
 
   openDelete(content: any, companyId: number){
@@ -110,35 +114,8 @@ export class CompanyListComponent implements OnInit {
   }
 
   onChange($event: any) {
-    const target = $event.target as HTMLInputElement
-    const file: File = (target.files as FileList)[0] 
-    this.convertToBase64(file)
-  }
-
-  convertToBase64(file: File) {
-    const observable = new Observable((subscriber: Subscriber<any>) => {
-      this.readFile(file, subscriber)
-    })
-
-    observable.subscribe((d) => {
-      this.file = d
-      this.base64code = d
-      this.companyForm.patchValue({imageURL: d})
-    })
-  }
-
-  readFile(file: File, subscriber: Subscriber<any>) {
-    const filereader = new FileReader();
-    filereader.readAsDataURL(file);
-    filereader.onload = () => {
-      subscriber.next(filereader.result)
-      subscriber.complete();
-    }
-
-    filereader.onerror = () => {
-      subscriber.error();
-      subscriber.complete();
-    }
+    const file = this.imageService.getFile($event);
+    this.imageService.convertToBase64(file);
   }
 
   private getDismissReason(reason: any): string {
