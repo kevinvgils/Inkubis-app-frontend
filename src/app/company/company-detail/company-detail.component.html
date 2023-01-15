@@ -1,0 +1,179 @@
+<div *ngIf="company" class="listWrap">
+    <div class="list">
+        <h2 class=" text-center ">{{ company.name }}</h2>
+        <p class="card-text text-center ">Hieronder bevindt zich een overzicht van {{ company.name }}</p>
+        <hr>
+        <div class="container">
+            <div class="row p-2 justify-content-end">
+                <div *ngIf="company.image" class="col-4 col-md-4 col-lg-4 my-3 me-3">
+                    <img [src]="company.image" class=" card-img rounded-0 detail-img " alt=" ... ">
+                </div>
+                <div class="col-7 col-md-7 col-lg-7 my-3 ">
+                    <h3 class=" text-center ">{{company.name}} details</h3>
+                    <div class="container border border-dark align-items-center ">
+                        <ul>
+                            <li class="mt-3 mb-2 me-5 ">
+                                <h5 class="title fw-bold ">(Bedrijfs-)naam: </h5>
+                                <p>{{ company.name }}</p>
+                            </li>
+                            <li class="mt-3 mb-2 me-5 ">
+                                <h5 class="title fw-bold ">Land: </h5>
+                                <p>{{ company.country }}</p>
+                            </li>
+                            <li class="mt-3 mb-2 me-5 ">
+                                <h5 class="title fw-bold ">Zipcode: </h5>
+                                <p> {{ company.zipcode }}</p>
+                            </li>
+                            <li class="mt-3 mb-2 me-5 ">
+                                <h5 class="title fw-bold ">Adres: </h5>
+                                <p> {{ company.address }}</p>
+                            </li>
+                            <li class="mt-3 mb-2 me-5 ">
+                                <h5 class="title fw-bold ">Stad: </h5>
+                                <p> {{ company.city }}</p>
+                            </li>
+                            <li class="mt-3 mb-2 me-5 ">
+                                <h5 class="title fw-bold ">Kvknummer: </h5>
+                                <p> {{ company.kvkNumber }}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="button purple mx-0 my-3 float-end " (click)=" open(content) ">Edit</button>
+                </div>
+            </div>
+        </div>
+
+        <ng-template #content let-c=" close " let-d="dismiss ">
+            <div class="modal-header text-center ">
+                <h4 class="modal-title" id="modal-basic-title-create">Update {{company.name}}</h4>
+                <button type="button " class="close end-1 purple " aria-label="Close " (click)="d( 'Cross click') ">
+                <span aria-hidden="true ">×</span>
+            </button>
+            </div>
+            <div class="modal-body text-center ">
+                <form [formGroup]="companyForm " (ngSubmit)="onSubmit() " novalidate>
+                    <div class="form-group ">
+                        <div class="row mb-3 mt-2 justify-content-center ">
+                            <div class="col-6 col-md-6 col-lg-6 ">
+                                <!--Company name start-->
+                                <label for="name " class="mb-1 fw-bold ">Naam</label>
+                                <input type="text " class="form-control rounded-0 " formControlName="name" placeholder="Type uw (bedrijfs-)naam in... " />
+                                <div class="alert alert-danger p-1 " *ngIf="name!.invalid && (name!.dirty || name!.touched) ">
+                                    <div class="error-message " *ngIf="name!.errors?.[ 'required'] ">
+                                        (Bedrijfs-)naam is vereist.
+                                    </div>
+                                    <div class="error-message " *ngIf="name!.errors?.[ 'maxlength'] ">
+                                        (Bedrijfs-)naam is te lang.
+                                    </div>
+                                    <div class="error-message " *ngIf="name!.errors?.[ 'minlength'] ">
+                                        (Bedrijfs-)naam is te kort.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Company name end-->
+                            <!--Country start-->
+                            <div class="col-6 col-md-6 col-lg-6 ">
+                                <label for="country " class="mb-1 fw-bold ">Land</label>
+                                <input type="text " class="form-control rounded-0 " formControlName="country" placeholder="Type uw land in... " />
+                                <div class="alert alert-danger p-1 " *ngIf="country!.invalid && (country!.dirty || country!.touched) ">
+                                    <div class="error-message " *ngIf="country!.errors?.[ 'required'] ">
+                                        Land is vereist.
+                                    </div>
+                                    <div class="error-message " *ngIf="country!.errors?.[ 'maxlength'] ">
+                                        Landnaam is te lang.
+                                    </div>
+                                    <div class="error-message " *ngIf="country!.errors?.[ 'minlength'] ">
+                                        Landnaam is te kort.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Country end-->
+                        </div>
+                        <div class="row mb-3 mt-2 ">
+                            <div class="col-6 col-md-6 col-lg-6 ">
+                                <!--Zipcode start-->
+                                <label for="zipcode " class="mb-1 fw-bold ">Zipcode</label>
+                                <input type="text " class="form-control rounded-0 " formControlName="zipcode" placeholder="Type uw zipcode in... " />
+                                <div class="alert alert-danger p-1 " *ngIf="zipcode!.invalid && (zipcode!.dirty || zipcode!.touched) ">
+                                    <div class="error-message " *ngIf="zipcode!.errors?.['pattern'] ">
+                                        Maak gebruik van de volgende formaat: (1234 AB)
+                                    </div>
+                                    <div class="error-message " *ngIf="zipcode!.errors?.['required'] ">
+                                        Zipcode is vereist.
+                                    </div>
+                                    <div class="error-message " *ngIf="zipcode!.errors?.['maxlength'] ">
+                                        Zipcode is te lang.
+                                    </div>
+                                    <div class="error-message " *ngIf="zipcode!.errors?.['minlength'] ">
+                                        Zipcode is te kort.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Zipcode name end-->
+                            <!--Address start-->
+                            <div class="col-6 col-md-6 col-lg-6 ">
+                                <label for="address " class="mb-1 fw-bold ">Adres</label>
+                                <input type="text " class="form-control rounded-0 " formControlName="address" placeholder="Type uw adres in... " />
+                                <div class="alert alert-danger p-1 " *ngIf="address!.invalid && (address!.dirty || address!.touched) ">
+                                    <div class="error-message " *ngIf="address!.errors?.[ 'required'] ">
+                                        Adres is vereist.
+                                    </div>
+                                    <div class="error-message " *ngIf="address!.errors?.[ 'maxlength'] ">
+                                        Adres is te lang.
+                                    </div>
+                                    <div class="error-message " *ngIf="address!.errors?.[ 'minlength'] ">
+                                        Adres is te kort.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Address end-->
+                        </div>
+                        <div class="row mb-3 mt-2 ">
+                            <div class="col-6 col-md-6 col-lg-6 ">
+                                <!--City start-->
+                                <label for="city " class="mb-1 fw-bold ">Stad</label>
+                                <input type="text " class="form-control rounded-0 " formControlName="city" placeholder="Type uw stadnaam in... " />
+                                <div class="alert alert-danger p-1 " *ngIf="city!.invalid && (city!.dirty || city!.touched) ">
+                                    <div class="error-message " *ngIf="city!.errors?.[ 'required'] ">
+                                        Stadsnaam is vereist.
+                                    </div>
+                                    <div class="error-message " *ngIf="city!.errors?.[ 'maxlength'] ">
+                                        Stadsnaam is te lang.
+                                    </div>
+                                    <div class="error-message " *ngIf="city!.errors?.[ 'minlength'] ">
+                                        Stadsnaam is te kort.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--City end-->
+                            <!--Kvk-number start-->
+                            <div class="col-6 col-md-6 col-lg-6 ">
+                                <label for="kvkNumber " class="mb-1 fw-bold ">Kvk-nummer</label>
+                                <input type="text " class="form-control rounded-0 " formControlName="kvkNumber" placeholder=" Type uw land in... " />
+                                <div class="alert alert-danger p-1 " *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched) ">
+                                    <div class="error-message " *ngIf="zipcode!.errors?.['pattern'] ">
+                                        Maak gebruik van de volgende formaat: (123 456 789)
+                                    </div>
+                                    <div class="error-message " *ngIf="kvkNumber!.errors?.['required'] ">
+                                        Kvk-nummer is vereist.
+                                    </div>
+                                    <div class="error-message " *ngIf="kvkNumber!.errors?.['maxlength'] ">
+                                        Kvk-nummer is te lang.
+                                    </div>
+                                    <div class="error-message " *ngIf="kvkNumber!.errors?.['minlength'] ">
+                                        Kvk-nummer is te kort.
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Kvk-number end-->
+                            <div class="col-12 col-md-12 col-lg-12">
+                                <label for="kvkNumber" class="mb-1 fw-bold mt-2 ">File</label>
+                                <input type="file" accept="image/png, image/jpeg, image/jpg " (change)="onChange($event) " class="form-control rounded-0" formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
+                                <div class="alert alert-danger p-1 " *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched) ">
+                                </div>
+                            </div>
+                            <div class="modal-footer rounded-0 justify-content-center ">
+                                <button type="submit " class="btn purple rounded-0 " (click)="c( 'Cross click') ">Update</button>
+                                <button type=" button " class="btn purple rounded-0 " (click)="c( 'Cross click') ">Cancel</button>
+                            </div>
+                        </div>
