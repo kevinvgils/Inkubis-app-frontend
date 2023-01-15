@@ -69,7 +69,6 @@ export class CompanyListComponent implements OnInit {
       // Assign image
       this.companies.forEach(item => {
         item.image = this.imageService.convertToImage(item.imageBase64Code);
-        console.log(item.image)
       })
     })
   }
