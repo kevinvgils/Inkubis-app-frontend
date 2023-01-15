@@ -182,11 +182,12 @@ export class ContractComponent extends FormProvider implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.link();
     this.route.params.subscribe(params => {
-      this.routeId = params['id'];
-      console.log(this.route);
+      if (params['id']) {
+        this.routeId = params['id'];
+      }
     })
+    this.link();
   }
 
   link(): void {

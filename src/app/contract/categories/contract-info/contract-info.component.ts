@@ -51,6 +51,7 @@ export class ContractInfoComponent implements OnInit {
     });
   }
 
+
   getContractById(id: number) {
     this.contractService.getContractById(id).subscribe((contract: IContract) => {
       this.contract = contract;
