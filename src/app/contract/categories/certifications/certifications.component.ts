@@ -25,9 +25,9 @@ export class CertificationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      console.log(params)
-      this.routeId = params['id'];
-      console.log(this.form.value)
+      if (params['id']) {
+        this.routeId = params['id'];
+      }
     })
   }
 

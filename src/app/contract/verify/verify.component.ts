@@ -18,8 +18,11 @@ export class VerifyComponent implements OnInit {
   constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router, readonly contractService: ContractService) {
     this.form = this.formProvider.getForm() as FormGroup;
     console.log(JSON.stringify(this.form.value));
+
     this.route.params.subscribe(params => {
-      this.routeId = params['id'];
+      if(params['id']){
+        this.routeId = params['id'];
+      }
     })
 
     if (this.routeId != 0){
@@ -44,11 +47,18 @@ export class VerifyComponent implements OnInit {
   }
 
   onSubmit() {
-    this.contractService
-    .contract(3, this.form.value)
-    .subscribe(() => {
-      console.log(this.form.value);
-    });
+    if (this.routeId == 0) {
+      this.contractService
+      .contract(3, this.form.value)
+      .subscribe(() => {
+        console.log(this.form.value);
+      });
+    } else if (this.routeId != 0 ){
+      console.log(this.form.value)
+        this.contractService.updateContract(this.routeId, this.form.value).subscribe(x => {
+      console.log(x)
+      })
+    }
 
     // const allForms = this.formProvider.getForm() as FormGroup;
 

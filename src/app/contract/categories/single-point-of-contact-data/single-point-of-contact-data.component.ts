@@ -33,7 +33,9 @@ export class SinglePointOfContactDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.routeId = params['id'];
+      if (params['id']) {
+        this.routeId = params['id'];
+      }
     })
   }
 

@@ -47,25 +47,35 @@ export class ContractService {
             return contracts;
         })
     )
-}
+  }
 
-getContractById(contractId: number): Observable<IContract> {
-    return this.httpClient
-    .get(`http://localhost:3000/data-api/contract/` + contractId, {
+  getContractById(contractId: number): Observable<IContract> {
+      return this.httpClient
+      .get(`http://localhost:3000/data-api/contract/` + contractId, {
+          headers: this.headers,
+      })
+      .pipe(
+          map((data: any) => data),
+          map((contract: IContract) => {
+              return contract
+          })
+      )
+  }
+
+  deleteContract(contractId: number): Observable<any> {
+      return this.httpClient
+      .delete(`http://localhost:3000/data-api/contract/` + contractId, {
+          headers: this.headers,
+      })
+  }
+
+  updateContract(contractId: number, contractInfo: any): Observable<Object> {
+    return this.httpClient.put(
+      `http://localhost:3000/data-api/contract/` + contractId,
+      contractInfo,
+      {
         headers: this.headers,
-    })
-    .pipe(
-        map((data: any) => data),
-        map((contract: IContract) => {
-            return contract
-        })
+      }
     )
-}
-
-deleteContract(contractId: number): Observable<any> {
-    return this.httpClient
-    .delete(`http://localhost:3000/data-api/contract/` + contractId, {
-        headers: this.headers,
-    })
-}
+  }
 }

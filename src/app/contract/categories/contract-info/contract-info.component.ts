@@ -43,9 +43,11 @@ export class ContractInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.routeId = params['id'];
-      this.getContractById(this.routeId)
-      console.log(this.routeId)
+      if (params['id']) {
+        this.routeId = params['id'];
+        this.getContractById(this.routeId)
+        console.log(this.routeId)
+      }
     });
   }
 
@@ -123,11 +125,11 @@ export class ContractInfoComponent implements OnInit {
   }
 
   onSubmit(){
-    if (this.routeId != 0){
-      this.router.navigate(['contract/edit/' + this.routeId + '/contractsignees']);
-    } else {
-      console.log(+this.route.snapshot.paramMap.get('id')!);
+    if (this.routeId == 0){
       this.router.navigate(['contract/contractsignees']);
+    } else {
+      console.log(this.routeId);
+      this.router.navigate(['contract/edit/' + this.routeId + '/contractsignees']);
     }
   }
 }
