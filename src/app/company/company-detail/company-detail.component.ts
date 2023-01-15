@@ -65,7 +65,7 @@ export class CompanyDetailComponent implements OnInit {
         Validators.maxLength(11),
         Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}'),
       ]),
-      imageURL: new FormControl('', [Validators.required]),
+      imageBase64Code: new FormControl('', [Validators.required]),
     }) as FormGroup;
   }
 
@@ -106,7 +106,7 @@ export class CompanyDetailComponent implements OnInit {
       address: this.company.address,
       city: this.company.city,
       kvkNumber: this.company.kvkNumber,
-      imageURL: this.company.imageBase64Code,
+      imageBase64Code: this.company.imageBase64Code,
     });
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
@@ -159,7 +159,7 @@ export class CompanyDetailComponent implements OnInit {
     return this.companyForm.get('kvkNumber');
   }
 
-  get imageURL() {
-    return this.companyForm.get('imageURL');
+  get imageBase64Code() {
+    return this.companyForm.get('imageBase64Code');
   }
 }

@@ -167,13 +167,13 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-12 col-lg-12 my-2">
-                                <label for="imgFile" class="mb-1 fw-bold mt-2">Bestand</label>
-                                <input id="imgFile" type="file" accept="image/png, image/jpeg, image/jpg"
+                                <label for="imageBase64Code" class="mb-1 fw-bold mt-2">Bestand</label>
+                                <input id="imageBase64Code" type="file" accept="image/png, image/jpeg, image/jpg"
                                     (change)="onChange($event)" class="form-control rounded-0"
-                                    formControlName="imageURL" placeholder=" Voeg hier uw afbeelding toe... " />
+                                    formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
                                 <div class="alert alert-danger p-1"
-                                    *ngIf="imageURL!.invalid && (imageURL!.dirty || imageURL!.touched)">
-                                    <div class="error-message" *ngIf="imageURL!.errors?.['required']">
+                                    *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched)">
+                                    <div class="error-message" *ngIf="imageBase64Code!.errors?.['required']">
                                         Een afbeelding is vereist.
                                     </div>
                                 </div>
