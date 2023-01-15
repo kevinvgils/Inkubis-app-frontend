@@ -1,45 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    padding: 0px;
-    margin: 0px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+* {
+  padding: 0px;
+  margin: 0px;
 }
-html{
-    font-size: 16px;
-}
-h1, h2, h3, h4, h5, h6{
-    font-weight: 700 !important;
-}
-h1{
-    font-size: 4rem !important; /*64px*/
-    color: #ffff00;
-}
-h2{
-    font-size: 1.75rem !important; /*28px*/
-    color: #280223;
-}
-h5{
-    font-size: 1.5rem !important; /*24px*/
-    color: #280223;
-}
-h5.preTitle{
-    font-size: 1rem !important; /*16px*/
-    color: #c95478;
+body{
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-button{
-    padding: 10.5px 16px;
-    font-weight: 900;
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    border: none;
+html {
+  font-size: 16px;
 }
 
-button.yellow{
-    background-color: #ffff00;
-    color: #280223;
+a {
+  cursor: pointer;
 }
-button.purple{
-    background-color: #280223;
-    color: #ffff00;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700 !important;
 }
+h1 {
+  font-size: 4rem !important; /*64px*/
+  color: #ffff00;
+}
+h2 {
+  font-size: 1.75rem !important; /*28px*/
+  color: #280223;
+}
+h5 {
+  font-size: 1.5rem !important; /*24px*/
+  color: #280223;
+}
+h5.preTitle {
+  font-size: 1rem !important; /*16px*/
+  color: #c95478;
+}
+
+button {
+  padding: 10.5px 16px;
+  font-weight: 900;
+  font-size: 12px !important;
+  letter-spacing: 1px;
+  text-transform: uppercase !important;
+  border: none;
+  cursor: pointer;
+}
+
+button::after{
+  position: relative;
+  left: 2px;
+  content: ">";
+  transition: 0.5s;
+}
+button:hover::after{
+  left: 7px;
+}
+
+button.yellow {
+  background-color: #ffff00;
+  color: #280223;
+}
+button.purple {
+  background-color: #280223;
+  color: #ffff00;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

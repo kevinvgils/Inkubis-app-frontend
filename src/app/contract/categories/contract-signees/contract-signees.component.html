@@ -1,0 +1,108 @@
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle ">Contract informatie</h2>
+        <p class="card-text">Algemene informatie over het contract
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="companyResponsibleForDataProcessing">
+        <h2>Verwerkingsverantwoordelijke</h2>
+
+        <div formGroupName="member1" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="nameEmployee1ResponsibleForDP">
+                </div>
+            </div>
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobEmployee1ResponsibleForDP">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div formGroupName="member2" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="nameEmployee2ResponsibleForDP">
+                </div>
+            </div>
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobEmployee2ResponsibleForDP">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div formGroupName="companyExecutingDataProcessing" class="row">
+        <h2>Verwerker</h2>
+
+        <div formGroupName="member1" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="nameEmployee1ExecutingDP">
+                </div>
+            </div>
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 1</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobEmployee1ExecutingDP">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div formGroupName="member2" class="row">
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Naam medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="name" name="name" formControlName="nameEmployee2ExecutingDP">
+                </div>
+            </div>
+            <div class="card col-12">
+                <div class="card-body">
+                    <h5 class="card-subtitle ">Functie medewerker 2</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="inputs">
+                    <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription" formControlName="jobEmployee2ExecutingDP">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="purple" type="submit">Volgende</button>
+</form>

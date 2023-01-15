@@ -23,33 +23,33 @@ export class CompanyDetailComponent implements OnInit {
     this.getCompany(+this.route.snapshot.paramMap.get('id')!);
 
     this.companyForm = new FormGroup({
-      name: new FormControl('', [
+      name: new FormControl(this.company.name, [
         Validators.required, 
         Validators.minLength(4),
         Validators.maxLength(20)
       ]),
-      country: new FormControl('', [
+      country: new FormControl(this.company.country, [
         Validators.required, 
         Validators.minLength(3),
         Validators.maxLength(20)
       ]),
-      zipcode: new FormControl('', [
+      zipcode: new FormControl(this.company.zipcode, [
         Validators.required, 
         Validators.minLength(5),
         Validators.maxLength(7),
         Validators.pattern(/^\d{4} ?[a-z]{2}$/i)
       ]),
-      address: new FormControl('', [
+      address: new FormControl(this.company.address, [
         Validators.required, 
         Validators.minLength(3),
         Validators.maxLength(50)
       ]),
-      city: new FormControl('', [
+      city: new FormControl(this.company.city, [
         Validators.required, 
         Validators.minLength(3),
         Validators.maxLength(25)
       ]),
-      kvkNumber: new FormControl('', [
+      kvkNumber: new FormControl(this.company.kvkNumber, [
         Validators.required, 
         Validators.minLength(4),
         Validators.maxLength(11),

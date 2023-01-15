@@ -168,7 +168,7 @@
                             <!--Kvk-number end-->
                             <div class="col-12 col-md-12 col-lg-12 my-3">
                                 <label for="kvkNumber" class="mb-1 fw-bold">Bestand</label>
-                                <input type="file" accept="image/png, image/jpeg, image/jpg " (change)="onChange($event) " class="form-control rounded-0" formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
+                                <input type="file" accept="image/png, image/jpeg, image/jpg" (change)="onChange($event) " class="form-control rounded-0" formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
                                 <div class="alert alert-danger p-1 " *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched) ">
                                 </div>
                             </div>

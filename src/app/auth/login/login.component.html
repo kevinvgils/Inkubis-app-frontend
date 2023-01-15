@@ -1,0 +1,52 @@
+<div class="wrap d-flex overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-md-5 p-0">
+                <img src="../../../assets/img/Inkubis-photo.jpg" class="img-fluid rounded-0 img-inkubis" alt="" />
+            </div>
+            <div class="col-md-6 p-0">
+                <div class="card rounded-0">
+                    <div class="card-body m-2 p-5">
+                        <h6 class="login-preTitle">Login</h6>
+                        <h3 class="card-title">
+                            Login om bedrijfscontracten te bekijken en aan te passen
+                        </h3>
+                        <hr class="mt-4" />
+                        <form [formGroup]="loginForm" name="form" (ngSubmit)="onSubmit()" novalidate
+                            class="mb-3 mt-md-4">
+                            <label for="emailAddress" class="form-label">E-mailadres</label>
+                            <input type="text" class="form-control mb-3" id="emailAddress"
+                                formControlName="emailAddress" placeholder="Type hier je e-mailadres" [ngClass]="{
+                                'is-invalid': loginForm.get('emailAddress')?.invalid && loginForm.get('emailAddress')?.touched
+                            }" />
+                            <label for="password" class="form-label">Wachtwoord</label>
+                            <i class="bi bi-eye" (click)="hide = !hide"></i>
+                            <input [type]="hide ? 'password' : 'text'" class="form-control" id="password"
+                                formControlName="password" placeholder="Type hier je wachtwoord" class="form-control"
+                                [ngClass]="{
+                            'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+                            }" />
+                            <div *ngIf="loginForm.get('emailAddress')?.invalid && loginForm.get('emailAddress')?.touched"
+                                class="text-danger">
+                                <div *ngIf="loginForm.get('emailAddress')?.errors!['required']">
+                                    E-mailadres is verplicht
+                                </div>
+                            </div>
+                            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+                                class="text-danger">
+                                <div *ngIf="loginForm.get('password')?.errors!['required']">
+                                    Wachtwoord is verplicht
+                                </div>
+                            </div>
+                            <div *ngIf="wrongPwOrEmail" class="text-danger">
+                                Verkeerd e-mailadres of wachtwoord probeer opnieuw
+                            </div>
+                            <button type="submit" class="purple"
+                                [disabled]="!loginForm.valid">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

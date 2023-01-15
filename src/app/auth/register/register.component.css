@@ -1,0 +1,69 @@
+.wrap{
+  min-height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+}
+.container{
+    height: 75vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.form-label {
+  font-size: 1rem;
+  color: #280223;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.8rem !important;
+}
+
+hr {
+  background-color: black;
+}
+
+.login-preTitle {
+  color: #c95478;
+  font-size: 1.5rem;
+}
+
+.card {
+  display: flex;
+  min-width: 70vw;
+}
+
+input {
+  border-radius: 0;
+  line-height: 3rem;
+  border-color: black;
+}
+
+.form-control {
+  font-size: 1rem;
+}
+
+.abs {
+  position: absolute;
+}
+
+.bi-eye {
+  margin-left: 10px;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: unset;
+}
+
+::ng-deep .mat-option-pseudo-checkbox.mat-pseudo-checkbox-checked {
+  background-color: #53042f;
+}
+
+.mat-select {
+  border-radius: 0;
+  border-color: black;
+  padding: 18px;
+}
+
+::ng-deep .mat-select-placeholder {
+  color: #6c757d;
+}

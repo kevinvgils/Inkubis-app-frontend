@@ -1,0 +1,120 @@
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle ">Contract informatie</h2>
+        <p class="card-text">Algemene informatie over het contract
+            waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="CompanyResponsibleForDataProcessing" class="row">
+        <h2>Verwerkingsverantwoordelijke</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="nameR">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Functie</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                    formControlName="jobDescR">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Email</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="email" name="email" formControlName="emailR">
+            </div>
+        </div>
+
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Telefoon</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="phoneR">
+            </div>
+        </div>
+
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Mobiele telefoon</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="mobile" name="mobile" formControlName="mobileR">
+            </div>
+        </div>
+    </div>
+
+    <div formGroupName="CompanyExecutingDataProcessing" class="row">
+        <h2>Verwerker</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Naam</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="name" name="name" formControlName="nameE">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Functie</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="jobDescription" name="jobDescription"
+                    formControlName="jobDescE">
+            </div>
+        </div>
+
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Email</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="email" name="email" formControlName="emailE">
+            </div>
+        </div>
+
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Telefoon</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="phone" name="phone" formControlName="phoneE">
+            </div>
+        </div>
+
+        <div class="card col-6">
+            <div class="card-body">
+                <h5 class="card-subtitle ">Mobiele telefoon</h5>
+                <p class="card-text"></p>
+            </div>
+            <div class="inputs">
+                <input class="form-tekst-input" type="text" id="mobile" name="mobile" formControlName="mobileE">
+            </div>
+        </div>
+    </div>
+
+    <button class="purple" type="submit">Volgende</button>
+</form>
