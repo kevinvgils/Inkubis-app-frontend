@@ -1,4 +1,8 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, catchError, retry, throwError } from 'rxjs';
@@ -6,22 +10,26 @@ import { environment } from 'src/environments/environment.prod';
 import { Company } from './company.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
-
 export class CompanyService {
   readonly apiURL = environment.apiurl;
-  
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   create(company: Company): Observable<Company> {
-    return this.http.post<Company>(`${this.apiURL}/company`, JSON.stringify(company), this.httpOptions).pipe(retry(1), catchError(this.handleError));
+    return this.http
+      .post<Company>(
+        `${this.apiURL}/company`,
+        JSON.stringify(company),
+        this.httpOptions
+      )
+      .pipe(retry(1), catchError(this.handleError));
   }
 
   getAll(): Observable<Company[]> {
@@ -63,8 +71,5 @@ export class CompanyService {
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
-
   }
-
 }
-
