@@ -54,7 +54,7 @@ export class CompanyListComponent implements OnInit {
         Validators.required, 
         Validators.minLength(4),
         Validators.maxLength(11),
-        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}') 
+        Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}') 
       ]),
 
       imageURL: new FormControl('', [
@@ -79,13 +79,17 @@ export class CompanyListComponent implements OnInit {
     this.companyService.delete(id).subscribe(data => this.getCompanies())
   }
 
-  createCompany() {
+  createCompany(company: Company) {
+      this.companyService.create(this.company).subscribe((data: any) => this.getCompanies())
+  }
+
+  onSubmit(){
     const {value, valid} = this.companyForm;
 
-    if(valid){
+    if(valid && !(this.imageService.base64code === "")){
       this.company = value;
       this.company.imageBase64Code = this.imageService.base64code;
-      this.companyService.create(this.company).subscribe((data: any) => this.getCompanies())
+      this.createCompany(this.company);
     }
   }
 
@@ -104,9 +108,6 @@ export class CompanyListComponent implements OnInit {
   openCreate(content: any){
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title-create',}).result.then((result) => {
       this.closeResult = `Closed result with ${result}`
-      if(result === 'create'){
-        this.createCompany();
-      }
     },
     (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`

@@ -70,16 +70,17 @@ export class CompanyDetailComponent implements OnInit {
   }
 
   updateCompany(company: any){
-    this.companyService.update(this.company.id, company).subscribe((data: any) => {
+    this.companyService.update(+this.route.snapshot.paramMap.get('id')!, company).subscribe((data: any) => {
       this.getCompany(+this.route.snapshot.paramMap.get('id')!)
     });
   }
 
-  onSubmit(){
+  async onSubmit(){
     const {value, valid} = this.companyForm;
 
-    if(valid){
+    if(valid && !(this.imageService.base64code === "")){
       this.company = value;
+      console.log(this.company)
       this.company.imageBase64Code = this.imageService.base64code;
       this.updateCompany(this.company);
     }
