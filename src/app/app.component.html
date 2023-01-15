@@ -9,32 +9,31 @@
           <div>Admin</div>
           <div class="arrow">></div>
           <ul class="dropdown">
-            <li><a routerLink="/admin">Contracten</a></li>
-            <li><a routerLink="/">Bedrijven</a></li>
+            <li><a routerLink="/admin">Alle contracten</a></li>
+            <li><a routerLink="/">Uw contracten</a></li>
+            <li><a routerLink="/company">Bedrijven</a></li>
             <li><a routerLink="/users">Gebruikers</a></li>
             <li><a routerLink="/register">Gebruiker registreren</a></li>
-
           </ul>
         </li>
         <li>
-          <button class="logout yellow" ></button>
+          <button class="logout yellow"></button>
           <ul class="dropdown">
-            <li><div>{{ user.emailAddress }}</div></li>
+            <li>
+              <div>{{ user.emailAddress }}</div>
+            </li>
             <li><a routerLink="">Gegevens aanpassen</a></li>
             <li><a (click)="logout()">Uitloggen</a></li>
           </ul>
-          
         </li>
       </ul>
     </div>
   </div>
 </header>
 
+<!-- Overview -->
 <main>
   <div class="content">
     <router-outlet></router-outlet>
   </div>
 </main>
-
-<!-- Footer -->
-<!-- <footer><div class="content"></div></footer> -->
