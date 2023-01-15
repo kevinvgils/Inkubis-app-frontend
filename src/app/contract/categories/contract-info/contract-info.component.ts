@@ -44,7 +44,8 @@ export class ContractInfoComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.routeId = params['id'];
-      this.getContractById(this.routeId) 
+      this.getContractById(this.routeId)
+      console.log(this.routeId)
     });
   }
 

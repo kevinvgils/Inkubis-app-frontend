@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Contract } from '../contract';
 import { ContractService } from '../contract.service';
 import { FormProvider } from '../FormProvider';
@@ -13,20 +13,35 @@ import { FormProvider } from '../FormProvider';
 export class VerifyComponent implements OnInit {
   contracts: any;
   form: FormGroup;
+  routeId: number = 0;
 
-  constructor(private formProvider: FormProvider, private router: Router, readonly contractService: ContractService) {
-    this.form = formProvider.getForm() as FormGroup;
+  constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router, readonly contractService: ContractService) {
+    this.form = this.formProvider.getForm() as FormGroup;
     console.log(JSON.stringify(this.form.value));
+    this.route.params.subscribe(params => {
+      this.routeId = params['id'];
+    })
 
-    try {
-      this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
-    } catch (e: any) {
-      this.contracts = [];
-      console.error(e.message);
+    if (this.routeId != 0){
+      try {
+        this.contracts = this.form
+      } catch (e: any) {
+        this.contracts = [];
+        console.error(e.message);
+      }
+    } else {
+      try {
+        this.contracts = JSON.parse(localStorage.getItem('forms') || '[]');
+      } catch (e: any) {
+        this.contracts = [];
+        console.error(e.message);
+      }
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.form.value);
+  }
 
   onSubmit() {
     this.contractService

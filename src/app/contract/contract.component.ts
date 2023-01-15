@@ -38,6 +38,7 @@ export class ContractComponent extends FormProvider implements OnInit {
   // ];
   currentComp!: string;
   contract!: IContract;
+  routeId: number = 0;
 
   contractForm = new FormGroup({
     contractinfo: new FormGroup({
@@ -182,6 +183,10 @@ export class ContractComponent extends FormProvider implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.link();
+    this.route.params.subscribe(params => {
+      this.routeId = params['id'];
+      console.log(this.route);
+    })
   }
 
   link(): void {
