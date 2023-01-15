@@ -62,7 +62,7 @@ button {
     left: 0 !important;
     height: 6vh !important;
     width: 5.5vw !important;
-    font-size: 10px !important;
+    font-size: 9px !important;
     margin-left: 12px !important;
 }
 
@@ -74,7 +74,7 @@ button {
 }
 
 .modal-title {
-    margin-left: 9vw;
+    margin-left: 8vw;
     color: #ffff00;
 }
 

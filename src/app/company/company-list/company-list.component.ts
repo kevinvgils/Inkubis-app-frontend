@@ -4,7 +4,6 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Company } from '../company.model';
 import { CompanyService } from '../company.service';
 import { ImageService } from 'src/app/shared/services/image.service';
-import { map } from 'rxjs';
 
 @Component({
   selector: 'app-company-list',
@@ -57,7 +56,7 @@ export class CompanyListComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(11),
-        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}'),
+        Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}'),
       ]),
 
       imageURL: new FormControl('', [Validators.required]),
@@ -78,17 +77,19 @@ export class CompanyListComponent implements OnInit {
     this.companyService.delete(id).subscribe((data) => this.getCompanies());
   }
 
-  createCompany() {
+  createCompany(company: Company) {
+    this.companyService
+      .create(this.company)
+      .subscribe((data: any) => this.getCompanies());
+  }
+
+  onSubmit() {
     const { value, valid } = this.companyForm;
-    console.log('valid');
-    console.log(valid);
-    console.log('valid');
-    if (valid) {
+
+    if (valid && !(this.imageService.base64code === '')) {
       this.company = value;
       this.company.imageBase64Code = this.imageService.base64code;
-      this.companyService
-        .create(this.company)
-        .subscribe((data: any) => this.getCompanies());
+      this.createCompany(this.company);
     }
   }
 
@@ -114,9 +115,6 @@ export class CompanyListComponent implements OnInit {
       .result.then(
         (result) => {
           this.closeResult = `Closed result with ${result}`;
-          if (result === 'create') {
-            this.createCompany();
-          }
         },
         (reason) => {
           this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
