@@ -66,7 +66,7 @@ export class CompanyDetailComponent implements OnInit {
         Validators.maxLength(11),
         Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}'),
       ]),
-      // imageURL: new FormControl('', [Validators.required]),
+      imageURL: new FormControl('', [Validators.required]),
     }) as FormGroup;
 
     await this.companyService
@@ -166,7 +166,7 @@ export class CompanyDetailComponent implements OnInit {
     return this.companyForm.get('kvkNumber');
   }
 
-  get imageBase64Code() {
-    return this.companyForm.get('imageBase64Code');
+  get imageURL() {
+    return this.companyForm.get('imageURL');
   }
 }

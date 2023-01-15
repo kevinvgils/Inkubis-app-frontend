@@ -53,52 +53,47 @@
             <div class="modal-body text-center">
                 <form [formGroup]="companyForm" novalidate>
                     <div class="form-group">
-                        <div class="row mb-3 mt-2 justify-content-center">
+                        <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
-                                <!--Company name start-->
                                 <label for="name" class="mb-1 fw-bold">Naam</label>
-                                <input type="text" class="form-control rounded-0" formControlName="name"
-                                    placeholder="Type uw (bedrijfs-)naam in..." />
+                                <input id="name" type="text" class="form-control rounded-0" formControlName="name"
+                                    placeholder="Type uw (bedrijfs-)naam in... " />
                                 <div class="alert alert-danger p-1"
                                     *ngIf="name!.invalid && (name!.dirty || name!.touched)">
-                                    <div class="error-message" *ngIf="name!.errors?.[ 'required']">
+                                    <div class="error-message" *ngIf="name!.errors?.['required']">
                                         (Bedrijfs-)naam is vereist.
                                     </div>
-                                    <div class="error-message" *ngIf="name!.errors?.[ 'maxlength']">
+                                    <div class="error-message" *ngIf="name!.errors?.['maxlength']">
                                         (Bedrijfs-)naam is te lang.
                                     </div>
-                                    <div class="error-message" *ngIf="name!.errors?.[ 'minlength']">
+                                    <div class="error-message" *ngIf="name!.errors?.['minlength']">
                                         (Bedrijfs-)naam is te kort.
                                     </div>
                                 </div>
                             </div>
-                            <!--Company name end-->
-                            <!--Country start-->
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="country" class="mb-1 fw-bold">Land</label>
-                                <input type="text" class="form-control rounded-0" formControlName="country"
-                                    placeholder="Type uw land in..." />
+                                <input id="country" type="text" class="form-control rounded-0" formControlName="country"
+                                    placeholder="Type uw land in... " />
                                 <div class="alert alert-danger p-1"
                                     *ngIf="country!.invalid && (country!.dirty || country!.touched)">
-                                    <div class="error-message" *ngIf="country!.errors?.[ 'required']">
+                                    <div class="error-message" *ngIf="country!.errors?.['required']">
                                         Land is vereist.
                                     </div>
-                                    <div class="error-message" *ngIf="country!.errors?.[ 'maxlength']">
+                                    <div class="error-message" *ngIf="country!.errors?.['maxlength']">
                                         Landnaam is te lang.
                                     </div>
-                                    <div class="error-message" *ngIf="country!.errors?.[ 'minlength']">
+                                    <div class="error-message" *ngIf="country!.errors?.['minlength']">
                                         Landnaam is te kort.
                                     </div>
                                 </div>
                             </div>
-                            <!--Country end-->
                         </div>
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
-                                <!--Zipcode start-->
                                 <label for="zipcode" class="mb-1 fw-bold">Zipcode</label>
-                                <input type="text" class="form-control rounded-0" formControlName="zipcode"
-                                    placeholder="Type uw zipcode in..." />
+                                <input id="zipcode" type="text" class="form-control rounded-0" formControlName="zipcode"
+                                    placeholder="Type uw zipcode in... " />
                                 <div class="alert alert-danger p-1"
                                     *ngIf="zipcode!.invalid && (zipcode!.dirty || zipcode!.touched)">
                                     <div class="error-message" *ngIf="zipcode!.errors?.['pattern']">
@@ -115,36 +110,32 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--Zipcode name end-->
-                            <!--Address start-->
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="address" class="mb-1 fw-bold">Adres</label>
-                                <input type="text" class="form-control rounded-0" formControlName="address"
-                                    placeholder="Type uw adres in..." />
+                                <input id="address" type="text" class="form-control rounded-0" formControlName="address"
+                                    placeholder="Type uw adres in... " />
                                 <div class="alert alert-danger p-1"
                                     *ngIf="address!.invalid && (address!.dirty || address!.touched)">
-                                    <div class="error-message" *ngIf="address!.errors?.[ 'required']">
+                                    <div class="error-message" *ngIf="address!.errors?.['required']">
                                         Adres is vereist.
                                     </div>
-                                    <div class="error-message" *ngIf="address!.errors?.[ 'maxlength']">
+                                    <div class="error-message" *ngIf="address!.errors?.['maxlength']">
                                         Adres is te lang.
                                     </div>
-                                    <div class="error-message" *ngIf="address!.errors?.[ 'minlength']">
+                                    <div class="error-message" *ngIf="address!.errors?.['minlength']">
                                         Adres is te kort.
                                     </div>
                                 </div>
                             </div>
-                            <!--Address end-->
                         </div>
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
-                                <!--City start-->
                                 <label for="city" class="mb-1 fw-bold">Stad</label>
-                                <input type="text" class="form-control rounded-0" formControlName="city"
-                                    placeholder="Type uw stadnaam in..." />
+                                <input id="city" type="text" class="form-control rounded-0" formControlName="city"
+                                    placeholder="Type uw stadnaam in... " />
                                 <div class="alert alert-danger p-1"
                                     *ngIf="city!.invalid && (city!.dirty || city!.touched)">
-                                    <div class="error-message" *ngIf="city!.errors?.[ 'required']">
+                                    <div class="error-message" *ngIf="city!.errors?.['required']">
                                         Stadsnaam is vereist.
                                     </div>
                                     <div class="error-message" *ngIf="city!.errors?.[ 'maxlength']">
@@ -155,42 +146,43 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--City end-->
-                            <!--Kvk-number start-->
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="kvkNumber" class="mb-1 fw-bold">Kvk-nummer</label>
-                                <input type="text" class="form-control rounded-0" formControlName="kvkNumber"
-                                    placeholder=" Type uw kvk-nummer in..." />
+                                <input id="kvkNumber" type="text" class="form-control rounded-0"
+                                    formControlName="kvkNumber" placeholder=" Type uw kvk-nummer in... " />
                                 <div class="alert alert-danger p-1"
                                     *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched)">
-                                    <div class="error-message" *ngIf="zipcode!.errors?.['pattern']">
+                                    <div class="error-message" *ngIf="kvkNumber!.errors?.[ 'pattern']">
                                         Maak gebruik van de volgende formaat: (123 456 789)
                                     </div>
-                                    <div class="error-message" *ngIf="kvkNumber!.errors?.['required']">
+                                    <div class="error-message" *ngIf="kvkNumber!.errors?.[ 'required']">
                                         Kvk-nummer is vereist.
                                     </div>
-                                    <div class="error-message" *ngIf="kvkNumber!.errors?.['maxlength']">
+                                    <div class="error-message" *ngIf="kvkNumber!.errors?.[ 'maxlength']">
                                         Kvk-nummer is te lang.
                                     </div>
-                                    <div class="error-message" *ngIf="kvkNumber!.errors?.['minlength']">
+                                    <div class="error-message" *ngIf="kvkNumber!.errors?.[ 'minlength']">
                                         Kvk-nummer is te kort.
                                     </div>
                                 </div>
                             </div>
-                            <!--Kvk-number end-->
-                            <div class="col-12 col-md-12 col-lg-12 my-3">
-                                <label for="kvkNumber" class="mb-1 fw-bold">Bestand</label>
-                                <input type="file" accept="image/png, image/jpeg, image/jpg" (change)="onChange($event)"
-                                    class="form-control rounded-0" formControlName="imageBase64Code"
-                                    placeholder=" Voeg hier uw afbeelding toe..." />
+                            <div class="col-12 col-md-12 col-lg-12 my-2">
+                                <label for="imgFile" class="mb-1 fw-bold mt-2">Bestand</label>
+                                <input id="imgFile" type="file" accept="image/png, image/jpeg, image/jpg"
+                                    (change)="onChange($event)" class="form-control rounded-0"
+                                    formControlName="imageURL" placeholder=" Voeg hier uw afbeelding toe... " />
                                 <div class="alert alert-danger p-1"
-                                    *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched)">
+                                    *ngIf="imageURL!.invalid && (imageURL!.dirty || imageURL!.touched)">
+                                    <div class="error-message" *ngIf="imageURL!.errors?.['required']">
+                                        Een afbeelding is vereist.
+                                    </div>
                                 </div>
                             </div>
-                            <div class="modal-footer rounded-0 justify-content-center">
-                                <button type="submit" class="btn purple rounded-0" [disabled]="!companyForm.valid"
-                                    (click)="c(onSubmit())">Wijzigen</button>
-                                <button type=" button" class="btn purple rounded-0"
-                                    (click)="c( 'Cross click')">Annuleren</button>
-                            </div>
                         </div>
+                        <div class="modal-footer rounded-0 justify-content-center">
+                            <button type="submit" class="btn purple rounded-0" [disabled]="!companyForm.valid"
+                                (click)="c(onSubmit())">Wijzigen</button>
+                            <button type=" button" class="btn purple rounded-0"
+                                (click)="c( 'Cross click')">Annuleren</button>
+                        </div>
+                    </div>
