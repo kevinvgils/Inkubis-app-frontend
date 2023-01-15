@@ -9,107 +9,119 @@ import { map } from 'rxjs';
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.css']
+  styleUrls: ['./company-list.component.css'],
 })
 export class CompanyListComponent implements OnInit {
-  
-  companies: Company[]
-  companyForm!: FormGroup
-  company: Company
-  closeResult = ''
+  companies: Company[];
+  companyForm!: FormGroup;
+  company: Company;
+  closeResult = '';
 
-  constructor(private companyService: CompanyService, private imageService: ImageService, private modalService: NgbModal) {}
+  constructor(
+    private companyService: CompanyService,
+    private imageService: ImageService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.getCompanies();
 
     this.companyForm = new FormGroup({
       name: new FormControl('', [
-        Validators.required, 
+        Validators.required,
         Validators.minLength(4),
-        Validators.maxLength(20)
+        Validators.maxLength(20),
       ]),
       country: new FormControl('', [
-        Validators.required, 
+        Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(20)
+        Validators.maxLength(20),
       ]),
       zipcode: new FormControl('', [
-        Validators.required, 
+        Validators.required,
         Validators.minLength(5),
         Validators.maxLength(7),
-        Validators.pattern(/^\d{4} ?[a-z]{2}$/i)
+        Validators.pattern(/^\d{4} ?[a-z]{2}$/i),
       ]),
       address: new FormControl('', [
-        Validators.required, 
+        Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(50)
+        Validators.maxLength(50),
       ]),
       city: new FormControl('', [
-        Validators.required, 
+        Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(25)
+        Validators.maxLength(25),
       ]),
       kvkNumber: new FormControl('', [
-        Validators.required, 
+        Validators.required,
         Validators.minLength(4),
         Validators.maxLength(11),
-        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}') 
+        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}'),
       ]),
 
-      imageURL: new FormControl('', [
-        Validators.required,
-      ])
-    })
+      imageURL: new FormControl('', [Validators.required]),
+    });
   }
 
   getCompanies() {
     this.companyService.getAll().subscribe((data: any) => {
       this.companies = data.companies;
       // Assign image
-      this.companies.forEach(item => {
+      this.companies.forEach((item) => {
         item.image = this.imageService.convertToImage(item.imageBase64Code);
-      })
-    })
+      });
+    });
   }
-  
 
-  deleteCompany(id: number){
-    this.companyService.delete(id).subscribe(data => this.getCompanies())
+  deleteCompany(id: number) {
+    this.companyService.delete(id).subscribe((data) => this.getCompanies());
   }
 
   createCompany() {
-    const {value, valid} = this.companyForm;
-
-    if(valid){
+    const { value, valid } = this.companyForm;
+    console.log('valid');
+    console.log(valid);
+    console.log('valid');
+    if (valid) {
       this.company = value;
       this.company.imageBase64Code = this.imageService.base64code;
-      this.companyService.create(this.company).subscribe((data: any) => this.getCompanies())
+      this.companyService
+        .create(this.company)
+        .subscribe((data: any) => this.getCompanies());
     }
   }
 
-  openDelete(content: any, companyId: number){
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title',}).result.then((result) => {
-      this.closeResult = `Closed result with ${result}`
-      if(result === 'delete'){
-        this.deleteCompany(companyId);
-      }
-    },
-    (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
-    })
+  openDelete(content: any, companyId: number) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed result with ${result}`;
+          if (result === 'delete') {
+            this.deleteCompany(companyId);
+          }
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
   }
 
-  openCreate(content: any){
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title-create',}).result.then((result) => {
-      this.closeResult = `Closed result with ${result}`
-      if(result === 'create'){
-        this.createCompany();
-      }
-    },
-    (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`
-    })
+  openCreate(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title-create' })
+      .result.then(
+        (result) => {
+          this.closeResult = `Closed result with ${result}`;
+          if (result === 'create') {
+            this.createCompany();
+          }
+        },
+        (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
   }
 
   onChange($event: any) {
@@ -128,30 +140,30 @@ export class CompanyListComponent implements OnInit {
   }
 
   get name() {
-    return this.companyForm.get('name')
+    return this.companyForm.get('name');
   }
 
   get country() {
-    return this.companyForm.get('country')
+    return this.companyForm.get('country');
   }
 
   get zipcode() {
-    return this.companyForm.get('zipcode')
+    return this.companyForm.get('zipcode');
   }
 
   get address() {
-    return this.companyForm.get('address')
+    return this.companyForm.get('address');
   }
 
   get city() {
-    return this.companyForm.get('city')
+    return this.companyForm.get('city');
   }
 
   get kvkNumber() {
-    return this.companyForm.get('kvkNumber')
+    return this.companyForm.get('kvkNumber');
   }
 
   get imageURL() {
-    return this.companyForm.get('imageURL')
+    return this.companyForm.get('imageURL');
   }
 }

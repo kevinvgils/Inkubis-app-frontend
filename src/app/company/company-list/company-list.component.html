@@ -165,7 +165,7 @@
                                     placeholder=" Type uw land in... " />
                                 <div class="alert alert-danger p-1 "
                                     *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched) ">
-                                    <div class="error-message" *ngIf="zipcode!.errors?.['pattern'] ">
+                                    <div class="error-message" *ngIf="kvkNumber!.errors?.['pattern'] ">
                                         Maak gebruik van de volgende formaat: (123 456 789)
                                     </div>
                                     <div class="error-message " *ngIf="kvkNumber!.errors?.[ 'required'] ">
