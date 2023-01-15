@@ -17,8 +17,7 @@ import { ImageService } from 'src/app/shared/services/image.service';
   styleUrls: ['./company-detail.component.css'],
 })
 export class CompanyDetailComponent implements OnInit {
-  selectedCompany: Company = new Company();
-  company!: Company;
+  company: Company = new Company();
   companyForm!: FormGroup;
   closeResult = '';
 
@@ -31,7 +30,7 @@ export class CompanyDetailComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    await this.getCompany(+this.route.snapshot.paramMap.get('id')!);
+    this.getCompany(+this.route.snapshot.paramMap.get('id')!);
 
     this.companyForm = this.fb.group({
       name: new FormControl('', [
@@ -68,26 +67,10 @@ export class CompanyDetailComponent implements OnInit {
       ]),
       imageURL: new FormControl('', [Validators.required]),
     }) as FormGroup;
-
-    await this.companyService
-      .getById(+this.route.snapshot.paramMap.get('id')!)
-      .subscribe((company) => {
-        this.selectedCompany = company;
-      });
-
-    this.companyForm.setValue({
-      name: this.selectedCompany.name,
-      country: this.selectedCompany.country,
-      zipcode: this.selectedCompany.zipcode,
-      address: this.selectedCompany.address,
-      city: this.selectedCompany.city,
-      kvkNumber: this.selectedCompany.kvkNumber,
-      imageBase64Code: this.selectedCompany.imageBase64Code,
-    });
   }
 
-  getCompany(id: number) {
-    this.companyService.getById(id).subscribe((data: any) => {
+  async getCompany(id: number) {
+    await this.companyService.getById(id).subscribe((data: any) => {
       this.company = data.company;
       this.company.image = this.imageService.convertToImage(
         this.company.imageBase64Code
@@ -115,6 +98,16 @@ export class CompanyDetailComponent implements OnInit {
   }
 
   open(content: any) {
+    console.log(this.company);
+    this.companyForm.setValue({
+      name: this.company.name,
+      country: this.company.country,
+      zipcode: this.company.zipcode,
+      address: this.company.address,
+      city: this.company.city,
+      kvkNumber: this.company.kvkNumber,
+      imageURL: this.company.imageBase64Code,
+    });
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(
