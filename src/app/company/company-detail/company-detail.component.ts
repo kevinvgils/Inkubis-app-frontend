@@ -3,7 +3,12 @@ import { CompanyService } from '../company.service';
 import { Company } from '../company.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ImageService } from 'src/app/shared/services/image.service';
 
 @Component({
@@ -12,6 +17,7 @@ import { ImageService } from 'src/app/shared/services/image.service';
   styleUrls: ['./company-detail.component.css'],
 })
 export class CompanyDetailComponent implements OnInit {
+  selectedCompany: Company = new Company();
   company!: Company;
   companyForm!: FormGroup;
   closeResult = '';
@@ -20,47 +26,63 @@ export class CompanyDetailComponent implements OnInit {
     private companyService: CompanyService,
     private imageService: ImageService,
     private route: ActivatedRoute,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private fb: FormBuilder
   ) {}
 
-  ngOnInit(): void {
-    this.getCompany(+this.route.snapshot.paramMap.get('id')!);
+  async ngOnInit(): Promise<void> {
+    await this.getCompany(+this.route.snapshot.paramMap.get('id')!);
 
-    this.companyForm = new FormGroup({
-      name: new FormControl(this.company.name, [
-        Validators.required, 
+    this.companyForm = this.fb.group({
+      name: new FormControl('', [
+        Validators.required,
         Validators.minLength(4),
         Validators.maxLength(20),
       ]),
-      country: new FormControl(this.company.country, [
-        Validators.required, 
+      country: new FormControl('', [
+        Validators.required,
         Validators.minLength(3),
         Validators.maxLength(20),
       ]),
-      zipcode: new FormControl(this.company.zipcode, [
-        Validators.required, 
+      zipcode: new FormControl('', [
+        Validators.required,
         Validators.minLength(5),
         Validators.maxLength(7),
         Validators.pattern(/^\d{4} ?[a-z]{2}$/i),
       ]),
-      address: new FormControl(this.company.address, [
-        Validators.required, 
+      address: new FormControl('', [
+        Validators.required,
         Validators.minLength(3),
         Validators.maxLength(50),
       ]),
-      city: new FormControl(this.company.city, [
-        Validators.required, 
+      city: new FormControl('', [
+        Validators.required,
         Validators.minLength(3),
         Validators.maxLength(25),
       ]),
-      kvkNumber: new FormControl(this.company.kvkNumber, [
-        Validators.required, 
+      kvkNumber: new FormControl('', [
+        Validators.required,
         Validators.minLength(4),
         Validators.maxLength(11),
-        Validators.pattern('[0-9 ]{3} [0-9 ]{3} [0-9]{3}'),
+        Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}'),
       ]),
+      // imageURL: new FormControl('', [Validators.required]),
+    }) as FormGroup;
 
-      imageBase64Code: new FormControl('', [Validators.required]),
+    await this.companyService
+      .getById(+this.route.snapshot.paramMap.get('id')!)
+      .subscribe((company) => {
+        this.selectedCompany = company;
+      });
+
+    this.companyForm.setValue({
+      name: this.selectedCompany.name,
+      country: this.selectedCompany.country,
+      zipcode: this.selectedCompany.zipcode,
+      address: this.selectedCompany.address,
+      city: this.selectedCompany.city,
+      kvkNumber: this.selectedCompany.kvkNumber,
+      imageBase64Code: this.selectedCompany.imageBase64Code,
     });
   }
 
