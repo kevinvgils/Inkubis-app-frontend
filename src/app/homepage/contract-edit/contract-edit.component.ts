@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Contract } from 'src/app/contract/contract';
 import { IContract } from 'src/app/contract/contract.interface';
-import { HomepageService } from '../homepage.service';
+import { ContractService } from 'src/app/contract/contract.service';
 
 @Component({
   selector: 'app-contract-edit',
@@ -12,7 +12,7 @@ import { HomepageService } from '../homepage.service';
 export class ContractEditComponent implements OnInit {
   contract!: IContract;
 
-  constructor(private route: ActivatedRoute, readonly homepageService: HomepageService) { }
+  constructor(private route: ActivatedRoute, readonly contractService: ContractService) { }
 
   ngOnInit(): void {
     this.getContractById(+this.route.snapshot.paramMap.get('id')!);
@@ -20,7 +20,7 @@ export class ContractEditComponent implements OnInit {
   }
 
   getContractById(id: number) {
-    this.homepageService.getContractById(id).subscribe((contract: IContract) => {
+    this.contractService.getContractById(id).subscribe((contract: IContract) => {
       console.log("Opgehaalde contractinfo: ", + contract);
       this.contract = contract;
     });

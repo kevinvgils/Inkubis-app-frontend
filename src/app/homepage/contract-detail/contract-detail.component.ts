@@ -3,8 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contract } from 'src/app/contract/contract';
 import { IContract } from 'src/app/contract/contract.interface';
-import { FormProvider } from 'src/app/contract/FormProvider';
-import { HomepageService } from 'src/app/homepage/homepage.service';
+import { ContractService } from 'src/app/contract/contract.service';
 
 @Component({
   selector: 'app-contract-detail',
@@ -14,7 +13,7 @@ import { HomepageService } from 'src/app/homepage/homepage.service';
 export class ContractDetailComponent implements OnInit {
   contract!: IContract;
   
-  constructor(private route: ActivatedRoute, readonly homepageService: HomepageService) {
+  constructor(private route: ActivatedRoute, readonly contractService: ContractService) {
   }
 
   async ngOnInit(): Promise<void> {
@@ -23,7 +22,7 @@ export class ContractDetailComponent implements OnInit {
   }
 
   getContractById(id: number) {
-    this.homepageService.getContractById(id).subscribe((contract: IContract) => {
+    this.contractService.getContractById(id).subscribe((contract: IContract) => {
       this.contract = contract;
     });
   }

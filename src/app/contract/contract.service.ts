@@ -12,6 +12,26 @@ export class ContractService {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
+  contractCreateNextLinking(currentComp: string, currentLink: boolean = true){
+    const components = [
+      'contractinfo',
+      'contractsignees',
+      'processingpurposes',
+      'certification',
+      'thirdparty',
+      'datasubjectcategory',
+      'datacategory',
+      'specialdatacategory',
+      'spoc',
+      'verify',
+    ];
+    if(currentLink){
+      return currentComp;
+    } else{
+      return components[components.indexOf(currentComp) +1];
+    }
+  }
+
   contract(
     company: number,
     questions: any
@@ -35,4 +55,37 @@ export class ContractService {
         })
       );
   }
+
+  getAllContracts(): Observable<IContract[]> {
+    return this.httpClient
+    .get(`http://localhost:3000/data-api/contract/user`, {
+        headers: this.headers,
+    })
+    .pipe(
+        map((data: any) => data),
+        map((contracts: IContract[]) => {
+            return contracts;
+        })
+    )
+}
+
+getContractById(contractId: number): Observable<IContract> {
+    return this.httpClient
+    .get(`http://localhost:3000/data-api/contract/` + contractId, {
+        headers: this.headers,
+    })
+    .pipe(
+        map((data: any) => data),
+        map((contract: IContract) => {
+            return contract
+        })
+    )
+}
+
+deleteContract(contractId: number): Observable<any> {
+    return this.httpClient
+    .delete(`http://localhost:3000/data-api/contract/` + contractId, {
+        headers: this.headers,
+    })
+}
 }
