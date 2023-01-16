@@ -66,13 +66,6 @@ button {
     margin-left: 12px !important;
 }
 
-.button:hover {
-    background-color: #ffff00;
-    transition: 0.4s;
-    transform: scale(1.02);
-    color: #53042F;
-}
-
 .modal-title {
     margin-left: 8vw;
     color: #ffff00;
@@ -90,25 +83,6 @@ button {
 .modal-footer {
     border-radius: 0;
     width: 500px;
-}
-
-.btn {
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.btn:hover {
-    background-color: #ffff00;
-    transition: 0.3s;
-    transform: scale(1.05);
-}
-
-.close:hover {
-    background-color: #ffff00;
-    transition: 0.3s;
-    transform: scale(1.02);
-    color: black;
 }
 
 .error-message {
