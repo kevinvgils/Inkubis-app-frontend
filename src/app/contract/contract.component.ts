@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
+import { ContractService } from './contract.service';
 import { FormProvider } from './FormProvider';
 
 @Component({
@@ -173,8 +174,17 @@ export class ContractComponent extends FormProvider implements OnInit {
     return this.contractForm;
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private contractService: ContractService) {
     super();
+    this.router.events
+  .subscribe(
+    (event: NavigationEvent) => {
+      if(event instanceof NavigationStart) {
+        console.log(event);
+        this.currentComp = this.contractService.contractCreateNextLinking(this.router.url.split('/').pop() as string, false)
+      }
+    });
+    
   }
 
   ngOnInit(): void {
@@ -182,6 +192,6 @@ export class ContractComponent extends FormProvider implements OnInit {
   }
 
   link(): void {
-    this.currentComp = this.router.url.split('/').pop() as string;
+    this.currentComp = this.contractService.contractCreateNextLinking(this.router.url.split('/').pop() as string);
   }
 }

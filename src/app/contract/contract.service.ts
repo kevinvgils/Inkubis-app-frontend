@@ -12,6 +12,26 @@ export class ContractService {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
+  contractCreateNextLinking(currentComp: string, currentLink: boolean = true){
+    const components = [
+      'contractinfo',
+      'contractsignees',
+      'processingpurposes',
+      'certification',
+      'thirdparty',
+      'datasubjectcategory',
+      'datacategory',
+      'specialdatacategory',
+      'spoc',
+      'verify',
+    ];
+    if(currentLink){
+      return currentComp;
+    } else{
+      return components[components.indexOf(currentComp) +1];
+    }
+  }
+
   contract(
     company: number,
     questions: any

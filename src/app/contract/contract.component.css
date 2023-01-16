@@ -42,6 +42,7 @@ p a{
         float: right;
         text-align: right;
         overflow-y: scroll;
+        position: relative;
       }
         .formLeft h4{
           margin-bottom: 45px;
@@ -49,6 +50,10 @@ p a{
         .formLeft p{
           margin-bottom: 20px;
         }
+          .formLeft p span{
+            position: absolute;
+            left: 20px;
+          }
       .formMain{
         padding: 60px 60px 0px 40px;
         height: inherit;
