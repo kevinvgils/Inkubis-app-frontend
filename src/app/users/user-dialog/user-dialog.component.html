@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div *ngIf="!this.data.owner" class="col-6">
                 <label for="isAdmin" class="form-label">Rol</label>
                 <select formControlName="role" class="form-control" id="isAdmin">
                     <option value="admin">Admin</option>
