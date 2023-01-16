@@ -495,7 +495,7 @@
     </div>
 
     <div class="buttonToRight">
-        <button *ngIf="this.routeId == 0" (click)="onSubmit()" class="versturen purple" type="submit" >Versturen</button>
-        <button *ngIf="this.routeId != 0" (click)="onSubmit()" class="versturen purple" type="submit" >Bijwerken</button>
+        <button *ngIf="this.routeId == 0" (click)="onSubmit()" routerLink="/" class="versturen purple" type="submit" >Versturen</button>
+        <button *ngIf="this.routeId != 0" (click)="onSubmit()" routerLink="/" class="versturen purple" type="submit" >Bijwerken</button>
     </div>
 </form>
