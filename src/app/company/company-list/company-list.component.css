@@ -6,6 +6,7 @@
 
 img {
   height: 25vh;
+  min-height: 25vh;
 }
 
 .card-footer {

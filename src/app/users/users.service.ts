@@ -33,7 +33,7 @@ export class UsersService {
         headers: this.headers,
       })
       .pipe(
-        map((data: any) => data),
+        map((data: any) => data.companies),
         map((companies: Company[]) => {
           return companies;
         })
