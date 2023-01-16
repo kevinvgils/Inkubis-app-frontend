@@ -11,6 +11,11 @@ img {
 
 .card-body {
   background-color: #53042f;
+  padding-top: 4px;
+}
+
+.center {
+  text-align: center;
 }
 
 .card .card-text {
@@ -49,7 +54,6 @@ img {
 hr {
   opacity: 100%;
   background-color: black;
-  width: 63.5vw;
 }
 
 .flex {
@@ -59,7 +63,6 @@ hr {
 }
 
 .modal-title {
-  margin-left: 8vw;
   color: #ffff00;
 }
 
@@ -84,7 +87,6 @@ hr {
 .close {
   font-size: 31px !important;
   padding: 0;
-  margin-left: 1vw !important;
   display: flex;
   justify-content: center;
   width: 40px !important;

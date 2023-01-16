@@ -4,13 +4,13 @@
         <p class="card-text text-center">Hieronder bevindt zich een overzicht van de bedrijven</p>
         <hr>
         <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-4 py-2" *ngFor="let company of companies">
+            <div class="col-sm-6 col-md-6 col-lg-4 py-2" *ngFor="let company of companies">
                 <div class="card">
                     <img *ngIf="company.image" [src]="company.image" class="card-img-top" alt="...">
                     <img *ngIf="!company.imageBase64Code" src="../../../assets/img/Inkubis-photo.jpg"
                         class="card-img-top" alt=" ... ">
                     <div class="card-body">
-                        <small class="card-text fw-bold">{{ company.name }}</small>
+                        <p class="center"> <small class="card-text fw-bold">{{ company.name }}</small></p>
                         <div class="flex">
                             <button class="purple text-center px-2"
                                 [routerLink]=" [ '/company/detail', company.id]">Meer
@@ -19,22 +19,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- <div class="card">
-                    <div class="card-body text-center">
-                        <div class="card-footer">
-                            <div class="row">
-                                <div class="col-5 col-md-5 col-lg-5">
-                                    <button class="purple text-center"
-                                        [routerLink]=" [ '/company/detail', company.id]">Meer bekijken</button>
-                                </div>
-                                <div class="col-5 col-md-5 col-lg-5">
-                                   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
 
                 <ng-template #content let-c=" close" let-d="dismiss">
                     <div class="modal-header text-center">
