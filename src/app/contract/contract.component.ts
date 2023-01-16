@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { IContract } from './contract.interface';
 import { ActivatedRoute, Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
 import { ContractService } from './contract.service';
 import { FormProvider } from './FormProvider';
@@ -36,6 +37,8 @@ export class ContractComponent extends FormProvider implements OnInit {
   //   'Gegevenscontrole',
   // ];
   currentComp!: string;
+  contract!: IContract;
+  routeId: number = 0;
 
   contractForm = new FormGroup({
     contractinfo: new FormGroup({
@@ -62,7 +65,7 @@ export class ContractComponent extends FormProvider implements OnInit {
       processingPurposes: new FormControl(''),
     }),
 
-    contractsignees: new FormGroup({
+    contractSignees: new FormGroup({
       companyResponsibleForDataProcessing: new FormGroup({
         member1: new FormGroup({
           nameEmployee1ResponsibleForDP: new FormControl(''),
@@ -120,7 +123,7 @@ export class ContractComponent extends FormProvider implements OnInit {
       }),
     }),
 
-    certification: new FormGroup({
+    certifications: new FormGroup({
       certifications: new FormControl(''),
       achievedCertifications: new FormControl(''),
       overhauls: new FormControl(''),
@@ -173,8 +176,7 @@ export class ContractComponent extends FormProvider implements OnInit {
   getForm() {
     return this.contractForm;
   }
-
-  constructor(private router: Router, private contractService: ContractService) {
+  constructor(private route: ActivatedRoute, private router: Router, readonly contractService: ContractService) {
     super();
     this.router.events
   .subscribe(
@@ -187,7 +189,12 @@ export class ContractComponent extends FormProvider implements OnInit {
     
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.route.params.subscribe(params => {
+      if (params['id']) {
+        this.routeId = params['id'];
+      }
+    })
     this.link();
   }
 

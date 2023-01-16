@@ -6,7 +6,10 @@
                 <h4>progressie:</h4>
                 <p (click)="link()" *ngFor="let comp of components" >
                     <span *ngIf="comp == currentComp">-></span>
-                    <a [routerLink]="['./', comp]">
+                    <a *ngIf="this.routeId != 0" [routerLink]="['./edit/', routeId, '/', comp]">
+                        {{comp}}
+                    </a> 
+                    <a *ngIf="this.routeId == 0" [routerLink]="['./', comp]">
                         {{comp}}
                     </a> 
                 </p>

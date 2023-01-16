@@ -106,22 +106,22 @@
             <h5 class="card-subtitle">Formulier Verwerkingsverantwoordelijke</h5>
             <div class="flex">
                 <label>Naam medewerker 1</label>
-                <label>{{this.form.get(['contractsignees','companyResponsibleForDataProcessing', 'member1',
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member1',
                     'nameEmployee1ResponsibleForDP'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Functie medewerker 1</label>
-                <label>{{this.form.get(['contractsignees','companyResponsibleForDataProcessing', 'member1',
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member1',
                     'jobEmployee1ResponsibleForDP'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Naam medewerker 2</label>
-                <label>{{this.form.get(['contractsignees','companyResponsibleForDataProcessing', 'member2',
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member2',
                     'nameEmployee2ResponsibleForDP'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Functie medewerker 2</label>
-                <label>{{this.form.get(['contractsignees','companyResponsibleForDataProcessing', 'member2',
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member2',
                     'jobEmployee2ResponsibleForDP'])!.value}}</label>
             </div>
 
@@ -129,22 +129,22 @@
             <h5 class="card-subtitle">Formulier Verwerker</h5>
             <div class="flex">
                 <label>Naam medewerker 1</label>
-                <label>{{this.form.get(['contractsignees','companyExecutingDataProcessing', 'member1',
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member1',
                     'nameEmployee1ExecutingDP'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Functie medewerker 1</label>
-                <label>{{this.form.get(['contractsignees','companyExecutingDataProcessing', 'member1',
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member1',
                     'nameEmployee1ExecutingDP'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Naam medewerker 2</label>
-                <label>{{this.form.get(['contractsignees','companyExecutingDataProcessing', 'member2',
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member2',
                     'nameEmployee2ExecutingDP'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Functie medewerker 2</label>
-                <label>{{this.form.get(['contractsignees','companyExecutingDataProcessing', 'member2',
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member2',
                     'jobEmployee2ExecutingDP'])!.value}}</label>
             </div>
 
@@ -159,15 +159,15 @@
             <h5 class="card-subtitle">Formulier Verwerkingsverantwoordelijke</h5>
             <div class="flex">
                 <label>Certificeringen</label>
-                <label>{{this.form.get(['certification','certifications'])!.value}}</label>
+                <label>{{this.form.get(['certifications','certifications'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Behaalde certificering</label>
-                <label>{{this.form.get(['certification','achievedCertifications'])!.value}}</label>
+                <label>{{this.form.get(['certifications','achievedCertifications'])!.value}}</label>
             </div>
             <div class="flex">
                 <label>Audits, inspecties of interne controles</label>
-                <label>{{this.form.get(['certification','overhauls'])!.value}}</label>
+                <label>{{this.form.get(['certifications','overhauls'])!.value}}</label>
             </div>
 
             <!-- thirdparty Externe subverwerkers -->
@@ -495,6 +495,7 @@
     </div>
 
     <div class="buttonToRight">
-        <button (click)="onSubmit()" class="versturen purple" type="submit" >Versturen</button>
+        <button *ngIf="this.routeId == 0" (click)="onSubmit()" routerLink="/" class="versturen purple" type="submit" >Versturen</button>
+        <button *ngIf="this.routeId != 0" (click)="onSubmit()" routerLink="/" class="versturen purple" type="submit" >Bijwerken</button>
     </div>
 </form>

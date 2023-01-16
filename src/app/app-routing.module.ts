@@ -16,6 +16,11 @@ const routes: Routes = [
       import('./contract/contract.module').then((m) => m.ContractModule),
   },
   {
+    path: 'contract/edit/:id',
+    loadChildren: () =>
+      import('./contract/contract.module').then((m) => m.ContractModule),
+  },
+  {
     path: '',
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
