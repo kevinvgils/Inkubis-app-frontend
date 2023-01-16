@@ -65,7 +65,7 @@ export class CompanyDetailComponent implements OnInit {
         Validators.maxLength(11),
         Validators.pattern('[0-9]{3} [0-9]{3} [0-9]{3}'),
       ]),
-      imageBase64Code: new FormControl('', [Validators.required]),
+      imageBase64Code: new FormControl(''),
     }) as FormGroup;
   }
 
