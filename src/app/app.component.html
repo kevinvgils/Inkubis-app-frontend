@@ -17,13 +17,12 @@
           </ul>
         </li>
         <li>
-          <button class="logout yellow" ></button>
+          <button class="logout yellow"></button>
           <ul class="dropdown">
             <li><div>{{ user.emailAddress }}</div></li>
-            <li><a>Gegevens aanpassen</a></li>
-            <li class="logoutButton"><a (click)="logout()">Uitloggen</a></li>
+            <li><a (click)="openDialog(user.id)">Gegevens aanpassen</a></li>
+            <li><a (click)="logout()">Uitloggen</a></li>
           </ul>
-          
         </li>
       </ul>
     </div>
