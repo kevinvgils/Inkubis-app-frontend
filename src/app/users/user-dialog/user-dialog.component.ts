@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Company } from '../../company/company.model';
 import { User } from '../user.model';
 import { UsersService } from '../users.service';
@@ -24,7 +25,8 @@ export class UserDialogComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private readonly userService: UsersService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   async ngOnInit(): Promise<void> {
@@ -61,12 +63,18 @@ export class UserDialogComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log(this.userForm.value);
-    this.userService
-      .updateUser(this.selectedUser.id, this.userForm.value)
-      .subscribe((x) => {
-        console.log(x);
-      });
+  async onSubmit() {
+    if (
+      this.userForm.value.firstName != '' &&
+      this.userForm.value.emailAddress != ''
+    ) {
+      console.log(this.userForm.value);
+      await this.userService
+        .updateUser(this.selectedUser.id, this.userForm.value)
+        .subscribe((x) => {
+          console.log(x);
+          this.router.navigate(['users']);
+        });
+    }
   }
 }

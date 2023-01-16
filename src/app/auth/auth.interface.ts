@@ -5,6 +5,12 @@ export interface ILogin {
   password: string;
 }
 
+export interface IToken {
+  id: number;
+  emailAddress: string;
+  token: string;
+}
+
 export interface IRegister {
   firstName: string;
   lastName: string;

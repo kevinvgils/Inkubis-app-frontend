@@ -1,6 +1,6 @@
 export interface IContract {
     id: number;
-    dateSigned: Date;
+    dateSigned: string;
     citySigned: string;
     processingPurposes: string;
     companyExecutingDP: CompanyExecutingDP;
