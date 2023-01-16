@@ -1,91 +1,91 @@
 .card {
-    width: 13vw;
-    height: 37.2vh;
-    justify-content: space-between;
+  width: 13vw;
+  height: 37.2vh;
+  justify-content: space-between;
 }
 
 img {
-    height: 25vh;
+  height: 25vh;
 }
 
 .card-footer {
-    background-color: #53042F;
-    justify-content: center;
-    height: 8vh;
+  background-color: #53042f;
+  justify-content: center;
+  height: 8vh;
 }
 
 .card-body {
-    background-color: #53042F;
-    font-size: 17px;
+  background-color: #53042f;
+  font-size: 17px;
 }
 
 .card .card-text {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .listWrap {
-    min-height: calc(100vh - 61px);
-    display: flex;
-    align-items: center;
+  min-height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
 }
 
 .list {
-    width: 100%;
-    background-color: #ffffff;
-    height: 75vh;
-    padding: 20px 30px;
-    position: relative;
-    overflow-y: scroll;
+  width: 100%;
+  background-color: #ffffff;
+  height: 75vh;
+  padding: 20px 30px;
+  position: relative;
+  overflow-y: scroll;
 }
 
 .list::-webkit-scrollbar {
-    width: 14px;
+  width: 14px;
 }
 
 .list::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 10px #53042F;
-    border-bottom: 10px;
+  box-shadow: inset 0 0 10px #53042f;
+  border-bottom: 10px;
 }
 
 .list::-webkit-scrollbar-thumb {
-    border-bottom-left-radius: 0px;
-    background-color: #53042F;
+  border-bottom-left-radius: 0px;
+  background-color: #53042f;
 }
 
 hr {
-    opacity: 100%;
-    background-color: black;
-    width: 63.5vw;
+  opacity: 100%;
+  background-color: black;
+  width: 63.5vw;
 }
 
 button {
-    left: 0 !important;
-    height: 6vh !important;
-    width: 5.5vw !important;
-    font-size: 9px !important;
-    margin-left: 12px !important;
+  left: 0 !important;
+  height: 6vh !important;
+  width: 5.5vw !important;
+  font-size: 8.7px !important;
+  margin-left: 12px !important;
 }
 
 .modal-title {
-    margin-left: 8vw;
-    color: #ffff00;
+  margin-left: 8vw;
+  color: #ffff00;
 }
 
 .modal-body {
-    width: 500px;
+  width: 500px;
 }
 
 .modal-header {
-    background-color: #53042F;
-    width: 500px;
+  background-color: #53042f;
+  width: 500px;
 }
 
 .modal-footer {
-    border-radius: 0;
-    width: 500px;
+  border-radius: 0;
+  width: 500px;
 }
 
 .error-message {
-    font-size: 12px;
-    font-weight: bold;
+  font-size: 12px;
+  font-weight: bold;
 }

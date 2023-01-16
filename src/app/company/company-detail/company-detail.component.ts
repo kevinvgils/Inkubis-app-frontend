@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CompanyService } from '../company.service';
 import { Company } from '../company.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {
   FormBuilder,
@@ -106,8 +106,9 @@ export class CompanyDetailComponent implements OnInit {
       address: this.company.address,
       city: this.company.city,
       kvkNumber: this.company.kvkNumber,
-      imageBase64Code: this.company.imageBase64Code,
+      imageBase64Code: '',
     });
+
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
       .result.then(
