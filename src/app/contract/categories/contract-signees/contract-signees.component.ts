@@ -6,7 +6,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormProvider } from '../../FormProvider';
 
 @Component({
@@ -17,17 +17,27 @@ import { FormProvider } from '../../FormProvider';
 export class ContractSigneesComponent implements OnInit {
 
   form: FormGroup;
+  routeId: number = 0;
 
-  constructor(private formProvider: FormProvider, private router: Router) {
-    this.form = formProvider.getForm().get('contractsignees') as FormGroup;
+  constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router) {
+    this.form = formProvider.getForm().get('contractSignees') as FormGroup;
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      if (params['id']) {
+        this.routeId = params['id'];
+      }
+    })
   }
 
   onSubmit(){
-    console.log(JSON.stringify(this.form.value));
-    this.router.navigate(['contract/processingpurposes']);
+    if (this.routeId != 0){
+      this.router.navigate(['contract/edit/' + this.routeId + '/processingpurposes']);
+    } else {
+      console.log(+this.route.snapshot.paramMap.get('id')!);
+      this.router.navigate(['contract/processingpurposes']);
+    }
   }
 
 }

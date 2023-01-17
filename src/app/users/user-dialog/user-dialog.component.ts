@@ -1,6 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Company } from '../company.model';
 import { User } from '../user.model';
@@ -9,7 +15,7 @@ import { UsersService } from '../users.service';
 @Component({
   selector: 'app-user-dialog',
   templateUrl: './user-dialog.component.html',
-  styleUrls: ['./user-dialog.component.css']
+  styleUrls: ['./user-dialog.component.css'],
 })
 export class UserDialogComponent implements OnInit {
   selectedUser: User = new User();
@@ -17,10 +23,14 @@ export class UserDialogComponent implements OnInit {
   userForm: FormGroup;
   preSelectedCompanies: number[] = [];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private readonly userService: UsersService, private fb: FormBuilder) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private readonly userService: UsersService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
 
   async ngOnInit(): Promise<void> {
-
     this.userForm = this.fb.group({
       firstName: new FormControl('', [
         Validators.required,
@@ -32,34 +42,40 @@ export class UserDialogComponent implements OnInit {
         Validators.email,
       ]),
       role: new FormControl(),
-      companies: new FormControl()
+      companies: new FormControl(),
     }) as FormGroup;
 
-    await this.userService.getUserById(this.data.userId).subscribe(user => {
+    await this.userService.getUserById(this.data.userId).subscribe((user) => {
       this.selectedUser = user;
-      this.userService.getAllCompanies().subscribe(companies => {
+      this.userService.getAllCompanies().subscribe((companies) => {
         this.allCompanies = companies;
-        this.selectedUser.companies.forEach(company => {
-          this.preSelectedCompanies.push(company.id)
+        this.selectedUser.companies.forEach((company) => {
+          this.preSelectedCompanies.push(company.id);
         });
-      })
-      
+      });
+
       this.userForm.setValue({
         firstName: this.selectedUser.firstName,
         lastName: this.selectedUser.lastName,
         emailAddress: this.selectedUser.emailAddress,
         role: this.selectedUser.role,
-        companies: this.preSelectedCompanies
-      })
-    })
-
+        companies: this.preSelectedCompanies,
+      });
+    });
   }
 
-  onSubmit() {
-    console.log(this.userForm.value)
-    this.userService.updateUser(this.selectedUser.id, this.userForm.value).subscribe(x => {
-      console.log(x)
-    })
+  async onSubmit() {
+    if (
+      this.userForm.value.firstName != '' &&
+      this.userForm.value.emailAddress != ''
+    ) {
+      console.log(this.userForm.value);
+      await this.userService
+        .updateUser(this.selectedUser.id, this.userForm.value)
+        .subscribe((x) => {
+          console.log(x);
+          this.router.navigate(['users']);
+        });
+    }
   }
-
 }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { IContract } from './contract.interface';
+import { ActivatedRoute, Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
+import { ContractService } from './contract.service';
 import { FormProvider } from './FormProvider';
+import { CategoryService } from './categories/category.service';
 
 @Component({
   selector: 'app-contract',
@@ -35,6 +38,8 @@ export class ContractComponent extends FormProvider implements OnInit {
   //   'Gegevenscontrole',
   // ];
   currentComp!: string;
+  contract!: IContract;
+  routeId: number = 0;
 
   contractForm = new FormGroup({
     contractinfo: new FormGroup({
@@ -61,7 +66,7 @@ export class ContractComponent extends FormProvider implements OnInit {
       processingPurposes: new FormControl(''),
     }),
 
-    contractsignees: new FormGroup({
+    contractSignees: new FormGroup({
       companyResponsibleForDataProcessing: new FormGroup({
         member1: new FormGroup({
           nameEmployee1ResponsibleForDP: new FormControl(''),
@@ -119,7 +124,7 @@ export class ContractComponent extends FormProvider implements OnInit {
       }),
     }),
 
-    certification: new FormGroup({
+    certifications: new FormGroup({
       certifications: new FormControl(''),
       achievedCertifications: new FormControl(''),
       overhauls: new FormControl(''),
@@ -172,16 +177,26 @@ export class ContractComponent extends FormProvider implements OnInit {
   getForm() {
     return this.contractForm;
   }
-
-  constructor(private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router, readonly contractService: ContractService, private categoryService: CategoryService) {
     super();
+    this.router.events
+  .subscribe(
+    (event: NavigationEvent) => {
+      if(event instanceof NavigationStart) {
+        console.log(event);
+        this.currentComp = this.contractService.contractCreateNextLinking(this.router.url.split('/').pop() as string, false)
+      }
+    });
+    
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    this.routeId = this.categoryService.getRouteId();
+    console.log(this.routeId);
     this.link();
   }
 
   link(): void {
-    this.currentComp = this.router.url.split('/').pop() as string;
+    this.currentComp = this.contractService.contractCreateNextLinking(this.router.url.split('/').pop() as string);
   }
 }

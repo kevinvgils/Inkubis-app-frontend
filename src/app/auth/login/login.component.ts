@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ILogin } from '../auth.interface';
+import { ILogin, IToken } from '../auth.interface';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -25,7 +25,7 @@ export class LoginComponent {
   ngOnInit(): void {
     this.subs = this.authService
       .getUserFromLocalStorage()
-      .subscribe((user: ILogin | undefined) => {
+      .subscribe((user: IToken | undefined) => {
         if (user) {
           console.log('Gebruiker is al ingelogd');
           this.router.navigate(['/']);
