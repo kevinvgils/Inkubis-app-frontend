@@ -1865,7 +1865,7 @@
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;">rechtsgeldig</span><span
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;"> vertegenwoordigd door
                             </span><span
-                                style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; background-color: yellow;">USER</span><span
+                                style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; background-color: yellow;">{{ user?.firstName }} {{ user?.lastName }}</span><span
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;">;</span><span
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;"> </span></p>
                         <p style="line-height: 1.15; text-indent: -35.45pt; margin-left: 35.45pt; text-align: justify;">
@@ -1903,7 +1903,7 @@
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; background-color: yellow;">{{contract?.companyExecutingDP?.companyNumber}}</span><span
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;">], hierbij rechtsgeldig
                                 vertegenwoordigd door </span><span
-                                style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; background-color: yellow;">USER</span><span
+                                style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; background-color: yellow;">{{ user?.firstName }} {{ user?.lastName }}</span><span
                                 style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;">; </span></p>
                         <p style="line-height: 1.15; text-indent: -35.45pt; margin-left: 35.45pt; text-align: justify;">
                         </p>
@@ -2298,14 +2298,12 @@
                             </span></p>
                         <p class="docx_standaard1" style="text-align: justify;">
                             <span>Verwerkingsverantwoordelijke</span><span style="font-weight: bold;">: </span><span
-                                style="font-weight: bold;">[</span><span
-                                style="font-weight: bold; font-style: italic; background-color: yellow;">invullen
-                                contactgegevens</span><span style="font-weight: bold;">]</span></p>
+                                style="font-weight: bold;"></span><span
+                                style="font-weight: bold; font-style: italic; background-color: yellow;">{{contract?.spoc?.emailR}}, {{contract?.spoc?.phoneR}}, {{contract?.spoc?.mobileR}}</span><span style="font-weight: bold;"></span></p>
                         <p class="docx_standaard1" style="text-align: justify;"></p>
                         <p class="docx_standaard1" style="text-align: justify;"><span>Verwerker</span><span
-                                style="font-weight: bold;">: [</span><span
-                                style="font-weight: bold; font-style: italic; background-color: yellow;">invullen
-                                contactgegevens</span><span style="font-weight: bold;">]</span></p>
+                                style="font-weight: bold;">: </span><span
+                                style="font-weight: bold; font-style: italic; background-color: yellow;">{{contract?.spoc?.emailE}}, {{contract?.spoc?.phoneE}}, {{contract?.spoc?.mobileE}}</span><span style="font-weight: bold;"></span></p>
                         <p class="docx_standaard1" style="text-align: justify;"></p>
                         <p class="docx_standaard1" style="margin-left: 0pt; text-align: justify;"><span
                                 style="font-weight: bold;">1</span><span style="font-weight: bold;">5</span><span
@@ -2387,24 +2385,24 @@
                             style="text-indent: -35.45pt; margin-left: 35.45pt; text-align: justify;"><span
                                 style="font-weight: normal;">Naam:</span><span style="font-weight: normal;"><span
                                     class="docx-tab-stop"> </span></span><span style="font-weight: normal;"><span
-                                    class="docx-tab-stop"> </span>……………………</span><span
-                                style="font-weight: normal; margin-right: 17rem;"><span class="docx-tab-stop"> </span></span><span
+                                    class="docx-tab-stop"> </span>{{contract?.spoc?.nameR}}</span><span
+                                style="font-weight: normal; "><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
-                                style="font-weight: normal;">……………………</span></p>
+                                style="font-weight: normal; margin-left: 24rem;">{{contract?.spoc?.nameE}}</span></p>
                         <p class="docx_brauwk1 docx-num-0-0"
                             style="text-indent: -35.45pt; margin-left: 35.45pt; text-align: justify;"><span
                                 style="font-weight: normal;">Functie:</span><span style="font-weight: normal;"><span
                                     class="docx-tab-stop"> </span></span><span style="font-weight: normal;"><span
-                                    class="docx-tab-stop"> </span>……………………</span><span
-                                style="font-weight: normal; margin-right: 16.5rem;"><span class="docx-tab-stop"> </span></span><span
+                                    class="docx-tab-stop"> </span>{{contract?.spoc?.jobDescR}}</span><span
+                                style="font-weight: normal; "><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
                                 style="font-weight: normal;"><span class="docx-tab-stop"> </span></span><span
-                                style="font-weight: normal;">……………………</span></p>
+                                style="font-weight: normal; margin-left: 19.5rem;">{{contract?.spoc?.jobDescE}}</span></p>
                         <p></p>
                         <p><span
                                 style="font-family: Arial; font-weight: bold; min-height: 12pt; font-size: 12pt;"></span>
@@ -2602,16 +2600,19 @@
                                 <td
                                     style="width: 142.45pt; background-color: inherit; border-width: 0.5pt; border-style: solid; border-color: black;">
                                     <p style="margin-bottom: 6pt; line-height: calc(100% + 14pt); text-align: justify;">
+                                        {{contract?.thirdParty?.TpProcessing?.name}}, {{contract?.thirdParty?.TpProcessing?.formalCity}}
                                     </p>
                                 </td>
                                 <td
                                     style="width: 142.45pt; background-color: inherit; border-width: 0.5pt; border-style: solid; border-color: black;">
                                     <p style="margin-bottom: 6pt; line-height: calc(100% + 14pt); text-align: justify;">
+                                        {{contract?.thirdParty?.TpProcessing?.address}}
                                     </p>
                                 </td>
                                 <td
                                     style="width: 161.4pt; background-color: inherit; border-width: 0.5pt; border-style: solid; border-color: black;">
                                     <p style="margin-bottom: 6pt; line-height: calc(100% + 14pt); text-align: justify;">
+                                        {{contract?.thirdParty?.TpProcessing?.typeProcessingPersonalData}}
                                     </p>
                                 </td>
                             </tr>
@@ -2737,8 +2738,9 @@
                                     style="width: 330.85pt; border-width: 0.5pt; border-style: solid; border-color: black;">
                                     <p
                                         style="margin-top: 12pt; margin-bottom: 12pt; line-height: calc(100% + 1.15pt); text-align: justify;">
-                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;">De
-                                            categorieën door de Verwerker te Verwerken Persoonsgegevens zijn: </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.specialDataCategory?.racialOrEthnicData == true">Alle gegevens waaruit de raciale of etnische afkomst, politieke opvattingen, religieuze of filosofische overtuiging of lidmaatschap van de vakbond blijkt, </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.specialDataCategory?.geneticData == true">Genetische gegevens, biometrische gegevens met het oog op het uniek identificeren van een natuurlijke persoon, gegevens betreffende de gezondheid of het seksuele leven of seksuele geaardheid, </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.specialDataCategory?.trafficRecordsAndPersonalData == true">De strafregisters en persoonlijke gegevens over onwettig of belemmerend gedrag met betrekking tot een opgelegd verbod op dat gedrag </span>
                                     </p>
                                     <p class="docx_lijstalinea docx-num-9-1"
                                         style="margin-top: 12pt; line-height: calc(100% + 1.15pt); text-indent: -21.25pt; margin-left: 42.55pt; text-align: justify;">
@@ -2764,9 +2766,12 @@
                                     style="width: 330.85pt; border-width: 0.5pt; border-style: solid; border-color: black;">
                                     <p
                                         style="margin-top: 12pt; margin-bottom: 12pt; line-height: calc(100% + 1.15pt); text-align: justify;">
-                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt;">De
-                                            categorieën van Individuen waarvan de Verwerker Persoonsgegevens Verwerkt
-                                            zijn: </span></p>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.potentialOrFormerCustomers == true">(potentiële) / (ex)klanten, </span><span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.applicantsAndFormerEmployeesInterns == true">
+                                                aanvragers en (ex) werknemers, stagiaires, </span><span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.potentialIndependentAdvisors == true">(potentiële) / zelfstandige consultants, </span>
+                                                <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.potentialFormerSuppliers == true">(potentiële) / (ex)leveranciers, </span>
+                                                <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.potentialBusinessPartners == true">(potentiële) / (ex) zakelijke partners, </span>
+                                                <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.minors == true">Minderjarigen (onder de leeftijd van 16), </span>
+                                                <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataSubjectCategory?.otherCategory == true">Een andere categorie </span> </p>
                                     <p class="docx_lijstalinea docx-num-10-1"
                                         style="margin-top: 12pt; line-height: calc(100% + 1.15pt); text-indent: -21.25pt; margin-left: 42.55pt; text-align: justify;">
                                     </p>
@@ -2787,6 +2792,22 @@
                                 <td
                                     style="width: 330.85pt; border-width: 0.5pt; border-style: solid; border-color: black;">
                                     <p style="margin-bottom: 6pt; line-height: calc(100% + 14pt); text-align: justify;">
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.identificationData == true">Identificatiegegevens (bv. voornaam, achternaam, leeftijd, gender, geboortedatum, elektronische identificatiegegevens (zoals IP Adres, cookies),…  </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.nationalRegistryNumber == true">Rijksregisternummer, </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.communicationsData == true">Communicatiegegevens (bv. naam, adres, titel, functie, telefoon, e-mailadres, adres etc.), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.relationalData == true">Relationele gegevens (bv. burgerlijke staat, kinderen, familieleden), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.professionalData == true">Professionele gegevens (bv. werkgelegenheid, aanwezigheid, salaris), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.locationData == true">Locatiegegevens (bv. GPS of mobiele telefoon, andere volgmechanismen), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.financialData == true">Alle gegevens met betrekking tot de financiële situatie van een betrokkene. Voorbeelden zijn schulden, salaris- en betalingsgegevens, bankrekening, pincode., </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.financialAndInsuranceProducts == true">Financiële en verzekeringsproducten (bv. Leningen, hypotheken ...)., </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.stigmatizationOrIsolationData == true">Alle gegevens met betrekking tot stigmatisering of afzondering van de betrokkene. Voorbeelden zijn gegevens met betrekking tot een gokverslaving, prestaties op school of werk of relatieproblemen., </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.lifestyleAndHabits == true">Levensstijl en gewoonten of consumptiegewoonten., </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.loginData == true">Gebruikersnamen, wachtwoorden en andere inloggegevens., </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.identityFraudData == true">Alle gegevens die kunnen worden gebruikt voor (identiteits)fraude zoals biometrische gegevens, kopieën van identiteitskaarten en socialezekerheidsnummers., </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.specialLegalDutyOfConfidentialityAndProfessionalSecrecyData== true">Alle gegevens met betrekking tot een bijzondere wettelijke geheimhoudingsverplichting en gegevens met betrekking tot het beroepsgeheim (zoals het beroepsgeheim van een arts), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.contractualData == true">Contractuele gegevens (contractuele relatie, bestelgeschiedenis, bestelnummers, facturering en betaling, enz.), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.imageOrSoundRecording == true">Beeld- of geluidsopname (bv. foto, video of geluid), </span>
+                                        <span style="font-family: Arial; min-height: 9.5pt; font-size: 9.5pt; " *ngIf="contract?.categories?.dataCategory?.otherCategory == true">Een andere categorie</span>
                                     </p>
                                 </td>
                             </tr>
@@ -4265,7 +4286,7 @@
                         <p class="docx_coversheettitle"></p>
                         <p class="docx_coversheettitle"></p>
                         <p class="docx_coversheettitle"><span style="background-color: yellow;">Datum</span></p>
-                        <p class="docx_coversheetparagraph" style="line-height: 1.15;"><span>------------</span></p>
+                        <p class="docx_coversheetparagraph" style="line-height: 1.15;"><span>{{ date | date:'dd-MM-yyyy' }}</span></p>
                         <p class="docx_coversheettitle2"><span>Verwerkingsovereenkomst</span></p>
                         <p class="docx_coversheetparagraph" style="line-height: 1.15;"></p>
                         <p class="docx_coversheetparagraph" style="line-height: 1.15;"></p>

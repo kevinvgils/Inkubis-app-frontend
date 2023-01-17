@@ -41,7 +41,7 @@ export class UsersService {
     )
   }
 
-  getUserById(userId: number): Observable<User> {
+  getUserById(userId: number | undefined): Observable<User> {
     return this.httpClient.get<User>(
       `http://localhost:3000/data-api/user/` + userId,
       {

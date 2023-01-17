@@ -6,6 +6,11 @@ import { IPDF } from './pdf.interface';
 import { IContract } from '../contract/contract.interface';
 import { ContractService } from '../contract/contract.service';
 import { ActivatedRoute } from '@angular/router';
+import { IToken } from '../auth/auth.interface';
+import { Observable } from 'rxjs';
+import { UsersService } from '../users/users.service';
+import { User } from '../users/user.model';
+import { AuthService } from '../auth/auth.service';
 
 
 @Component({
@@ -18,9 +23,13 @@ export class PdfComponent implements OnInit {
   @ViewChild('htmlData') htmlData!: ElementRef;
   //pdf: PdfComponent | undefined;
   contract: IContract | undefined;
+  userId: number | undefined;
+  token$: Observable<IToken> | undefined;
+  user: User | undefined;
   company: Object | undefined;
   companyId: number | undefined
   routeId: number = 0;
+  date: Date;
 
   USERS = [
     {
@@ -61,9 +70,18 @@ export class PdfComponent implements OnInit {
     },
   ];
 
-  constructor(private pdfService: PdfService, private contractService : ContractService, private route: ActivatedRoute) {}
+  constructor(private userService: UsersService, private contractService : ContractService, private route: ActivatedRoute, private authService: AuthService) {}
 
   ngOnInit(): void {
+    this.date = new Date();
+    this.authService.currentUser$.subscribe(token => this.userId = token?.id);
+    //const token$ = this.token$.subscribe(token => this.userId = token.id);
+    //console.log(this.userId);
+    this.userService.getUserById(this.userId).subscribe(params => {
+      this.user = params;
+    });
+    //console.log(this.user);
+
     
     this.route.params.subscribe(params => {
       if (params['id']) {
