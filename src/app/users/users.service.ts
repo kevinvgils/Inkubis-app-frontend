@@ -28,6 +28,19 @@ export class UsersService {
     )
   }
 
+  getAllCompaniesForUser(userId: number): Observable<Company[]> {
+    return this.httpClient
+    .get(`http://localhost:3000/data-api/company/usercompany/` + userId, {
+      headers: this.headers,
+    })
+    .pipe(
+      map((data: any) => data),
+      map((companies: Company[]) => {
+        return companies;
+      })
+    )
+  }
+
   getAllCompanies(): Observable<Company[]> {
     return this.httpClient
     .get(`http://localhost:3000/data-api/company`, {

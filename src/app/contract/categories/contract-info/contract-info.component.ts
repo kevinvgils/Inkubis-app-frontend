@@ -23,7 +23,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IContract } from '../../contract.interface';
+import { AuthService } from 'src/app/auth/auth.service';
+import { UsersService } from 'src/app/users/users.service';
+import { Company, IContract } from '../../contract.interface';
 import { ContractService } from '../../contract.service';
 import { FormProvider } from '../../FormProvider';
 import { CategoryService } from '../category.service';
@@ -37,8 +39,9 @@ export class ContractInfoComponent implements OnInit {
   form: FormGroup;
   routeId: number = 0;
   contract: IContract;
+  allCompanies: Company[] = [];
 
-  constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router, private readonly contractService: ContractService, private categoryService: CategoryService) {
+  constructor(private route: ActivatedRoute, private userService: UsersService, private authService: AuthService, private formProvider: FormProvider, private router: Router, private readonly contractService: ContractService, private categoryService: CategoryService) {
     this.form = formProvider.getForm() as FormGroup;
     this.route.params.subscribe(params => {
       if (params['id']) {
@@ -52,6 +55,18 @@ export class ContractInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.categoryService.setRouteId(0);
+
+    const userTokenData = this.authService.decodeJwtToken(this.authService.getAuthorizationToken()!) as any;
+    if(userTokenData['role'] == 'admin') {
+      this.userService.getAllCompanies().subscribe(company => {
+        this.allCompanies = company;
+      })
+    } else{
+      this.userService.getAllCompaniesForUser(userTokenData['id']).subscribe(company => {
+        this.allCompanies = company;
+      })
+    }
+
   }
 
 
@@ -61,6 +76,7 @@ export class ContractInfoComponent implements OnInit {
       console.log(this.contract);
       this.form.patchValue({
         contractinfo: { 
+          companyId: this.contract.company.id,
           companyResponsibleForDataProcessing: {
             ...this.contract.companyResponsibleForDP
           },
