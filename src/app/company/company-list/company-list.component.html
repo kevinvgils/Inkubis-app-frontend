@@ -4,8 +4,7 @@
         <p class="card-text text-center">Hieronder bevindt zich een overzicht van de bedrijven</p>
         <hr>
         <div class="row">
-            <!-- <div class="col-sm-6 col-md-6 col-lg-3 py-2" *ngFor="let company of companies"> -->
-            <div class="col-sm-6 col-md-6 col-lg-4 py-2" *ngFor="let company of companies">
+            <div class="col-sm-6 col-md-6 col-lg-3 py-2" *ngFor="let company of companies">
                 <div class="card rounded-0">
                     <img *ngIf="company.imageBase64Code" [src]="company.image" class="card-img-top rounded-0" alt="...">
                     <img *ngIf="!company.imageBase64Code" src="../../../assets/img/default.jfif"
