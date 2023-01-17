@@ -5,8 +5,11 @@
         <hr>
         <div class="container">
             <div class="row p-2 justify-content-end">
-                <div *ngIf="company.image" class="col-4 col-md-4 col-lg-4 my-3 me-3">
-                    <img [src]="company.image" class=" card-img rounded-0 detail-img" alt=" ...">
+                <div class="col-4 col-md-4 col-lg-4 my-3 me-3">
+                    <img *ngIf="company.imageBase64Code" [src]="company.image" class="detail-img card-img-top"
+                        alt="...">
+                    <img *ngIf="!company.imageBase64Code" src="../../../assets/img/default.jfif"
+                        class="detail-img card-img-top" alt=" ... ">
                 </div>
                 <div class="col-7 col-md-7 col-lg-7 my-3">
                     <h3 class=" text-center">{{company.name}} details</h3>
