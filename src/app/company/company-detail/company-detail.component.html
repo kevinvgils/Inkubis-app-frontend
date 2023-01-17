@@ -46,9 +46,6 @@
         <ng-template #content let-c=" close" let-d="dismiss">
             <div class="modal-header">
                 <h4 class="modal-title" id="modal-basic-title-create">Wijzig {{company.name}}</h4>
-                <button type="button" class="close purple" aria-label="Close" (click)="d( 'Cross click')">
-                    <span aria-hidden="true">×</span>
-                </button>
             </div>
             <div class="modal-body text-center">
                 <form [formGroup]="companyForm" novalidate>
@@ -179,9 +176,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer rounded-0 justify-content-center">
+                        <div class="modal-footer rounded-0">
+                            <button type=" button" class="purple" (click)="c( 'Cross click')">Annuleren</button>
                             <button type="submit" class="purple" [disabled]="!companyForm.valid"
                                 (click)="c(onSubmit())">Wijzigen</button>
-                            <button type=" button" class="purple" (click)="c( 'Cross click')">Annuleren</button>
                         </div>
                     </div>

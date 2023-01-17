@@ -73,27 +73,15 @@ hr {
 .modal-header {
   background-color: #53042f;
   width: 500px;
+  justify-content: center;
 }
 
 .modal-footer {
   border-radius: 0;
+  justify-content: center;
 }
 
 .error-message {
   font-size: 12px;
   font-weight: bold;
-}
-
-.close {
-  font-size: 31px !important;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  width: 40px !important;
-  height: 40px !important;
-  align-items: center;
-}
-
-.close::after {
-  content: none !important;
 }
