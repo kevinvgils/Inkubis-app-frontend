@@ -35,6 +35,8 @@ export class VerifyComponent implements OnInit {
       console.log(this.form.value);
     });
 
+    this.router.navigate(['/pdf']);
+
     // const allForms = this.formProvider.getForm() as FormGroup;
 
     // let contract = new Contract(allForms);

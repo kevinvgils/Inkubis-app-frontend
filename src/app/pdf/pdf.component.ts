@@ -3,6 +3,9 @@ import * as jspdf from 'jspdf';
 import html2canvas from 'html2canvas'; 
 import { PdfService } from './pdf.service';
 import { IPDF } from './pdf.interface';
+import { IContract } from '../contract/contract.interface';
+import { ContractService } from '../contract/contract.service';
+
 
 @Component({
   selector: 'app-pdf',
@@ -13,7 +16,7 @@ export class PdfComponent implements OnInit {
   //pdfTable: ;
   @ViewChild('htmlData') htmlData!: ElementRef;
   //pdf: PdfComponent | undefined;
-  pdf: IPDF | undefined;
+  contract: IContract | undefined;
   company: Object | undefined;
   companyId: number | undefined
 
@@ -56,20 +59,20 @@ export class PdfComponent implements OnInit {
     },
   ];
 
-  constructor(private pdfService: PdfService) {}
+  constructor(private pdfService: PdfService, private contractService : ContractService) {}
 
   ngOnInit(): void {
     
-    this.pdfService
-    .getContractByIdAsObservable("1")
-    .subscribe((pdf: IPDF) => {
-      console.log(pdf);
-      pdf.company = Object.values(pdf.company).at(1);
+    this.contractService.getContractById(3)
+    .subscribe((contract: IContract) => {
+      console.log(contract);
+    
+      //pdf.company = Object.values(pdf.company).at(1);
       //this.staticUser = {
       //  ...JSON.parse(JSON.stringify(user)),
       //};
-      this.pdf = {
-        ...JSON.parse(JSON.stringify(pdf)),
+      this.contract = {
+        ...JSON.parse(JSON.stringify(contract)),
       };
     });
 
@@ -78,20 +81,53 @@ export class PdfComponent implements OnInit {
 
   }
 
+
+
   public openPDF(): void {
-    let DATA: any = document.getElementById('htmlData');
-    html2canvas(DATA).then((canvas) => {
+  let data:any;
+if(this.contract?.companyResponsibleForDP.legalCountry == true) {
+  data = document.getElementById('htmlDataNL');
+} else {
+  data = document.getElementById('htmlDataBE');
+}
+    
+html2canvas(data).then((canvas:any) => {
+  const imgWidth = 208;
+  const pageHeight = 295;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+  let heightLeft = imgHeight;
+  let position = 0;
+  heightLeft -= pageHeight;
+  const doc = new jspdf.jsPDF('p', 'mm');
+  doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+  while (heightLeft >= 0) {
+    position = heightLeft - imgHeight;
+    doc.addPage();
+    doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
+    heightLeft -= pageHeight;
+  }
+  doc.save('Downld.pdf');
+});
+    
+    /*let DATA: any = document.getElementById('htmlDataBE');
+    let pdf = new jspdf.jsPDF('p', 'pt', [ 595.28,  841.89]);
+    pdf.
+    pdf.html(DATA).then(() => pdf.save('test.pdf'));*/
+    
+
+    
+    /*html2canvas(DATA).then((canvas) => {
       let fileWidth = 208;
       let fileHeight = (canvas.height * fileWidth) / canvas.width;
       const FILEURI = canvas.toDataURL('image/png');
-      let PDF = new jspdf.jsPDF();
+      
       let position = 0;
       //PDF.setFont("helvetica");
-      
+      PDF.html("hello", document.getElementById('htmlData')).save('angular-demo.pdf');
       PDF.setFontSize(30);
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
       PDF.save('angular-demo.pdf');
-    });
+    });*/
   }
     
 

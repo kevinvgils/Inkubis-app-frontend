@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+}
+
+.s1 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+h1 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14pt;
+}
+
+.p,
+p {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+    margin: 0pt;
+}
+
+h2 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s2 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.a {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s3 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s4 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s5 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s6 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+.s7 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+.s8 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s9 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+.s10 {
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+.s11 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+.s12 {
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+li {
+    display: block;
+}
+
+#l1 {
+    padding-left: 0pt;
+    counter-reset: c1 1;
+}
+
+#l1>li>*:first-child:before {
+    counter-increment: c1;
+    content: counter(c1, upper-latin)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l1>li:first-child>*:first-child:before {
+    counter-increment: c1 0;
+}
+
+li {
+    display: block;
+}
+
+#l2 {
+    padding-left: 0pt;
+    counter-reset: d1 1;
+}
+
+#l2>li>*:first-child:before {
+    counter-increment: d1;
+    content: counter(d1, decimal)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l2>li:first-child>*:first-child:before {
+    counter-increment: d1 0;
+}
+
+#l3 {
+    padding-left: 0pt;
+    counter-reset: d2 1;
+}
+
+#l3>li>*:first-child:before {
+    counter-increment: d2;
+    content: "(" counter(d2, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l3>li:first-child>*:first-child:before {
+    counter-increment: d2 0;
+}
+
+#l4 {
+    padding-left: 0pt;
+}
+
+#l4>li>*:first-child:before {
+    content: "- ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l5 {
+    padding-left: 0pt;
+    counter-reset: f1 1;
+}
+
+#l5>li>*:first-child:before {
+    counter-increment: f1;
+    content: counter(f1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l5>li:first-child>*:first-child:before {
+    counter-increment: f1 0;
+}
+
+#l6 {
+    padding-left: 0pt;
+    counter-reset: d2 1;
+}
+
+#l6>li>*:first-child:before {
+    counter-increment: d2;
+    content: "(" counter(d2, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l6>li:first-child>*:first-child:before {
+    counter-increment: d2 0;
+}
+
+#l7 {
+    padding-left: 0pt;
+    counter-reset: g1 5;
+}
+
+#l7>li>*:first-child:before {
+    counter-increment: g1;
+    content: counter(g1, decimal)" ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l7>li:first-child>*:first-child:before {
+    counter-increment: g1 0;
+}
+
+#l8 {
+    padding-left: 0pt;
+    counter-reset: g2 7;
+}
+
+#l8>li>*:first-child:before {
+    counter-increment: g2;
+    content: counter(g1, decimal)"." counter(g2, decimal)" ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l8>li:first-child>*:first-child:before {
+    counter-increment: g2 0;
+}
+
+#l9 {
+    padding-left: 0pt;
+    counter-reset: g3 1;
+}
+
+#l9>li>*:first-child:before {
+    counter-increment: g3;
+    content: counter(g1, decimal)"." counter(g2, decimal)"." counter(g3, decimal)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l9>li:first-child>*:first-child:before {
+    counter-increment: g3 0;
+}
+
+#l10 {
+    padding-left: 0pt;
+    counter-reset: h1 5;
+}
+
+#l10>li>*:first-child:before {
+    counter-increment: h1;
+    content: counter(h1, decimal)" ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l10>li:first-child>*:first-child:before {
+    counter-increment: h1 0;
+}
+
+#l11 {
+    padding-left: 0pt;
+    counter-reset: h2 8;
+}
+
+#l11>li>*:first-child:before {
+    counter-increment: h2;
+    content: counter(h1, decimal)"." counter(h2, decimal)" ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l11>li:first-child>*:first-child:before {
+    counter-increment: h2 0;
+}
+
+#l12 {
+    padding-left: 0pt;
+    counter-reset: h3 1;
+}
+
+#l12>li>*:first-child:before {
+    counter-increment: h3;
+    content: counter(h1, decimal)"." counter(h2, decimal)"." counter(h3, decimal)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l12>li:first-child>*:first-child:before {
+    counter-increment: h3 0;
+}
+
+#l13 {
+    padding-left: 0pt;
+    counter-reset: i1 5;
+}
+
+#l13>li>*:first-child:before {
+    counter-increment: i1;
+    content: counter(i1, decimal)" ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l13>li:first-child>*:first-child:before {
+    counter-increment: i1 0;
+}
+
+#l14 {
+    padding-left: 0pt;
+    counter-reset: i2 9;
+}
+
+#l14>li>*:first-child:before {
+    counter-increment: i2;
+    content: counter(i1, decimal)"." counter(i2, decimal)" ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l14>li:first-child>*:first-child:before {
+    counter-increment: i2 0;
+}
+
+#l15 {
+    padding-left: 0pt;
+    counter-reset: i3 1;
+}
+
+#l15>li>*:first-child:before {
+    counter-increment: i3;
+    content: counter(i1, decimal)"." counter(i2, decimal)"." counter(i3, decimal)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l15>li:first-child>*:first-child:before {
+    counter-increment: i3 0;
+}
+
+#l16 {
+    padding-left: 0pt;
+    counter-reset: d2 1;
+}
+
+#l16>li>*:first-child:before {
+    counter-increment: d2;
+    content: "(" counter(d2, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l16>li:first-child>*:first-child:before {
+    counter-increment: d2 0;
+}
+
+#l17 {
+    padding-left: 0pt;
+    counter-reset: d2 1;
+}
+
+#l17>li>*:first-child:before {
+    counter-increment: d2;
+    content: "(" counter(d2, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l17>li:first-child>*:first-child:before {
+    counter-increment: d2 0;
+}
+
+li {
+    display: block;
+}
+
+#l18 {
+    padding-left: 0pt;
+    counter-reset: j1 1;
+}
+
+#l18>li>*:first-child:before {
+    counter-increment: j1;
+    content: counter(j1, decimal)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#l18>li:first-child>*:first-child:before {
+    counter-increment: j1 0;
+}
+
+#l19 {
+    padding-left: 0pt;
+    counter-reset: j2 1;
+}
+
+#l19>li>*:first-child:before {
+    counter-increment: j2;
+    content: counter(j2, upper-latin)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+#l19>li:first-child>*:first-child:before {
+    counter-increment: j2 0;
+}
+
+#l20 {
+    padding-left: 0pt;
+    counter-reset: k1 1;
+}
+
+#l20>li>*:first-child:before {
+    counter-increment: k1;
+    content: counter(k1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#l20>li:first-child>*:first-child:before {
+    counter-increment: k1 0;
+}
+
+#l21 {
+    padding-left: 0pt;
+    counter-reset: k1 2;
+}
+
+#l21>li>*:first-child:before {
+    counter-increment: k1;
+    content: counter(k1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#l21>li:first-child>*:first-child:before {
+    counter-increment: k1 0;
+}
+
+#l22 {
+    padding-left: 0pt;
+    counter-reset: j2 1;
+}
+
+#l22>li>*:first-child:before {
+    counter-increment: j2;
+    content: counter(j2, upper-latin)". ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 12pt;
+}
+
+#l22>li:first-child>*:first-child:before {
+    counter-increment: j2 0;
+}
+
+#l23 {
+    padding-left: 0pt;
+    counter-reset: l1 1;
+}
+
+#l23>li>*:first-child:before {
+    counter-increment: l1;
+    content: counter(l1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#l23>li:first-child>*:first-child:before {
+    counter-increment: l1 0;
+}
+
+#l24 {
+    padding-left: 0pt;
+    counter-reset: l2 1;
+}
+
+#l24>li>*:first-child:before {
+    counter-increment: l2;
+    content: "(" counter(l2, lower-latin)") ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l24>li:first-child>*:first-child:before {
+    counter-increment: l2 0;
+}
+
+#l25 {
+    padding-left: 0pt;
+    counter-reset: l2 1;
+}
+
+#l25>li>*:first-child:before {
+    counter-increment: l2;
+    content: "(" counter(l2, lower-latin)") ";
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+#l25>li:first-child>*:first-child:before {
+    counter-increment: l2 0;
+}
+
+#l26 {
+    padding-left: 0pt;
+    counter-reset: m1 1;
+}
+
+#l26>li>*:first-child:before {
+    counter-increment: m1;
+    content: "(" counter(m1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 10pt;
+}
+
+#l26>li:first-child>*:first-child:before {
+    counter-increment: m1 0;
+}
+
+#l27 {
+    padding-left: 0pt;
+    counter-reset: m2 1;
+}
+
+#l27>li>*:first-child:before {
+    counter-increment: m2;
+    content: "(" counter(m2, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l27>li:first-child>*:first-child:before {
+    counter-increment: m2 0;
+}
+
+#l28 {
+    padding-left: 0pt;
+    counter-reset: n1 1;
+}
+
+#l28>li>*:first-child:before {
+    counter-increment: n1;
+    content: "(" counter(n1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l28>li:first-child>*:first-child:before {
+    counter-increment: n1 0;
+}
+
+li {
+    display: block;
+}
+
+#l29 {
+    padding-left: 0pt;
+    counter-reset: o1 1;
+}
+
+#l29>li>*:first-child:before {
+    counter-increment: o1;
+    content: "(" counter(o1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l29>li:first-child>*:first-child:before {
+    counter-increment: o1 0;
+}
+
+#l30 {
+    padding-left: 0pt;
+    counter-reset: n1 2;
+}
+
+#l30>li>*:first-child:before {
+    counter-increment: n1;
+    content: "(" counter(n1, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l30>li:first-child>*:first-child:before {
+    counter-increment: n1 0;
+}
+
+#l31 {
+    padding-left: 0pt;
+    counter-reset: o2 1;
+}
+
+#l31>li>*:first-child:before {
+    counter-increment: o2;
+    content: "(" counter(o2, lower-latin)") ";
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 11pt;
+}
+
+#l31>li:first-child>*:first-child:before {
+    counter-increment: o2 0;
+}
+
+table,
+tbody {
+    vertical-align: top;
+    overflow: visible;
+}
