@@ -4,6 +4,7 @@
         <p class="card-text text-center">Hieronder bevindt zich een overzicht van de bedrijven</p>
         <hr>
         <div class="row">
+            <!-- <div class="col-sm-6 col-md-6 col-lg-3 py-2" *ngFor="let company of companies"> -->
             <div class="col-sm-6 col-md-6 col-lg-4 py-2" *ngFor="let company of companies">
                 <div class="card rounded-0">
                     <img *ngIf="company.imageBase64Code" [src]="company.image" class="card-img-top rounded-0" alt="...">
@@ -12,9 +13,10 @@
                     <div class="card-body">
                         <p class="center"> <small class="card-text fw-bold">{{ company.name }}</small></p>
                         <div class="flex">
-                            <button class="purple text-center px-2"
-                                [routerLink]=" [ '/company/detail', company.id]">Meer
-                                bekijken</button> <button class="purple text-center"
+                            <button class="purple listButton text-center px-2"
+                                [routerLink]=" ['/company/detail', company.id]">Meer
+                                bekijken</button>
+                            <button class="purple listButton text-center"
                                 (click)="openDelete(content, company.id)">Verwijder</button>
                         </div>
                     </div>
@@ -23,10 +25,6 @@
                 <ng-template #content let-c=" close" let-d="dismiss">
                     <div class="modal-header text-center">
                         <h4 class="modal-title" id="modal-basic-title">Bevestig verwijderen</h4>
-                        <button type="button" class="close float-end purple" aria-label="Close"
-                            (click)="d( 'Cross click')">
-                            <span aria-hidden="true">×</span>
-                        </button>
                     </div>
                     <div class="modal-body text-center">
                         <h6>Weet u zeker dat u dit item definitief wilt verwijderen?</h6>
