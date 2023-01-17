@@ -1,6 +1,7 @@
 img {
   height: 14vh;
   min-height: 14vh;
+  object-fit: cover;
 }
 
 .card-footer {
