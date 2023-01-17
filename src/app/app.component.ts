@@ -40,6 +40,7 @@ export class AppComponent {
       width: '50vw',
       data: {
         userId: userId,
+        owner: true
       },
     });
 
