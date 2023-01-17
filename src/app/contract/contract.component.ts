@@ -4,6 +4,7 @@ import { IContract } from './contract.interface';
 import { ActivatedRoute, Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
 import { ContractService } from './contract.service';
 import { FormProvider } from './FormProvider';
+import { CategoryService } from './categories/category.service';
 
 @Component({
   selector: 'app-contract',
@@ -176,7 +177,7 @@ export class ContractComponent extends FormProvider implements OnInit {
   getForm() {
     return this.contractForm;
   }
-  constructor(private route: ActivatedRoute, private router: Router, readonly contractService: ContractService) {
+  constructor(private route: ActivatedRoute, private router: Router, readonly contractService: ContractService, private categoryService: CategoryService) {
     super();
     this.router.events
   .subscribe(
@@ -190,11 +191,8 @@ export class ContractComponent extends FormProvider implements OnInit {
   }
 
   async ngOnInit(): Promise<void> {
-    this.route.params.subscribe(params => {
-      if (params['id']) {
-        this.routeId = params['id'];
-      }
-    })
+    this.routeId = this.categoryService.getRouteId();
+    console.log(this.routeId);
     this.link();
   }
 

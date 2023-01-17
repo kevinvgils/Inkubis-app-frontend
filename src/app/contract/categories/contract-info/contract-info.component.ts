@@ -26,6 +26,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IContract } from '../../contract.interface';
 import { ContractService } from '../../contract.service';
 import { FormProvider } from '../../FormProvider';
+import { CategoryService } from '../category.service';
 
 @Component({
   selector: 'app-contract-info',
@@ -37,18 +38,20 @@ export class ContractInfoComponent implements OnInit {
   routeId: number = 0;
   contract: IContract;
 
-  constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router, private readonly contractService: ContractService ) {
+  constructor(private route: ActivatedRoute, private formProvider: FormProvider, private router: Router, private readonly contractService: ContractService, private categoryService: CategoryService) {
     this.form = formProvider.getForm() as FormGroup;
-  }
-
-  ngOnInit(): void {
     this.route.params.subscribe(params => {
       if (params['id']) {
         this.routeId = params['id'];
+        this.categoryService.setRouteId(this.routeId);
         this.getContractById(this.routeId)
         console.log(this.routeId)
       }
     });
+  }
+
+  ngOnInit(): void {
+    this.categoryService.setRouteId(0);
   }
 
 
