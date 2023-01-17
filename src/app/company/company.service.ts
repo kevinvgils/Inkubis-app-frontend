@@ -90,7 +90,8 @@ export class CompanyService {
       errorMessage = error.error.message;
     } else {
       // Get server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}\nOnImageUpload: Image file too large`;
+      window.location.reload();
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
