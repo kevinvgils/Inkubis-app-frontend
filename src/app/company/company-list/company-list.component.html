@@ -5,10 +5,10 @@
         <hr>
         <div class="row">
             <div class="col-sm-6 col-md-6 col-lg-4 py-2" *ngFor="let company of companies">
-                <div class="card">
-                    <img *ngIf="company.imageBase64Code" [src]="company.image" class="card-img-top" alt="...">
-                    <img *ngIf="!company.imageBase64Code" src="../../../assets/img/default.jfif" class="card-img-top"
-                        alt=" ... ">
+                <div class="card rounded-0">
+                    <img *ngIf="company.imageBase64Code" [src]="company.image" class="card-img-top rounded-0" alt="...">
+                    <img *ngIf="!company.imageBase64Code" src="../../../assets/img/default.jfif"
+                        class="card-img-top rounded-0" alt=" ... ">
                     <div class="card-body">
                         <p class="center"> <small class="card-text fw-bold">{{ company.name }}</small></p>
                         <div class="flex">
