@@ -29,7 +29,9 @@ export class CompanyService {
         map((data: any) => data),
         map((company: Company) => {
           return company;
-        })
+        }),
+        retry(1),
+        catchError(this.handleError)
       );
   }
 
@@ -38,7 +40,9 @@ export class CompanyService {
       map((data: any) => data),
       map((company: Company[]) => {
         return company;
-      })
+      }),
+      retry(1),
+      catchError(this.handleError)
     );
   }
 
@@ -47,7 +51,9 @@ export class CompanyService {
       map((data: any) => data),
       map((company: Company) => {
         return company;
-      })
+      }),
+      retry(1),
+      catchError(this.handleError)
     );
   }
 
@@ -58,7 +64,9 @@ export class CompanyService {
         map((data: any) => data),
         map((company: Company) => {
           return company;
-        })
+        }),
+        retry(1),
+        catchError(this.handleError)
       );
   }
 
@@ -69,7 +77,9 @@ export class CompanyService {
         map((data: any) => data),
         map((company: Company) => {
           return company;
-        })
+        }),
+        retry(1),
+        catchError(this.handleError)
       );
   }
 
