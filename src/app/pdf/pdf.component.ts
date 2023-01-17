@@ -5,6 +5,7 @@ import { PdfService } from './pdf.service';
 import { IPDF } from './pdf.interface';
 import { IContract } from '../contract/contract.interface';
 import { ContractService } from '../contract/contract.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class PdfComponent implements OnInit {
   contract: IContract | undefined;
   company: Object | undefined;
   companyId: number | undefined
+  routeId: number = 0;
 
   USERS = [
     {
@@ -59,11 +61,16 @@ export class PdfComponent implements OnInit {
     },
   ];
 
-  constructor(private pdfService: PdfService, private contractService : ContractService) {}
+  constructor(private pdfService: PdfService, private contractService : ContractService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     
-    this.contractService.getContractById(3)
+    this.route.params.subscribe(params => {
+      if (params['id']) {
+        this.routeId = params['id'];
+      }
+    })
+    this.contractService.getContractById(this.routeId)
     .subscribe((contract: IContract) => {
       console.log(contract);
     
