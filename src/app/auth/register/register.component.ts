@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersService } from '../../users/users.service';
-import { Company } from '../../users/company.model';
 import { AuthService } from '../auth.service';
 import { User } from '../../users/user.model';
 import { IRegister } from '../auth.interface';
+import { Company } from '..//../company/company.model';
 
 @Component({
   selector: 'app-register',

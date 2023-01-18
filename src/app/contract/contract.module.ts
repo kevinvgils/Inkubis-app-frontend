@@ -13,6 +13,7 @@ import { DataSubjectCategoryComponent } from './categories/data-subject-category
 import { DataCategoryComponent } from './categories/data-category/data-category.component';
 import { SpecialDataCategoryComponent } from './categories/special-data-category/special-data-category.component';
 import { CertificationsComponent } from './categories/certifications/certifications.component';
+import { MatSelectModule} from '@angular/material/select';
 import { SinglePointOfContactDataComponent } from './categories/single-point-of-contact-data/single-point-of-contact-data.component';
 
 @NgModule({
@@ -29,6 +30,6 @@ import { SinglePointOfContactDataComponent } from './categories/single-point-of-
     CertificationsComponent,
     SinglePointOfContactDataComponent,
   ],
-  imports: [CommonModule, ContractRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, ContractRoutingModule, ReactiveFormsModule, MatSelectModule],
 })
 export class ContractModule {}

@@ -1,4 +1,4 @@
-import { Company } from '../users/company.model';
+import { Company } from '../company/company.model';
 
 export interface ILogin {
   emailAddress: string;

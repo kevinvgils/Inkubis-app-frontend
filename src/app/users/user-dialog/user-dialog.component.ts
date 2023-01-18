@@ -7,8 +7,7 @@ import {
 } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Company } from '../company.model';
+import { Company } from '../../company/company.model';
 import { User } from '../user.model';
 import { UsersService } from '../users.service';
 
