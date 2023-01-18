@@ -74,4 +74,14 @@ export class UsersService {
       }
     );
   }
+
+  updateSelf(userInfo: any): Observable<Object> {
+    return this.httpClient.put(
+      `http://localhost:3000/data-api/user/self`,
+      userInfo,
+      {
+        headers: this.headers,
+      }
+    );
+  }
 }
