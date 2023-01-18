@@ -1,25 +1,22 @@
 <div class="listWrap">
     <div class="list">
         <h2 class="text-center">Bedrijven overzicht</h2>
-        <p class="card-text text-center">Hieronder bevindt zich een overzicht van de bedrijven</p>
+        <p class="card-text text-center">Hieronder bevind zich een overzicht van de bedrijven</p>
         <hr>
         <div class="row p-2 mx-2">
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 mt-3 mb-4" *ngFor="let company of companies">
                 <div class=" card rounded-0">
                     <img [src]="company.image" class=" card-img-top p-0 rounded-0 deatil-image img-fluid" alt=" ... ">
-                    <img *ngIf="!company.image" src="../../../assets/img/Inkubis-photo.jpg"
-                        class=" card-img-top p-0 rounded-0 deatil-image img-fluid" alt=" ... ">
+                    <img *ngIf="!company.image" src="../../../assets/img/Inkubis-photo.jpg" class=" card-img-top p-0 rounded-0 deatil-image img-fluid" alt=" ... ">
                     <div class="card-body text-center p-0 m-0 h-75">
                         <small class="card-text fw-bold my-1">{{ company.name }}</small>
                         <div class="card-footer rounded-0 p-0">
                             <div class="row">
                                 <div class="col-5 col-md-5 col-lg-5">
-                                    <button class="purple my-2 p-1 text-center"
-                                        [routerLink]=" [ '/company/detail', company.id]">Meer bekijken</button>
+                                    <button class="purple my-2 p-1 text-center" [routerLink]=" [ '/company/detail', company.id]">Meer bekijken</button>
                                 </div>
                                 <div class="col-5 col-md-5 col-lg-5">
-                                    <button class="purple my-2 p-1 text-center"
-                                        (click)="openDelete(content, company.id)">Verwijder</button>
+                                    <button class="purple my-2 p-1 text-center" (click)="openDelete(content, company.id)">Verwijder</button>
                                 </div>
                             </div>
                         </div>
@@ -29,8 +26,7 @@
                 <ng-template #content let-c=" close" let-d="dismiss">
                     <div class="modal-header text-center">
                         <h4 class="modal-title" id="modal-basic-title">Bevestig verwijderen</h4>
-                        <button type="button" class="close float-end purple p-0" aria-label="Close"
-                            (click)="d( 'Cross click')">
+                        <button type="button" class="close float-end purple p-0" aria-label="Close" (click)="d( 'Cross click')">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
@@ -38,10 +34,8 @@
                         <h6>Weet u zeker dat u dit item definitief wilt verwijderen?</h6>
                     </div>
                     <div class="modal-footer rounded-0 justify-content-center">
-                        <button type="button" class="button purple rounded-0 p-1"
-                            (click)="c(deleteCompany(company.id))">Verwijder</button>
-                        <button type="button" class="button purple rounded-0 p-1"
-                            (click)="c( 'Cross click')">Annuleer</button>
+                        <button type="button" class="button purple rounded-0 p-1" (click)="c(deleteCompany(company.id))">Verwijder</button>
+                        <button type="button" class="button purple rounded-0 p-1" (click)="c( 'Cross click')">Annuleer</button>
                     </div>
                 </ng-template>
             </div>
@@ -60,10 +54,8 @@
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="name" class="mb-1 fw-bold">Naam</label>
-                                <input id="name" type="text" class="form-control rounded-0" formControlName="name"
-                                    placeholder="Type uw (bedrijfs-)naam in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="name!.invalid && (name!.dirty || name!.touched)">
+                                <input id="name" type="text" class="form-control rounded-0" formControlName="name" placeholder="Type uw (bedrijfs-)naam in... " />
+                                <div class="alert alert-danger p-1" *ngIf="name!.invalid && (name!.dirty || name!.touched)">
                                     <div class="error-message" *ngIf="name!.errors?.['required']">
                                         (Bedrijfs-)naam is vereist.
                                     </div>
@@ -77,10 +69,8 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="country" class="mb-1 fw-bold">Land</label>
-                                <input id="country" type="text" class="form-control rounded-0" formControlName="country"
-                                    placeholder="Type uw land in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="country!.invalid && (country!.dirty || country!.touched)">
+                                <input id="country" type="text" class="form-control rounded-0" formControlName="country" placeholder="Type uw land in... " />
+                                <div class="alert alert-danger p-1" *ngIf="country!.invalid && (country!.dirty || country!.touched)">
                                     <div class="error-message" *ngIf="country!.errors?.['required']">
                                         Land is vereist.
                                     </div>
@@ -95,31 +85,27 @@
                         </div>
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
-                                <label for="zipcode" class="mb-1 fw-bold">Zipcode</label>
-                                <input id="zipcode" type="text" class="form-control rounded-0" formControlName="zipcode"
-                                    placeholder="Type uw zipcode in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="zipcode!.invalid && (zipcode!.dirty || zipcode!.touched)">
+                                <label for="zipcode" class="mb-1 fw-bold">Postcode</label>
+                                <input id="zipcode" type="text" class="form-control rounded-0" formControlName="zipcode" placeholder="Type uw zipcode in... " />
+                                <div class="alert alert-danger p-1" *ngIf="zipcode!.invalid && (zipcode!.dirty || zipcode!.touched)">
                                     <div class="error-message" *ngIf="zipcode!.errors?.['pattern']">
                                         Maak gebruik van de volgende formaat: (1234 AB)
                                     </div>
                                     <div class="error-message" *ngIf="zipcode!.errors?.['required']">
-                                        Zipcode is vereist.
+                                        Postcode is vereist.
                                     </div>
                                     <div class="error-message" *ngIf="zipcode!.errors?.['maxlength']">
-                                        Zipcode is te lang.
+                                        Postcode is te lang.
                                     </div>
                                     <div class="error-message" *ngIf="zipcode!.errors?.['minlength']">
-                                        Zipcode is te kort.
+                                        Postcode is te kort.
                                     </div>
                                 </div>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="address" class="mb-1 fw-bold">Adres</label>
-                                <input id="address" type="text" class="form-control rounded-0" formControlName="address"
-                                    placeholder="Type uw adres in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="address!.invalid && (address!.dirty || address!.touched)">
+                                <input id="address" type="text" class="form-control rounded-0" formControlName="address" placeholder="Type uw adres in... " />
+                                <div class="alert alert-danger p-1" *ngIf="address!.invalid && (address!.dirty || address!.touched)">
                                     <div class="error-message" *ngIf="address!.errors?.['required']">
                                         Adres is vereist.
                                     </div>
@@ -135,10 +121,8 @@
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="city" class="mb-1 fw-bold">Stad</label>
-                                <input id="city" type="text" class="form-control rounded-0" formControlName="city"
-                                    placeholder="Type uw stadnaam in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="city!.invalid && (city!.dirty || city!.touched)">
+                                <input id="city" type="text" class="form-control rounded-0" formControlName="city" placeholder="Type uw stadnaam in... " />
+                                <div class="alert alert-danger p-1" *ngIf="city!.invalid && (city!.dirty || city!.touched)">
                                     <div class="error-message" *ngIf="city!.errors?.['required']">
                                         Stadsnaam is vereist.
                                     </div>
@@ -152,10 +136,8 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="kvkNumber" class="mb-1 fw-bold">Kvk-nummer</label>
-                                <input id="kvkNumber" type="text" class="form-control rounded-0"
-                                    formControlName="kvkNumber" placeholder=" Type uw kvk-nummer in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched)">
+                                <input id="kvkNumber" type="text" class="form-control rounded-0" formControlName="kvkNumber" placeholder=" Type uw kvk-nummer in... " />
+                                <div class="alert alert-danger p-1" *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched)">
                                     <div class="error-message" *ngIf="kvkNumber!.errors?.[ 'pattern']">
                                         Maak gebruik van de volgende formaat: (123 456 789)
                                     </div>
@@ -172,11 +154,8 @@
                             </div>
                             <div class="col-12 col-md-12 col-lg-12 my-2">
                                 <label for="imgFile" class="mb-1 fw-bold mt-2">Bestand</label>
-                                <input id="imgFile" type="file" accept="image/png, image/jpeg, image/jpg"
-                                    (change)="onChange($event)" class="form-control rounded-0"
-                                    formControlName="imageURL" placeholder=" Voeg hier uw afbeelding toe... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="imageURL!.invalid && (imageURL!.dirty || imageURL!.touched)">
+                                <input id="imgFile" type="file" accept="image/png, image/jpeg, image/jpg" (change)="onChange($event)" class="form-control rounded-0" formControlName="imageURL" placeholder=" Voeg hier uw afbeelding toe... " />
+                                <div class="alert alert-danger p-1" *ngIf="imageURL!.invalid && (imageURL!.dirty || imageURL!.touched)">
                                     <div class="error-message" *ngIf="imageURL!.errors?.['required']">
                                         Een afbeelding is vereist.
                                     </div>
@@ -187,8 +166,7 @@
                 </form>
             </div>
             <div class="modal-footer rounded-0 justify-content-center">
-                <button type="button" class="purple rounded-0 p-0" [disabled]="!companyForm.valid"
-                    (click)="c(onSubmit())">Aanmaken</button>
+                <button type="button" class="purple rounded-0 p-0" [disabled]="!companyForm.valid" (click)="c(onSubmit())">Aanmaken</button>
                 <button type="button" class="purple rounded-0 p-0" (click)="c( 'Cross click')">Annuleren</button>
             </div>
         </ng-template>
