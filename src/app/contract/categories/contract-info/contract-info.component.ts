@@ -61,7 +61,7 @@ export class ContractInfoComponent implements OnInit {
       this.userService.getAllCompanies().subscribe(company => {
         this.allCompanies = company;
       })
-    } else{
+    } else {
       this.userService.getAllCompaniesForUser(userTokenData['id']).subscribe(company => {
         this.allCompanies = company;
       })
