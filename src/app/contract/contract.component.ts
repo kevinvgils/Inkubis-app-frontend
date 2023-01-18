@@ -43,6 +43,7 @@ export class ContractComponent extends FormProvider implements OnInit {
 
   contractForm = new FormGroup({
     contractinfo: new FormGroup({
+      companyId: new FormControl(''),
       companyResponsibleForDataProcessing: new FormGroup({
         name: new FormControl(''),
         companyNumber: new FormControl(''),
