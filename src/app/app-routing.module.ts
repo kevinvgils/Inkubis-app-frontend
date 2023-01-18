@@ -21,6 +21,11 @@ const routes: Routes = [
       import('./contract/contract.module').then((m) => m.ContractModule),
   },
   {
+    path: 'company',
+    loadChildren: () =>
+      import('./company/company.module').then((m) => m.CompanyModule),
+  },
+  {
     path: '',
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],

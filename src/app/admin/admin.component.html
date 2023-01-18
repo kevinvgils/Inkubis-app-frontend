@@ -10,7 +10,9 @@
                 <div class="contract" *ngFor="let contract of contracts">
                     <div class="line">
                         <div class="content">
-                            <a class="title" routerLink="/contract-details/{{contract.id}}"><h2>Contract hoort bij: {{ contract.companyExecutingDP.name }}</h2></a>
+                            <a class="title" routerLink="/contract-details/{{contract.id}}">
+                                <h2>Contract hoort bij: {{ contract.companyExecutingDP.name }}</h2>
+                            </a>
                             <p><b>Verwerker:</b> {{contract.companyExecutingDP.name}}</p>
                             <p><b>Verwerkings verantwoordelijke:</b> {{ contract.companyResponsibleForDP.name}}</p>
                             <p *ngIf="contract.companyExecutingDP.legalCountry == true">Nederlands template</p>
@@ -21,7 +23,7 @@
                                 <a routerLink="/contract/edit/{{contract.id}}"><i class="bi bi-pencil"></i> Bewerken</a>
                             </div>
                             <div class="delete">
-                                <a (click)="deleteContract(contract.id)"><i class="bi bi-trash3"></i> Verwijderen</a>
+                                <a (click)="deleteContract(contract.id)"><i class="bi bi-trash3"></i> Verwijder</a>
                             </div>
                         </div>
                     </div>
