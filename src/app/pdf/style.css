@@ -13,6 +13,11 @@
     font-size: 11pt;
 }
 
+button.yellow {
+  background-color: #ffff00;
+  color: #280223;
+}
+
 h1 {
     color: black;
     font-family: "Times New Roman", serif;
