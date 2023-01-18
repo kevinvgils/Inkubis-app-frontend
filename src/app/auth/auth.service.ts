@@ -1,3 +1,4 @@
+import jwt_decode from 'jwt-decode'
 import { Injectable } from '@angular/core';
 import {
   BehaviorSubject,
@@ -38,6 +39,10 @@ export class AuthService {
         })
       )
       .subscribe();
+  }
+
+  decodeJwtToken(token: string){
+    return jwt_decode(token);
   }
 
   login(
