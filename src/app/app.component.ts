@@ -29,14 +29,6 @@ export class AppComponent {
     this.loggedInUser$.subscribe(u => {
       this.token = u!.token
     })
-    await this.getUsers();
-  }
-
-  async getUsers(): Promise<void> {
-    this.userService.getAllUsers().subscribe((users) => {
-      this.users = users;
-      console.log(users);
-    });
   }
 
   openDialog(userId: number) {
@@ -46,10 +38,6 @@ export class AppComponent {
         userId: userId,
         owner: true
       },
-    });
-
-    dialogref.afterClosed().subscribe((x) => {
-      this.getUsers();
     });
   }
 

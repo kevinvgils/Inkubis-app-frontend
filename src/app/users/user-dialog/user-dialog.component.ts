@@ -46,12 +46,14 @@ export class UserDialogComponent implements OnInit {
 
     await this.userService.getUserById(this.data.userId).subscribe((user) => {
       this.selectedUser = user;
-      this.userService.getAllCompanies().subscribe((companies) => {
-        this.allCompanies = companies;
-        this.selectedUser.companies.forEach((company) => {
-          this.preSelectedCompanies.push(company.id);
+      if(!this.data.owner) {
+        this.userService.getAllCompanies().subscribe((companies) => {
+          this.allCompanies = companies;
+          this.selectedUser.companies.forEach((company) => {
+            this.preSelectedCompanies.push(company.id);
+          });
         });
-      });
+      }
 
       this.userForm.setValue({
         firstName: this.selectedUser.firstName,
@@ -68,13 +70,17 @@ export class UserDialogComponent implements OnInit {
       this.userForm.value.firstName != '' &&
       this.userForm.value.emailAddress != ''
     ) {
-      console.log(this.userForm.value);
-      await this.userService
+      console.log(this.data)
+      if(this.data.owner) {
+        await this.userService.updateSelf(this.userForm.value).subscribe(u => {
+        })
+      } else {
+        await this.userService
         .updateUser(this.selectedUser.id, this.userForm.value)
         .subscribe((x) => {
-          console.log(x);
           this.router.navigate(['users']);
         });
+      }
     }
   }
 }
