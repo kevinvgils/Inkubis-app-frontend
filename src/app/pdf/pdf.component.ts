@@ -131,7 +131,7 @@ html2canvas(data).then((canvas:any) => {
     doc.addImage(canvas, 'PNG', 0, position, imgWidth, imgHeight, '', 'FAST');
     heightLeft -= pageHeight;
   }
-  doc.save('Downld.pdf');
+  doc.save('Contract.pdf');
 });
     
     /*let DATA: any = document.getElementById('htmlDataBE');
