@@ -58,6 +58,19 @@ export class ContractService {
 
   getAllContracts(): Observable<IContract[]> {
     return this.httpClient
+    .get(`http://localhost:3000/data-api/contract`, {
+        headers: this.headers,
+    })
+    .pipe(
+        map((data: any) => data),
+        map((contracts: IContract[]) => {
+            return contracts;
+        })
+    )
+  }
+
+  getAllContractsForUser(): Observable<IContract[]> {
+    return this.httpClient
     .get(`http://localhost:3000/data-api/contract/user`, {
         headers: this.headers,
     })
