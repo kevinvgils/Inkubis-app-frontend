@@ -38,7 +38,7 @@ const routes: Routes = [
     component: AdminComponent,
   },
   {
-    path: 'pdf',
+    path: 'pdf/:id',
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
     component: PdfComponent,

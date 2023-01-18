@@ -8,6 +8,10 @@
     height: 75vh;
     width: 100%;
   }
+  .top{
+    display: flex;
+    justify-content: space-between;
+  }
     .detail .row{
       --bs-gutter-x: 0;
       height: 100%;

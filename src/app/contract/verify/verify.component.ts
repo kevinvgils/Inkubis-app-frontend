@@ -60,6 +60,8 @@ export class VerifyComponent implements OnInit {
       })
     }
 
+    this.router.navigate(['/pdf']);
+
     // const allForms = this.formProvider.getForm() as FormGroup;
 
     // let contract = new Contract(allForms);
