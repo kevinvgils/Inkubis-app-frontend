@@ -56,10 +56,8 @@
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="name" class="mb-1 fw-bold">Naam</label>
-                                <input id="name" type="text" class="form-control rounded-0" formControlName="name"
-                                    placeholder="Type uw (bedrijfs-)naam in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="name!.invalid && (name!.dirty || name!.touched)">
+                                <input id="name" type="text" class="form-control rounded-0" formControlName="name" placeholder="Type uw (bedrijfs-)naam in... " />
+                                <div class="alert alert-danger p-1" *ngIf="name!.invalid && (name!.dirty || name!.touched)">
                                     <div class="error-message" *ngIf="name!.errors?.['required']">
                                         (Bedrijfs-)naam is vereist.
                                     </div>
@@ -73,10 +71,8 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="country" class="mb-1 fw-bold">Land</label>
-                                <input id="country" type="text" class="form-control rounded-0" formControlName="country"
-                                    placeholder="Type uw land in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="country!.invalid && (country!.dirty || country!.touched)">
+                                <input id="country" type="text" class="form-control rounded-0" formControlName="country" placeholder="Type uw land in... " />
+                                <div class="alert alert-danger p-1" *ngIf="country!.invalid && (country!.dirty || country!.touched)">
                                     <div class="error-message" *ngIf="country!.errors?.['required']">
                                         Land is vereist.
                                     </div>
@@ -92,10 +88,8 @@
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="zipcode" class="mb-1 fw-bold">Zipcode</label>
-                                <input id="zipcode" type="text" class="form-control rounded-0" formControlName="zipcode"
-                                    placeholder="Type uw zipcode in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="zipcode!.invalid && (zipcode!.dirty || zipcode!.touched)">
+                                <input id="zipcode" type="text" class="form-control rounded-0" formControlName="zipcode" placeholder="Type uw zipcode in... " />
+                                <div class="alert alert-danger p-1" *ngIf="zipcode!.invalid && (zipcode!.dirty || zipcode!.touched)">
                                     <div class="error-message" *ngIf="zipcode!.errors?.['pattern']">
                                         Maak gebruik van de volgende formaat: (1234 AB)
                                     </div>
@@ -112,10 +106,8 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="address" class="mb-1 fw-bold">Adres</label>
-                                <input id="address" type="text" class="form-control rounded-0" formControlName="address"
-                                    placeholder="Type uw adres in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="address!.invalid && (address!.dirty || address!.touched)">
+                                <input id="address" type="text" class="form-control rounded-0" formControlName="address" placeholder="Type uw adres in... " />
+                                <div class="alert alert-danger p-1" *ngIf="address!.invalid && (address!.dirty || address!.touched)">
                                     <div class="error-message" *ngIf="address!.errors?.['required']">
                                         Adres is vereist.
                                     </div>
@@ -131,10 +123,8 @@
                         <div class="row mb-3 mt-2">
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="city" class="mb-1 fw-bold">Stad</label>
-                                <input id="city" type="text" class="form-control rounded-0" formControlName="city"
-                                    placeholder="Type uw stadnaam in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="city!.invalid && (city!.dirty || city!.touched)">
+                                <input id="city" type="text" class="form-control rounded-0" formControlName="city" placeholder="Type uw stadnaam in... " />
+                                <div class="alert alert-danger p-1" *ngIf="city!.invalid && (city!.dirty || city!.touched)">
                                     <div class="error-message" *ngIf="city!.errors?.['required']">
                                         Stadsnaam is vereist.
                                     </div>
@@ -148,10 +138,8 @@
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <label for="kvkNumber" class="mb-1 fw-bold">Kvk-nummer</label>
-                                <input id="kvkNumber" type="text" class="form-control rounded-0"
-                                    formControlName="kvkNumber" placeholder=" Type uw kvk-nummer in... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched)">
+                                <input id="kvkNumber" type="text" class="form-control rounded-0" formControlName="kvkNumber" placeholder=" Type uw kvk-nummer in... " />
+                                <div class="alert alert-danger p-1" *ngIf="kvkNumber!.invalid && (kvkNumber!.dirty || kvkNumber!.touched)">
                                     <div class="error-message" *ngIf="kvkNumber!.errors?.[ 'pattern']">
                                         Maak gebruik van de volgende formaat: (123 456 789)
                                     </div>
@@ -168,20 +156,16 @@
                             </div>
                             <div class="col-12 col-md-12 col-lg-12 my-2">
                                 <label for="imageBase64Code" class="mb-1 fw-bold mt-2">Bestand</label>
-                                <input id="imageBase64Code" type="file" accept="image/png, image/jpeg, image/jpg"
-                                    (change)="onChange($event)" class="form-control rounded-0"
-                                    formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
-                                <div class="alert alert-danger p-1"
-                                    *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched)">
+                                <input id="imageBase64Code" type="file" accept="image/png, image/jpeg, image/jpg" (change)="onChange($event)" class="form-control rounded-0" formControlName="imageBase64Code" placeholder=" Voeg hier uw afbeelding toe... " />
+                                <div class="alert alert-danger p-1" *ngIf="imageBase64Code!.invalid && (imageBase64Code!.dirty || imageBase64Code!.touched)">
                                     <div class="error-message" *ngIf="imageBase64Code!.errors?.['required']">
                                         Een afbeelding is vereist.
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer rounded-0">
+                        <div class="modal-footer rounded-0 justify-content-center">
+                            <button type="submit" class="purple" [disabled]="!companyForm.valid" (click)="c(onSubmit())">Wijzigen</button>
                             <button type=" button" class="purple" (click)="c( 'Cross click')">Annuleren</button>
-                            <button type="submit" class="purple" [disabled]="!companyForm.valid"
-                                (click)="c(onSubmit())">Wijzigen</button>
                         </div>
                     </div>

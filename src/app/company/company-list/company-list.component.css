@@ -1,7 +1,12 @@
+.card {
+  width: 13vw;
+  height: 37.2vh;
+  justify-content: space-between;
+}
+
 img {
-  height: 14vh;
-  min-height: 14vh;
-  object-fit: cover;
+  height: 25vh;
+  min-height: 25vh;
 }
 
 .card-footer {
@@ -12,7 +17,7 @@ img {
 
 .card-body {
   background-color: #53042f;
-  padding-top: 4px;
+  font-size: 17px;
 }
 
 .center {
@@ -55,16 +60,21 @@ img {
 hr {
   opacity: 100%;
   background-color: black;
+  width: 63.5vw;
 }
 
-.flex {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
+button {
+  left: 0 !important;
+  height: 6vh !important;
+  width: 5.5vw !important;
+  font-size: 8.7px !important;
+  margin-left: 12px !important;
 }
 
 .modal-title {
+  margin-left: 6vw;
   color: #ffff00;
+  font-size: 24px;
 }
 
 .modal-body {
@@ -74,12 +84,10 @@ hr {
 .modal-header {
   background-color: #53042f;
   width: 500px;
-  justify-content: center;
 }
 
 .modal-footer {
   border-radius: 0;
-  justify-content: center;
 }
 
 .error-message {
@@ -87,13 +95,17 @@ hr {
   font-weight: bold;
 }
 
-.listButton {
-  padding: 8px;
-  font-size: 9px !important;
-  margin-left: 3px;
-  margin-right: 3px;
+.close {
+  font-size: 31px !important;
+  padding: 0;
+  margin-left: 1vw;
+  display: flex;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  align-items: center;
 }
 
-p {
-  margin-bottom: 5px;
+.close::after {
+  content: none !important;
 }
