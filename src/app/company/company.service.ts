@@ -6,25 +6,31 @@ import {
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, catchError, retry, throwError, map } from 'rxjs';
-import { environment } from 'src/environments/environment.prod';
+import { ConfigService } from '../shared/moduleconfig/config.service';
 import { Company } from './company.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CompanyService {
-  readonly apiURL = environment.apiurl;
-
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
   };
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private configService: ConfigService
+  ) {}
 
   create(company: Company): Observable<Company> {
     return this.http
-      .post<Company>(`${this.apiURL}/company`, company, this.httpOptions)
+      .post<Company>(
+        `${this.configService.getConfig().apiEndpoint}data-api/company`,
+        company,
+        this.httpOptions
+      )
       .pipe(
         map((data: any) => data),
         map((company: Company) => {
@@ -36,30 +42,42 @@ export class CompanyService {
   }
 
   getAll(): Observable<Company[]> {
-    return this.http.get<Company[]>(`${this.apiURL}/company`).pipe(
-      map((data: any) => data),
-      map((company: Company[]) => {
-        return company;
-      }),
-      retry(1),
-      catchError(this.handleError)
-    );
+    return this.http
+      .get<Company[]>(
+        `${this.configService.getConfig().apiEndpoint}data-api/company`
+      )
+      .pipe(
+        map((data: any) => data),
+        map((company: Company[]) => {
+          return company;
+        }),
+        retry(1),
+        catchError(this.handleError)
+      );
   }
 
   getById(id: number): Observable<Company> {
-    return this.http.get<Company>(`${this.apiURL}/company/${id}`).pipe(
-      map((data: any) => data),
-      map((company: Company) => {
-        return company;
-      }),
-      retry(1),
-      catchError(this.handleError)
-    );
+    return this.http
+      .get<Company>(
+        `${this.configService.getConfig().apiEndpoint}data-api/company/${id}`
+      )
+      .pipe(
+        map((data: any) => data),
+        map((company: Company) => {
+          return company;
+        }),
+        retry(1),
+        catchError(this.handleError)
+      );
   }
 
   update(id: number, Company: Company): Observable<Company> {
     return this.http
-      .put<Company>(`${this.apiURL}/company/${id}`, Company, this.httpOptions)
+      .put<Company>(
+        `${this.configService.getConfig().apiEndpoint}data-api/company/${id}`,
+        Company,
+        this.httpOptions
+      )
       .pipe(
         map((data: any) => data),
         map((company: Company) => {
@@ -72,7 +90,10 @@ export class CompanyService {
 
   delete(id: number) {
     return this.http
-      .delete<Company>(`${this.apiURL}/company/${id}`, this.httpOptions)
+      .delete<Company>(
+        `${this.configService.getConfig().apiEndpoint}data-api/company/${id}`,
+        this.httpOptions
+      )
       .pipe(
         map((data: any) => data),
         map((company: Company) => {

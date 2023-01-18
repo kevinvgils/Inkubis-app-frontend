@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Company } from '../company/company.model';
+import { ConfigService } from '../shared/moduleconfig/config.service';
 import { User } from './user.model';
 
 @Injectable({
@@ -12,11 +13,14 @@ export class UsersService {
     'Content-Type': 'application/json',
   });
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private configService: ConfigService
+  ) {}
 
   getAllUsers(): Observable<User[]> {
     return this.httpClient
-      .get(`http://localhost:3000/data-api/user`, {
+      .get(`${this.configService.getConfig().apiEndpoint}data-api/user`, {
         headers: this.headers,
       })
       .pipe(
@@ -29,19 +33,24 @@ export class UsersService {
 
   getAllCompaniesForUser(userId: number): Observable<Company[]> {
     return this.httpClient
-    .get(`http://localhost:3000/data-api/company/usercompany/` + userId, {
-      headers: this.headers,
-    })
-    .pipe(
-      map((data: any) => data),
-      map((companies: Company[]) => {
-        return companies;
-      })
-    )
+      .get(
+        `${
+          this.configService.getConfig().apiEndpoint
+        }data-api/company/usercompany/` + userId,
+        {
+          headers: this.headers,
+        }
+      )
+      .pipe(
+        map((data: any) => data),
+        map((companies: Company[]) => {
+          return companies;
+        })
+      );
   }
   getAllCompanies(): Observable<Company[]> {
     return this.httpClient
-      .get(`http://localhost:3000/data-api/company`, {
+      .get(`${this.configService.getConfig().apiEndpoint}data-api/company`, {
         headers: this.headers,
       })
       .pipe(
@@ -54,9 +63,12 @@ export class UsersService {
 
   getUserById(userId: number | undefined): Observable<User> {
     return this.httpClient
-      .get<User>(`http://localhost:3000/data-api/user/` + userId, {
-        headers: this.headers,
-      })
+      .get<User>(
+        `${this.configService.getConfig().apiEndpoint}data-api/user/` + userId,
+        {
+          headers: this.headers,
+        }
+      )
       .pipe(
         map((user: User) => {
           console.log(user);
@@ -67,7 +79,7 @@ export class UsersService {
 
   updateUser(userId: number, userInfo: any): Observable<Object> {
     return this.httpClient.put(
-      `http://localhost:3000/data-api/user/` + userId,
+      `${this.configService.getConfig().apiEndpoint}data-api/user/` + userId,
       userInfo,
       {
         headers: this.headers,

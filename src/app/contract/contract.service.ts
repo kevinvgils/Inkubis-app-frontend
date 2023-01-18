@@ -3,6 +3,7 @@ import { BehaviorSubject, catchError, map, Observable, of, tap } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { IContract } from './contract.interface';
+import { ConfigService } from '../shared/moduleconfig/config.service';
 
 @Injectable({ providedIn: 'root' })
 export class ContractService {
@@ -10,9 +11,13 @@ export class ContractService {
     'Content-Type': 'application/json',
   });
 
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private configService: ConfigService
+  ) {}
 
-  contractCreateNextLinking(currentComp: string, currentLink: boolean = true){
+  contractCreateNextLinking(currentComp: string, currentLink: boolean = true) {
     const components = [
       'contractinfo',
       'contractsignees',
@@ -25,26 +30,27 @@ export class ContractService {
       'spoc',
       'verify',
     ];
-    if(currentLink){
+    if (currentLink) {
       return currentComp;
-    } else{
-      return components[components.indexOf(currentComp) +1];
+    } else {
+      return components[components.indexOf(currentComp) + 1];
     }
   }
 
-  contract(
-    company: number,
-    questions: any
-  ): Observable<IContract | undefined> {
+  contract(company: number, questions: any): Observable<IContract | undefined> {
     const contract = {
       ...questions,
-      company: company
-    }
+      company: company,
+    };
 
     return this.httpClient
-      .post(`http://localhost:3000/data-api/contract`, contract, {
-        headers: this.headers,
-      })
+      .post(
+        `${this.configService.getConfig().apiEndpoint}data-api/contract`,
+        contract,
+        {
+          headers: this.headers,
+        }
+      )
       .pipe(
         tap(console.log),
         catchError((error) => {
@@ -58,44 +64,55 @@ export class ContractService {
 
   getAllContracts(): Observable<IContract[]> {
     return this.httpClient
-    .get(`http://localhost:3000/data-api/contract/user`, {
-        headers: this.headers,
-    })
-    .pipe(
+      .get(
+        `${this.configService.getConfig().apiEndpoint}data-api/contract/user`,
+        {
+          headers: this.headers,
+        }
+      )
+      .pipe(
         map((data: any) => data),
         map((contracts: IContract[]) => {
-            return contracts;
+          return contracts;
         })
-    )
+      );
   }
 
   getContractById(contractId: number): Observable<IContract> {
-      return this.httpClient
-      .get(`http://localhost:3000/data-api/contract/` + contractId, {
+    return this.httpClient
+      .get(
+        `${this.configService.getConfig().apiEndpoint}data-api/contract/` +
+          contractId,
+        {
           headers: this.headers,
-      })
-      .pipe(
-          map((data: any) => data),
-          map((contract: IContract) => {
-              return contract
-          })
+        }
       )
+      .pipe(
+        map((data: any) => data),
+        map((contract: IContract) => {
+          return contract;
+        })
+      );
   }
 
   deleteContract(contractId: number): Observable<any> {
-      return this.httpClient
-      .delete(`http://localhost:3000/data-api/contract/` + contractId, {
-          headers: this.headers,
-      })
+    return this.httpClient.delete(
+      `${this.configService.getConfig().apiEndpoint}data-api/contract/` +
+        contractId,
+      {
+        headers: this.headers,
+      }
+    );
   }
 
   updateContract(contractId: number, contractInfo: any): Observable<Object> {
     return this.httpClient.put(
-      `http://localhost:3000/data-api/contract/` + contractId,
+      `${this.configService.getConfig().apiEndpoint}data-api/contract/` +
+        contractId,
       contractInfo,
       {
         headers: this.headers,
       }
-    )
+    );
   }
 }

@@ -1,4 +1,4 @@
-import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode';
 import { Injectable } from '@angular/core';
 import {
   BehaviorSubject,
@@ -12,6 +12,7 @@ import {
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ILogin, IRegister, IToken } from './auth.interface';
 import { Router } from '@angular/router';
+import { ConfigService } from '../shared/moduleconfig/config.service';
 
 @Injectable({
   providedIn: 'root',
@@ -24,7 +25,11 @@ export class AuthService {
     Authorization: this.getAuthorizationToken() || '',
   });
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+    private configService: ConfigService
+  ) {
     this.getUserFromLocalStorage()
       .pipe(
         switchMap((user: IToken | undefined) => {
@@ -41,7 +46,7 @@ export class AuthService {
       .subscribe();
   }
 
-  decodeJwtToken(token: string){
+  decodeJwtToken(token: string) {
     return jwt_decode(token);
   }
 
@@ -56,7 +61,7 @@ export class AuthService {
 
     return this.httpClient
       .post<ILogin>(
-        `http://localhost:3000/auth-api/user-auth/login`,
+        `${this.configService.getConfig().apiEndpoint}auth-api/user-auth/login`,
         credentials,
         {
           headers: this.headers,
@@ -80,10 +85,14 @@ export class AuthService {
     userData.role = isAdmin;
 
     return this.httpClient
-      .post(`http://localhost:3000/auth-api/user-auth`, userData, {
-        responseType: 'text',
-        headers: this.headers,
-      })
+      .post(
+        `${this.configService.getConfig().apiEndpoint}auth-api/user-auth`,
+        userData,
+        {
+          responseType: 'text',
+          headers: this.headers,
+        }
+      )
       .pipe(
         tap(console.log),
         map((data: any) => {

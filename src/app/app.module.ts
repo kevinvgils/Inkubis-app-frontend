@@ -20,6 +20,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AdminComponent } from './admin/admin.component';
 import { ContractDetailComponent } from './homepage/contract-detail/contract-detail.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConfigModule } from './shared/moduleconfig/config.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatSelectModule,
     ContractModule,
     NgbModule,
+    ConfigModule.forRoot({ apiEndpoint: environment.SERVER_API_URL }),
   ],
   entryComponents: [UserDialogComponent],
   providers: [LoggedInAuthGuard, httpInterceptorProviders],
