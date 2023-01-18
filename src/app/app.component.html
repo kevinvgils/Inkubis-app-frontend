@@ -5,7 +5,7 @@
     <div class="navWrap">
       <ul class="navBar" *ngIf="loggedInUser$ | async as user">
         <li><a routerLink="/contract">Contract aanmaken</a></li>
-        <li *ngIf="authService.checkIsAdmin(token)" class="dropdownWrap">
+        <li class="dropdownWrap">
           <div>Admin</div>
           <div class="arrow">></div>
           <ul class="dropdown">

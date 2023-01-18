@@ -15,20 +15,16 @@ import { UsersService } from './users/users.service';
 export class AppComponent {
   title = 'Inkubis';
   loggedInUser$!: Observable<IToken | undefined>;
-  token: string;
   users: User[];
 
   constructor(
     private readonly userService: UsersService,
-    public authService: AuthService,
+    private authService: AuthService,
     public dialog: MatDialog
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.loggedInUser$ = this.authService.currentUser$;
-    this.loggedInUser$.subscribe(u => {
-      this.token = u!.token
-    })
     await this.getUsers();
   }
 

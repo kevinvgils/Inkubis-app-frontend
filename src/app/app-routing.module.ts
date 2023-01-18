@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminGuard, LoggedInAuthGuard } from './auth/auth.guards';
+import { LoggedInAuthGuard } from './auth/auth.guards';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -17,7 +17,6 @@ const routes: Routes = [
   },
   {
     path: 'contract/edit/:id',
-    canActivate: [LoggedInAuthGuard],
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),
   },
@@ -35,7 +34,7 @@ const routes: Routes = [
   {
     path: 'admin',
     pathMatch: 'full',
-    canActivate: [LoggedInAuthGuard, AdminGuard],
+    canActivate: [LoggedInAuthGuard],
     component: AdminComponent,
   },
   {
@@ -47,7 +46,7 @@ const routes: Routes = [
   {
     path: 'users',
     pathMatch: 'full',
-    canActivate: [LoggedInAuthGuard, AdminGuard],
+    canActivate: [LoggedInAuthGuard],
     component: UsersComponent,
   },
   {
@@ -57,11 +56,7 @@ const routes: Routes = [
     component: ContractDetailComponent,
   },
   { path: 'login', component: LoginComponent },
-  { 
-    path: 'register', 
-    component: RegisterComponent,
-    canActivate: [LoggedInAuthGuard, AdminGuard] 
-  },
+  { path: 'register', component: RegisterComponent },
   { path: '**', redirectTo: '' },
 ];
 
