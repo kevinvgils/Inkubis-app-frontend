@@ -46,29 +46,20 @@ export class VerifyComponent implements OnInit {
     console.log(this.form.value);
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.routeId == 0) {
-      this.contractService
+      await this.contractService
       .contract(3, this.form.value)
       .subscribe(() => {
         console.log(this.form.value);
+        this.router.navigate(['/']);
       });
     } else if (this.routeId != 0 ){
-      console.log(this.form.value)
         this.contractService.updateContract(this.routeId, this.form.value).subscribe(x => {
-      console.log(x)
-      })
-    }
-
-    this.router.navigate(['/pdf']);
-
-    // const allForms = this.formProvider.getForm() as FormGroup;
-
-    // let contract = new Contract(allForms);
-    // this.contracts.push(contract);
-    // console.log(this.form.value)
-
-    // localStorage.setItem('forms', JSON.stringify(this.contracts));
-    // this.router.navigate(['..']);
+          console.log(x)
+          this.router.navigate(['/']);
+        })
+      }
+      //this.router.navigate(['/']);
   }
 }
