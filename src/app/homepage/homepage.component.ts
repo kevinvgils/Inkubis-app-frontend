@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit {
   }
 
   async getContracts(): Promise<void>{
-    this.contractService.getAllContractsForUser().subscribe(contracts => {
+    await this.contractService.getAllContractsForUser().subscribe(contracts => {
       this.contracts = contracts
       console.log(contracts)
     })

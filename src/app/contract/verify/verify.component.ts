@@ -46,18 +46,20 @@ export class VerifyComponent implements OnInit {
     console.log(this.form.value);
   }
 
-  onSubmit() {
+  async onSubmit() {
     if (this.routeId == 0) {
-      this.contractService
+      await this.contractService
       .contract(3, this.form.value)
       .subscribe(() => {
         console.log(this.form.value);
+        this.router.navigate(['/']);
       });
     } else if (this.routeId != 0 ){
         this.contractService.updateContract(this.routeId, this.form.value).subscribe(x => {
           console.log(x)
+          this.router.navigate(['/']);
         })
       }
-    this.router.navigate(['/']);
+      //this.router.navigate(['/']);
   }
 }
