@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { UserDialogComponent } from './users/user-dialog/user-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
-import { LoggedInAuthGuard } from './auth/auth.guards';
+import { AdminGuard, LoggedInAuthGuard } from './auth/auth.guards';
 import { ContractModule } from './contract/contract.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AdminComponent } from './admin/admin.component';
@@ -51,7 +51,7 @@ import { environment } from 'src/environments/environment';
     ConfigModule.forRoot({ apiEndpoint: environment.SERVER_API_URL }),
   ],
   entryComponents: [UserDialogComponent],
-  providers: [LoggedInAuthGuard, httpInterceptorProviders],
+  providers: [LoggedInAuthGuard, AdminGuard, httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

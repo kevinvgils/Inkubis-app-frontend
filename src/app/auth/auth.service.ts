@@ -50,6 +50,12 @@ export class AuthService {
     return jwt_decode(token);
   }
 
+  checkIsAdmin(token: string): boolean {
+    const user = this.decodeJwtToken(token) as any
+
+    return user.role === 'admin'
+  }
+
   login(
     emailAddress: string,
     password: string

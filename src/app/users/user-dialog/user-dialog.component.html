@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
+            <div *ngIf="!data.owner" class="col-12">
                 <div class="mb-3 ">
                     <label for="function" class="form-label">Werkt voor</label>
                     <mat-select class="form-control" formControlName="companies" multiple>

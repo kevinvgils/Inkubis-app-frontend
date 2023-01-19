@@ -15,24 +15,20 @@ import { UsersService } from './users/users.service';
 export class AppComponent {
   title = 'Inkubis';
   loggedInUser$!: Observable<IToken | undefined>;
+  token: string;
   users: User[];
 
   constructor(
     private readonly userService: UsersService,
-    private authService: AuthService,
+    public authService: AuthService,
     public dialog: MatDialog
   ) {}
 
   async ngOnInit(): Promise<void> {
     this.loggedInUser$ = this.authService.currentUser$;
-    await this.getUsers();
-  }
-
-  async getUsers(): Promise<void> {
-    this.userService.getAllUsers().subscribe((users) => {
-      this.users = users;
-      console.log(users);
-    });
+    this.loggedInUser$.subscribe(u => {
+      this.token = u!.token
+    })
   }
 
   openDialog(userId: number) {
@@ -42,10 +38,6 @@ export class AppComponent {
         userId: userId,
         owner: true
       },
-    });
-
-    dialogref.afterClosed().subscribe((x) => {
-      this.getUsers();
     });
   }
 
