@@ -39,7 +39,6 @@ export class UsersService {
       })
     )
   }
-
   getAllCompanies(): Observable<Company[]> {
     return this.httpClient
       .get(`http://localhost:3000/data-api/company`, {
@@ -53,7 +52,7 @@ export class UsersService {
       );
   }
 
-  getUserById(userId: number): Observable<User> {
+  getUserById(userId: number | undefined): Observable<User> {
     return this.httpClient
       .get<User>(`http://localhost:3000/data-api/user/` + userId, {
         headers: this.headers,
@@ -69,6 +68,16 @@ export class UsersService {
   updateUser(userId: number, userInfo: any): Observable<Object> {
     return this.httpClient.put(
       `http://localhost:3000/data-api/user/` + userId,
+      userInfo,
+      {
+        headers: this.headers,
+      }
+    );
+  }
+
+  updateSelf(userInfo: any): Observable<Object> {
+    return this.httpClient.put(
+      `http://localhost:3000/data-api/user/self`,
       userInfo,
       {
         headers: this.headers,

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoggedInAuthGuard } from './auth/auth.guards';
+import { AdminGuard, LoggedInAuthGuard } from './auth/auth.guards';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
@@ -17,6 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'contract/edit/:id',
+    canActivate: [LoggedInAuthGuard],
     loadChildren: () =>
       import('./contract/contract.module').then((m) => m.ContractModule),
   },
@@ -34,11 +35,11 @@ const routes: Routes = [
   {
     path: 'admin',
     pathMatch: 'full',
-    canActivate: [LoggedInAuthGuard],
+    canActivate: [LoggedInAuthGuard, AdminGuard],
     component: AdminComponent,
   },
   {
-    path: 'pdf',
+    path: 'pdf/:id',
     pathMatch: 'full',
     canActivate: [LoggedInAuthGuard],
     component: PdfComponent,
@@ -46,7 +47,7 @@ const routes: Routes = [
   {
     path: 'users',
     pathMatch: 'full',
-    canActivate: [LoggedInAuthGuard],
+    canActivate: [LoggedInAuthGuard, AdminGuard],
     component: UsersComponent,
   },
   {
@@ -56,7 +57,11 @@ const routes: Routes = [
     component: ContractDetailComponent,
   },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { 
+    path: 'register', 
+    component: RegisterComponent,
+    canActivate: [LoggedInAuthGuard, AdminGuard] 
+  },
   { path: '**', redirectTo: '' },
 ];
 
