@@ -1,0 +1,65 @@
+.wrap{
+  min-height: calc(100vh - 61px);
+  display: flex;
+  align-items: center;
+}
+.container{
+    overflow: clip;
+    height: 75vh;
+}
+.form-label {
+  font-size: 1rem;
+  color: #280223;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.8rem !important;
+}
+
+hr {
+  opacity: 100% !important;
+}
+
+.login-preTitle {
+  color: #c95478;
+  font-size: 1.5rem;
+}
+
+.card {
+  min-height: 30vw;
+  display: flex;
+  min-width: 41vw;
+}
+
+.card-body {
+  width: 100%;
+}
+
+input {
+  border-radius: 0;
+  line-height: 3rem;
+  border-color: black;
+}
+
+.img-inkubis {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.form-control {
+  width: 70%;
+}
+
+.purple{
+  margin-top: 30px;
+}
+
+.abs {
+  position: absolute;
+}
+
+.bi-eye {
+  margin-left: 10px;
+}

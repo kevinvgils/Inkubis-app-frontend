@@ -1,0 +1,18 @@
+.flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.buttonToRight {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+}
+.versturen {
+  width: 120px;
+  height: 40px;
+  padding: 0;
+}
+h5{
+  margin-top: 30px;
+}

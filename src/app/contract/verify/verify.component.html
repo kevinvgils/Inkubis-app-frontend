@@ -1,0 +1,501 @@
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Controleer de volgende gegevens goed</h5>
+        <h2 class="card-subtitle mb-2">Controleren gegevens</h2>
+        <p class="card-text">De volgende informatie is opgegeven in het formulier</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent">
+
+    <div class="contract">
+        <div class="card">
+            <!-- Verwerkingsverantwoordelijke -->
+            <h5 class="card-subtitle">Formulier Verwerkingsverantwoordelijke</h5>
+            <div class="flex">
+                <label>Bedrijfsnaam</label>
+                <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                    'name'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Ondernemingsnummer</label>
+                <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                    'companyNumber'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Nederlandse wetgeving</label>
+                <label *ngIf="this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                'legalCountry'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                'legalCountry'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Adres</label>
+                <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                    'address'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Postcode</label>
+                <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                    'zipcode'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Stad</label>
+                <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                    'city'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Land</label>
+                <label>{{this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                    'countryOfResidence'])!.value}}</label>
+            </div>
+
+            <!-- Verwerker -->
+            <h5 class="card-subtitle">Formulier Verwerker</h5>
+            <div class="flex">
+                <label>Bedrijfsnaam</label>
+                <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
+                    'name'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Ondernemingsnummer</label>
+                <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
+                    'companyNumber'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Nederlandse wetgeving</label>
+                <label *ngIf="this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                'legalCountry'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['contractinfo','companyResponsibleForDataProcessing',
+                'legalCountry'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Adres</label>
+                <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
+                    'address'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Postcode</label>
+                <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
+                    'zipcode'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Stad</label>
+                <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
+                    'city'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Land</label>
+                <label>{{this.form.get(['contractinfo','companyExecutingDataProcessing',
+                    'countryOfResidence'])!.value}}</label>
+            </div>
+
+            <!-- Extra informatie -->
+            <h5 class="card-subtitle">Formulier Extra informatie</h5>
+            <div class="flex">
+                <label>Plaats ondertekening</label>
+                <label>{{this.form.get(['contractinfo','citySigned'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Datum ondertekening</label>
+                <label>{{this.form.get(['contractinfo','dateSigned'])!.value}}</label>
+            </div>
+
+            <!-- contractsignees Verwerkingsverantwoordelijke -->
+            <h5 class="card-subtitle">Formulier Verwerkingsverantwoordelijke</h5>
+            <div class="flex">
+                <label>Naam medewerker 1</label>
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member1',
+                    'nameEmployee1ResponsibleForDP'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Functie medewerker 1</label>
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member1',
+                    'jobEmployee1ResponsibleForDP'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Naam medewerker 2</label>
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member2',
+                    'nameEmployee2ResponsibleForDP'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Functie medewerker 2</label>
+                <label>{{this.form.get(['contractSignees','companyResponsibleForDataProcessing', 'member2',
+                    'jobEmployee2ResponsibleForDP'])!.value}}</label>
+            </div>
+
+            <!-- contractsignees Verwerker -->
+            <h5 class="card-subtitle">Formulier Verwerker</h5>
+            <div class="flex">
+                <label>Naam medewerker 1</label>
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member1',
+                    'nameEmployee1ExecutingDP'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Functie medewerker 1</label>
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member1',
+                    'jobEmployee1ExecutingDP'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Naam medewerker 2</label>
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member2',
+                    'nameEmployee2ExecutingDP'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Functie medewerker 2</label>
+                <label>{{this.form.get(['contractSignees','companyExecutingDataProcessing', 'member2',
+                    'jobEmployee2ExecutingDP'])!.value}}</label>
+            </div>
+
+            <!-- processingpurposes Verwerkingsdoeleindes -->
+            <h5 class="card-subtitle">Formulier Verwerkingsdoeleindes</h5>
+            <div class="flex">
+                <label>Verwerkingsdoeleindes</label>
+                <label>{{this.form.get(['contractinfo','processingPurposes'])!.value}}</label>
+            </div>
+
+            <!-- certification Verwerkingsverantwoordelijke -->
+            <h5 class="card-subtitle">Formulier Verwerkingsverantwoordelijke</h5>
+            <div class="flex">
+                <label>Certificeringen</label>
+                <label>{{this.form.get(['certifications','certifications'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Behaalde certificering</label>
+                <label>{{this.form.get(['certifications','achievedCertifications'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Audits, inspecties of interne controles</label>
+                <label>{{this.form.get(['certifications','overhauls'])!.value}}</label>
+            </div>
+
+            <!-- thirdparty Externe subverwerkers -->
+            <h5 class="card-subtitle">Formulier Externe subverwerkers</h5>
+            <div class="flex">
+                <label>Naam</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
+                    'name'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Statutaire zetel</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
+                    'formalCity'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Adres</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
+                    'address'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Aanduiding van verwerking persoonsgegevens</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
+                    'typeProcessingPersonalData'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Dienstomschrijving voor verwerker</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDataProcessing',
+                    'jobDescription'])!.value}}</label>
+            </div>
+
+            <!-- thirdparty Derde leveranciers -->
+            <h5 class="card-subtitle">Formulier Derde leveranciers</h5>
+            <div class="flex">
+                <label>Naam</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
+                    'name'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Zetel</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
+                    'formalCity'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Adres</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
+                    'address'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Beschrijving van de levering</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
+                    'descriptionOfSupply'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Eventueel link naar de voorwaarden</label>
+                <label>{{this.form.get(['thirdparty','externalSubEmployeeExecutingDatathirdPartySuppliersProcessing',
+                    'linkToLegalTerms'])!.value}}</label>
+            </div>
+
+            <!-- thirdparty Derde leveranciers -->
+            <h5 class="card-subtitle">Formulier Derde leveranciers</h5>
+            <div class="flex">
+                <label>Naam</label>
+                <label>{{this.form.get(['thirdparty','dataTransfer', 'nameOfExternalSubEmployee'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Land</label>
+                <label>{{this.form.get(['thirdparty','dataTransfer', 'legalCountry'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Basis van doorgifte</label>
+                <label>{{this.form.get(['thirdparty','dataTransfer', 'reasonForDataTransfer'])!.value}}</label>
+            </div>
+
+            <!-- datacategory Categorieën van betrokkenen -->
+            <h5 class="card-subtitle">Formulier Categorieën van betrokkenen</h5>
+            <div class="flex">
+                <label>(potentiële) / (ex)klanten</label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialOrFormerCustomers'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialOrFormerCustomers'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>aanvragers en (ex) werknemers, stagiaires </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'applicantsAndFormerEmployeesInterns'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'applicantsAndFormerEmployeesInterns'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / zelfstandige consultants </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialIndependentAdvisors'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialIndependentAdvisors'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / (ex)leveranciers </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialFormerSuppliers'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialFormerSuppliers'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>(potentiële) / (ex) zakelijke partners </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'potentialBusinessPartners'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'potentialBusinessPartners'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Minderjarigen (onder de leeftijd van 16) </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'minors'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'minors'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Een andere categorie </label>
+                <label *ngIf="this.form.get(['category','dataSubjectCategory',
+                        'otherCategory'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataSubjectCategory',
+                        'otherCategory'])!.value">Nee</label>
+            </div>
+
+            <!-- datacategory Categorieën van gegevens -->
+            <h5 class="card-subtitle">Formulier Categorieën van gegevens</h5>
+            <div class="flex">
+                <label>Identificatiegegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'identificationData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'identificationData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Rijksregisternummer</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'nationalRegistryNumber'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'nationalRegistryNumber'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Communicatiegegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'communicationsData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'communicationsData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Relationele gegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'relationalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'relationalData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Professionele gegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'professionalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'professionalData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Locatiegegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'locationData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'locationData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens met betrekking tot de financiële situatie van een betrokkene.</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'financialData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'financialData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Financiële en verzekeringsproducten</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'financialAndInsuranceProducts'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'financialAndInsuranceProducts'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens met betrekking tot stigmatisering of afzondering van de</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'stigmatizationOrIsolationData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'stigmatizationOrIsolationData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Levensstijl en gewoonten of consumptiegewoonten</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'lifestyleAndHabits'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'lifestyleAndHabits'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Gebruikersnamen, wachtwoorden en andere inloggegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'loginData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'loginData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens die kunnen worden gebruikt voor (identiteits)fraude</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'identityFraudData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'identityFraudData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Alle gegevens met betrekking tot een bijzondere wettelijke</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'specialLegalDutyOfConfidentialityAndProfessionalSecrecyData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Contractuele gegevens</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'contractualData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'contractualData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Beeld- of geluidsopname</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'imageOrSoundRecording'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'imageOrSoundRecording'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Een andere categorie:</label>
+                <label *ngIf="this.form.get(['category','dataCategory',
+                'otherCategory'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','dataCategory',
+                'otherCategory'])!.value">Nee</label>
+            </div>
+
+            <!-- datacategory Speciale categorieën van gegevens ('Gevoelige gegevens') -->
+            <h5 class="card-subtitle">Formulier Speciale categorieën van gegevens ('Gevoelige gegevens')</h5>
+            <div class="flex">
+                <label>Alle gegevens waaruit de raciale of etnische afkomst, politieke opvattingen,
+                    religieuze of filosofische overtuiging of lidmaatschap van de vakbond blijkt</label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'racialOrEthnicData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'racialOrEthnicData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>Genetische gegevens, biometrische gegevens met het oog op het uniek identificeren van een
+                    natuurlijke persoon, gegevens betreffende de gezondheid of het seksuele leven of seksuele geaardheid
+                </label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'geneticData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'geneticData'])!.value">Nee</label>
+            </div>
+            <div class="flex">
+                <label>De strafregisters en persoonlijke gegevens over onwettig of belemmerend gedrag met betrekking tot
+                    een opgelegd verbod op dat gedrag</label>
+                <label *ngIf="this.form.get(['category','specialDataCategory',
+                    'trafficRecordsAndPersonalData'])!.value">Ja</label>
+                <label *ngIf="!this.form.get(['category','specialDataCategory',
+                    'trafficRecordsAndPersonalData'])!.value">Nee</label>
+            </div>
+
+            <!-- spoc Verwerkingsverantwoordelijke -->
+            <h5 class="card-subtitle">Formulier Verwerkingsverantwoordelijke</h5>
+            <div class="flex">
+                <label>Naam</label>
+                <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
+                    'nameR'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Functie</label>
+                <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
+                    'jobDescR'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Email</label>
+                <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
+                    'emailR'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Telefoon</label>
+                <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
+                    'phoneR'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Mobiele telefoon</label>
+                <label>{{this.form.get(['spoc','CompanyResponsibleForDataProcessing',
+                    'mobileR'])!.value}}</label>
+            </div>
+
+            <!-- spoc Verwerker -->
+            <h5 class="card-subtitle">Formulier Verwerker</h5>
+            <div class="flex">
+                <label>Naam</label>
+                <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
+                    'nameE'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Functie</label>
+                <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
+                    'jobDescE'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Email</label>
+                <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
+                    'emailE'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Telefoon</label>
+                <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
+                    'phoneE'])!.value}}</label>
+            </div>
+            <div class="flex">
+                <label>Mobiele telefoon</label>
+                <label>{{this.form.get(['spoc','CompanyExecutingDataProcessing',
+                    'mobileE'])!.value}}</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttonToRight">
+        <button *ngIf="this.routeId == 0" (click)="onSubmit()" class="versturen purple" type="submit" >Versturen</button>
+        <button *ngIf="this.routeId != 0" (click)="onSubmit()" class="versturen purple" type="submit" >Bijwerken</button>
+    </div>
+</form>

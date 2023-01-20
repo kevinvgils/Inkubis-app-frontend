@@ -1,0 +1,150 @@
+.content {
+  margin: 0 auto;
+  max-width: 70vw;
+  height: 100%;
+}
+header .content,
+footer .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  height: 61px;
+  background-color: #280223;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.logo {
+  height: 41px;
+  max-height: 100%;
+  width: auto;
+}
+
+.navWrap {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+}
+.navWrap .navBar {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  display: flex;
+  gap: 40px;
+}
+
+/* LI ITSELF */
+.navWrap .navBar > li {
+  position: relative;
+  height: 101%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.navWrap .navBar > li:hover {
+  border-bottom: #ffff00 2px solid;
+  color: #ffff00 !important;
+}
+  /* CHILDREN OF LI */
+  .navWrap .navBar > li *{
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .navWrap .navBar > li:hover > * {
+    color: #ffff00 !important;
+    margin-bottom: -2px;
+  }
+
+    /* dropdown */
+    .navWrap .navBar > li:last-child > .dropdown{
+      right: -10px;
+      left: auto;
+    }
+    .navWrap .dropdownWrap{
+      display: flex;
+      flex-direction: row !important;
+      align-items: center;
+    }
+
+    .navWrap .dropdownWrap .arrow{
+      margin-left: 5px;
+      transition: 0.2s;
+    }
+    .navWrap .dropdownWrap:hover .arrow{
+      transform: rotateZ(90deg);
+    }
+
+    .navWrap .navBar > li:hover .dropdown{
+      transform: scaleY(1);
+    }
+    .dropdown{
+      z-index: 100;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: 0.2s;
+      overflow-y: hidden;
+      
+      position: absolute;
+      top: 61px;
+      left: -10px;
+
+      padding-left: 0px;
+      width: max-content;
+    }
+      .dropdown li{
+        background-color: #280223;
+        width: 100%;
+        height: max-content;
+      }
+      .dropdown li *{
+        padding: 15px 10px;
+        display: block;
+        cursor: default;
+      }
+      .dropdown li:hover a{
+        color: #ffff00 !important;
+        cursor: pointer;
+      }
+
+      .navBar li:last-child .dropdown .logoutButton:hover a{
+        color: #dc3545 !important;
+      }
+
+
+    /* button */
+    .yellow.logout{
+      background-image: url(/assets/img/sales.png);
+      background-size: cover;
+      height: 40px;
+      width: 40px;
+      border-radius: 100%;
+    }
+    .yellow.logout::after{
+      content: "";
+    }
+
+main {
+  background: rgb(39, 15, 39);
+  background: linear-gradient(
+    69deg,
+    rgba(39, 15, 39, 1) 0%,
+    rgba(40, 24, 55, 1) 69%,
+    rgba(20, 22, 60, 1) 100%
+  );
+  min-height: calc(100vh - 61px);
+}
+main .content {
+  min-height: inherit;
+}
+span {
+  color: #fff;
+  margin-right: 30px;
+  font-weight: bold;
+}

@@ -1,0 +1,271 @@
+<div class="detailWrap">
+    <div class="detail">
+        <div class="row">
+            <div class="col-9 main">
+                <div class="top">
+                    <div class="title">
+                        <h5 class="preTitle">Overzicht contracten</h5>
+                        <h2>Contracten overzicht</h2>
+                        <p>De volgende contracten behoren tot {{ contract.companyResponsibleForDP.name}}</p>
+                    </div>
+                    <div class="navigation">
+                        <button routerLink="/pdf/{{contract.id}}" class="versturen purple">Download PDF </button>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="contract">
+                    <!-- Verwerkingsverantwoordelijke -->
+                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
+                    <div class="flex">
+                        <label>(bedrijfs-) naam</label>
+                        <label>{{ contract.companyResponsibleForDP.name }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Ondernemingsnummer</label>
+                        <label>{{ contract.companyResponsibleForDP.companyNumber }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Nederlandse wetgeving</label>
+                        <label *ngIf="contract.companyResponsibleForDP.legalCountry">Ja</label>
+                        <label *ngIf="!contract.companyResponsibleForDP.legalCountry">Nee</label>
+                    </div>
+                    <div class="flex">
+                        <label>Adres</label>
+                        <label>{{ contract.companyResponsibleForDP.address }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Postcode</label>
+                        <label>{{ contract.companyResponsibleForDP.zipcode }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Stad</label>
+                        <label>{{ contract.companyResponsibleForDP.city }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Land</label>
+                        <label>{{ contract.companyResponsibleForDP.countryOfResidence }}</label>
+                    </div>
+
+                    <!-- Verwerker -->
+                    <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
+                    <div class="flex">
+                        <label>(bedrijfs-) naam</label>
+                        <label>{{ contract.companyExecutingDP.name }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Ondernemingsnummer</label>
+                        <label>{{ contract.companyExecutingDP.companyNumber }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Nederlandse wetgeving</label>
+                        <label *ngIf="contract.companyExecutingDP.legalCountry">Ja</label>
+                        <label *ngIf="!contract.companyExecutingDP.legalCountry">Nee</label>
+                    </div>
+                    <div class="flex">
+                        <label>Adres</label>
+                        <label>{{ contract.companyExecutingDP.address }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Postcode</label>
+                        <label>{{ contract.companyExecutingDP.zipcode }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Stad</label>
+                        <label>{{ contract.companyExecutingDP.city }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Land</label>
+                        <label>{{ contract.companyExecutingDP.countryOfResidence }}</label>
+                    </div>
+
+                    <!-- Extra informatie -->
+                    <h5 class="card-subtitle mb-2">Formulier Extra informatie</h5>
+                    <div class="flex">
+                        <label>Plaats ondertekening</label>
+                        <label>{{ contract.citySigned }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Datum ondertekening</label>
+                        <label>{{ contract.dateSigned }}</label>
+                    </div>
+
+                    <!-- contractsignees Verwerkingsverantwoordelijke -->
+                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
+                    <div class="flex">
+                        <label>Naam medewerker 1</label>
+                        <label>{{ contract.contractSignees.nameEmployee1ResponsibleForDP }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Functie medewerker 1</label>
+                        <label>{{ contract.contractSignees.jobEmployee1ResponsibleForDP }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Naam medewerker 2</label>
+                        <label>{{ contract.contractSignees.nameEmployee2ResponsibleForDP }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Functie medewerker 2</label>
+                        <label>{{ contract.contractSignees.jobEmployee2ResponsibleForDP }}</label>
+                    </div>
+
+                    <!-- contractsignees Verwerker -->
+                    <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
+                    <div class="flex">
+                        <label>Naam medewerker 1</label>
+                        <label>{{ contract.contractSignees.nameEmployee1ExecutingDP }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Functie medewerker 1</label>
+                        <label>{{ contract.contractSignees.jobEmployee1ExecutingDP }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Naam medewerker 2</label>
+                        <label>{{ contract.contractSignees.nameEmployee2ExecutingDP }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Functie medewerker 2</label>
+                        <label>{{ contract.contractSignees.jobEmployee2ExecutingDP }}</label>
+                    </div>
+
+                    <!-- processingpurposes Verwerkingsdoeleindes -->
+
+                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsdoeleindes</h5>
+                    <div class="flex">
+                        <label>Verwerkingsdoeleindes</label>
+                        <label>{{ contract.processingPurposes }}</label>
+                    </div>
+
+                    <!-- certification Verwerkingsverantwoordelijke -->
+
+                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
+                    <div class="flex">
+                        <label>Certificeringen</label>
+                        <label>{{ contract.certifications.certifications }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Behaalde certificering</label>
+                        <label>{{ contract.certifications.achievedCertifications }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Audits, inspecties of interne controles</label>
+                        <label>{{ contract.certifications.overhauls }}</label>
+                    </div>
+
+                    <!-- thirdparty Externe subverwerkers -->
+                    <h5 class="card-subtitle mb-2">Formulier Externe subverwerkers</h5>
+                    <div class="flex">
+                        <label>Naam</label>
+                        <label>{{ contract.thirdParty.TpProcessing.name }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Statutaire zetel</label>
+                        <label>{{ contract.thirdParty.TpProcessing.formalCity }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Adres</label>
+                        <label>{{ contract.thirdParty.TpProcessing.address }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Aanduiding van verwerking persoonsgegevens</label>
+                        <label>{{ contract.thirdParty.TpProcessing.typeProcessingPersonalData }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Dienstomschrijving voor verwerker</label>
+                        <label>{{ contract.thirdParty.TpProcessing.jobDescription }}</label>
+                    </div>
+
+                    <!-- thirdparty Derde leveranciers -->
+
+                    <h5 class="card-subtitle mb-2">Formulier Derde leveranciers</h5>
+                    <div class="flex">
+                        <label>Naam</label>
+                        <label>{{ contract.thirdParty.TpSupplier.name }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Zetel</label>
+                        <label>{{ contract.thirdParty.TpSupplier.formalCity }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Adres</label>
+                        <label>{{ contract.thirdParty.TpSupplier.address }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Beschrijving van de levering</label>
+                        <label>{{ contract.thirdParty.TpSupplier.descriptionOfSupply }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Eventueel link naar de voorwaarden</label>
+                        <label>{{ contract.thirdParty.TpSupplier.linkToLegalTerms }}</label>
+                    </div>
+
+                    <!-- thirdparty Derde leveranciers -->
+                    <h5 class="card-subtitle mb-2">Formulier Derde leveranciers</h5>
+                    <div class="flex">
+                        <label>Naam</label>
+                        <label>{{ contract.thirdParty.TpDataTransfer.nameOfExternalSubEmployee }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Land</label>
+                        <label>{{ contract.thirdParty.TpDataTransfer.legalCountry }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Basis van doorgifte</label>
+                        <label>{{ contract.thirdParty.TpDataTransfer.reasonForDataTransfer }}</label>
+                    </div>
+
+                    <!-- spoc Verwerkingsverantwoordelijke -->
+                    <h5 class="card-subtitle mb-2">Formulier Verwerkingsverantwoordelijke</h5>
+                    <div class="flex">
+                        <label>Naam</label>
+                        <label>{{ contract.spoc.nameR }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Functie</label>
+                        <label>{{ contract.spoc.jobDescR }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Email</label>
+                        <label>{{contract.spoc.emailR }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Telefoon</label>
+                        <label>{{ contract.spoc.phoneR }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Mobiele telefoon</label>
+                        <label>{{ contract.spoc.mobileR }}</label>
+                    </div>
+
+                    <!-- spoc Verwerker -->
+                    <h5 class="card-subtitle mb-2">Formulier Verwerker</h5>
+                    <div class="flex">
+                        <label>Naam</label>
+                        <label>{{ contract.spoc.nameE }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Functie</label>
+                        <label>{{ contract.spoc.jobDescE }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Email</label>
+                        <label>{{ contract.spoc.emailE }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Telefoon</label>
+                        <label>{{ contract.spoc.phoneE }}</label>
+                    </div>
+                    <div class="flex">
+                        <label>Mobiele telefoon</label>
+                        <label>{{ contract.spoc.mobileE }}</label>
+                    </div>
+
+                </div>
+
+                <div class="buttonToRight">
+                    <button routerLink="/" class="versturen purple">Terug naar homepagina</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

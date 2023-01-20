@@ -1,0 +1,44 @@
+<div class="card formHeader">
+    <div class="card-body">
+        <h5 class="preTitle">Contract aanmaken</h5>
+        <h2 class="card-subtitle">Contractinformatie</h2>
+        <p class="card-text">Algemene informatie over het contract waaronder de informatie over de verwerker en de verwerkersverantwoordelijke.</p>
+        <hr>
+    </div>
+</div>
+
+<form [formGroup]="form" class="formMainContent" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="specialDataCategory" class="row">
+        <h2>Speciale categorieën van gegevens ('Gevoelige gegevens')</h2>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">Alle raciale of etnische gegevens</h5>
+                <p class="card-text">waaruit de raciale of etnische afkomst, politieke opvattingen, religieuze of filosofische overtuiging of lidmaatschap van de vakbond blijkt</p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="racialOrEthnicData" name="racialOrEthnicData" formControlName="racialOrEthnicData">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">Genetische gegevens, biometrische gegevens</h5>
+                <p class="card-text">met het oog op het uniek identificeren van een natuurlijke persoon, gegevens betreffende de gezondheid of het seksuele leven of seksuele geaardheid</p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="geneticData" name="geneticData" formControlName="geneticData">
+            </div>
+        </div>
+        <div class="card col-12">
+            <div class="card-body">
+                <h5 class="card-subtitle">De strafregisters en persoonlijke gegevens</h5>
+                <p class="card-text">over onwettig of belemmerend gedrag met betrekking tot een opgelegd verbod op dat gedrag</p>
+            </div>
+            <div class="inputs">
+                <input class="form-check-input" type="checkbox" id="trafficRecordsAndPersonalData" name="trafficRecordsAndPersonalData" formControlName="trafficRecordsAndPersonalData">
+            </div>
+        </div>
+    </div>
+
+    <button class="purple" type="submit">Volgende</button>
+</form>
